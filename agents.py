@@ -13,15 +13,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # --- CONFIGURATION ---
+# We keep these variables for use within the WargameAgent class
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
 LOCATION = os.environ.get("GCP_REGION", "us-central1")
 MODEL_ID = "gemini-2.5-pro" 
 
-try:
-    vertexai.init(project=PROJECT_ID, location=LOCATION)
-    logger.info(f"Vertex AI Initialized. Model: {MODEL_ID}")
-except Exception as e:
-    logger.error(f"Vertex AI Init Failed: {e}")
+# NOTE: Removed the global vertexai.init() call to speed up Streamlit startup.
+# Initialization now occurs inside WargameAgent.__init__ which is cached in web_app.py.
 
 # --- SITUATION ROOM PROMPTS (STATIC REPORTS) ---
 # KEY REQUIREMENT: Cabinet-level concise, bulleted, no fluff.
@@ -189,9 +187,11 @@ ADVISOR_DEFINITIONS = {
     }
 }
 
-# --- GENERATION FUNCTIONS ---
+# --- GENERATION FUNCTIONS (Unchanged, they still use the global MODEL_ID) ---
 
 def generate_situation_report(report_type, context_text):
+    # This function is only used by the precompute script, which runs locally 
+    # and has its own initialization flow, so we leave it as is.
     start_time = time.time()
     logger.info(f"--> START: Report [{report_type}]")
     
@@ -201,10 +201,10 @@ def generate_situation_report(report_type, context_text):
         return f"Error: No prompt for {report_type}"
 
     try:
-        # We use the system instruction to set the persona/format
+        # Initializing Vertex AI locally for precomputation, if not already
+        vertexai.init(project=PROJECT_ID, location=LOCATION) 
         model = GenerativeModel(MODEL_ID, system_instruction=[SITUATION_PROMPTS[report_type]])
         
-        # The user prompt injects the data
         prompt = f"""
         ANALYZE THE FOLLOWING TRANSCRIPT CONTEXT:
         -----------------------------------------
@@ -223,6 +223,8 @@ def generate_situation_report(report_type, context_text):
         raise e 
 
 def generate_advisor_briefing(agent_name, context_text):
+    # This function is only used by the precompute script, which runs locally 
+    # and has its own initialization flow, so we leave it as is.
     start_time = time.time()
     logger.info(f"--> START: Briefing [{agent_name}]")
     
@@ -230,6 +232,8 @@ def generate_advisor_briefing(agent_name, context_text):
         return "Error: Unknown Advisor"
     
     try:
+        # Initializing Vertex AI locally for precomputation, if not already
+        vertexai.init(project=PROJECT_ID, location=LOCATION)
         definition = ADVISOR_DEFINITIONS[agent_name]
         model = GenerativeModel(MODEL_ID, system_instruction=[definition['prompt']])
         
@@ -262,21 +266,41 @@ class WargameAgent:
         self.name = name
         self.icon = icon
         self.system_prompt = system_prompt
-        self.model = GenerativeModel(MODEL_ID, system_instruction=[system_prompt])
+        
+        # --- LAZY INITIALIZATION FOR CLOUD RUN ---
+        # Initialize Vertex AI connection only when a WargameAgent is instantiated.
+        # This will now be controlled by @st.cache_resource in web_app.py.
+        try:
+            vertexai.init(project=PROJECT_ID, location=LOCATION)
+            logger.info(f"Initialized Vertex AI for Agent: {name}")
+            self.model = GenerativeModel(MODEL_ID, system_instruction=[system_prompt])
+        except Exception as e:
+            logger.error(f"Vertex AI Init Failed for Agent {name}: {e}")
+            self.model = None # Set to None if initialization fails
+            
         self.chat_session = None
 
     def start_new_session(self):
-        self.chat_session = self.model.start_chat(history=[])
+        # Only start the chat session if the model was successfully initialized
+        if self.model:
+            self.chat_session = self.model.start_chat(history=[])
+        else:
+            logger.warning(f"Cannot start chat session for {self.name}: Model not initialized.")
+
 
     def get_response(self, user_input, context_text=""):
+        if self.model is None:
+            return "Error: Agent model failed to initialize. Check configuration."
+            
         try:
             if self.chat_session is None:
+                # Should not happen if start_new_session is called in @st.cache_resource, 
+                # but good safety check.
                 self.start_new_session()
             
-            # For chat, we append context only if it's likely the first meaningful interaction 
-            # or if we want to enforce RAG. 
             full_prompt = user_input
             if context_text:
+                 # Pass the raw transcript context to the LLM for RAG-like capability
                  full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
                  
             response = self.chat_session.send_message(full_prompt)

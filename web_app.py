@@ -3,6 +3,8 @@ import json
 import os
 import sys
 import logging
+# Import necessary for Streamlit caching
+from functools import lru_cache
 
 # --- PATH SETUP ---
 sys.path.append(os.path.dirname(__file__))
@@ -19,7 +21,8 @@ if not os.path.exists(AGENTS_FILE_PATH):
     st.stop()
 else:
     try:
-        from agents import get_agent
+        # Import the factory function from agents.py
+        from agents import get_agent, ADVISOR_DEFINITIONS 
     except ImportError as e:
         st.error(f"FATAL: Import failed: {e}")
         st.stop()
@@ -35,6 +38,25 @@ if 'wargame_context' not in st.session_state:
     st.session_state.wargame_context = ""
 if 'data_loaded' not in st.session_state:
     st.session_state.data_loaded = False
+
+# --- CACHED AGENT CREATION ---
+@st.cache_resource
+def initialize_wargame_agent(agent_name):
+    """
+    Initializes and caches a WargameAgent instance. 
+    This prevents running vertexai.init() and model loading on every rerun.
+    """
+    if agent_name in ADVISOR_DEFINITIONS:
+        st.toast(f"Initializing {agent_name}...", icon=ADVISOR_DEFINITIONS[agent_name]['icon'])
+    
+    agent = get_agent(agent_name)
+    if agent:
+        # Important: Start chat session here or inside get_response, but ensure it's
+        # not tied to the st.cache_resource lifecycle if possible. 
+        # Since the agent class will now handle initialization internally, 
+        # we can rely on its methods.
+        agent.start_new_session()
+    return agent
 
 # --- NAVIGATION ---
 NAVIGATION = {
@@ -180,7 +202,9 @@ def render_chatbot_page(agent_name):
             
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
-                agent = get_agent(agent_name)
+                # Use the cached agent creation function
+                agent = initialize_wargame_agent(agent_name)
+                
                 if agent:
                     # We pass context here for RAG capability on follow-up questions
                     response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
