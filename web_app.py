@@ -2,13 +2,31 @@ import streamlit as st
 import json
 import os
 import time
+import sys
 
-# Import the Agent factory. Ensure agents.py is in the same directory.
-try:
-    from agents import get_agent
-except ImportError:
-    st.error("Backend module 'agents.py' not found. Please ensure it is created.")
+# --- PATH FIX ---
+# This ensures that the directory containing this script (and agents.py) 
+# is explicitly included in the Python module search path. This resolves the 
+# ImportError when running 'streamlit run web_app.py'.
+sys.path.append(os.path.dirname(__file__))
+
+# --- MODIFIED IMPORT BLOCK ---
+# Check if the file exists before attempting the import
+AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
+
+if not os.path.exists(AGENTS_FILE_PATH):
+    # This check confirms a file system error (e.g., file not copied)
+    st.error(f"FATAL: Backend module 'agents.py' not found at expected path: {AGENTS_FILE_PATH}. Please verify your file structure.")
     get_agent = None
+else:
+    # Attempt the import. The sys.path fix should make this work.
+    try:
+        from agents import get_agent
+    except ImportError as e:
+        # If this still fails, it suggests an issue *inside* agents.py 
+        # (e.g., a dependency missing from requirements.txt, though unlikely here).
+        st.error(f"FATAL: Import of 'agents.py' failed despite file existence (check contents of agents.py): {e}")
+        get_agent = None
 
 
 # --- 1. CONFIGURATION, STYLING, AND DATA LOADING ---
@@ -37,7 +55,6 @@ st.markdown("""
 def load_frozen_snapshot():
     """
     Loads and concatenates the first three episodes into a single context string.
-    This replaces the dynamic timeline logic.
     """
     files = [
         "the_wargame_s2e1_transcript_cleaned.json",
@@ -49,6 +66,11 @@ def load_frozen_snapshot():
     base_path = "data" 
     valid_types = ['blue', 'red', 'explanation'] # Focus on core game segments
     
+    # Ensure the data directory exists before attempting to load
+    if not os.path.exists(base_path):
+        st.error(f"Data directory '{base_path}' not found. Please create it and add the JSON files.")
+        return full_context
+
     for i, filename in enumerate(files):
         path = os.path.join(base_path, filename)
         if os.path.exists(path):
@@ -66,6 +88,8 @@ def load_frozen_snapshot():
                         
             except Exception as e:
                 st.warning(f"Could not load or parse {filename}: {e}")
+        else:
+            st.warning(f"Required data file not found: {filename}")
     
     full_context += "\n--- END OF CONTEXT ---"
     return full_context
@@ -160,18 +184,18 @@ def render_llm_static_page(group, title):
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 🔵 UK Forces (Blue)")
-            st.dataframe([
-                {"Asset": "HMS Queen Elizabeth", "Status": "Damaged/On Fire", "Location": "Portsmouth"},
-                {"Asset": "F-35 Squadron", "Status": "Deployed/Active", "Location": "Sortie"},
-                {"Asset": "Trident Sub 1", "Status": "At Sea", "Location": "Classified"},
-            ])
+            st.dataframe({
+                "Asset": ["HMS Queen Elizabeth", "F-35 Squadron", "Trident Sub 1"], 
+                "Status": ["Damaged/On Fire", "Deployed/Active", "At Sea"], 
+                "Location": ["Portsmouth", "Sortie", "Classified"]
+            })
         with col2:
             st.markdown("#### 🔴 Russian Forces (Red)")
-            st.dataframe([
-                {"Asset": "Northern Fleet", "Status": "Active", "Location": "North Atlantic"},
-                {"Asset": "SSN Flotilla", "Status": "Hunting", "Location": "UK Waters"},
-                {"Asset": "Airborne Missiles", "Status": "Expended", "Location": "Targets Reached"},
-            ])
+            st.dataframe({
+                "Asset": ["Northern Fleet", "SSN Flotilla", "Airborne Missiles"], 
+                "Status": ["Active", "Hunting", "Expended"], 
+                "Location": ["North Atlantic", "UK Waters", "Targets Reached"]
+            })
     else:
         st.markdown(f"**{title}** content requires an agent call to format the transcript context. For the MVP, this section is a placeholder.")
 
@@ -204,8 +228,9 @@ def render_chatbot_page(group, title):
 
         # 2. Assistant Response
         with st.chat_message("assistant", avatar=NAVIGATION['Advisors'][title]['icon']):
+            # Check if the import failed earlier
             if not get_agent:
-                st.error("Agent backend not loaded.")
+                st.error("Agent backend not available due to prior import error.")
             else:
                 agent = get_agent(title) # Get the specific agent instance
                 
@@ -222,11 +247,15 @@ def render_chatbot_page(group, title):
                             
                         except Exception as e:
                             st.error(f"Error communicating with Agent: {e}")
+                            st.warning("If running locally, ensure you have run 'gcloud auth application-default login'.")
                 else:
-                    st.warning(f"Agent '{title}' is not defined.")
+                    st.warning(f"Advisor '{title}' is not defined in agents.py.")
 
 
 # --- 4. STREAMLIT APPLICATION LAYOUT ---
+
+# Retrieve the components from the stored unique ID
+page_group, current_page_title = get_group_and_title(st.session_state.current_page_id)
 
 # --- Sidebar (Navigation) ---
 with st.sidebar:
@@ -252,9 +281,6 @@ with st.sidebar:
         st.markdown("---") # Visual separator between groups
 
 # --- Main Content Area ---
-
-# Retrieve the components from the stored unique ID
-page_group, current_page_title = get_group_and_title(st.session_state.current_page_id)
 
 # Render the appropriate content based on the page type
 if page_group in NAVIGATION and current_page_title in NAVIGATION[page_group]:

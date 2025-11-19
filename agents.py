@@ -4,8 +4,8 @@ import streamlit as st
 
 # Initialize Vertex AI (Ensure you have authenticated via gcloud auth application-default login locally)
 # Replace with your actual Project ID and Location
-PROJECT_ID = "your-gcp-project-id" 
-LOCATION = "us-central1" 
+PROJECT_ID = "mod-scc25lon-710" 
+LOCATION = "europe-west2" 
 
 try:
     vertexai.init(project=PROJECT_ID, location=LOCATION)
