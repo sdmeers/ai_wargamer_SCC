@@ -7,10 +7,10 @@ import logging
 import concurrent.futures
 
 # --- PATH SETUP ---
+# Essential for finding agents.py in the same folder
 sys.path.append(os.path.dirname(__file__))
 
 # --- LOGGING SETUP ---
-# Streamlit specific logger
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -23,6 +23,7 @@ AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
 
 if not os.path.exists(AGENTS_FILE_PATH):
     st.error(f"FATAL: 'agents.py' not found at {AGENTS_FILE_PATH}.")
+    # Define dummy fallbacks to prevent immediate crash
     get_agent = None
     generate_situation_report = None
     generate_advisor_briefing = None
@@ -30,6 +31,7 @@ if not os.path.exists(AGENTS_FILE_PATH):
     ADVISOR_DEFINITIONS = {}
 else:
     try:
+        # Importing specific functions that MUST exist in agents.py
         from agents import (
             get_agent, 
             generate_situation_report, 
@@ -38,7 +40,8 @@ else:
             ADVISOR_DEFINITIONS
         )
     except ImportError as e:
-        st.error(f"FATAL: Failed to import from agents.py: {e}")
+        st.error(f"FATAL: Failed to import from agents.py. Ensure agents.py is updated with the latest code. Error: {e}")
+        st.stop()
 
 # --- PAGE CONFIG ---
 st.set_page_config(layout="wide", page_title="AI Wargame Situation Room")
@@ -125,7 +128,6 @@ def load_and_analyze_data():
     logger.info("--- STARTING PARALLEL GENERATION ---")
     
     # Define tasks
-    # Format: (type, name)
     tasks = []
     for report_name in SITUATION_PROMPTS:
         tasks.append(("report", report_name))
@@ -141,6 +143,9 @@ def load_and_analyze_data():
         result_key = ""
         result_content = ""
         
+        # Small sleep to stagger requests and avoid hitting Rate Limits instantly
+        time.sleep(0.5) 
+        
         if t_type == "report":
             result_key = f"report_{t_name}"
             result_content = generate_situation_report(t_name, combined_text)
@@ -151,23 +156,19 @@ def load_and_analyze_data():
         return result_key, result_content
 
     # Run in ThreadPool
-    # We limit max_workers to 4 to avoid hitting Vertex AI QPM/TPM (Rate Limits)
-    # while still being 4x faster than serial execution.
-    MAX_WORKERS = 4
+    # Reduced to 2 workers to prevent TPM (Tokens Per Minute) exhaustion with large contexts
+    MAX_WORKERS = 2 
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        # Submit all tasks
         future_to_task = {executor.submit(process_task, task): task for task in tasks}
         
         for future in concurrent.futures.as_completed(future_to_task):
             task_type, task_name = future_to_task[future]
             try:
                 key, content = future.result()
-                # Write to session state (Streamlit allows this from main thread loop)
                 st.session_state[key] = content
                 completed_tasks += 1
                 
-                # Update UI
                 pct = int((completed_tasks / total_tasks) * 100)
                 my_bar.progress(pct, text=f"Processed: {task_name} ({completed_tasks}/{total_tasks})")
                 
@@ -287,8 +288,6 @@ def render_chatbot_page(agent_name):
             with st.spinner("Thinking..."):
                 agent = get_agent(agent_name)
                 if agent:
-                    # Context injection handled inside get_response if needed, 
-                    # but usually better to rely on the conversation flow for follow-ups
                     response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
                     st.markdown(response)
                     st.session_state[history_key].append({"role": "assistant", "content": response})

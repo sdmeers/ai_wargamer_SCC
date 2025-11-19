@@ -1,73 +1,77 @@
 import vertexai
 from vertexai.generative_models import GenerativeModel, SafetySetting
-import streamlit as st
+import os
+import logging
+import time
 
-# Initialize Vertex AI (Ensure you have authenticated via gcloud auth application-default login locally)
-# Replace with your actual Project ID and Location
-PROJECT_ID = "mod-scc25lon-710" 
-LOCATION = "europe-west2" 
+# --- LOGGING SETUP ---
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+logger = logging.getLogger(__name__)
 
+# --- CONFIGURATION ---
+PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
+LOCATION = os.environ.get("GCP_REGION", "us-central1")
+# Using the ID you confirmed works. 
+MODEL_ID = "gemini-2.5-pro" 
+
+# Initialize Vertex AI
 try:
     vertexai.init(project=PROJECT_ID, location=LOCATION)
+    logger.info(f"Vertex AI Initialized. Project: {PROJECT_ID}, Region: {LOCATION}, Model: {MODEL_ID}")
 except Exception as e:
-    print(f"Vertex AI Init failed (expected if running locally without creds): {e}")
+    logger.error(f"Vertex AI Init Failed: {e}")
 
-class WargameAgent:
-    def __init__(self, name, icon, system_prompt, model_name="gemini-1.5-flash-001"):
-        self.name = name
-        self.icon = icon
-        self.system_prompt = system_prompt
-        self.model = GenerativeModel(
-            model_name,
-            system_instruction=[system_prompt]
-        )
-        self.chat_session = None
+# --- DATA DEFINITIONS ---
 
-    def start_new_session(self):
-        """Resets the chat session."""
-        self.chat_session = self.model.start_chat(history=[])
+SITUATION_PROMPTS = {
+    "SITREP": """
+    You are the Chief of Staff. 
+    Based strictly on the provided transcript context, write a Situation Report (SITREP).
+    
+    Format:
+    **1. Situation Overview** (High level summary)
+    **2. Key Events** (Bulleted list of what just happened)
+    **3. Immediate Priorities** (What needs attention now)
+    
+    Style: Professional, military standard, concise.
+    """,
+    
+    "SIGACTS": """
+    You are an Intelligence Analyst.
+    Extract all Significant Activities (SIGACTS) from the transcript.
+    Focus on: Attacks, troop movements, kinetic events, and major diplomatic escalations.
+    Provide them as a time-ordered list if time is discernible, otherwise by importance.
+    """,
+    
+    "ORBAT": """
+    You are a Military Analyst.
+    Reconstruct the Order of Battle (ORBAT) based on the transcript.
+    List all specific Units, Assets, and Key Individuals mentioned.
+    Categorize them by Faction (Blue/Friendly vs Red/Hostile).
+    State their current status/location if known.
+    """,
 
-    def analyze_situation(self, context_text, task_type="summary"):
-        """
-        Used for the 'Situation Room' static reports.
-        """
-        prompt = f"""
-        Based strictly on the following transcript context, provide a {self.name} report.
-        
-        CONTEXT:
-        {context_text}
-        
-        TASK:
-        {task_type}
-        """
-        # Generate simple content
-        response = self.model.generate_content(prompt)
-        return response.text
-
-    def chat(self, user_input, context_text):
-        """
-        Used for the 'Advisors' interactive chat.
-        Injects context if it's the first turn, otherwise just chats.
-        """
-        if not self.chat_session:
-            self.start_new_session()
-            # On first message, we stealthily inject the context
-            setup_prompt = f"""
-            Here is the current scenario context (Transcripts of the wargame so far). 
-            Use this to inform all your future answers.
-            
-            CONTEXT:
-            {context_text}
-            
-            User Question: {user_input}
-            """
-            response = self.chat_session.send_message(setup_prompt)
-        else:
-            response = self.chat_session.send_message(user_input)
-            
-        return response.text
-
-# --- DEFINING THE SPECIFIC PERSONAS ---
+    "Actions": """
+    Summarize the specific decisions and actions taken by the Blue Team (friendly forces) in this transcript.
+    Highlight orders given, communications sent, and resources deployed.
+    """,
+    
+    "Uncertainties": """
+    Identify the "Known Unknowns". 
+    List the critical information gaps that the leadership is currently struggling with.
+    What are they asking questions about? What is ambiguous?
+    """,
+    
+    "Dilemmas": """
+    Identify the strategic dilemmas. 
+    Where is the team forced to choose between two bad options? 
+    What are the moral or strategic trade-offs discussed?
+    """
+}
 
 ADVISOR_DEFINITIONS = {
     "Integrator": {
@@ -93,6 +97,114 @@ ADVISOR_DEFINITIONS = {
         Ask: 'What does this mean for ordinary people?' and 'Are we protecting the population, not just the state?'"""
     }
 }
+
+# --- GENERATION FUNCTIONS ---
+
+def generate_situation_report(report_type, context_text):
+    """
+    Generates a one-off static report for the Situation Room.
+    """
+    start_time = time.time()
+    logger.info(f"START: Generating Report [{report_type}]")
+    
+    if not context_text:
+        logger.warning(f"ABORT: No context text for [{report_type}]")
+        return "Error: No transcript context available for analysis."
+        
+    if report_type not in SITUATION_PROMPTS:
+        return f"System Error: No prompt defined for report type '{report_type}'."
+
+    system_instruction = SITUATION_PROMPTS[report_type]
+    
+    try:
+        model = GenerativeModel(MODEL_ID, system_instruction=[system_instruction])
+        
+        # Truncate context if absolutely necessary, but Gemini 1.5/2.5 handles huge context.
+        # We pass it all.
+        prompt = f"""
+        ANALYZE THE FOLLOWING TRANSCRIPT DATA:
+        --------------------------------------
+        {context_text}
+        --------------------------------------
+        
+        GENERATE THE REQUESTED REPORT ({report_type}).
+        """
+        
+        response = model.generate_content(prompt)
+        duration = time.time() - start_time
+        logger.info(f"SUCCESS: Generated Report [{report_type}] in {duration:.2f}s")
+        return response.text
+        
+    except Exception as e:
+        logger.error(f"FAILURE: Report [{report_type}] failed: {e}")
+        return f"Error generating {report_type}: {str(e)}"
+
+def generate_advisor_briefing(agent_name, context_text):
+    """
+    Generates the initial 'thinking' summary for an advisor.
+    """
+    start_time = time.time()
+    logger.info(f"START: Generating Briefing [{agent_name}]")
+    
+    if agent_name not in ADVISOR_DEFINITIONS:
+        return "Error: Unknown Advisor"
+        
+    definition = ADVISOR_DEFINITIONS[agent_name]
+    
+    try:
+        model = GenerativeModel(MODEL_ID, system_instruction=[definition['prompt']])
+        
+        prompt = f"""
+        CONTEXT:
+        {context_text}
+        
+        TASK:
+        Provide a high-level initial assessment of the situation from your specific perspective.
+        What is your headline advice to the Commander?
+        Keep it under 150 words. Use bullet points for clarity.
+        """
+        
+        response = model.generate_content(prompt)
+        duration = time.time() - start_time
+        logger.info(f"SUCCESS: Generated Briefing [{agent_name}] in {duration:.2f}s")
+        return response.text
+    except Exception as e:
+        logger.error(f"FAILURE: Briefing [{agent_name}] failed: {e}")
+        return f"Error generating briefing: {e}"
+
+# --- AGENT CLASS ---
+
+class WargameAgent:
+    def __init__(self, name, icon, system_prompt):
+        self.name = name
+        self.icon = icon
+        self.system_prompt = system_prompt
+        self.model = GenerativeModel(
+            MODEL_ID,
+            system_instruction=[system_prompt]
+        )
+        self.chat_session = None
+
+    def start_new_session(self):
+        """Resets the chat session."""
+        self.chat_session = self.model.start_chat(history=[])
+
+    def get_response(self, user_input, context_text=""):
+        try:
+            if self.chat_session is None:
+                self.start_new_session()
+            
+            full_prompt = user_input
+            if context_text:
+                # We append context to the prompt for the first run or specific queries
+                full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
+
+            logger.info(f"Agent [{self.name}] received query.")
+            response = self.chat_session.send_message(full_prompt)
+            return response.text
+        except Exception as e:
+            logger.error(f"Agent [{self.name}] failed to respond: {e}")
+            return f"Error getting response from {self.name}: {e}"
 
 def get_agent(agent_name):
     """Factory function to create an agent instance."""
