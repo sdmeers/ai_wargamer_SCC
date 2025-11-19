@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wargame - Classified Transcript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+        }
+        .legend {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .legend h3 {
+            margin-top: 0;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .controls {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover {
+            background: #f0f0f0;
+        }
+        .filter-btn.active {
+            font-weight: bold;
+            border-width: 3px;
+        }
+        .filter-btn.explanation.active { border-color: #17a2b8; }
+        .filter-btn.commentary.active { border-color: #28a745; }
+        .filter-btn.blue.active { border-color: #007bff; }
+        .filter-btn.red.active { border-color: #dc3545; }
+        .transcript {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .line {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .timestamp {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #666;
+            margin-right: 10px;
+        }
+        .speaker {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .explanation { color: #17a2b8; }
+        .commentary { color: #28a745; }
+        .blue { color: #007bff; }
+        .red { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The Wargame - Classified Transcript</h1>
+        <p>AI-Processed and Classified Transcript Viewer</p>
+    </div>
+    
+    <div class="legend">
+        <h3>Classification Legend</h3>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #17a2b8;"></span>
+            <span>Explanation</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #28a745;"></span>
+            <span>Commentary</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #007bff;"></span>
+            <span>Blue Team (UK)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #dc3545;"></span>
+            <span>Red Team (Russia)</span>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <h3 style="margin-top: 0;">Filter by Type:</h3>
+        <button class="filter-btn explanation active" onclick="toggleFilter('explanation')">Explanation</button>
+        <button class="filter-btn commentary active" onclick="toggleFilter('commentary')">Commentary</button>
+        <button class="filter-btn blue active" onclick="toggleFilter('blue')">Blue Team</button>
+        <button class="filter-btn red active" onclick="toggleFilter('red')">Red Team</button>
+        <button class="filter-btn" onclick="showAll()" style="margin-left: 20px; border-color: #764ba2; color: #764ba2;">Show All</button>
+    </div>
+    
+    <div class="transcript">
+
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[43.54–44.6]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It's the job of the country.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[49.51–51.85]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Armed forces fight battles, countries fight war.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[58.24–63.47]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">I'm back with Chris Donnelly, the Russia expert who we met at the start of the previous episode.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[64.51–72.06]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">He was born in 1946, a year after Allied forces defeated the Nazis in the Second World War.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[73.44–76.11]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But the scars from that conflict ran deep.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[81.99–94.01]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Every one of my generation grew up in a world very heavily in the shadow of war for national survival, which had just finished and only just by the skin of our teeth been won.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[96.23–98.98]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">When I was a child, food was rationed.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[99.7–103.75]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Even as I was growing up, right until the mid-50s, petrol was rationed.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[105.51–108.3]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The world was so badly damaged.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[108.32–111.24]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">There had been so much destruction.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[111.28–115.83]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Everything was expensive, everything was hard to get, everything was grey.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[119.24–128.39]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">As we sit in his living room, Chris explains to me how that kind of reality creates an inbuilt sense of resilience within a society.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[128.41–134.29]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">That's the first place to start, and that's the most important place because it goes into your heart.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[137.0–147.89]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The second thing which goes into the brain is the logic of all the structures with which we emerged from the Second World War and converted to cope with the Cold War.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[150.57–159.64]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">That, of course, included prioritising the funding and equipping of large armed forces ready to fight the then Soviet Union at any moment.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[160.85–168.38]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But it also involved maintaining a civilian population that was prepared for the worst, even nuclear war.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[169.36–173.56]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">So, a very large civil defence organisation across the country.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[174.56–175.12]</span>
+            <span class="speaker explanation">Deborah Haynes:</span>
+            <span class="explanation">What was that?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[175.24–176.12]</span>
+            <span class="speaker explanation">Deborah Haynes:</span>
+            <span class="explanation">What did it like?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[176.56–178.84]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It took volunteers, it had uniforms.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[179.14–179.9]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">What was it called?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[180.19–181.85]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">A civil defence CD.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[183.29–203.5]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Its function was to mobilise in every town and village quite a large percentage of the population who would, in event of a future war, and that might well be a nuclear war, protect the population in the sense of training them to get into shelters,</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[203.8–230.26]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">...run the recovery systems... ...support the emergency services, so a massive expansion of that... ...and support law and order When the Cold War ended though... ...as well as reducing the size of its military... ...the government also chose to allow society's readiness... ...for armed conflict to fade As a nation we have lost this understanding...</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[230.71–243.02]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">that when bad things happen, we may have to change the whole structure, the priorities, the spending patterns of how the countries run and how our lives work.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[243.38–248.97]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">And a shorthand for that is saying we have to be able to move from a peacetime footing to a wartime footing.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[250.13–258.04]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">What would you think if you looked at the UK today from a Cold War mindset in terms of how prepared the UK is for war?</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[258.5–260.6]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">I wouldn't have believed it could be so bad.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[261.32–266.99]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">And what do you think about the fact that there is currently no national defence plan as there was during the Cold War?</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[284.22–290.05]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">What you're about to hear is the kind of war game that's genuinely tested inside government</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[328.57–341.11]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">It was the gravest assault on Britain since the Second World War, with a barrage of missiles striking military targets across the country, as well as Terminal 4 at Heathrow Airport.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[342.91–349.77]</span>
+            <span class="speaker commentary">Unknown:</span>
+            <span class="commentary">We left the war game with Britain's military chief telling his top operational commander to strike back.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[350.59–356.91]</span>
+            <span class="speaker commentary">Prime Minister:</span>
+            <span class="commentary">From the Prime Minister's perspective, the UK cannot be seen to be completely supine in this situation.</span>
+        </div>
+        <div class="line commentary" data-type="commentary">
+            <span class="timestamp">[357.63–360.96]</span>
+            <span class="speaker commentary">Prime Minister:</span>
+            <span class="commentary">Tell me how to sink a Russian ship in the next 30 minutes.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[363.42–372.4]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Sir Ben Wallace, as prime minister, is still locked in an emergency COBRA meeting with his team of real-life former ministers and military chiefs.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[373.74–377.71]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">They have to figure out what to say to the nation about the attack.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[378.47–388.52]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Had the UK really come under fire, all key ministers would have been forced to disperse to different locations to avoid being wiped out in a single strike.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[389.68–398.15]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">As this is a simulation though, they're staying put around a long table in a large room in the basement of a building in central London.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[399.51–404.48]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The following events take place between around five o'clock and six o'clock in the morning.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[405.22–411.05]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">What we need to work out is very simple, initial advice to public.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[411.79–413.19]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Five points, six points, whatever.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[413.51–419.54]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Stay at home, essential workers, report to hospitals, and prepare someone.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[419.7–421.44]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We've got the leader of the House in touch with the Speaker.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[421.49–424.33]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Try and bring Parliament sitting earlier.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[424.81–429.74]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Two statements, I expect, one from Chancellor, one from the Home Secretary, if you want to lead on that.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[429.72–435.91]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">where we make very clear but in the meantime when they wake up and it's on the radio there are five or six points.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[436.19–440.94]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We can always loosen those but let's start off so people know what to do.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[442.56–446.71]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The press secretary, played by Victoria McInnes, has a suggestion.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[447.73–453.1]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">We should also ensure Prime Minister were using the Home Office Alert System so that everybody will wake up to it on their phones, not just on the radio.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[453.12–454.36]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So let me tell you something.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[454.38–456.24]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">I don't even know what the Home Office Alert System is.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[456.42–458.78]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It has been probably so underused.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[458.8–459.61]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">How do we get it?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[460.01–460.91]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Is it on the radio?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[461.29–462.21]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Is it on the television?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[462.69–464.95]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">You get a very loud noise on your phone.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[465.07–466.5]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">That will wake them all up, Prime Minister.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[466.51–467.44]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">I can assure you.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[467.46–467.9]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Right.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[467.92–469.16]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">So it wakes you up, and then what?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[473.29–481.06]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Emergency alerts are being sent to tens of millions of mobile phones across the country, letting people know the UK has been attacked.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[483.33–485.09]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">This is what you would actually hear.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[485.15–492.89]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The government in the real world introduced the alert system in 2023 when they ran a nationwide test.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[493.67–495.75]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Another test is planned for this year.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[497.98–506.57]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Like air raid sirens during World War II, it would be the modern day sound of the UK at war, provided the mobile networks are still working.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[508.04–518.27]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Imagine how that would feel to be woken before dawn by this sound and a message telling you that Russia has launched missile strikes against targets across Britain.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[521.81–526.78]</span>
+            <span class="speaker explanation">Deborah Haynes:</span>
+            <span class="explanation">We understand that RAF jets are still airborne in case of further strikes.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[526.8–530.8]</span>
+            <span class="speaker explanation">Deborah Haynes:</span>
+            <span class="explanation">Two people have died, but officials warn the toll will likely rise.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[532.25–550.41]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The government knows it needs to do everything possible to reassure the public and prevent panic, even as it struggles to rally NATO allies to help the UK fight back.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[552.2–572.6]</span>
+            <span class="speaker explanation">PM (Prime Minister):</span>
+            <span class="explanation">Before I address the nation, can we just make sure there are comms going out about reassurance, what we've been doing, the government has met, the government is talking to allies, just a running narrative to give people reassurance that we are active on their behalf and doing stuff and just making sure that we are listening and we are available.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[575.92–582.36]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">He asks Amber Rudd, as the Home Secretary, to liaise with the Scottish, Welsh and Northern Irish governments.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[583.32–594.74]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">He also needs her to speak with dozens of local resilience forums that played a key role during the Covid crisis, though none have experience of responding to war.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[594.72–607.28]</span>
+            <span class="speaker explanation">Prime Minister:</span>
+            <span class="explanation">I just want to make sure that everybody's aware the scale of the damage that's already taken place and the strain that emergency services are already under and the fact that local government do not really know what to do.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[607.62–617.08]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">And I will speak to the Secretary of State for local government, but we do not yet have in place any guidance for the local governments about how to behave in these sorts of emergencies.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[617.46–617.98]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">They are</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[618.26–626.22]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">at the moment, completely at sea of how to behave, what to prioritize, and we will try to put in place some of those structures for them.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[626.24–628.25]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We used to have the war book, as they called it.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[628.69–629.79]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Do we still have a war book?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[629.81–630.37]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">No, we don't.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[631.17–636.31]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">That was abandoned sometime in the 90s after the Cold War or the 2000s.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[641.87–645.29]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">I'm going to step in for a moment to explain what they're talking about.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[645.34–652.52]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">This is a fundamental weakness in the UK's national resilience that Chris Donnelly also highlighted.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[654.68–660.29]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Can you remember how you felt when, for example, the government war book got shelved?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[660.67–661.41]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">What did I think of it?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[661.43–662.73]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">I thought it was a great mistake.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[663.43–670.04]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But for the vast bulk of the political and military establishment, the tide seemed to have turned in a different direction.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[672.01–681.33]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The War Book started life around the time of the First World War as a set of national plans on what to do in the transition from peace to war.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[682.57–692.47]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It was by no means perfect because the country was once again unprepared in the run-up to the Second World War, but at least it had some kind of plan.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[693.91–705.15]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">By the time NATO was established in 1949, this instruction manual to prepare for a conflict had evolved to correspond with war plans for the whole of the Alliance.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[707.17–717.54]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Marked secret and regularly updated by the Cabinet Office, the Government War Book covered so much more than just mobilising the armed forces during the Cold War.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[718.77–731.29]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It also focused on the need for local authorities, industry and wider society to be prepared for World War Three, including the prospect of nuclear Armageddon.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[736.6–741.18]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But much of that readiness was allowed to fade after the Soviet Union collapsed.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[742.85–751.13]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The war book was effectively replaced by a piece of legislation you've heard the Attorney General talk about, called the Civil Contingencies Act.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[752.01–759.98]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But this law is geared far more towards responding to terrorist attacks or natural disasters, not all-out war.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[761.26–776.06]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">When I asked the cabinet office about any update to a national defence plan, they simply told me, and I quote, the UK has robust plans in place for a range of potential emergencies that have been developed and tested over many years.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[777.75–778.65]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Back to the game.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[780.79–794.95]</span>
+            <span class="speaker explanation">Home Secretary:</span>
+            <span class="explanation">Prime Minister, can I just raise that I know that obviously the major thing is security and the missile issues, but there are people who are getting out of their beds this morning and they're going to be hearing that there have been explosions in areas close to them.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[795.22–803.06]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Our Attorney General, Helena Kennedy, says people across the UK will be in a state of shock, fear and confusion.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[803.99–807.45]</span>
+            <span class="speaker explanation">Home Secretary:</span>
+            <span class="explanation">Some of them will be heading for airports and going on their holidays or going on business trips.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[807.79–811.25]</span>
+            <span class="speaker explanation">Home Secretary:</span>
+            <span class="explanation">Some of them will be looking for whether they should be going to their work or not.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[811.73–820.24]</span>
+            <span class="speaker explanation">Home Secretary:</span>
+            <span class="explanation">There's going to be a lot of fear around and I just wonder about practical advice to ordinary people and I wanted to know what the Home Secretary felt she should be saying too.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[820.22–822.11]</span>
+            <span class="speaker explanation">Prime Minister:</span>
+            <span class="explanation">Yes, thank you.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[822.51–828.28]</span>
+            <span class="speaker explanation">Prime Minister:</span>
+            <span class="explanation">We have already announced that we've closed UK airspace and Heathrow Airport is closed as well.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[828.46–831.05]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So that's in place and that will be available.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[831.17–832.91]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Other airports, Glasgow?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[833.03–836.8]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Yes, because airspace is closed overall.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[836.78–847.88]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">The local government of course do not have a rehearsal plan to respond to armed attack, but we do have structures in place as a result of the Covid situation a few years back.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[847.94–851.41]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So we are going to be using volunteers through the local resilience forms.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[851.81–858.38]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">We can perhaps put that back together and we should also think about how we can use volunteers to come into</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[858.36–859.58]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">military assistance.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[859.6–864.36]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So we do the opposite to the military assistance, to the civilian authority camera.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[864.38–872.76]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">It is regrettable that we haven't rehearsed this before and that we haven't been able to put it in place so local government have more information because they don't know what to do basically.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[875.74–882.33]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The National Security Advisor and Attorney General recommend invoking Part 2 of the Civil Contingencies Act.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[883.29–892.59]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">This will give the government emergency powers to be able to do things like require people to stay at home, ban travel and ration fuel.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[892.68–906.9]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So PM, can I suggest, you've got to make a statement to the nation and you're going to have to do that fairly shortly and you need some time to go through that because that is the crucial moment for the nation and it's going to have to be, I don't think we can go beyond 6am for that on a Monday morning.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[907.02–908.57]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So can I suggest</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[908.55–916.24]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Assuming the attorney agrees, and I think from what she says she does, we can invoke part two of the Civil Contingency Act, which is emergency powers.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[917.04–922.98]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We have been subject to an emergency which amounts to war or tourism, which threatens serious damage to the security of the United Kingdom.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[923.5–932.25]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">That gives ministers essentially emergency powers, and therefore to direct all emergency services to take the actions the Home Secretary set out.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[932.27–935.62]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">But it also means we can direct people to stay at home, et cetera.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[943.09–957.04]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">As ministers focus on the home front, in a separate room across the corridor, the UK's top warfighting commander is asking a team of advisors for ideas on how to sink a Russian ship or submarine.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[958.25–967.27]</span>
+            <span class="speaker explanation">Narrator:</span>
+            <span class="explanation">Could I ask you, Tom, just to put together a narrative in your own mind how we do this so there's a little bit of technical application to it as well?</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[969.33–976.62]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Lieutenant General Sir David Capewell is supported by six experts in defence, security and national resilience.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[978.11–988.08]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">One of them, Tom Sharp, was a commander in the Royal Navy who now works as a communications consultant.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[989.26–1009.06]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">When David really was the UK's Chief of Joint Operations from 2011 until 2014, Tom worked for him at what's known as the Permanent Joint Headquarters, or PJHQ.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1010.1–1019.24]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">In the war game, we've so far largely focused on the conversations taking place in the Prime Minister's Cobra meeting, as well as at the Kremlin.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1021.86–1035.06]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">But David and his advisors have also been playing the game from the start, seated around a circular table in yet another underground room, discussing possible options and responses.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1035.5–1041.95]</span>
+            <span class="speaker explanation">Dr Rob Johnson:</span>
+            <span class="explanation">The issue we still have is that all three targets and SSN is the best way of prosecuting that.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1042.37–1046.26]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The team uses a lot of military acronyms, but I'll translate.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1047.5–1054.33]</span>
+            <span class="speaker explanation">Dr Rob Johnson:</span>
+            <span class="explanation">Using the Cold War mentality of giving them a bloody nose underwater first up to send them scurrying back, hopefully.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1054.72–1069.67]</span>
+            <span class="speaker explanation">Dr Rob Johnson:</span>
+            <span class="explanation">The first order of battle is to sink one of their SSNs, maybe more if we know where they are, certainly the one that was off Scotland, using a combination of our SSN, a Type 23 frigate with Merlin and or the P8, whichever gets there first.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1070.43–1082.68]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">An SSN is an attack submarine armed with cruise missiles and torpedoes, while a frigate is a medium-sized warship that can be fitted with radars to hunt for submarines.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1083.84–1088.91]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Merlin helicopters and P-8 maritime patrol aircraft can do this as well.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1090.09–1100.18]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">What Tom's saying is that a submarine is the best way to strike back against Russia and they should aim to take out one or more of the Russian submarines.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1100.92–1105.57]</span>
+            <span class="speaker blue">Captain:</span>
+            <span class="blue">It's helpful that the one that we've seen is next door to Lossiemouth.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1107.53–1114.1]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Sir Bernard Grey used to be the top civil servant in charge of procuring and maintaining military equipment.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1114.83–1119.99]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The place he's referring to, Lossiemouth, is on the north coast of Scotland.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1120.33–1125.11]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It's where the UK's fleet of P-8 maritime patrol aircraft is based.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1126.02–1135.97]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">These planes are a kind of military version of a Boeing 737 airliner which he may have flown on as a passenger, but this one's armed with missiles.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1137.25–1146.86]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Both Tom and Bernard want to target the Russian submarine that chose to surface off the Scottish coast the previous day next to a passenger ferry.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1146.96–1155.17]</span>
+            <span class="speaker blue">Captain:</span>
+            <span class="blue">And therefore, from that point of view, I would be prosecuting the area with as much of P8 as we've got.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1155.19–1163.0]</span>
+            <span class="speaker blue">Captain:</span>
+            <span class="blue">Just bearing in mind it's the P8 base, our quickest remedy for the Prime Minister's point of view is finding and prosecuting.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1163.02–1171.72]</span>
+            <span class="speaker blue">Captain:</span>
+            <span class="blue">And we know it's an SSN, we know where it is, and we've got all of our ASW aircraft within 50 miles.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1174.53–1181.46]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">ASW means anti-submarine warfare, so anything that can find, track and destroy submarines.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1182.44–1182.94]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">That's a good point.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1182.96–1185.01]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">That's easily the quickest way to strike back.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1186.21–1192.78]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Tom also suggests sending a submarine to target the flotilla of Russian warships that attacked the UK.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1193.72–1196.43]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">And then we can allocate one SSN to their surface fleet.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1196.63–1198.21]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">That is a high-risk mission.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1198.81–1202.18]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">But it's something that my submarine champs would very much like to get involved in.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1202.2–1202.96]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">I've spoken to them.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1203.56–1208.21]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">And in theory, if they can get in amongst that task group, they could cause merry, merry hell.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1208.71–1213.43]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">But it's high risk because there are still seven of their SSNs, of which one or two will be allocated to this.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1213.71–1216.46]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">So then it comes down to our SSN versus their SSNs.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1217.56–1222.85]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">He sets out some stark survival odds for the submariners who'd be carrying out the mission.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1223.0–1225.67]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">I'm sure they could get a few shots away.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1225.69–1231.07]</span>
+            <span class="speaker blue">Dr Rob Johnson:</span>
+            <span class="blue">I mean, that submarine, I would give it probably a 40% chance of not coming back.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1235.26–1246.54]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Back in the War Games main Cobra Room, the British side has just received their first communication from the President of the United States via a post on social media.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1246.56–1250.91]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">— He has put out a statement saying, stop the bombing on both sides.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1251.87–1254.89]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">— The Prime Minister's press secretary reads it out.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1255.14–1261.55]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">The attacks on the United Kingdom and inside Russia this past week should never have happened, and they are sad to see.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1262.03–1264.8]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">The United States is ready to negotiate an end to the fighting.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1265.3–1266.72]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">My administration wants peace.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1267.02–1268.92]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">Whoever seeks war will regret it.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1269.38–1270.53]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">That came out about 10 minutes ago.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1270.61–1271.59]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">OK, so not very helpful.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1271.79–1278.04]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Meanwhile, however, unusually, the US Navy has been ordered into the North Atlantic to conduct surveillance.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1278.08–1284.63]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Two carrier groups are being readied or diverted immediately to the region, so I understand, which is potentially positive news.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1285.28–1289.93]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">This could be important if they're ultimately allowed to help the UK.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1289.99–1295.24]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">American aircraft carriers are giant war-fighting platforms.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1296.06–1303.91]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Each one will be loaded with dozens of fast jets and protected by a task force of warships and submarines.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1308.5–1310.78]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Very interesting.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1312.44–1312.72]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Mm-hmm.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1315.05–1320.02]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Also very alert to the movement of the American warships is the Russian team.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1320.98–1326.09]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">A weakening of US support for the UK has emboldened the Kremlin in this crisis.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1326.91–1330.68]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">But Moscow knows that Washington is not its close friend either.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1331.32–1332.4]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Well, not yet.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1334.24–1342.93]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">The Russian president, played by Keir Giles, is asking his team for an assessment of the damage inflicted on Britain by their missile strikes.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1344.19–1359.64]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Swedish defence expert Maria Enkvist is in the role of Russia's military spy chief, while Finnish naval analyst Robin Hagblom, speaking via video link, is pretending to be a Russian admiral and commander of the Northern Fleet.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1360.53–1365.93]</span>
+            <span class="speaker red">Chief of Military Intelligence:</span>
+            <span class="red">Do we see anything, Chief of Military Intelligence, from UK news reporting yet or any other sources?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1366.75–1371.72]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Mr. President, our assessment is that the strike on Portsmouth has been successful.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1372.94–1377.02]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">UK media reports on the locations of our strikes are sparse at best.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1377.78–1381.87]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Our operators can confirm that the damage at Portsmouth is substantial.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1382.47–1383.13]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Thank you very much.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1383.49–1385.47]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Admiral, did you receive all of that?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1385.81–1387.05]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">Yes, that is understood.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1387.11–1393.1]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">My recommendation is that we will follow up the first wave with the second wave targeting the capabilities left.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1394.18–1394.5]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Thank you.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1394.64–1395.85]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">We will proceed as scheduled.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1396.72–1402.29]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The Russian attack isn't just being fought by warships, jets and submarines, though.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1403.29–1409.38]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The Kremlin is also using information as a weapon to undermine and isolate the UK.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1410.44–1416.29]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">The president asks his spy chief for an update on what he calls information warfare measures.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1417.12–1422.48]</span>
+            <span class="speaker red">Chief of Military Intelligence:</span>
+            <span class="red">Please brief me on the information warfare measures that your services have prepared against the United Kingdom.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1423.24–1424.71]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Yes, Mr President.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1425.02–1428.69]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">We have prepared two options here to direct the narrative.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1429.41–1434.05]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">The first is how dare the UK media blame Russia for this.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1435.05–1439.7]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">We will frame it as being all rosophobia by the aggressive British government.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1440.94–1450.39]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">And the second one, if it really is Russia, it has indeed been provoked by the UK, which must now back down from supporting Ukraine most of all.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1452.04–1461.51]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Also, one of our agents is already out on the BBC saying that this is a result of the UK's provocation of Russia over the years.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1463.28–1469.22]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">The spreading of multiple conflicting lies is a classic form of Russian disinformation.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1470.41–1477.21]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">It was used to try to cast doubt on British evidence that Russia carried out the Salisbury spy poisonings in 2018.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1478.56–1480.7]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Moscow has always denied involvement.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1481.44–1488.33]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">The Kremlin also deployed the same kind of tactic to justify its full-scale war in Ukraine.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1488.31–1499.8]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Vladimir Putin denied up until the last moment that he had any plans to launch an attack, even as more than 100,000 Russian troops massed along Ukraine's border.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1500.08–1516.78]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">On the 18th February 2022, the Russian leader told a news conference his soldiers are just on a defensive exercise and wouldn't threaten anyone.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1517.92–1520.12]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Six days later, they invaded.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1582.53–1583.95]</span>
+            <span class="speaker explanation">Narrator:</span>
+            <span class="explanation">Eligibility conditions apply.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1583.99–1598.92]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The Russian disinformation creates yet another battlefield for the UK, one that it has to fight across social media platforms as well as more traditional news sites.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1600.13–1606.49]</span>
+            <span class="speaker explanation">President:</span>
+            <span class="explanation">So we've got kind of agents of influence are putting out that this is an appropriate response to British imperialism.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1606.55–1611.62]</span>
+            <span class="speaker explanation">President:</span>
+            <span class="explanation">So that's something that we need to be aware of is now very openly in the global media.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1612.42–1616.89]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Back in the Cobra meeting, the press secretary is briefing the British team.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1617.18–1623.85]</span>
+            <span class="speaker red">President:</span>
+            <span class="red">The other point to make is that it has now been over an hour since the first strikes landed, and we have not made any public response.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1624.27–1628.28]</span>
+            <span class="speaker red">President:</span>
+            <span class="red">We need to consider that in terms of the priorities and actions and timing now to provide reassurance.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1629.06–1638.27]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">She wants the prime minister to broadcast his address to the nation as soon as possible so his words can push back hard against the Russian claims.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1639.69–1643.56]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">The national security adviser, played by Mark Sedwell, agrees.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[1644.58–1649.25]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">Can I just urge colleagues, we're going to get a lot of updates and a lot of noise from the Russians here.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1650.22–1656.77]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Unless it's central, let's take that out of the room PM and not allow you and your senior colleagues to be distracted.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1658.13–1665.65]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">General Sir Richard Barons, the Defence Chief, wants to update the Prime Minister on options to attack the Russian Navy.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1665.8–1667.38]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">I have two urgent issues.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1667.68–1679.01]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">The chief of joint operations has made the very good point that any strike that we now make on that Russian fertility relies on the strategic enablement that we get from other people's satellites and communications networks.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1679.62–1682.46]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So far, those have not been denied to us.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1682.52–1688.87]</span>
+            <span class="speaker explanation">Prime Minister:</span>
+            <span class="explanation">But in ministers communications with their counterparts, even if they're not going to fight for us, they must keep giving us access.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1689.84–1694.41]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">All modern armed forces rely heavily on what's known as enablers.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1695.17–1698.72]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">You can't just send tanks, jets and warships to fight.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1699.38–1704.53]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">They need data and other forms of intelligence to be able to find and hit targets.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1705.39–1708.43]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">They also need to be able to refuel and to rearm.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1709.65–1719.01]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">NATO allies rely in large part on the US for many of these enablers because America has by far the biggest military.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1719.19–1743.1]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Without this kind of US support... ...things could become even more difficult for the UK Would it be the case that in the next 10 minutes... ...we've readied and fired a torpedo... ...that it would still be able to function now in this moment... ...without ringing up and asking in advance... ...if we were just to simply use a certain or a storm shadow, for example... ...that we would be able to do that?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1743.12–1746.66]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">We need the satellite communication in order to make sure... ...we know where the targets are</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1747.44–1749.96]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">the National Security Advisor offers a view.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1750.56–1753.08]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">But CGS, we have that at the moment, don't we?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1753.2–1753.7]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We do.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1753.72–1758.83]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So I would caution against asking in case they switch it off.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1759.13–1773.23]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">I communicate in real time, so if they're going to switch it off, they switch it off after we've... So I think this is all linked to the CGO's second question, which is, once we have... and we are likely to have sunk a Russian ship in the next 30 minutes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1773.25–1774.61]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Once we have done that,</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1774.88–1775.8]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">What's the next play?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1776.18–1779.16]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Is there a day march to say, that's it, if you want to stop, we want to stop?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1779.68–1797.63]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">Because if we fail to deescalate this, and my own view is that is more likely, and we're into a long haul, then the finite number on our missiles able to shoot down other people's missiles, the limitations on the strategic enablement we get from common architecture, all of that is going to come.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1797.81–1803.63]</span>
+            <span class="speaker explanation">Prime Minister:</span>
+            <span class="explanation">We need our allies to send us their stuff, or we're out of the game within a week.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1804.54–1808.57]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">The UK doesn't just have limited capabilities to defend itself.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1809.19–1810.83]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It also lacks capacity.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1811.73–1815.96]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">That's not just a question of the number of jets or air defence systems.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1816.62–1819.12]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">It's also about how well they're armed.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[1820.16–1828.04]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Like so many parts of the armed forces, stockpiles of ammunition have been reduced over time to save money.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1829.05–1838.87]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The military has also given a lot of its remaining weapons to Ukraine without receiving enough cash from the Treasury to replenish its own stocks at speed.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1840.28–1846.56]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Adding to the problem, the UK has far fewer arms factories than it did in the Cold War.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1847.5–1851.57]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Production lines are starting to expand again, but slowly.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1852.77–1856.03]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">After you've had about seven of those attacks roughly, I'll be out of missiles.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1856.53–1861.97]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So if our allies are not going to come to our defence, and they don't appear to be, they could at least send us their missiles.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1862.91–1867.49]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The Prime Minister wants to prioritise fighting over fretting about stockpiles.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1868.4–1879.27]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Our ammo stocks, woefully low as they are, should not preclude us from taking action because keeping them from a rainy day isn't going to help anyone already in a rainy day.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1880.01–1883.18]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So then I think we should take that choice.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1883.38–1886.0]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">The Secretary of State for Defence is authorising a chain of command.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1886.74–1891.59]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Then afterwards we can see what happens with our allies and friends.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1892.24–1902.01]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">He says the UK must send a clear message after it sinks a Russian ship that this was a proportionate act of self-defence following Russia's attack.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1903.23–1910.86]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">That in itself is a clue to the Russians that there is a potential here for a limitation for a barrier.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1911.5–1918.13]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">If at the same time they don't want to take that decision, then we'll readdress it then.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1918.77–1928.24]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The defence secretary, played by James Heapey, is worried about the timing of a decision to sink the ship, given the risk of a Russian retaliation.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1929.02–1943.24]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">I'm concerned that the sequencing of your address to the nation versus the military opportunity to respond means that we could find that this situation starts to escalate in a rather uncontrolled way quite quickly.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1943.66–1947.11]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">And I think therefore it is important for you to be clear</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1947.09–1954.26]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">Do you wish to make your address donation with all of the messaging that that brings internationally prior to taking any decision?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1954.73–1962.51]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">Or do you want to prioritize taking the military decision at the moment that is expedient, even if that were to come before you have addressed the nation?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1962.53–1965.11]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">That's, I think, the key question for you.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1965.37–1969.19]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Well, I think, first of all, does anyone here believe we should not</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1969.17–1977.41]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">No matter when it comes, we should not take a limited self-defence strike against the Russian asset.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1978.51–1983.21]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">No, but one must think of what that action will be.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1983.73–1987.04]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">We're asking one UK military asset to strike a Russian.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1987.06–1989.16]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">The Russian asset may well respond.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1989.6–1997.67]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">And I'm just... I don't think that you should assume that it will be taken as a single, measured, discrete act.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[1998.17–1999.95]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">It may well trigger a response.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2000.27–2001.11]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">That is the risk.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2001.37–2001.75]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">Exactly.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2001.77–2006.86]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">I totally get that.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2007.55–2019.77]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">I'm hesitant, not to say reluctant, to see us use this so-called window of opportunity to attack a single Russian asset.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2020.61–2025.52]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Because I think it will put us on the back foot in a way that diplomatically we're not at the moment.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2025.58–2028.22]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">We have the option of doing this</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2028.47–2029.62]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">as it were, down the line.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2030.34–2039.45]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">And to come to the point that CDS and the defense secretary and the NSA advisor have also made, there's a question of, what do we do next?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2040.11–2042.67]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">And so we attack this Russian asset.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2043.17–2044.16]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">We sink a Russian boat.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2044.98–2046.76]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">They're not going to sit on that.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2046.8–2048.36]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">They have more assets than we do.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2048.8–2052.67]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">And they don't rely on other nations in the way that we do for our capability.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2052.97–2054.07]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">So they then do something else.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2054.95–2056.03]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">What do we do again?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2056.43–2058.62]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">But what do we know about Putin's track record?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2058.72–2063.26]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">That if we don't do anything, Putin's track record is usually to continue.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2064.14–2065.15]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Yeah, I accept that.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2065.45–2066.03]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">Would you say that?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2066.05–2068.19]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">I think that's absolutely correct, Prime Minister.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2069.01–2070.13]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">I don't think you should rush this.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2070.35–2080.38]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">We've got a nation out there that is waking up that has heard explosions, has seen this nation under attack for the first time since 1940.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2080.67–2087.03]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">and you want to just take a breath before you decide exactly what the next move is.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2093.28–2097.8]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">As they're talking, the Defence Chief is handed a piece of official-looking paper.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2099.12–2106.65]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">This new information, known in wargame language as an inject, has been issued by Rob Johnson, the Games Master.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2107.75–2110.14]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The Chief of the Defence Staff reads it out,</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2111.21–2112.68]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">I'm sorry, I have to interrupt.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2113.6–2118.15]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">I have to report that we have sunk a Russian ship in self-defense.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2118.71–2125.37]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">One of our submarines in proximity to the Russian fertility was attacked and it has sunk a Russian ship.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2125.94–2127.8]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">What was the ship that was sunk?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2128.09–2135.51]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">The Russian vessel so unfairly victimised by a British submarine was the Vice Admiral Kulikov, which is a Hudile class destroyer.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2135.84–2137.32]</span>
+            <span class="speaker blue">Prime Minister:</span>
+            <span class="blue">So a valuable target.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2137.64–2140.24]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So look, I think what we do is we cash that in the bank.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2140.42–2144.39]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We say that we took, we defended ourselves.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2145.51–2154.4]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">And indeed, if there is any communications on that ship or any witnesses on that ship, we make sure that is in the public arena.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2156.13–2161.06]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">This is a significant development, the sudden sinking of a Russian warship.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2162.32–2172.83]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">As you know, a British submarine had been tasked with trying to attack the Russian flotilla, but while on this mission it was threatened and opened fire in self-defence.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2174.17–2181.94]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">A destroyer like the Vice Admiral Kulakov would probably have a crew of more than 220 sailors.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2181.92–2192.96]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Russia's navy has lost a lot of vessels in its war against Ukraine… …but this is the first time the Royal Navy… …has directly sunk a Russian warship in more than a century.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2194.08–2196.48]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">We just lost the ship.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2196.5–2198.38]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">I see there has been a development.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2198.61–2198.89]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Yes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2201.37–2204.79]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">It's unexpected and unwelcome news for the Russians.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2205.64–2209.56]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">I would like now to speak to the commander of the Northern Fleet… …if he is on the line.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2210.08–2212.11]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">Yes, the Commander of the Northern Fleet is here.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2212.59–2215.05]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Admiral, we understand that one of your vessels has been sunk.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2215.68–2222.35]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">Yes, we have unfortunately seen one of our large anti-submarine ships being sunk by a torpedo.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2223.03–2237.07]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">Immediately upon this happening we have launched additional anti-submarine helicopters who will start looking for any signs of the submarine trying to follow us and in the best case we hope to be able to identify its location and seek it.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2237.9–2240.56]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">Unfortunately this is the kind of losses one can expect.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2241.27–2241.89]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Absolutely.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2242.01–2252.78]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">I am sure you will be doing your best to recover whatever survivors you can, but I'm sure we are also all agreed that this is an entirely acceptable price to pay for the success of our operations so far.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2253.26–2254.16]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Does anybody disagree?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2254.6–2257.63]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">No.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2257.65–2263.71]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The Russians then start to question whether the Americans may have helped the British attack their ship.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2264.12–2269.24]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">We cannot rule out that US intelligence has been aiding in the targeting of our vessels.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2269.72–2278.64]</span>
+            <span class="speaker blue">Admiral Sir Ben Key:</span>
+            <span class="blue">We are currently looking into that, as well as going once more through all the sonar contacts we have to make sure that there isn't a US submarine shadowing our squadron.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2279.92–2280.3]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Very good.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2280.42–2280.76]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Thank you.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2280.78–2281.43]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Keep us informed.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2283.85–2287.8]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">So, at present, we have suffered damage.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2288.09–2290.94]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">but nothing significant enough to change our course.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2291.78–2294.18]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">Our only real concern is the attitude of the United States.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2295.79–2297.07]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">Yeah, less than expected.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2297.23–2298.21]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Yes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2298.23–2304.64]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">It will be interesting to see whether the US have actively assisted the Anglo-Saxons or not.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2305.64–2309.13]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">I suspect we may not have a clear answer to that from the Americans.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2309.15–2310.67]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">It is something that we need to handle.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2312.61–2316.72]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Tom's Rostocks, playing the part of Russia's military chief, offers a view.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2317.37–2325.8]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">This was probably implied when the state secretary said that the US would pursue an even-handed approach.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2326.47–2327.89]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">It is fair to assume that, yes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2328.85–2337.42]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The admiral suggests asking the Americans to help them sink the British submarine that fired the missile if they really are being even-handed.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2338.42–2339.18]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">We can always ask.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2339.22–2340.65]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">That is an excellent question.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2341.69–2352.2]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">In London, the Prime Minister also wants to speak to the Americans, as the President had warned in his social media post that whoever seeks war will regret it.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2353.09–2357.35]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">And if you remember, his last word on his tweet is, I think they will pay.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2357.41–2360.29]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Wasn't that the line on his tweet?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2360.31–2360.84]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It was, yes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2360.86–2361.07]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It was.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2361.09–2367.34]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So, I think we need to go straight back to the United States and remind them that the Russians have, in a sense, done that.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2368.13–2373.14]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">He's referring to the fact the British submarine had been acting in self-defence.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2374.82–2382.05]</span>
+            <span class="speaker explanation">PM (Prime Minister):</span>
+            <span class="explanation">OK, very briefly, as this is sort of hot and live, there are other things we have to also consider.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2382.47–2393.14]</span>
+            <span class="speaker explanation">PM (Prime Minister):</span>
+            <span class="explanation">So our economy, Chancellor, with some urgency, whatever work we need to do to make sure that the economy, when the markets open, etc., we are protected.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2394.56–2396.94]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">Our Chancellor is played by Jim Murphy.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2396.98–2412.22]</span>
+            <span class="speaker explanation">Unknown:</span>
+            <span class="explanation">In real life, he served as Secretary of State for Scotland in Gordon Brown's government, then as Shadow Defence Secretary in Opposition, before becoming leader of the Scottish Labour Party between 2014 and 2015.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2412.36–2422.19]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">In the war game, the Chancellor flew back the previous night from a trip to China, so this is the first time we're hearing from him.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2423.89–2430.88]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It might sound trivial to some people in the middle of an attack, but fundamentally our economy is absolutely one of the things Russia would be after.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2431.18–2433.68]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">You're going to have to think, Chancellor, about whether you're going to let the markets open.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2433.7–2434.62]</span>
+            <span class="speaker blue">Chancellor:</span>
+            <span class="blue">Of course.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2434.66–2444.8]</span>
+            <span class="speaker blue">Chancellor:</span>
+            <span class="blue">If this is a one-off event, then even what we've seen already today will have very deep and long-term impacts on our economy.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2444.78–2450.47]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">But if it's more significant than that, then we're an entirely uncharted territory in any of our lives.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2450.49–2453.69]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">And we have to build an economic response that matches that.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2453.73–2459.08]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">So I've got the Bank of England governor out of his bed, I've spoken to him two or three times about monetary policy.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2459.8–2467.19]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">On the opening of the market, the stock exchange, from memory it's only closed in September 1939, even on 9-11 it stayed open.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2467.17–2473.93]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">I want to talk to the US Treasury Secretary and others before coming to a view as to whether the market should open.</span>
+        </div>
+        <div class="line explanation" data-type="explanation">
+            <span class="timestamp">[2474.41–2483.86]</span>
+            <span class="speaker explanation">Chancellor:</span>
+            <span class="explanation">And finally, this may be the last time I have a chance to speak to you before you address the nation, so I just wanted to implore upon you that we take a posture of peace through strength.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2483.84–2489.33]</span>
+            <span class="speaker blue">Chancellor:</span>
+            <span class="blue">If we are too weak in the next hour, this ends with our humiliation and surrender.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2490.39–2497.3]</span>
+            <span class="speaker blue">Chancellor:</span>
+            <span class="blue">And I stand alongside you and behind you and taking whichever measures are required to get us through this day and through these events.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2498.97–2501.63]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">A civil servant then hands the Prime Minister a note.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2502.63–2506.16]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">The latest flash signal we've had, I've just received,</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2506.64–2510.97]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It says that Russia's nuclear arsenals are being placed on the highest state of alert.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2510.99–2515.38]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So what we need to make sure is we go back again to the United States.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2515.4–2524.33]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The UK is wondering whether this nuclear escalation by Moscow could prompt the US finally to take Britain's side.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2524.65–2527.35]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So, Prime Minister, it's now just after six.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2527.39–2529.78]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">You were due to address the nation just a few minutes ago.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2529.82–2534.94]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">While you are prepping and doing that, the Foreign Secretary can get us on the line to the US Secretary of State.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2534.96–2536.42]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">He's apparently ready to speak to us again.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2536.88–2543.35]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">I really think you need to go and do that now and have a quick glance at your speech.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2543.37–2554.4]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The National Security Advisor is preparing his boss for what will be the most significant public broadcast by any British Prime Minister since the Second World War.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2554.75–2558.9]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Am I actually going to do it?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2558.92–2561.48]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Ben Wallace leaves the room with his press secretary.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2561.52–2565.78]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">They head down the corridor and into a small radio studio.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2565.82–2567.63]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Take a seat just there.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2570.07–2570.31]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Right, okay.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2570.33–2577.5]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">His team has already worked up a draft speech, but ultimately it's up to the Prime Minister to decide what to say.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2577.56–2580.88]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">He makes his own handwritten changes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2582.7–2592.07]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Russian missiles have impacted our brave emergency services.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2592.91–2594.29]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">I've deployed to the scenes.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2595.68–2599.82]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">We are appealing for those of you in the areas affected by the missile attacks to remain in place and to listen to news.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2599.86–2604.61]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">It's important that you will be safe and easy to look after if you remain at home.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2604.65–2605.19]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So stay at home.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2605.23–2606.03]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">That's the first thing you do.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2606.05–2606.57]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Stay at home.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2606.61–2607.57]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Hide them on the table basically.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2608.75–2609.27]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Stay at home.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2609.91–2612.11]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Further advice will be</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2613.58–2639.08]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">It's now just gone six in the morning on Monday the 6th of October 2025.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2640.53–2641.01]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Good morning.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2641.69–2645.72]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">In the early hours of this morning, this country came under armed attack by Russia.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2646.54–2651.79]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">This attack was unprovoked, illegal under international law, and utterly unnecessary.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2656.6–2660.87]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">So, Foreign Secretary, can I suggest you take the PM's chair just for now?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2661.22–2674.8]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">As the Prime Minister speaks, Jack Straw, as Foreign Secretary, moves into his seat at the head of the table in the Cobra Room for a call with the US Secretary of State, played by Phillips O'Brien.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2675.9–2678.35]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Secretary of State, good to talk to you again.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2678.37–2679.57]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Have you got anything for us?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2680.61–2685.44]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Yes, I can tell you that we have spoken to the Russians and made it very clear to the Russians</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2685.79–2689.3]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">that we would like military operations on both sides now to end.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2689.34–2692.63]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">We believe there have been attacks on both sides that have done damage.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2693.41–2697.28]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">First and foremost, we would like attacks on both sides to stop</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2697.95–2700.62]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">And we cannot state that strongly enough.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2700.74–2704.88]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Look, Secretary of State, I'm sorry to be blunt, but we're between friends.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2705.92–2709.19]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">There is a completely false assumption in what you've said.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2709.45–2718.0]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">We were not remotely responsible for the attack on the naval base of the Russian Federation that has triggered all this.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2718.96–2723.32]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">I do not understand why in those circumstances</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2723.55–2730.83]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">You are bluntly pretending that this is a situation where there was equal wrong on both sides.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2731.53–2733.95]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Why are you going in for this pretence?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2733.97–2738.16]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">We are not saying Britain or Russia is to be blamed right now.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2738.36–2740.46]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">We do not have full intelligence.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2743.79–2747.99]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">The government has given license to our armed forces to defend our islands.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2749.04–2757.83]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Throughout the night, I have chaired COBRA meetings and the government has given its full support to those armed forces to act to defend our nation and our people.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2759.41–2763.23]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">What we are saying is fighting should stop now.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2763.91–2766.9]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Well, let me just say that equal handedly.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2766.92–2775.51]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Well, I'm very sorry, but I think that history will judge the president and also with respect to yourself very harshly.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2775.91–2777.05]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Let me just tell you something else.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2778.6–2783.39]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">The UK submarine sank a Russian naval vessel that had attacked it.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2785.05–2791.78]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">Our submarine had to take action against the Russian ship, and we sunk that Russian asset.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2792.74–2796.29]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">What would a US submarine have done in this situation?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2796.95–2803.42]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Well, the US submarine would not have been caught in this kind of situation and let a Russian get close enough to attack it.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2803.64–2804.76]</span>
+            <span class="speaker red">Russian President:</span>
+            <span class="red">OK, how would it prevent that?</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2805.62–2807.76]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">Well, it would prevent it by being prepared better.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2810.31–2816.58]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Russia must understand that any unprovoked and illegal attack will receive a response.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2817.72–2824.47]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Can I just ask you, are you aware that Russian nuclear arsenals are being placed on the highest state of alert?</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2825.11–2833.01]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">We were aware that the Russian nuclear move, but the Russians have assured us that they will have no use of nuclear weapons.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2835.71–2845.38]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">The situation, I know, is very alarming, but our country has endured many attacks in the past, and I ask each of you to consider how you may assist in this moment of national trial.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2846.04–2854.75]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">We are calling on our allies internationally to join with the United Kingdom to defend collectively and to fight back against such attacks.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2856.75–2861.93]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">We do not see any other European state at this point fearing that a war is about to break out.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2862.42–2866.64]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">So that is why we would like to handle this bilaterally with the British and the Russians.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2867.26–2873.83]</span>
+            <span class="speaker red">Unknown:</span>
+            <span class="red">We are going to follow the US policy as laid out by the president, which will look after American interests first.</span>
+        </div>
+        <div class="line red" data-type="red">
+            <span class="timestamp">[2876.16–2877.72]</span>
+            <span class="speaker red">PM (Prime Minister):</span>
+            <span class="red">The message is we are not alone.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2879.14–2890.82]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">And Russia must understand that they cannot bully, intimidate, or strike us without serious consequences.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2890.84–2891.62]</span>
+            <span class="speaker blue">PM (Prime Minister):</span>
+            <span class="blue">Done.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2892.14–2893.12]</span>
+            <span class="speaker blue">President:</span>
+            <span class="blue">Well done, Prime Minister.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2899.55–2904.17]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">The UK's isolation is yet another opportunity for the Kremlin.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2907.26–2916.25]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">The Americans tell us that they believe both sides are now involved in a tit-for-tat exchange which is heading in the wrong direction, and they are urging both to stop all military operations aimed at the other.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2916.96–2926.73]</span>
+            <span class="speaker blue">Chief of Military Intelligence:</span>
+            <span class="blue">I believe we need to continue with our sozzet, with our strategic operation for the destruction of critically important targets precisely for the purpose of coercion to peace.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2927.69–2928.15]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">I agree.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2929.45–2933.06]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">And we don't have that much time left.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2934.12–2937.49]</span>
+            <span class="speaker blue">Russian President:</span>
+            <span class="blue">Yes, it is time to strike while we still can.</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2944.94–2946.58]</span>
+            <span class="speaker blue">Unknown:</span>
+            <span class="blue">Coming up in episode four,</span>
+        </div>
+        <div class="line blue" data-type="blue">
+            <span class="timestamp">[2948.04–2953.73]</span>
+            <span class="speaker blue">Foreign Secretary:</span>
+            <span class="blue">I'm not clear what can be done to warn civilian populations who are in mortal danger.</span>
+        </div>
+    </div>
+    
+    <script>
+        const filters = {
+            explanation: true,
+            commentary: true,
+            blue: true,
+            red: true
+        };
+        
+        function toggleFilter(type) {
+            filters[type] = !filters[type];
+            const btn = document.querySelector(`.filter-btn.${type}`);
+            btn.classList.toggle('active');
+            applyFilters();
+        }
+        
+        function showAll() {
+            Object.keys(filters).forEach(key => filters[key] = true);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (!btn.textContent.includes('Show All')) {
+                    btn.classList.add('active');
+                }
+            });
+            applyFilters();
+        }
+        
+        function applyFilters() {
+            document.querySelectorAll('.line').forEach(line => {
+                const type = line.getAttribute('data-type');
+                line.style.display = filters[type] ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

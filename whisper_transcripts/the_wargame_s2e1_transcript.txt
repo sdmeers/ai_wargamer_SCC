@@ -1,0 +1,538 @@
+[0.03–7.54] SPEAKER_15: On a windswept walk in Carmarthen, while someone tries to use your car details to hire a speedboat in Cannes.
+[8.24–16.75] SPEAKER_15: This is the moment you relax, knowing that Barclays' advanced tech has helped to spot the fraud in under a second, and their expert team are on hand to close it down.
+[17.63–20.29] SPEAKER_15: So you can get back to being windswept.
+[22.03–24.58] SPEAKER_15: Just one of the ways we're protecting our customers 24-7.
+[24.94–27.26] SPEAKER_15: Search Barclays Fraud Protection.
+[27.76–28.28] SPEAKER_15: Barclays.
+[28.74–30.02] SPEAKER_15: Make money work for you.
+[35.06–50.11] SPEAKER_17: I'm sitting in a room in the basement of a building in central London with an Oxford academic who's an expert on war.
+[51.09–52.61] SPEAKER_11: So my name is Dr Rob Johnson.
+[54.24–59.05] SPEAKER_11: My area of research is about decision-making in crises and in conflicts.
+[63.53–67.94] SPEAKER_17: Rob Johnson is showing me a piece of his own family's wartime history.
+[68.50–70.58] SPEAKER_17: It's something he always keeps with him.
+[71.92–78.35] SPEAKER_11: In front of me, I've got my grandfather's pocket watch, which he carried during the Battle of the Atlantic and the Battle of the Mediterranean at Malta.
+[79.11–82.66] SPEAKER_11: And this pocket watch was given to my father and subsequently to me.
+[86.08–91.85] SPEAKER_17: Reginald Johnson had been a Shakespearean actor before the Second World War broke out.
+[93.06–100.64] SPEAKER_17: Like most of his generation, he put his own dreams on hold to serve the nation in its time of crisis.
+[101.96–109.86] SPEAKER_17: His grandson, though, has dedicated his whole life to defence as a soldier, a scholar and a senior civil servant.
+[111.29–129.61] SPEAKER_17: Rob is fiercely loyal to his country and would never want to talk it down, but he's become increasingly worried about the state of the UK's defences after a prolonged period of peace that's seen the government and society forget what it means to be ready for war.
+[131.25–135.24] SPEAKER_17: It's a concern he raised while seconded to the Ministry of Defence.
+[136.63–142.44] SPEAKER_11: My job was to try to alert colleagues to what was going on and where the gaps were.
+[142.99–146.15] SPEAKER_11: What I found, actually, was that many, many people agreed with me.
+[146.51–147.99] SPEAKER_11: They knew we were in the position we are.
+[148.47–161.04] SPEAKER_11: But the response often was, look, government's about choice, and the government of the day and the governments we've had have all made the same choice, which is that we're going to invest in health and education and roads and growth, not in defence.
+[163.36–174.86] SPEAKER_17: Resilience was second nature during the Cold War, but when the Soviet Union collapsed, successive prime ministers spent less on the armed forces and more on other priorities.
+[175.88–186.47] SPEAKER_17: European allies did the same, all seeing this as a peace dividend, while gambling that the United States would still protect them if things went wrong.
+[190.53–194.00] SPEAKER_17: But the threat posed by Russia never really went away.
+[194.02–201.83] SPEAKER_17: And now, under Donald Trump, America's support to its partners in NATO no longer feels so guaranteed.
+[201.85–204.55] SPEAKER_00: I think it's common sense, right?
+[205.11–206.90] SPEAKER_00: If they don't pay, I'm not going to defend them.
+[206.94–208.12] SPEAKER_00: No, I'm not going to defend them.
+[209.94–212.24] SPEAKER_00: I got into a lot of heat when I said that.
+[212.28–214.47] SPEAKER_00: You said, oh, he's violating NATO.
+[217.40–222.75] SPEAKER_17: With Europe weak and Russia on a war footing, it's a perfect storm.
+[227.12–230.88] SPEAKER_17: I'm Debra Haines, the security and defence editor at Sky News.
+[231.74–239.24] SPEAKER_17: I've been a journalist for the past two and a half decades and can tell you that Rob isn't alone with his concerns.
+[242.07–253.88] SPEAKER_17: Pretty much everyone I speak to inside the military says the UK has allowed its defences to shrink too far and has lost the kind of national resilience it once had during the Cold War.
+[254.65–263.64] SPEAKER_17: But because we live in a country that generally feels pretty safe, it's perhaps hard to understand why or even whether that matters.
+[265.75–271.92] SPEAKER_17: It made me wonder, what if we simulate an emergency and find out how the UK might respond?
+[272.98–277.96] SPEAKER_17: Whatever the outcome, it would at least bring to life the reality of the threat.
+[279.59–289.42] SPEAKER_17: Last year I got in touch with Rob, who's out of government service now and back in his day job as the head of the changing character of War Centre at Oxford University.
+[290.48–300.74] SPEAKER_17: I asked him if he might be up for running a war game about an attack on the UK, with former ministers and military chiefs playing the part of the British side.
+[302.02–303.42] SPEAKER_17: He thought it was worth a try.
+[303.46–306.81] SPEAKER_17: It's why we're sitting together in this basement.
+[307.93–310.35] SPEAKER_11: So we chose a bunker, we've created some maps.
+[311.79–315.90] SPEAKER_17: Rob's just finalising the game he's devised over the past few months.
+[316.12–318.86] SPEAKER_11: So we've got a lot of mechanics we've had to put together behind the game.
+[318.90–319.66] SPEAKER_11: It's taken a long time.
+[320.28–321.44] SPEAKER_11: So I did a bit of research.
+[321.46–326.61] SPEAKER_17: He describes the scenario as extremely low likelihood, but high impact.
+[327.37–332.36] SPEAKER_17: That means a low chance of it happening, but catastrophic consequences if it did.
+[335.00–339.95] SPEAKER_17: And as he works, on a desk in front of him is his grandfather's watch.
+[340.82–348.15] SPEAKER_11: It's pretty dramatic because you can hear the ticking of this clock and it feels like, both in the game but also for real, that our time is running out.
+[352.99–359.56] SPEAKER_17: What you're about to hear is the kind of war game that's genuinely tested inside government.
+[361.12–366.17] SPEAKER_17: The main difference is that nothing discussed in Rob's version is classified.
+[367.23–368.81] SPEAKER_17: Russia knows our weaknesses.
+[369.85–370.59] SPEAKER_17: But do you?
+[374.25–378.43] SPEAKER_17: From Sky News and Tortoise, this is The War Game.
+[378.47–382.45] SPEAKER_17: Episode 1, False Flag.
+[400.78–419.61] SPEAKER_11: First of all, thank you very much indeed all of you for the hours you're giving out, the time.
+[419.64–422.19] SPEAKER_17: Rob is welcoming his players into the basement.
+[423.13–430.04] SPEAKER_17: It's been transformed into the set of the War Game, with three rooms connected by a winding corridor.
+[431.16–437.64] SPEAKER_17: Each one has a table, some chairs and a network of microphones to record every conversation.
+[437.68–438.69] SPEAKER_11: Thank you as well.
+[438.70–441.73] SPEAKER_11: I've got my Pembroke College students at the back from Oxford.
+[442.25–443.01] SPEAKER_11: Thanks so much for coming.
+[443.03–444.47] SPEAKER_11: They helped with all the rehearsals.
+[444.57–450.24] SPEAKER_17: As the Games Master, he heads what's known as the White Cell, which runs the event.
+[451.00–452.88] SPEAKER_11: A lovely crew of individuals at the back here.
+[453.06–462.67] SPEAKER_17: Rob has a team of helpers who'll give the various participants certain slips of paper containing new information at different times throughout the game.
+[462.74–467.14] SPEAKER_17: These, in Wargame language, are known as Injects.
+[468.50–470.20] SPEAKER_17: Now let me bring in the players.
+[471.23–486.47] SPEAKER_13: War games typically have a blue team and a red team.
+[487.35–493.98] SPEAKER_17: In our scenario, blue is an imagined British government, while red is a fictional Kremlin.
+[495.06–510.24] SPEAKER_17: We chose our cast carefully, ensuring a mix of Labour and Conservative ministers and top officials who either played the roles they've been given for real or have deep expertise in different but relevant jobs.
+[511.90–518.39] SPEAKER_13: I'm Ben Wallis, former Secretary of State to Feds, and I'm going to be playing the Prime Minister of the United Kingdom.
+[518.41–519.97] SPEAKER_17: Why did you want to take part in this?
+[520.24–526.93] SPEAKER_13: Because I think it's really important that we demonstrate to the public how government makes decisions in real crisis and emergencies.
+[527.77–537.58] SPEAKER_13: And it's at that moment in time that no matter what people's party politics are, people pull together for the right reasons.
+[537.60–545.65] SPEAKER_17: In the war game, Ben heads a cross-party government at a time of heightened tensions with Vladimir Putin's Russia.
+[546.60–550.47] SPEAKER_13: I think what's amazing about this, the team you put together, Debs, is we're all the real deal.
+[550.54–556.96] SPEAKER_13: I mean, I'm not the prime minister, but we've all been there and I think that's quite unique, to be honest.
+[560.85–563.88] SPEAKER_17: I'll let him and his team introduce themselves.
+[565.02–569.19] SPEAKER_13: After myself as Prime Minister, which is an interesting choice, I'm going to look forward to it.
+[569.75–571.13] SPEAKER_13: I've got Jack Straw.
+[571.41–583.26] SPEAKER_18: Jack Straw, Home Secretary between 1997 and 2001, Foreign Secretary between 2001 and 2006, and Justice Secretary between 2007 and 2010.
+[583.90–586.93] SPEAKER_18: He's very experienced.
+[586.95–588.99] SPEAKER_18: And I'm playing the role of Foreign Secretary.
+[589.59–593.26] SPEAKER_13: I've got Amber Rudd, my former boss when I was security minister in the Home Office.
+[593.82–600.29] SPEAKER_20: Amber Rudd, former Secretary of State for Energy and Climate Change 2015-16 and then Home Secretary 2016-18.
+[602.47–605.68] SPEAKER_13: She is going to be doing the part of the Home Secretary.
+[606.04–608.88] SPEAKER_13: And then I've got my former colleague James Heape.
+[608.86–614.23] SPEAKER_07: James Heapie, I was Minister for the Armed Forces from 2019 to 2024 and I'm playing the Defence Secretary.
+[614.85–623.82] SPEAKER_13: He's one of the most experienced parliamentarians who had done tours in Northern Ireland, in Iraq and Afghanistan as a soldier in some very difficult times.
+[624.50–627.12] SPEAKER_13: I've got Baroness Kennedy as our Attorney General.
+[627.57–632.71] SPEAKER_03: Helena Kennedy, I'm a member of the House of Lords, I'm a practitioner barrister
+[632.69–647.95] SPEAKER_03: King's Council of lengthy experience and I now practice in international law, international humanitarian law and the laws of war.
+[647.93–651.00] SPEAKER_13: And then another colleague I work with, Lord Sedwell.
+[651.58–658.41] SPEAKER_10: Mark Sedwell, National Security Advisor 2017-20, Cabinet Secretary 2018-20, former Permanent Secretary at the Home Office.
+[658.81–662.26] SPEAKER_13: Former Ambassador in Afghanistan and National Security Advisor.
+[662.80–666.02] SPEAKER_10: And National Security Advisor in the exercise.
+[666.24–668.62] SPEAKER_13: My chief of defence staff is General Barons.
+[668.92–677.58] SPEAKER_06: General Sir Richard Barons, I commanded Joint Forces Command 2013 to 2016, and I've just finished being one of the leaders of the 2025 Defence Review.
+[678.12–682.28] SPEAKER_13: Just hot on the heels of delivering Labour's current strategic defence review.
+[682.80–687.57] SPEAKER_13: He's an innovative and forward-thinking general, so that is going to be really great.
+[691.13–694.78] SPEAKER_17: We also have a chancellor, who you'll meet in episode two.
+[694.96–724.23] SPEAKER_17: And the scenario is they're flying in from Beijing The Treasury are playing their role perfectly, as ever It's not a joke, they often wouldn't attend meetings It's very normal for the Treasury to miss Cobra Finally, the Prime Minister has a press secretary who's played by Victoria McInnes Victoria McInnes, I'm a communications specialist She's a former civil servant and an expert on communications who works in the defence industry
+[726.90–734.15] SPEAKER_17: Ben Wallace and his government are being supported by a group of expert advisors who you'll hear more from later.
+[734.21–738.96] SPEAKER_17: We'll also meet the Russia team once the game is underway.
+[745.22–756.46] SPEAKER_17: Governments around the world use war games to run through scenarios and test responses for literally anything from health emergencies to World War III.
+[757.77–766.70] SPEAKER_17: Typically, they're conducted in secret, with the blue and the red teams pitched against each other, each able to act as they choose.
+[768.22–776.81] SPEAKER_17: In our scenario, though, the red team, while free to make some choices, is already aware of the key steps it will take.
+[777.67–785.46] SPEAKER_17: By contrast, the blue team knows very little about the scenario and will have to respond to whatever comes its way.
+[786.88–795.21] SPEAKER_17: As well as running the show, Rob is playing the role of what's known as the Chair of the Joint Intelligence Committee, or JIC Chair.
+[795.25–808.82] SPEAKER_17: He'll share updates from the UK's spy agencies, MI6, MI5 and GCHQ, as well as Defence Intelligence, which is part of the Ministry of Defence, or MOD.
+[809.80–813.13] SPEAKER_17: There are lots of acronyms in the military and the security world.
+[813.71–816.09] SPEAKER_17: I'll try to spell them out whenever they come up.
+[819.25–830.27] SPEAKER_17: With the drama about to start... ...Ben and his team have assembled around a long table... ...in the largest of the basement rooms We're now going to open the exercise
+[831.48–834.78] SPEAKER_17: In the real world, it's a Tuesday morning in early April.
+[835.66–841.77] SPEAKER_17: In the war game, it's almost six months in the future, and the government is in crisis mode.
+[842.96–849.00] SPEAKER_17: To set the scene, we've mocked up some rolling news reports from an imagined UK television station.
+[850.23–854.53] SPEAKER_17: Everyone stops talking and listens.
+[857.48–861.81] SPEAKER_16: It's 8am on Monday 29th September, our top story this morning.
+[862.23–869.47] SPEAKER_16: Travel chaos on the railways and the roads after a major power cut left parts of England and Wales without electricity.
+[872.25–880.60] SPEAKER_16: Multiple train stations have been forced to close to passengers this morning after what the National Grid is describing as an issue with two generators.
+[881.40–884.21] SPEAKER_16: Reports are also coming in of problems on the roads.
+[884.35–892.60] SPEAKER_16: Transport for London says some traffic lights in the capital are out of action and police officers may be called in to manage certain junctions.
+[892.58–902.83] SPEAKER_16: The disruption comes just three days after simultaneous fires broke out at ferry terminals in Plymouth and Portsmouth, halting Channel Ferry crossings over the weekend.
+[903.32–909.00] SPEAKER_16: The Home Office says counter-terrorism officers are now investigating the fires as a precautionary measure.
+[909.46–913.39] SPEAKER_16: The security sources say they haven't ruled out foul play.
+[914.11–922.13] SPEAKER_16: Last year, the heads of MI6 and the CIA accused Moscow of waging a reckless campaign of sabotage across Europe.
+[925.10–929.11] SPEAKER_17: Russia has previously denied involvement in any sabotage attacks.
+[929.73–934.79] SPEAKER_17: And there could, of course, be a perfectly innocent explanation for this transport chaos.
+[935.88–937.70] SPEAKER_17: For now, the cause is unclear.
+[938.74–941.70] SPEAKER_17: Then, two days later, this happens.
+[943.11–945.61] SPEAKER_16: It's 8am on Wednesday, the 1st of October.
+[946.13–946.83] SPEAKER_16: Our top story.
+[947.27–953.54] SPEAKER_16: Explosions have ripped through a major naval base in northern Russia, killing and wounding dozens of personnel.
+[956.40–963.17] SPEAKER_16: The Russian president has suggested the attack at Severomorsk was linked to the UK and has vowed revenge.
+[967.48–974.25] SPEAKER_16: The British government has yet to comment, but Downing Street sources have strongly rejected the allegation of any UK involvement.
+[976.29–978.28] SPEAKER_16: We'll bring you more as we get it.
+[983.20–989.93] SPEAKER_17: As tensions grow between Moscow and London over the next few days, British police make a shocking discovery.
+[991.03–994.50] SPEAKER_16: It's 4pm on Sunday 5th October, our top story.
+[994.94–1000.91] SPEAKER_16: The Ministry of Defence says two F-35 pilots have been found shot dead in Norfolk.
+[1001.31–1006.48] SPEAKER_16: The circumstances of the deaths are not clear and military police are investigating.
+[1006.46–1015.09] SPEAKER_16: Both pilots are part of 617 Squadron, which fly the UK's most sophisticated F-35 warplanes out of RAF Marham.
+[1018.77–1025.46] SPEAKER_16: In other news, Moscow has recalled its ambassador to London, saying Britain is now considered an unfriendly state.
+[1026.06–1035.47] SPEAKER_16: The extraordinary move follows the deadly blasts at a major Russian naval base that the Kremlin has claimed were linked to the UK, but without providing evidence.
+[1042.28–1053.82] SPEAKER_17: The mysterious killing of two such elite fighter pilots, coupled with the aggressive rhetoric from Moscow, prompts the Prime Minister to convene an emergency COBRA meeting.
+[1055.12–1057.32] SPEAKER_17: These are held at times of crisis.
+[1058.30–1061.35] SPEAKER_17: COBRA stands for Cabinet Office Briefing Rooms.
+[1063.11–1069.44] SPEAKER_17: The war game begins at 5pm on Sunday 5th October 2025.
+[1076.35–1089.08] SPEAKER_13: I called this after the deaths of the two F-35 pilots coupled with the growing both intelligence and situation with Britain being put at the heart of the messaging from Russia.
+[1089.66–1092.52] SPEAKER_13: So, thank you colleagues for attending on Sunday afternoon.
+[1093.42–1098.07] SPEAKER_13: Could I ask the National Security Advisor, Marc San Martin, to follow us through the agenda
+[1098.05–1098.85] SPEAKER_13: Prime Minister, thanks.
+[1099.19–1111.68] SPEAKER_10: I suggest we start just by seeing whether there's anything further in terms of threat or other intelligence that we need to know before we come to the various options for action both by you and colleagues.
+[1112.52–1115.94] SPEAKER_17: Rob gives his first inject of information to the players.
+[1116.60–1120.07] SPEAKER_11: I'll start with the situation update of where we are.
+[1120.81–1124.41] SPEAKER_11: There was indeed on the 1st of October a terrorist attack in northern Russia.
+[1125.34–1133.82] SPEAKER_11: It does appear that in the early hours of that day, over 100 Russian labour personnel were killed in detonations around the port of Murmansk Severomorsk
+[1133.80–1135.16] SPEAKER_11: and its residential area.
+[1135.72–1142.98] SPEAKER_11: GCHQ did a lot of work to try and identify who had been behind this particular attack.
+[1143.84–1148.61] SPEAKER_11: Rather curiously, there were some inferences that darker styles are involved
+[1149.57–1155.18] SPEAKER_17: The intelligence is referring to Islamist extremists from the Russian Republic of Dagestan.
+[1156.00–1164.34] SPEAKER_17: It suggests their motivation for launching the attack could be anger at Moscow for recruiting their men to fight in Ukraine.
+[1164.94–1174.35] SPEAKER_11: The Russian government announced that they needed little further evidence to confirm that this was an attack by British intelligence using divers.
+[1174.59–1176.90] SPEAKER_11: I think we can dismiss this nonsense.
+[1177.87–1185.82] SPEAKER_17: Rob then shares information from MI5 on the two F-35 pilots whose bodies were found early in the morning.
+[1187.42–1189.91] SPEAKER_11: Both appear to have died on Saturday night.
+[1190.61–1192.61] SPEAKER_11: Police investigations are ongoing.
+[1193.19–1199.34] SPEAKER_11: We have low confidence in the intelligence so far, but it's likely that these men were tracked before they were killed.
+[1201.08–1204.08] SPEAKER_17: He highlights two other important developments.
+[1204.94–1215.33] SPEAKER_11: Signals intelligence reveals that there is a snap Russian naval exercise underway today involving rehearsals for the deployment of surface-to-surface missiles in the North Atlantic.
+[1216.49–1226.31] SPEAKER_11: What they also note at Cheltenham is the intensity of cyber attacks on UK businesses and government websites has increased by a magnitude of 65%.
+[1227.67–1234.64] SPEAKER_17: Cheltenham refers to the location of GCHQ, the government's signals and cyber intelligence agency.
+[1234.68–1244.14] SPEAKER_17: While the cause of the rise in cyber attacks isn't clear, it could be yet another sign of hostile Russian activity.
+[1246.03–1257.00] SPEAKER_17: The National Security Advisor is interested in what appears to be an exceptionally large Russian naval exercise involving warships, aircraft and submarines.
+[1258.33–1261.99] SPEAKER_17: It's being tracked by American, Norwegian and British ships.
+[1263.67–1267.52] SPEAKER_17: When he says CDS, he means Chief of the Defence Staff.
+[1268.30–1273.51] SPEAKER_17: That's the Prime Minister's top military advisor and head of the UK Armed Forces.
+[1275.34–1286.41] SPEAKER_10: PM perhaps from CDS, just more on this Russian naval exercise and how we're monitoring it, and in particular CDS, do you have any concerns about how they're operating in these circumstances?
+[1287.66–1288.68] SPEAKER_06: Yes, thank you.
+[1288.80–1293.99] SPEAKER_06: So, Prime Minister, if I may, from the military perspective, I'd like to widen this discussion a little bit.
+[1294.53–1299.29] SPEAKER_06: I think it's becoming clear that the country is being subject to a wide range of coercion.
+[1300.23–1312.59] SPEAKER_06: We've seen the attacks on the railway, the likely attacks on the traffic infrastructure in London and the ferry fires, and now we have had two F-35 pilots murdered.
+[1314.46–1323.35] SPEAKER_06: And I have to say that if we fit all of those things together, the murder of the pilots is a traditional special forces activity.
+[1323.43–1328.02] SPEAKER_06: So we should not indulge ourselves by thinking that was some sort of accident.
+[1331.70–1335.71] SPEAKER_17: Killing pilots was part of the Soviet playbook during the Cold War.
+[1336.90–1358.49] SPEAKER_17: Richard Barrons, the general who's playing our defence chief, once told me about a Czech special forces officer whose task in the run-up to war, once he'd smuggled himself into the UK, would have been to go to the officer's mess at an RAF base in Lincolnshire on a Friday night during happy hour and shoot all the pilots.
+[1361.34–1370.07] SPEAKER_17: And when you think about it, a 9mm bullet is a much more efficient way of grounding an air force than a barrage of missiles.
+[1370.69–1385.96] SPEAKER_06: So what I've done so far is I have made sure that all the pilots of our F-35 and Typhoon aircraft are now coming into their bases and they will stay there with their families until the situation is clearer.
+[1386.64–1389.17] SPEAKER_17: This means they'll have additional security.
+[1390.21–1396.06] SPEAKER_06: To answer the National Security Advisor's direct question, we are monitoring a Russian exercise in the North Atlantic.
+[1396.82–1397.94] SPEAKER_06: There are two dimensions to this.
+[1398.12–1404.95] SPEAKER_06: One is, as reported, the Russian nuclear bomber submarines are coming into the Atlantic.
+[1405.01–1407.58] SPEAKER_06: Now, they could threaten the UK from anywhere in the Atlantic.
+[1408.57–1417.87] SPEAKER_06: and the two other submarines that carry cruise missiles could threaten the UK with conventional attack from certainly the eastern half of the Atlantic.
+[1417.93–1424.42] SPEAKER_06: So my concern as CDS now is that we are managing a great deal of Russian coercion.
+[1424.80–1429.29] SPEAKER_06: We can't exclude that we're on the threshold of this becoming a military attack of the UK.
+[1429.33–1431.11] SPEAKER_06: This might all be precursor activity.
+[1431.82–1440.53] SPEAKER_06: And I need to get the armed forces ready for that without, of course, provoking Russia into the one activity we would wish them to avoid.
+[1441.33–1448.68] SPEAKER_06: So I'm going to ask that we begin to concentrate some of the military units in their bases, and I may even disperse them.
+[1449.24–1452.25] SPEAKER_06: I need to start outloading some supplies so that we're not caught short.
+[1454.56–1467.57] SPEAKER_17: He's talking about ordering troops to their barracks, potentially getting them to spread out to other sites, and ensuring things like ammunition, fuel and other supplies are brought out of storage.
+[1468.56–1473.17] SPEAKER_10: PM, if I may, I think we have to assume that essentially we're now being put to the test.
+[1473.63–1476.11] SPEAKER_10: There's a series of unconventional activities by the Russians.
+[1476.62–1484.93] SPEAKER_10: We mustn't jump to conclusions, I certainly mustn't say that publicly, but potentially arson attacks, possibly these two assassinations are not a believer in coincidence.
+[1485.45–1491.26] SPEAKER_10: And now we have them essentially raising readiness in terms of the deployment of their naval forces.
+[1491.73–1495.93] SPEAKER_17: Like many around the table, he's encountered Russian aggression before.
+[1497.04–1513.35] SPEAKER_17: Mark Sedwell was the real national security adviser when the UK accused Vladimir Putin's Russia of attempting to kill the former Russian double agent Sergei Skripal and his daughter Yulia with a Novichok nerve agent in Salisbury in 2018.
+[1514.99–1517.10] SPEAKER_17: Moscow has always denied involvement.
+[1518.24–1528.80] SPEAKER_17: Mark led efforts, alongside Amber Rudd as the Home Secretary and Ben Wallace as Security Minister at the time, to rally NATO allies to retaliate to the attack.
+[1529.98–1535.28] SPEAKER_17: It had left the Skripals critically ill and killed a British woman Dawn Sturgis.
+[1536.29–1543.45] SPEAKER_17: More than 20 nations agreed to a mass expulsion of alleged Russian spies from their respective countries.
+[1545.44–1553.43] SPEAKER_10: And I suspect what they're doing, as Putin always does, channeling the old Leninist doctrine, keep pushing and if you meet steel retreat, if you meet mush keep going.
+[1553.53–1562.58] SPEAKER_10: And so I think he is putting us and NATO to the test and we should work on the assumption that this will continue until and unless we respond.
+[1562.64–1566.61] SPEAKER_10: I think the discussion PM, if I may suggest, should take place in that context.
+[1567.43–1568.21] SPEAKER_10: OK, good.
+[1579.30–1580.18] SPEAKER_14: It's thrilling.
+[1582.20–1583.62] SPEAKER_14: High octane racing.
+[1585.20–1588.14] SPEAKER_14: Across three big days at Newbury Racecourse.
+[1590.29–1592.93] SPEAKER_14: Enjoy the historic Coral Gold Cup meeting.
+[1593.21–1598.15] SPEAKER_14: Complete with after party on Friday the 28th and Saturday the 29th of November.
+[1598.45–1604.56] SPEAKER_14: Before family fun returns to Newbury on Monday the 29th of December for the Coral Challow Hurdle Day.
+[1604.92–1608.74] SPEAKER_14: Buy early and save at NewburyRacecourse.co.uk
+[1608.72–1615.09] SPEAKER_12: This year, Amazon are increasing the electric delivery vehicles we use across Europe to 10,000.
+[1615.47–1627.35] SPEAKER_12: It's a difference you'll notice on your doorstep, where babies are made a fuss of, where we deliver footballs for kids' kickabouts, and where they deliver the football straight into next door's garden.
+[1629.79–1631.69] SPEAKER_12: Can they have their ball back, please?
+[1631.78–1633.92] SPEAKER_12: We're delivering change where it matters.
+[1634.44–1635.28] SPEAKER_12: On your doorstep.
+[1635.70–1640.34] SPEAKER_12: Delivery service partner vehicles across the UK and EU.
+[1640.36–1645.35] SPEAKER_17: In Russia, the reporting of the attack on the naval base has a very different spin.
+[1647.95–1656.84] SPEAKER_17: We asked an expert on Russian state communications, Valeriy Akhimenko, to help us craft an imagined state media bulletin.
+[1658.26–1660.92] SPEAKER_02: In the first day of the war,
+[1662.03–1667.54] SPEAKER_02: A British frogman's outfit has been discovered on a beach near the Severomorsk naval base.
+[1668.56–1676.54] SPEAKER_02: The head of the investigation into last Wednesday's attack says this is powerful evidence of British involvement in the terrorist atrocity.
+[1677.56–1686.37] SPEAKER_02: Several experts have likened the suspected British operation to the Nazi surprise attack on the Soviet Union in 1941.
+[1686.69–1690.19] SPEAKER_02: It is just the latest example of British-sponsored terrorism.
+[1691.01–1698.22] SPEAKER_02: As you know, the UK has been the closest backer of the Nazi regime in Ukraine.
+[1704.43–1705.43] SPEAKER_09: I'm Keir Giles.
+[1705.71–1707.99] SPEAKER_09: I study and explain Russia for a living.
+[1708.66–1713.62] SPEAKER_09: I've written a number of books about what Russia does, why it does it and what it's going to do next.
+[1716.12–1719.36] SPEAKER_09: I'm playing the president of Russia in this war game.
+[1720.78–1729.80] SPEAKER_17: The Kremlin, for the purpose of the game, is in another room, separated from the British side by a corridor, a hall and a couple of doors.
+[1731.18–1741.42] SPEAKER_17: Kir is joined by three other experts, each with experience of playing the Russia side in war games to help Western allies better understand the threat posed by Moscow.
+[1742.36–1748.85] SPEAKER_09: There's Toms Rostok from Latvia, who is going to be playing the chief of the general staff, so in charge of the Russian military.
+[1749.85–1754.70] SPEAKER_17: In real life, Toms is a director of the National Defence Academy of Latvia.
+[1755.30–1757.98] SPEAKER_17: He's flown to London especially for the war game.
+[1759.16–1761.35] SPEAKER_01: It's October in the game.
+[1761.39–1766.58] SPEAKER_01: This may go down in history as the British missile crisis.
+[1766.94–1772.69] SPEAKER_05: It also luckily coincides with the birthday of our beloved leader and president.
+[1773.80–1783.27] SPEAKER_17: Also just off a flight is Maria Engvist, deputy head of the Russia and Eurasia studies programme at the Swedish Defence Research Agency.
+[1783.93–1786.47] SPEAKER_09: She's going to be playing the head of military intelligence.
+[1787.43–1791.08] SPEAKER_05: Yeah, 7th of October, if I do not remember incorrectly.
+[1791.67–1801.04] SPEAKER_17: Known as the GRU, this is the agency that the UK believes carried out the Salisbury spy poisonings and many other hostile acts.
+[1801.94–1804.50] SPEAKER_09: And then dining in remotely, we have Robin Hagblom.
+[1804.52–1809.67] SPEAKER_09: He is a naval analyst from Finland and he will be playing the commander of Russia's Northern Fleet.
+[1810.11–1816.46] SPEAKER_19: The Navy is very eager to take this opportunity to be able to extract revenge for the terrorist attack at Cevermosh.
+[1819.49–1824.27] SPEAKER_17: Appearing via video link, his backdrop shows the inside of a warship.
+[1824.91–1825.75] SPEAKER_09: He's got a good backdrop.
+[1826.11–1827.70] SPEAKER_05: Robin looks very operational.
+[1828.86–1831.60] SPEAKER_17: In reality, he's in his office in Finland.
+[1832.52–1837.35] SPEAKER_17: Robin is a senior advisor at a risk assessment company called Risk Intelligence.
+[1838.55–1849.32] SPEAKER_17: And despite what he said about extracting revenge, no one on the Russian team really believes the UK had anything to do with the explosions at their naval base.
+[1850.08–1857.68] SPEAKER_01: It is our assessment that it was the terrorist attack carried out by the Pakistani extremists.
+[1858.47–1862.52] SPEAKER_17: The Chief of the General Staff has just been asked who was responsible.
+[1863.38–1868.03] SPEAKER_17: He too blames Dagestani militants, echoing the British assessment.
+[1868.71–1869.05] SPEAKER_09: Very good.
+[1869.33–1871.05] SPEAKER_09: Thank you colleagues, I approve of your assessment.
+[1871.23–1882.07] SPEAKER_09: We will deal with our Dagestani terrorists at another time, but this provides a historic opportunity to neutralise the Anglo-Saxons as an obstacle to our objectives.
+[1882.69–1889.44] SPEAKER_09: I agree with your recommendation that we should use the Severomovsk attack as a pretext for launching Operation Tuman.
+[1890.48–1894.40] SPEAKER_17: This is the secret code name the Russian side has given its attack plan.
+[1896.23–1898.37] SPEAKER_17: The word means fog in Russian.
+[1901.23–1906.22] SPEAKER_17: The president asks his spy chief whether she thinks the US will help the UK.
+[1906.96–1913.79] SPEAKER_05: It is the assessment of my agency that the US have no interest in engaging in war fighting in Europe.
+[1913.81–1917.73] SPEAKER_05: Britain and the US have drifted apart increasingly during the past years.
+[1918.82–1922.00] SPEAKER_05: US resources remain focused in the Indo-Pacific.
+[1922.30–1928.17] SPEAKER_05: This is a bold and necessary operation that will effectively be the end of NATO.
+[1929.59–1934.08] SPEAKER_17: The commander of the Northern Fleet gives an update on the readiness of his flotilla.
+[1936.02–1946.55] SPEAKER_19: As we have been able to prepare for these strikes for two months, we are in a relatively good shape, though of course we have not been able to create any miracles or add new units to the fleet in this time.
+[1947.77–1955.94] SPEAKER_09: So to confirm, Admiral, we are not expecting that the United Kingdom is able to defend realistically against our missiles, is that correct?
+[1957.00–1957.72] SPEAKER_19: That is correct.
+[1959.99–1965.82] SPEAKER_19: The number of air defenses they have available able to intercept our missiles is very limited.
+[1965.86–1970.11] SPEAKER_19: We have a significant number of missiles aboard our ships and submarines.
+[1970.53–1971.66] SPEAKER_19: This should not be an issue.
+[1975.92–1993.43] SPEAKER_17: He's identified a glaring vulnerability here that, as with most of Britain's military cuts, can be traced back to the end of the Cold War, when successive governments ran down their ability to defeat attacks from the sky to save cash.
+[1993.41–2001.42] SPEAKER_17: Today, only a handful of RAF squadrons and a limited number of army systems can intercept cruise missiles.
+[2002.47–2008.68] SPEAKER_17: These are self-guided weapons propelled by a jet engine that are powered all the way onto a target.
+[2009.96–2026.72] SPEAKER_17: As for ballistic missiles, which are blasted to a high altitude, even out of the Earth's atmosphere, before dropping at a steep angle onto a target at great speed, the Royal Navy's Type 45 destroyers are the UK's sole line of defence.
+[2027.77–2038.45] SPEAKER_17: But it only has six of these billion-pound warships, and four are routinely unavailable because of maintenance woes and crew shortages.
+[2039.50–2045.54] SPEAKER_17: One of them, HMS Daring, has spent more years being fixed than out at sea.
+[2047.16–2055.39] SPEAKER_17: A NATO command base in Germany is responsible for defending the airspace of the whole Alliance, including the UK.
+[2055.89–2063.14] SPEAKER_17: However, British forces would be the first line of defence against any threats coming straight at them from the Atlantic.
+[2067.91–2073.38] SPEAKER_09: Chief of General Staff, I would like to hear from you about our overall military position.
+[2073.80–2081.13] SPEAKER_17: The president is now asking his defence chief about the overall state of Russia's armed forces given their war in Ukraine.
+[2081.82–2093.27] SPEAKER_01: Of course, much attention has been paid in past years on the special military operation and the losses that we have suffered during that operation.
+[2094.27–2096.43] SPEAKER_01: And those losses have been significant.
+[2096.85–2111.70] SPEAKER_01: However, in terms of military personnel, we have recovered and our military in the coming years will be even larger than it was before the start of the special military operation.
+[2112.41–2117.12] SPEAKER_09: So for a target like the United Kingdom, we are in as strong a position as we were before.
+[2117.96–2121.69] SPEAKER_01: Yes, and we are certainly in a stronger position than the UK.
+[2123.30–2129.59] SPEAKER_09: Thank you for your assessment.
+[2132.32–2137.39] SPEAKER_17: Back in London, Amber Rudd, playing the Home Secretary, has an update for the COBRA meeting.
+[2137.75–2138.49] SPEAKER_20: I'm so sorry.
+[2138.51–2142.34] SPEAKER_20: I've got some urgent news, Prime Minister, so I feel it ought to be on the table.
+[2143.38–2148.69] SPEAKER_20: We've heard from MI5 that Russian families are leaving the UK, and that includes diplomatic staff.
+[2149.59–2156.86] SPEAKER_20: I mean, I would suggest that our immediate inquiry, our return at this date, to find out from JIC whether we have any further intelligence from
+[2156.84–2167.58] SPEAKER_20: MI6, perhaps, who might know more about some intentions, but the fact that Russian staff are leaving at speed is... Do we have any reports of the activity of the Russian intelligence officers in the embassy?
+[2167.60–2174.14] SPEAKER_13: As in, do we see any activity of Russians, GRU or whatever, in the UK?
+[2174.18–2175.11] SPEAKER_13: Has that changed?
+[2176.07–2178.55] SPEAKER_20: I think I'd ask Duke Cher about that, if I may.
+[2178.57–2181.63] SPEAKER_11: We'll put on that an immediate investigation, Prime Minister.
+[2183.96–2191.37] SPEAKER_17: The exodus of a number of Russian families is a further indicator that something bad is heading the UK's way.
+[2191.62–2203.12] SPEAKER_20: Prime Minister, can I ask, as the CDS said in his earlier remarks, this is an escalation of the squeeze we've felt from the Russians in terms of their attacks on the UK and on other European countries as well.
+[2203.90–2207.74] SPEAKER_20: Do you have any view, Prime Minister, or perhaps the Foreign Secretary, about what the Russians are after?
+[2207.76–2209.12] SPEAKER_20: What are they trying to achieve?
+[2209.49–2218.88] SPEAKER_20: Is it anything in particular, or is it retaliation for an event that took place that we weren't in fact responsible for, but they want to show a response to?
+[2219.08–2225.31] SPEAKER_13: One of the challenges is Russia has a long track record of false flag for the purpose of its own agenda.
+[2226.57–2237.48] SPEAKER_17: A false flag can mean an action like a bombing or an assassination that's done by one side but blamed on the other to create a fake pretext to attack them.
+[2238.38–2245.35] SPEAKER_17: Attribution is also typically hard, making it difficult for the accused to prove their innocence.
+[2246.47–2253.70] SPEAKER_17: In this case, the Russian government did not deliberately target its own naval base, but it knows who did.
+[2253.74–2264.64] SPEAKER_17: Yet the Kremlin is using the atrocity as a way to falsely smear the British and excuse whatever activity it plans to do next.
+[2264.99–2270.26] SPEAKER_13: We saw that in the build-up to the Ukraine war, which was exposed by the West on a number of occasions.
+[2271.42–2277.33] SPEAKER_13: And so there is almost nothing ever off-limit with the Russians in how they currently function.
+[2277.41–2279.80] SPEAKER_13: He should know.
+[2279.82–2292.23] SPEAKER_17: When Ben Wallace was the UK's real defence secretary, he was a leading voice in 2021, raising the alarm about the impending threat of a Russian invasion of Ukraine.
+[2293.48–2303.10] SPEAKER_17: He was also instrumental in rushing out British weapons to Ukrainian forces to help them fend off the initial onslaught the following year.
+[2303.64–2308.57] SPEAKER_13: So it could be they genuinely believe we are behind this attack.
+[2308.61–2317.08] SPEAKER_13: My own experience, when the Russians were obsessed that there was a dirty bomb in Ukraine, I had a phone call with my Russian defense counterpart.
+[2317.10–2320.68] SPEAKER_13: He contacted me, my Turkish counterpart and my French counterpart.
+[2320.93–2325.81] SPEAKER_13: Interesting choice of people him to contact when we were in one summer.
+[2326.05–2332.23] SPEAKER_13: they were determined that the British and others were behind a dirty bomb, totally untrue and false.
+[2332.51–2338.12] SPEAKER_13: And to this day, I would still be guessing whether they believed it or whether they made it up themselves.
+[2338.68–2350.45] SPEAKER_13: So I think we could only really look at their physical deployment as the marker and trying to undo the riddle, could be a lot of energy, the riddle behind it all.
+[2351.58–2355.24] SPEAKER_17: Helena Kennedy, as the Attorney General, offers her view.
+[2355.26–2361.43] SPEAKER_03: They could be testing whether the NATO alliance is actually as solid as it once was.
+[2362.03–2366.38] SPEAKER_03: And we know that that fragility is one of the issues that concerns us.
+[2366.86–2368.93] SPEAKER_03: And they may be actually putting that to the test.
+[2368.95–2369.87] SPEAKER_13: Always punching the bruise.
+[2370.33–2380.30] SPEAKER_17: Suddenly, the chair of the Joint Intelligence Committee interrupts.
+[2380.93–2387.82] SPEAKER_11: So we've just had two injects, one from Defence Intelligence, which is also replicated from the information coming from SIS.
+[2389.72–2392.47] SPEAKER_17: SIS is another acronym for MI6.
+[2393.07–2395.13] SPEAKER_17: It means Secret Intelligence Service.
+[2396.27–2401.48] SPEAKER_17: Rob reveals that more submarines have joined the Russian flotilla in the North Atlantic.
+[2402.12–2412.41] SPEAKER_11: And we estimate the total now out of Severomorsk is seven SSBNs, which is the entire Northern Fleet Bar 1, eight SSNs.
+[2412.97–2417.75] SPEAKER_13: Just for clarity, SSBN is the bombers, and SSN are the hunter-killer submarines.
+[2418.03–2418.41] SPEAKER_13: That's correct.
+[2418.43–2422.30] SPEAKER_13: That's 15 submarines in the North Atlantic.
+[2423.28–2424.24] SPEAKER_10: Well, and PM clustered.
+[2425.42–2427.50] SPEAKER_10: That's the very striking thing.
+[2428.38–2430.09] SPEAKER_10: I don't know if the CDS, if you were sitting
+[2430.67–2441.31] SPEAKER_17: A screen in the Cobra Room lights up with a map that shows the Russian deployment also includes two large destroyers and four frigates.
+[2441.33–2444.53] SPEAKER_17: These are medium-sized ships armed with missiles.
+[2446.05–2452.02] SPEAKER_17: Such a formidable display of naval power is the biggest warning sign yet from Moscow.
+[2453.28–2456.95] SPEAKER_11: This is well above the normal complement that we would expect to see deployed.
+[2457.61–2459.59] SPEAKER_11: They've all assembled at a rendezvous point.
+[2460.45–2466.98] SPEAKER_11: But you can see from our map that they are moving in a southwesterly direction.
+[2467.46–2476.95] SPEAKER_11: And there are active Russian air operations over the North Atlantic, all of which are being tracked by our own surveillance sites and by our own surveillance aircraft and by American satellites.
+[2477.41–2482.62] SPEAKER_13: Put it in perspective for others around the table, normally, roughly, you'd get
+[2483.29–2489.43] SPEAKER_13: three to five submarines lurking around the Atlantic, Russian, American, French, British.
+[2490.36–2499.51] SPEAKER_13: To have 15 from just one power alone is extraordinary and takes a huge amount of effort, actually, by any country to see that many submarines.
+[2499.53–2502.61] SPEAKER_13: So it is definitely out of the ordinary.
+[2503.17–2505.09] SPEAKER_10: I don't know the CDS, you've got a view.
+[2505.73–2509.72] SPEAKER_10: If you were sitting in your Russian counterparts' chair,
+[2509.70–2514.03] SPEAKER_10: what the basis would be for deploying not only that number but in that concentration.
+[2516.14–2519.07] SPEAKER_06: So in my view this is clearly an enormous show of force.
+[2522.57–2526.62] SPEAKER_06: It's quite out of any form of normal pattern.
+[2527.18–2529.90] SPEAKER_06: All of this activity is in international waters and airspace.
+[2530.34–2535.27] SPEAKER_06: So it's still at some distance, but also protected by international law.
+[2536.37–2541.10] SPEAKER_06: It is heading around the UK, but it remains in range of the UK.
+[2542.08–2545.15] SPEAKER_06: The best outcome is that this is just a show of force.
+[2545.77–2550.55] SPEAKER_06: The worst outcome is this is setting a force in order to attack the UK.
+[2552.68–2560.85] SPEAKER_17: The national security adviser explains this is not just a problem for the UK, it's a challenge to the whole of the NATO alliance.
+[2562.12–2567.99] SPEAKER_17: All 32 member states share responsibility for defending their land, seas and skies.
+[2569.13–2576.92] SPEAKER_10: There are NATO protocols for this, and we're obviously anxious in the current circumstances that those protocols might not apply.
+[2577.62–2593.14] SPEAKER_10: But if we can just at least test by presuming that they will, do it perhaps on the professional military channel first, CDS perhaps, and just almost presume that they're going to operate as we've always understood they will.
+[2593.16–2596.49] SPEAKER_10: And then if it looks as though they won't, we then escalate to the political level.
+[2597.80–2603.80] SPEAKER_17: He's referring here to uncertainty about the United States' commitment to defending Europe.
+[2605.50–2610.28] SPEAKER_17: Jack Straw, speaking as the Foreign Secretary, is far more blunt.
+[2612.16–2615.85] SPEAKER_18: Prime Minister, the elephant in the room here is what the US is going to do.
+[2616.47–2621.41] SPEAKER_18: In the past, we were confident that the US would be with us.
+[2622.18–2631.59] SPEAKER_18: Now, the question I raise is, as well as quotes hitting the phone to professional opposite numbers in NATO headquarters and command centres.
+[2631.72–2637.28] SPEAKER_18: Do we also hit the phones in my case to talk to the American Secretary of State?
+[2637.84–2642.22] SPEAKER_18: Because if we are able to get a situation where the US
+[2642.28–2662.66] SPEAKER_18: understands that this is a threat against them as well as against us, then we're in a very, very different position to be able to deter Russia from a situation where the Russians can take great comfort from the fact that the United States is simply going to sit on its hands because...
+[2662.64–2677.17] SPEAKER_17: Until recently, it would have been implausible even to contemplate the possibility of the United States not immediately mobilizing to help defend the UK in the face of such a show of force by Russia.
+[2677.19–2679.85] SPEAKER_17: Not so much anymore.
+[2681.29–2690.60] SPEAKER_17: Washington has repeatedly warned its NATO allies to stop relying so heavily on American protection and do more to defend themselves.
+[2691.80–2701.35] SPEAKER_17: At the same time, the White House has been seeking to forge better relations with Moscow to the dismay of London and most other western capitals.
+[2704.02–2710.31] SPEAKER_17: It's an upending of a security landscape that's been in place since the end of the Second World War.
+[2712.62–2714.52] SPEAKER_13: I think the foreign secretary is absolutely right.
+[2715.47–2719.97] SPEAKER_13: To start point really is with the United States here and secondly then NATO.
+[2720.01–2727.84] SPEAKER_13: The two bodies we have taken partly for granted but we have definitely taken as our guarantor for 70 odd years.
+[2728.73–2732.97] SPEAKER_13: I think in this situation we should absolutely take that for starter.
+[2734.09–2743.32] SPEAKER_17: The British side also needs to prepare its own military and society for the possibility of the home front being turned into a war zone.
+[2744.51–2751.00] SPEAKER_17: It's something no prime minister has seriously considered or planned for since the 1980s.
+[2751.64–2757.07] SPEAKER_10: I was just going to suggest, Peter, because those of us who need to put it into effect need to get out of this room and get those actions going.
+[2757.09–2759.53] SPEAKER_13: Could we do the readiness for assurance?
+[2759.55–2762.76] SPEAKER_13: Readiness in itself is a deterrent to people.
+[2762.88–2766.91] SPEAKER_13: So if I could start, first of all, with CDS and Defence Secretary
+[2767.21–2767.65] SPEAKER_13: on that.
+[2768.05–2770.91] SPEAKER_13: What is our ability to either change our readiness?
+[2771.70–2776.46] SPEAKER_13: What ideas do you have to increase our readiness both at sea, land and air?
+[2776.48–2787.56] SPEAKER_07: PM, as CDS said earlier on, he's already advising that forces be concentrated and early steps are taken to mobilise and outload supplies.
+[2788.06–2789.70] SPEAKER_07: CDS, do you want to expand on that?
+[2790.40–2795.23] SPEAKER_06: So I suggest that we apply the P-8 reconnaissance aircraft that we have.
+[2796.08–2801.89] SPEAKER_06: the currently one only but shortly two Type 23 anti-submarine frigates that we can put to sea.
+[2803.01–2815.47] SPEAKER_17: The Chief of the Defence Staff, CDS, also says one, if possible two, Royal Navy attack submarines are being deployed to help monitor the Russian flotilla.
+[2816.65–2820.66] SPEAKER_17: He also has plans for one of the UK's two aircraft carriers.
+[2821.75–2829.64] SPEAKER_06: I recommend that although it's not at the highest state of readiness, that we put the Prince of Wales carrier to sea.
+[2830.36–2833.83] SPEAKER_06: I believe I can get eight F-35s on board it.
+[2834.63–2840.05] SPEAKER_06: And we send it into the North Atlantic between the Russian group and the UK.
+[2840.09–2843.20] SPEAKER_06: It will take some days to get there.
+[2843.22–2850.73] SPEAKER_17: This October, in the real world, the Navy's three billion pound carrier will actually be on the other side of the globe.
+[2852.78–2858.20] SPEAKER_17: The warship left Portsmouth back in April on an eight-month deployment to the Indo-Pacific.
+[2861.50–2871.06] SPEAKER_17: It's accompanied by a Type 45 destroyer and up to 24 of the UK's F-35 jets, leaving Britain even less well defended.
+[2872.56–2894.07] SPEAKER_17: In the war game, though... ...we've imagined that the trip was cancelled... ...amid escalating tensions with Russia... ...so the ships and aircraft are available to fight The Prime Minister has a recommendation as well Could you also look at readying the second Trident SSBN?
+[2894.99–2901.72] SPEAKER_17: He's referring to the UK's nuclear-armed submarines Obviously we always have one at sea on patrol...
+[2902.14–2910.14] SPEAKER_13: And while we know one's in refit and there are three others, I would be grateful if we look at the readiness of that.
+[2911.95–2917.92] SPEAKER_17: It's the most dramatic move yet by the British side, underlining the gravity of the crisis.
+[2919.36–2922.84] SPEAKER_17: The Navy has a fleet of four nuclear-armed submarines.
+[2923.98–2930.99] SPEAKER_17: One is always deployed on a rotating basis, providing what's known as the continuous at-sea deterrence.
+[2932.19–2938.04] SPEAKER_17: That means it's ready to fire nuclear weapons to defend the UK if given the order.
+[2939.53–2948.84] SPEAKER_17: Preparing to put a second submarine out from its base at Fazlane in Scotland would send a clear signal to Moscow to back off.
+[2949.93–2956.18] SPEAKER_13: And let's not forget that that boat is perfectly possible to operate alongside, even if it's not at sea.
+[2956.82–2962.47] SPEAKER_17: He means the submarine can still fire nuclear weapons from its moorings if necessary.
+[2963.21–2965.95] SPEAKER_13: So from the Russian point of view, it'll be viewed as a threat.
+[2970.34–2979.59] SPEAKER_17: As for the UK homeland, the defence chief is doing the best he can, in coordination with NATO, to defend as much as possible.
+[2979.80–2987.84] SPEAKER_06: What I recommend is that we surge the Royal Air Force to produce two 24-hour combat air patrols.
+[2988.56–2993.89] SPEAKER_06: One vital piece of guidance I need from you, I can protect two areas of the UK on a 24-hour basis.
+[2994.23–2995.19] SPEAKER_06: I need to prioritise.
+[2995.69–2999.50] SPEAKER_17: He says one has to be the Fazlane submarine base.
+[2999.83–3002.10] SPEAKER_06: You've asked me about the second Trident boat.
+[3002.66–3010.35] SPEAKER_06: I need to put one of those combat air patrols over Faslane or the nuclear architecture will be very vulnerable.
+[3010.69–3014.44] SPEAKER_06: And the second one I propose to put over and around London.
+[3015.48–3015.99] SPEAKER_06: That's it.
+[3018.45–3020.81] SPEAKER_17: It's a pretty devastating admission.
+[3021.87–3031.12] SPEAKER_17: The military chief is saying his air force only has the capacity to defend two sites in total across the whole of the UK.
+[3031.18–3039.32] SPEAKER_17: The prime minister isn't so sure London should be one of them.
+[3040.02–3043.74] SPEAKER_13: In terms of military vulnerability,
+[3044.30–3056.47] SPEAKER_13: Is London the priority if this was an attack by Russia that, you know, randomly hitting suburbs of London is not going to
+[3059.10–3067.79] SPEAKER_13: It's not going to deteriorate our capabilities as opposed to putting those patrols somewhere like over the RAF bases of East Anglia.
+[3068.23–3075.64] SPEAKER_06: So that depends how you feel about Whitehall and the centre of government and everything else that sits in and around the centre of London.
+[3076.52–3084.84] SPEAKER_13: Yes to Fazlaine, the second deployment for now, not London, but over the key military infrastructures that you consider.
+[3090.80–3095.29] SPEAKER_17: James Heapey, our Defence Secretary, then speaks.
+[3095.31–3104.17] SPEAKER_07: It's also worth noting that the activity that CDS describes is a not insignificant outload of UK military resource.
+[3104.61–3107.05] SPEAKER_07: And I think that that brings with it two issues.
+[3107.53–3113.30] SPEAKER_07: Firstly, that we will not be able to deploy that amount of force in secret.
+[3113.44–3117.05] SPEAKER_07: Indeed, you may not want to deploy it in secret, but we need to think carefully
+[3117.03–3122.76] SPEAKER_07: about what the messaging is that we attach to the outload of those forces.
+[3123.24–3133.34] SPEAKER_07: But secondly it won't escape the notice of many in the commentariat that what we do deploy is still overmatched by what the Russians have deployed as well.
+[3134.44–3137.25] SPEAKER_17: As they talk, another update comes in.
+[3137.89–3149.18] SPEAKER_06: Forgive me, I have one piece of news which is I understand that an Akula class Russian submarine has surfaced off Orkney and it's then paralleled the commercial ferry and then submerged.
+[3150.00–3151.32] SPEAKER_17: Imagine this.
+[3152.45–3159.00] SPEAKER_17: You're on a ferry to the Orkney Islands off the north coast of Scotland along with dozens of other passengers.
+[3160.12–3167.51] SPEAKER_17: You look out the window and see a giant grey attack submarine pop up out the water and then dive again.
+[3167.53–3173.82] SPEAKER_17: People would surely pull out their phones to take videos and photographs to share online.
+[3174.10–3176.78] SPEAKER_06: That is exceptional activity.
+[3176.84–3178.85] SPEAKER_06: It's clearly threatening and it's messaging to us.
+[3179.15–3185.41] SPEAKER_06: It's also public, so we'll not be able to keep that a secret in a way that a Russian deployment in the North Atlantic might be a secret.
+[3185.43–3189.04] SPEAKER_20: I mean, this is clearly breaking out nationally, CDS.
+[3189.06–3194.85] SPEAKER_20: They've been seeing it, but also the fact that the Russian diplomats and their families are leaving is now all over Twitter.
+[3194.87–3196.11] SPEAKER_17: The Home Secretary
+[3196.64–3204.49] SPEAKER_20: So it's going to be very evident that the Russians are signalling that there may be, let's call it what it is Prime Minister, there may be an attack.
+[3210.84–3214.76] SPEAKER_13: I think we just have to be cautious of the word attack at the moment.
+[3215.05–3224.06] SPEAKER_13: We have to prepare ourselves, we have to be determined and focused, clear messaging of denial.
+[3224.08–3232.56] SPEAKER_13: The most important fish to catch at this phase is a strong US commitment and NATO commitment to this.
+[3232.89–3247.24] SPEAKER_13: At the same time, a lot of work in the Civil Contingency Secretariat to make sure we prepare our domestic defences, MI5, police leave, consider whether we cancel police leave, etc.
+[3247.96–3250.58] SPEAKER_13: to make sure we can maximise our readiness.
+[3250.90–3252.82] SPEAKER_20: If I may, PM, I agree with all that.
+[3253.06–3256.48] SPEAKER_20: I just think we need to just think how we're going to message to the public as this escalates.
+[3257.12–3269.26] SPEAKER_20: And I would really like to have, I don't know whether you're going to be doing media or the press secretary is going to be doing the media, but just some reassuring words, but also acknowledging the threat that we're under, because that will be available.
+[3269.30–3276.37] SPEAKER_13: So Home Secretary, as the guardian of the domestic threat, I would ask you after this meeting to do
+[3276.35–3287.68] SPEAKER_13: The media, reassurance around civilian infrastructure, civilians, a reassurance about investigation of the F-35 pilots.
+[3290.08–3297.39] SPEAKER_17: The Prime Minister also tasks his defence secretary with releasing comments about what the armed forces will be doing.
+[3297.78–3303.45] SPEAKER_13: a rather crisp and factual current defense statement about we have deployed.
+[3304.59–3310.45] SPEAKER_13: We've seen unprecedented sort of keywords, you know, unprecedented deployments working with allies.
+[3310.61–3314.32] SPEAKER_13: So reassurance from defense sort of
+[3314.30–3318.41] SPEAKER_13: We have a plan from the Home Office, which I always think is important, to communicate you have a plan.
+[3318.51–3318.71] SPEAKER_13: Yes.
+[3318.89–3320.23] SPEAKER_13: That's the most important thing.
+[3320.85–3323.39] SPEAKER_10: I think you have to go, if I may.
+[3323.41–3325.26] SPEAKER_10: I think we all have our homework to do.
+[3325.28–3328.04] SPEAKER_10: Foreign Secretary and I will start working the phones.
+[3328.12–3330.29] SPEAKER_10: We'll get you engaged as we need to.
+[3331.23–3332.31] SPEAKER_10: Thank you very much indeed.
+[3332.33–3333.05] SPEAKER_11: Break, break, break.
+[3334.70–3335.28] SPEAKER_11: Thank you.
+[3339.71–3348.74] SPEAKER_17: As Rob Johnson ends the session in the Cobra Room, though, the defence chief steps out and walks across the corridor to a second room.
+[3349.90–3358.41] SPEAKER_17: Inside, the top operational commander has gathered a team of advisors to discuss the UK's limited options to defend itself.
+[3365.02–3366.02] SPEAKER_08: CGO, hello.
+[3367.18–3368.17] SPEAKER_08: Morning, CDS.
+[3368.99–3379.22] SPEAKER_17: Lieutenant General Sir David Capewell is a highly regarded and hugely experienced Royal Marines officer who spent almost four decades serving in the armed forces.
+[3380.83–3386.07] SPEAKER_17: He's reprising his former job as Chief of Joint Operations or CJO.
+[3387.29–3393.32] SPEAKER_17: In an emergency like this, he'd be an overall command of UK forces in the fight.
+[3393.92–3395.39] SPEAKER_06: I've just come from Cobra.
+[3395.62–3400.85] SPEAKER_06: It would be fair to say there's quite a lot of disquiet of what's going on.
+[3401.53–3402.81] SPEAKER_06: Considerable uncertainty.
+[3403.45–3407.24] SPEAKER_06: But I have some instructions which we are going to have to tackle at speed.
+[3408.06–3418.80] SPEAKER_17: The defence chief lists the tasks, from defending the UK airspace to tracking the Russian flotilla, despite far too few jets, ships and missiles.
+[3419.86–3421.76] SPEAKER_06: Everybody knows we can't do it all.
+[3422.18–3427.15] SPEAKER_17: He also says there's a big question mark over whether NATO is going to help.
+[3427.85–3428.97] SPEAKER_08: Thank you, CDS.
+[3429.43–3441.81] SPEAKER_08: We can definitely get on with the planning necessary to provide the protection and oversight and surveillance requirements that you've described.
+[3442.33–3452.22] SPEAKER_08: But right at the back of my mind is that we are beginning to see the mortgaging of risk from political intent to operational reality.
+[3452.76–3467.68] SPEAKER_08: And the operational reality is that we are extremely thin on the ground and will require quite a lot of negotiation with NATO, who will also be feeling the same pressure to do something nationally as opposed to collectively.
+[3468.43–3482.44] SPEAKER_06: So in the spirit of the Cobra meeting, it was not the time for us to have a protracted discussion about how we're dealing with a major Russian military threat with armed forces that have been conditioned by 30 years of traveling through the post-Cold War era.
+[3483.60–3486.98] SPEAKER_06: And we are where we are, with what we have.
+[3487.20–3495.01] SPEAKER_06: And as you describe, unless NATO stands up and supports us now, we're going to feel pretty chilly pretty soon.
+[3500.07–3503.76] SPEAKER_17: He then puts the crisis in even starker terms.
+[3504.50–3511.45] SPEAKER_06: We want to be in a place where we're contributing to public reassurance, not public panic, and we're moving at speed.
+[3511.47–3518.56] SPEAKER_06: To put it in another way, I can't tell you whether in 24 hours from now we are going to be at war with Russia.
+[3519.22–3522.08] SPEAKER_06: But you and I know that we don't have a plan for this.
+[3522.82–3525.93] SPEAKER_06: We're massively under-resourced if we stand alone without NATO.
+[3527.03–3528.43] SPEAKER_06: And we haven't any time to fix this.
+[3529.34–3530.36] SPEAKER_06: but we're going to have to manage it.
+[3531.24–3535.51] SPEAKER_08: CDS, I'd like you to take one message back to the cabinet, please.
+[3537.57–3550.99] SPEAKER_08: If they think that we might have to start a fight or certainly defend against a fight, what I want to be sure of is that they have a view about how we finish this fight.
+[3559.64–3562.41] SPEAKER_17: Coming up in episode two.
+[3562.43–3563.01] SPEAKER_17: Good afternoon.
+[3563.41–3564.75] SPEAKER_13: Good afternoon, Secretary-General.
+[3565.45–3567.37] SPEAKER_13: We have suffered a number of casualties.
+[3568.03–3570.81] SPEAKER_13: Russia's intention is not just Britain.
+[3571.25–3573.32] SPEAKER_13: It is to fracture NATO.
+[3573.36–3579.96] SPEAKER_17: The War Game was written and presented by me, Deborah Haynes.
+[3580.58–3583.08] SPEAKER_17: The series producer is James Shield.
+[3584.05–3587.29] SPEAKER_17: The development producer is Jess Swinburne.
+[3587.72–3591.31] SPEAKER_17: Original music and sound design are by Tom Kinsella.
+[3593.53–3595.90] SPEAKER_17: Additional production by Katie Scholes.
+[3597.24–3599.73] SPEAKER_17: The editor for Tortoise is Jasper Corbett.
+[3600.93–3609.65] SPEAKER_17: For Sky News, the commissioning editor is Paul Stanworth and the executive producers are Sarah Whitehead and David Mapstone.
+[3611.70–3618.76] SPEAKER_04: you
+[3634.06–3641.02] SPEAKER_15: on a windswept walk in Carmarthen, while someone tries to use your car details to hire a speedboat in Cannes.
+[3641.72–3650.26] SPEAKER_15: This is the moment you relax, knowing that Barclays' advanced tech has helped to spot the fraud in under a second, and their expert team are on hand to close it down.
+[3651.12–3653.78] SPEAKER_15: So you can get back to being windswept.
+[3655.53–3658.15] SPEAKER_15: Just one of the ways we're protecting our customers 24-7.
+[3658.43–3660.78] SPEAKER_15: Search Barclays Fraud Protection.
+[3661.28–3661.80] SPEAKER_15: Barclays.
+[3662.26–3663.56] SPEAKER_15: Make money work for you.
