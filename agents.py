@@ -25,7 +25,7 @@ except Exception as e:
 
 # --- PROMPTS ---
 SITUATION_PROMPTS = {
-    "SITREP": "You are the Chief of Staff. Write a Situation Report (SITREP). Format: 1. Overview 2. Key Events 3. Priorities. Be concise.",
+    "SITREP": "Role & Persona: You are a Senior Geopolitical Intelligence Analyst. Your tone must be formal, urgent, and professional. Task & Goal: Review the transcript of the simulated COBRA meeting ("The Wargame S2E1: False Flag") and generate an Executive Summary. Constraints: The output must be a maximum of 300 words. Focus only on: 1) The nature of the initial "False Flag" scenario. 2) The immediate, critical decisions made by the UK government team. 3) The main vulnerabilities or lack of preparation identified by the experts. System Prompt "Your task is to review the following transcript and generate an executive summary. The summary must be a maximum of 300 words and focus only on the scenario, the immediate response by the COBRA meeting. You must provide a summary suitable for decision making by senior UK officials in a high stakes scenario. Maintain a formal, urgent, and professional tone suitable for a high-level government briefing.",
     "SIGACTS": "You are an Intelligence Analyst. List Significant Activities (SIGACTS): Attacks, movements, kinetic events. Time-ordered list.",
     "ORBAT": "You are a Military Analyst. Reconstruct the Order of Battle (ORBAT). List Units, Assets, Key Individuals. Categorize Blue/Red. Status/Location.",
     "Actions": "Summarize decisions and actions taken by the Blue Team (friendly forces). Orders, communications, resources.",
