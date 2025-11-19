@@ -7,7 +7,6 @@ import logging
 import concurrent.futures
 
 # --- PATH SETUP ---
-# Essential for finding agents.py in the same folder
 sys.path.append(os.path.dirname(__file__))
 
 # --- LOGGING SETUP ---
@@ -23,15 +22,9 @@ AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
 
 if not os.path.exists(AGENTS_FILE_PATH):
     st.error(f"FATAL: 'agents.py' not found at {AGENTS_FILE_PATH}.")
-    # Define dummy fallbacks to prevent immediate crash
-    get_agent = None
-    generate_situation_report = None
-    generate_advisor_briefing = None
-    SITUATION_PROMPTS = {}
-    ADVISOR_DEFINITIONS = {}
+    st.stop()
 else:
     try:
-        # Importing specific functions that MUST exist in agents.py
         from agents import (
             get_agent, 
             generate_situation_report, 
@@ -40,7 +33,7 @@ else:
             ADVISOR_DEFINITIONS
         )
     except ImportError as e:
-        st.error(f"FATAL: Failed to import from agents.py. Ensure agents.py is updated with the latest code. Error: {e}")
+        st.error(f"FATAL: Failed to import from agents.py: {e}")
         st.stop()
 
 # --- PAGE CONFIG ---
@@ -76,8 +69,7 @@ NAVIGATION = {
 
 def load_and_analyze_data():
     """
-    Loads transcripts and runs batch processing in PARALLEL using ThreadPoolExecutor.
-    Logs progress to GCP console.
+    Loads transcripts and runs batch processing in HIGH PARALLEL.
     """
     # 1. LOAD FILES
     logger.info("--- STARTING DATA LOAD ---")
@@ -90,7 +82,7 @@ def load_and_analyze_data():
     combined_text = ""
     loaded_count = 0
     
-    progress_text = "Loading Transcripts..."
+    progress_text = "Reading Transcripts..."
     my_bar = st.sidebar.progress(0, text=progress_text)
     
     for filename in files_to_load:
@@ -101,7 +93,6 @@ def load_and_analyze_data():
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                # Check format
                 if isinstance(data, list):
                     for entry in data:
                         if 'text' in entry: 
@@ -118,14 +109,13 @@ def load_and_analyze_data():
 
     st.session_state.wargame_context = combined_text
     st.session_state.transcript_context_length = len(combined_text)
-    logger.info(f"Loaded {loaded_count} files. Total characters: {len(combined_text)}")
     
     if loaded_count == 0:
         st.sidebar.error("No files loaded.")
         return 0
 
-    # 2. PARALLEL BATCH ANALYSIS
-    logger.info("--- STARTING PARALLEL GENERATION ---")
+    # 2. HIGH PARALLEL BATCH ANALYSIS
+    logger.info("--- STARTING HIGH-SPEED PARALLEL GENERATION ---")
     
     # Define tasks
     tasks = []
@@ -143,37 +133,46 @@ def load_and_analyze_data():
         result_key = ""
         result_content = ""
         
-        # Small sleep to stagger requests and avoid hitting Rate Limits instantly
-        time.sleep(0.5) 
-        
-        if t_type == "report":
-            result_key = f"report_{t_name}"
-            result_content = generate_situation_report(t_name, combined_text)
-        elif t_type == "advisor":
-            result_key = f"briefing_{t_name}"
-            result_content = generate_advisor_briefing(t_name, combined_text)
+        # Try generating up to 2 times (Simple Retry Logic)
+        attempts = 2
+        for i in range(attempts):
+            try:
+                if t_type == "report":
+                    result_key = f"report_{t_name}"
+                    result_content = generate_situation_report(t_name, combined_text)
+                elif t_type == "advisor":
+                    result_key = f"briefing_{t_name}"
+                    result_content = generate_advisor_briefing(t_name, combined_text)
+                
+                # If we get here, it worked
+                break
+            except Exception as e:
+                logger.warning(f"Task {t_name} failed attempt {i+1}: {e}")
+                if i < attempts - 1:
+                    time.sleep(2) # Wait 2 seconds before retry
+                else:
+                    result_content = f"Generation Failed after retries. Error: {e}"
             
         return result_key, result_content
 
-    # Run in ThreadPool
-    # Reduced to 2 workers to prevent TPM (Tokens Per Minute) exhaustion with large contexts
-    MAX_WORKERS = 2 
+    # --- INCREASED PARALLELISM ---
+    # Increased to 8. This will be much faster but monitors for 429 errors.
+    MAX_WORKERS = 8
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_task = {executor.submit(process_task, task): task for task in tasks}
         
         for future in concurrent.futures.as_completed(future_to_task):
-            task_type, task_name = future_to_task[future]
             try:
                 key, content = future.result()
                 st.session_state[key] = content
                 completed_tasks += 1
                 
                 pct = int((completed_tasks / total_tasks) * 100)
-                my_bar.progress(pct, text=f"Processed: {task_name} ({completed_tasks}/{total_tasks})")
+                my_bar.progress(pct, text=f"Generated: {future_to_task[future][1]} ({completed_tasks}/{total_tasks})")
                 
             except Exception as exc:
-                logger.error(f"Task {task_name} generated an exception: {exc}")
+                logger.error(f"Thread Exception: {exc}")
 
     my_bar.empty()
     st.session_state.data_loaded = True
@@ -184,9 +183,7 @@ def load_and_analyze_data():
 with st.sidebar:
     st.title("Wargame OS")
     
-    # Initialize Button
     if st.button("INITIALIZE / RELOAD INTELLIGENCE", type="primary"):
-        # Clear old cache
         keys_to_delete = [k for k in st.session_state.keys() if k.startswith("report_") or k.startswith("briefing_")]
         for k in keys_to_delete:
             del st.session_state[k]
@@ -203,7 +200,6 @@ with st.sidebar:
 
     st.markdown("---")
 
-    # Navigation Menu
     for group, pages in NAVIGATION.items():
         st.subheader(group)
         for page_title, data in pages.items():
@@ -218,7 +214,6 @@ with st.sidebar:
         st.markdown("---")
 
 # --- PAGE ROUTER ---
-
 current_id = st.session_state.current_page_id
 try:
     page_group, current_page_title = current_id.split(" - ")
@@ -229,14 +224,9 @@ except:
     page_data = NAVIGATION["Situation Room"]["SITREP"]
 
 # --- RENDER FUNCTIONS ---
-
 def render_llm_static_page(group, title):
-    """
-    Renders a pre-generated situation report.
-    """
     st.header(f"{page_data['icon']} {group}: {title}")
     st.markdown("---")
-    
     cache_key = f"report_{title}"
     
     if cache_key in st.session_state:
@@ -245,40 +235,33 @@ def render_llm_static_page(group, title):
         if not st.session_state.data_loaded:
             st.info("System Offline. Please click 'INITIALIZE / RELOAD INTELLIGENCE' in the sidebar.")
         else:
-            st.warning("Report generation pending or failed. Check logs or try reloading.")
+            st.warning("Report generation pending or failed. Check logs.")
 
 def render_chatbot_page(agent_name):
-    """
-    Renders the Advisor page with a pre-generated briefing + interactive chat.
-    """
     st.header(f"{page_data['icon']} Advisor: {agent_name}")
     
     if not st.session_state.data_loaded:
         st.info("Advisor Offline. Please initialize intelligence in the sidebar.")
         return
 
-    # 1. Show the Pre-Generated Briefing
     briefing_key = f"briefing_{agent_name}"
     if briefing_key in st.session_state:
         with st.expander("📜 Initial Strategic Assessment", expanded=True):
             st.markdown(st.session_state[briefing_key])
     else:
-         st.warning("Briefing unavailable (generation failed). You can still chat below.")
+         st.warning("Briefing unavailable. You can still chat below.")
     
     st.markdown("---")
     st.caption("Operational Chat Channel - Secure Line Open")
 
-    # 2. Chat Interface
     history_key = f"chat_history_{agent_name}"
     if history_key not in st.session_state:
         st.session_state[history_key] = []
         
-    # Display History
     for msg in st.session_state[history_key]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
             
-    # Chat Input
     if prompt := st.chat_input(f"Ask {agent_name} for clarification..."):
         st.session_state[history_key].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -293,8 +276,6 @@ def render_chatbot_page(agent_name):
                     st.session_state[history_key].append({"role": "assistant", "content": response})
                 else:
                     st.error("Agent connection failed.")
-
-# --- MAIN EXECUTION ---
 
 if page_data['type'] == 'llm_static':
     render_llm_static_page(page_group, current_page_title)
