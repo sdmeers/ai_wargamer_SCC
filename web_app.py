@@ -39,7 +39,7 @@ if 'transcript_context_length' not in st.session_state:
 NAVIGATION = {
     "Situation Room": {
         "Sitrep": {"icon": "📊", "type": "llm_static"},
-        "SIGACTS": {"icon": "💥", "type": "llm_static"},
+        "Sigacts": {"icon": "💥", "type": "llm_static"},
         "ORBAT": {"icon": "🛡️", "type": "llm_static"},
         "Actions": {"icon": "🎬", "type": "llm_static"},
         "Uncertainties": {"icon": "❓", "type": "llm_static"},
