@@ -1,297 +1,230 @@
 import streamlit as st
 import json
 import os
-import time
 import sys
 
-# --- PATH FIX ---
-# This ensures that the directory containing this script (and agents.py) 
-# is explicitly included in the Python module search path. This resolves the 
-# ImportError when running 'streamlit run web_app.py'.
+# --- PATH SETUP ---
+# Ensure local modules can be imported
 sys.path.append(os.path.dirname(__file__))
 
-# --- MODIFIED IMPORT BLOCK ---
-# Check if the file exists before attempting the import
+# --- IMPORTS ---
 AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
 
+# Check file existence
 if not os.path.exists(AGENTS_FILE_PATH):
-    # This check confirms a file system error (e.g., file not copied)
-    st.error(f"FATAL: Backend module 'agents.py' not found at expected path: {AGENTS_FILE_PATH}. Please verify your file structure.")
+    st.error(f"FATAL: 'agents.py' not found at {AGENTS_FILE_PATH}.")
     get_agent = None
+    generate_situation_report = None
 else:
-    # Attempt the import. The sys.path fix should make this work.
     try:
-        from agents import get_agent
+        # Import both the factory and the report generator
+        from agents import get_agent, generate_situation_report
     except ImportError as e:
-        # If this still fails, it suggests an issue *inside* agents.py 
-        # (e.g., a dependency missing from requirements.txt, though unlikely here).
-        st.error(f"FATAL: Import of 'agents.py' failed despite file existence (check contents of agents.py): {e}")
+        st.error(f"FATAL: Failed to import from agents.py: {e}")
         get_agent = None
+        generate_situation_report = None
 
+# --- PAGE CONFIG ---
+st.set_page_config(layout="wide", page_title="AI Wargame Situation Room")
 
-# --- 1. CONFIGURATION, STYLING, AND DATA LOADING ---
-
-st.set_page_config(
-    page_title="AI Wargamer Interface (MVP Snapshot)",
-    page_icon="🤖",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-# Custom CSS for a dark theme
-st.markdown("""
-<style>
-    .stApp { background-color: #121212; color: #E0E0E0; }
-    [data-testid="stSidebar"] { background-color: #1E1E1E; }
-    h1 { color: #FFD700; padding-top: 0px; margin-top: 0px; }
-    h2, h3 { color: #A9A9A9; }
-    .stTextInput > div > div > input { color: #E0E0E0; background-color: #2D2D2D; border: 1px solid #444444; }
-    [data-testid="stChatMessage"] { background-color: #1E1E1E; }
-</style>
-""", unsafe_allow_html=True)
-
-
-@st.cache_data
-def load_frozen_snapshot():
-    """
-    Loads and concatenates the first three episodes into a single context string.
-    """
-    files = [
-        "the_wargame_s2e1_transcript_cleaned.json",
-        "the_wargame_s2e2_transcript_cleaned.json",
-        "the_wargame_s2e3_transcript_cleaned.json"
-    ]
-    
-    full_context = "--- FULL WARGAME CONTEXT (Episodes 1-3 Snapshot) ---\n"
-    base_path = "data" 
-    valid_types = ['blue', 'red', 'explanation'] # Focus on core game segments
-    
-    # Ensure the data directory exists before attempting to load
-    if not os.path.exists(base_path):
-        st.error(f"Data directory '{base_path}' not found. Please create it and add the JSON files.")
-        return full_context
-
-    for i, filename in enumerate(files):
-        path = os.path.join(base_path, filename)
-        if os.path.exists(path):
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    
-                full_context += f"\n=== EPISODE {i+1} SEGMENTS ===\n"
-                
-                for segment in data.get('segments', []):
-                    if segment.get('type') in valid_types:
-                        speaker = segment.get('type', 'UNKNOWN').upper()
-                        text = segment.get('content', '')
-                        full_context += f"[{speaker}]: {text}\n"
-                        
-            except Exception as e:
-                st.warning(f"Could not load or parse {filename}: {e}")
-        else:
-            st.warning(f"Required data file not found: {filename}")
-    
-    full_context += "\n--- END OF CONTEXT ---"
-    return full_context
-
-# Load the context once and store it
+# --- SESSION STATE INIT ---
+if 'current_page_id' not in st.session_state:
+    st.session_state.current_page_id = "Situation Room - SITREP" # Default landing
 if 'wargame_context' not in st.session_state:
-    with st.spinner("Loading Wargame Data (Episodes 1-3 Snapshot)..."):
-        st.session_state['wargame_context'] = load_frozen_snapshot()
-        st.session_state['transcript_context_length'] = len(st.session_state['wargame_context'])
+    st.session_state.wargame_context = ""
+if 'transcript_context_length' not in st.session_state:
+    st.session_state.transcript_context_length = 0
 
-# --- 2. NAVIGATION DATA STRUCTURE (Original Structure Maintained) ---
-
+# --- NAVIGATION STRUCTURE ---
 NAVIGATION = {
-    "Scenario": {
-        "Summary": {"icon": "📜", "type": "static"},
-        "Transcripts": {"icon": "🎙️", "type": "static"},
-        "Knowledge Graph": {"icon": "🧠", "type": "llm_static"},
-    },
     "Situation Room": {
         "SITREP": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
-        "ORBAT": {"icon": "♟️", "type": "llm_static"},
-        "Actions": {"icon": "👉", "type": "llm_static"},
+        "ORBAT": {"icon": "🛡️", "type": "llm_static"},
+        "Actions": {"icon": "🎬", "type": "llm_static"},
         "Uncertainties": {"icon": "❓", "type": "llm_static"},
         "Dilemmas": {"icon": "⚖️", "type": "llm_static"},
     },
     "Advisors": {
         "Integrator": {"icon": "🧩", "type": "chatbot"},
-        "Military Historian": {"icon": "🏛️", "type": "chatbot"},
-        "Alliance Whisperer": {"icon": "🤝", "type": "chatbot"},
         "Red Teamer": {"icon": "😈", "type": "chatbot"},
-        "The Missing Link": {"icon": "💡", "type": "chatbot"},
+        "Military Historian": {"icon": "🏛️", "type": "chatbot"},
         "Citizen's Voice": {"icon": "🗣️", "type": "chatbot"},
     }
 }
 
-# Session state management
-DEFAULT_PAGE_ID = "Scenario - Summary"
-if 'current_page_id' not in st.session_state:
-    st.session_state.current_page_id = DEFAULT_PAGE_ID 
-
-# --- 3. PAGE RENDERING FUNCTIONS ---
-
-def get_group_and_title(unique_id):
-    """Parses the unique ID back into its group and page title components."""
-    try:
-        group, title = unique_id.split(" - ", 1)
-        return group, title
-    except ValueError:
-        return "Scenario", "Summary"
-
-def render_static_page(group, title):
-    """Renders a simple static placeholder page."""
-    icon = NAVIGATION[group][title]["icon"]
-    st.header(f"{icon} {group}: {title}")
-    st.markdown("---")
-    
-    if title == "Transcripts":
-        st.info("The transcripts are loaded as one complete context block (Episodes 1-3).")
-        # Display the context as raw text
-        st.text_area(
-            "Full Wargame Context (Read Only)", 
-            st.session_state['wargame_context'], 
-            height=400, 
-            disabled=True
-        )
-    else:
-        st.markdown(f"### **Static Content**\nThis page contains **pre-defined information** about the project.")
-
-def render_llm_static_page(group, title):
+def load_transcripts():
     """
-    Renders a page for LLM-generated static reports (Situation Room).
-    Uses hardcoded data for the MVP to ensure fast, predictable results.
+    Loads transcript JSON files from the 'data' directory (or current dir).
     """
-    icon = NAVIGATION[group][title]["icon"]
-    st.header(f"{icon} {group}: {title}")
-    st.markdown("---")
+    # Hardcoded list based on your request
+    files_to_load = [
+        "the_wargame_s2e1_transcript_cleaned.json",
+        "the_wargame_s2e2_transcript_cleaned.json",
+        "the_wargame_s2e3_transcript_cleaned.json"
+    ]
     
-    st.info(f"Report for **{title}** - (Based on End of Episode 3 Snapshot)")
+    combined_text = ""
+    loaded_count = 0
     
-    # --- MVP HARDCODED REPORTS (for speed) ---
-    if title == "SITREP":
-        st.subheader("High-Level Situation Report")
-        st.markdown("""
-        The conflict has escalated to missile strikes on the UK mainland. Key actions include:
-        - **Russian Strike:** Successful attacks on Portsmouth Naval Base, Faslane, and Heathrow Airport.
-        - **UK Response:** Activation of full military readiness; Trident deployment; Cabinet debate on Article 5 invocation.
-        - **Diplomatic:** NATO discussions ongoing, but US commitment appears contingent on certain actions.
-        """)
-    elif title == "ORBAT":
-        st.subheader("Order of Battle (ORBAT)")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("#### 🔵 UK Forces (Blue)")
-            st.dataframe({
-                "Asset": ["HMS Queen Elizabeth", "F-35 Squadron", "Trident Sub 1"], 
-                "Status": ["Damaged/On Fire", "Deployed/Active", "At Sea"], 
-                "Location": ["Portsmouth", "Sortie", "Classified"]
-            })
-        with col2:
-            st.markdown("#### 🔴 Russian Forces (Red)")
-            st.dataframe({
-                "Asset": ["Northern Fleet", "SSN Flotilla", "Airborne Missiles"], 
-                "Status": ["Active", "Hunting", "Expended"], 
-                "Location": ["North Atlantic", "UK Waters", "Targets Reached"]
-            })
-    else:
-        st.markdown(f"**{title}** content requires an agent call to format the transcript context. For the MVP, this section is a placeholder.")
-
-def render_chatbot_page(group, title):
-    """Renders an interactive chatbot interface connected to the Wargame Agent."""
-    icon = NAVIGATION[group][title]["icon"]
-    st.header(f"{icon} **Advisor**: {title}")
-    st.markdown("---")
-    
-    # Unique history key for this advisor
-    history_key = f'messages_{title.replace(" ", "_")}'
-    
-    # Initialize chat history
-    if history_key not in st.session_state:
-        st.session_state[history_key] = [{"role": "assistant", "content": f"Greetings. I am the **{title}**. I have analyzed the entire Wargame scenario up to Episode 3. How can I advise you?"}]
-    
-    # Display chat history
-    for message in st.session_state[history_key]:
-        # Use a generic icon for assistant, no icon for user
-        avatar = NAVIGATION['Advisors'][title]['icon'] if message["role"] == "assistant" else None
-        with st.chat_message(message["role"], avatar=avatar):
-            st.markdown(message["content"])
-
-    # Chat Input
-    if prompt := st.chat_input(f"Consult with the {title}..."):
-        # 1. User Message
-        st.session_state[history_key].append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        # 2. Assistant Response
-        with st.chat_message("assistant", avatar=NAVIGATION['Advisors'][title]['icon']):
-            # Check if the import failed earlier
-            if not get_agent:
-                st.error("Agent backend not available due to prior import error.")
-            else:
-                agent = get_agent(title) # Get the specific agent instance
+    for filename in files_to_load:
+        # Check current directory or a 'data' subdirectory
+        if os.path.exists(filename):
+            path = filename
+        elif os.path.exists(os.path.join("data", filename)):
+            path = os.path.join("data", filename)
+        else:
+            continue
+            
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                # Assuming the JSON structure is list of dicts or has a 'text' field
+                # Adjust this logic based on your actual JSON structure
+                if isinstance(data, list):
+                    for entry in data:
+                        if 'text' in entry: # Common transcript format
+                            combined_text += f"{entry.get('speaker', 'Unknown')}: {entry['text']}\n"
+                        elif 'content' in entry:
+                            combined_text += f"{entry['content']}\n"
+                elif isinstance(data, dict):
+                     # Fallback for specific structure
+                     combined_text += str(data)
                 
-                if agent:
-                    with st.spinner(f"{title} is synthesizing the full scenario context..."):
-                        try:
-                            # Pass the *single, frozen* context
-                            response_text = agent.chat(prompt, st.session_state['wargame_context'])
-                            
-                            st.markdown(response_text)
-                            
-                            # Save to history
-                            st.session_state[history_key].append({"role": "assistant", "content": response_text})
-                            
-                        except Exception as e:
-                            st.error(f"Error communicating with Agent: {e}")
-                            st.warning("If running locally, ensure you have run 'gcloud auth application-default login'.")
-                else:
-                    st.warning(f"Advisor '{title}' is not defined in agents.py.")
+                loaded_count += 1
+                combined_text += "\n--- END OF EPISODE ---\n"
+        except Exception as e:
+            st.sidebar.error(f"Error loading {filename}: {e}")
 
+    st.session_state.wargame_context = combined_text
+    st.session_state.transcript_context_length = len(combined_text)
+    return loaded_count
 
-# --- 4. STREAMLIT APPLICATION LAYOUT ---
-
-# Retrieve the components from the stored unique ID
-page_group, current_page_title = get_group_and_title(st.session_state.current_page_id)
-
-# --- Sidebar (Navigation) ---
+# --- SIDEBAR ---
 with st.sidebar:
-    st.title("🤖 AI Wargamer ⚔️")
-    st.caption("Hackathon MVP: Frozen State (Eps 1-3)")
+    st.title("Wargame OS")
     
-    # --- Context Display (Replaces Timeline Slider) ---
-    st.subheader("Wargame Context")
-    st.info(f"Loaded {st.session_state.get('transcript_context_length', 0):,} characters of transcript data.")
+    # Data Loader
+    if st.button("Reload Transcripts"):
+        count = load_transcripts()
+        if count > 0:
+            st.success(f"Loaded {count} files.")
+            # Clear report cache on data reload
+            keys_to_delete = [k for k in st.session_state.keys() if k.startswith("report_")]
+            for k in keys_to_delete:
+                del st.session_state[k]
+            st.rerun()
+        else:
+            st.warning("No transcript files found.")
+
+    st.info(f"Context Buffer: {st.session_state.get('transcript_context_length', 0):,} chars")
     st.markdown("---")
 
-    # --- Navigation Menu (Original Structure) ---
+    # Navigation Menu
     for group, pages in NAVIGATION.items():
         st.subheader(group)
         for page_title, data in pages.items():
-            # Generate a UNIQUE IDENTIFIER and KEY for each button
             unique_id = f"{group} - {page_title}"
-            unique_key = f"nav_{group}_{page_title.replace(' ', '_')}"
             
-            if st.button(f"{data['icon']} {page_title}", use_container_width=True, key=unique_key):
-                # On click, set the unique ID to the session state
-                st.session_state.current_page_id = unique_id
-        st.markdown("---") # Visual separator between groups
+            # Styling selected button
+            if st.session_state.current_page_id == unique_id:
+                st.markdown(f"**👉 {data['icon']} {page_title}**")
+            else:
+                if st.button(f"{data['icon']} {page_title}", key=unique_id, use_container_width=True):
+                    st.session_state.current_page_id = unique_id
+                    st.rerun()
+        st.markdown("---")
 
-# --- Main Content Area ---
+# --- PAGE ROUTER ---
 
-# Render the appropriate content based on the page type
-if page_group in NAVIGATION and current_page_title in NAVIGATION[page_group]:
-    page_type = NAVIGATION[page_group][current_page_title]['type']
+# Determine current page details
+current_id = st.session_state.current_page_id
+try:
+    page_group, current_page_title = current_id.split(" - ")
+    page_data = NAVIGATION[page_group][current_page_title]
+except:
+    # Fallback
+    page_group = "Situation Room"
+    current_page_title = "SITREP"
+    page_data = NAVIGATION["Situation Room"]["SITREP"]
 
-    if page_type == "static":
-        render_static_page(page_group, current_page_title)
-    elif page_type == "llm_static":
-        render_llm_static_page(page_group, current_page_title)
-    elif page_type == "chatbot":
-        render_chatbot_page(page_group, current_page_title)
+# --- RENDER FUNCTIONS ---
+
+def render_llm_static_page(group, title):
+    """
+    Renders a situation report. Checks cache, if missing, calls LLM.
+    """
+    st.header(f"{page_data['icon']} {group}: {title}")
+    st.caption("AI-Generated Analysis based on current transcripts")
+    st.markdown("---")
+    
+    if not st.session_state.wargame_context:
+        st.warning("⚠️ No transcripts loaded. Please click 'Reload Transcripts' in the sidebar.")
+        return
+
+    # Cache Key: Ensures we don't re-generate just by resizing window or clicking other things
+    cache_key = f"report_{title}"
+    
+    # 1. Check if we have it
+    if cache_key in st.session_state:
+        st.markdown(st.session_state[cache_key])
+        
+        col1, col2 = st.columns([1, 4])
+        with col1:
+            if st.button("Regenerate Analysis"):
+                del st.session_state[cache_key]
+                st.rerun()
+    
+    # 2. If not, generate it
+    else:
+        with st.spinner(f"Agents are analyzing {st.session_state.transcript_context_length:,} characters of intelligence..."):
+            if generate_situation_report:
+                report = generate_situation_report(title, st.session_state.wargame_context)
+                st.session_state[cache_key] = report
+                st.rerun() # Rerun to display the cached content cleanly
+            else:
+                st.error("Backend function missing.")
+
+def render_chatbot_page(agent_name):
+    """
+    Renders the chat interface for specific advisors.
+    """
+    st.header(f"{page_data['icon']} Advisor: {agent_name}")
+    
+    # Initialize chat history for this specific agent if needed
+    history_key = f"chat_history_{agent_name}"
+    if history_key not in st.session_state:
+        st.session_state[history_key] = []
+        
+    # Display History
+    for msg in st.session_state[history_key]:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+            
+    # Chat Input
+    if prompt := st.chat_input(f"Ask {agent_name}..."):
+        # User Message
+        st.session_state[history_key].append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+            
+        # Agent Response
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                agent = get_agent(agent_name)
+                if agent:
+                    # We pass the full context only if it's the start or handled inside the agent logic
+                    response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
+                    st.markdown(response)
+                    st.session_state[history_key].append({"role": "assistant", "content": response})
+                else:
+                    st.error("Agent not found.")
+
+# --- MAIN EXECUTION ---
+
+if page_data['type'] == 'llm_static':
+    render_llm_static_page(page_group, current_page_title)
+elif page_data['type'] == 'chatbot':
+    render_chatbot_page(current_page_title)
 else:
-    st.title("Welcome to the AI Wargamer Interface")
-    st.info("Select a page from the sidebar to view scenario data or consult with an Advisor.")
+    st.write("Page type not implemented.")
