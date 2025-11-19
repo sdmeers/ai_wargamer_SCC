@@ -6,7 +6,7 @@ import streamlit as st
 # --- CONFIGURATION ---
 # Use environment variables for Docker/Cloud Run compatibility, fallback to defaults
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
-LOCATION = os.environ.get("GCP_REGION", "europe-west2")
+LOCATION = os.environ.get("GCP_REGION", "us-central1")
 # UPDATED: Using Gemini 1.5 Pro (002) as the robust "Pro" model.
 # If you have a specific ID for "2.5", replace the string below.
 MODEL_ID = "gemini-2.5-pro" 
