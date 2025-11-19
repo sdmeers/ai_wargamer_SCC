@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wargame Network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        #network {
+            width: 100vw;
+            height: 100vh;
+        }
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+        h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #666;
+            padding-bottom: 10px;
+        }
+        .legend-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="network"></div>
+    <div id="info">
+        <h3>🎯 The Wargame</h3>
+        <div class="legend-item">
+            <div class="color-box" style="background: #0066FF;"></div>
+            <span>People (Blue)</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #FF0000;"></div>
+            <span>People (Red)</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #FF6B6B;"></div>
+            <span>Events</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #00CC00;"></div>
+            <span>Locations</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #9933FF;"></div>
+            <span>Organizations</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #FF8800;"></div>
+            <span>Actions</span>
+        </div>
+        <p style="font-size: 12px; color: #aaa; margin-top: 15px;">
+            💡 Hover for details<br>
+            💡 Drag to move<br>
+            💡 Scroll to zoom
+        </p>
+    </div>
+
+    <script>
+        // Create nodes
+        var nodes = new vis.DataSet([
+            {
+            id: 'uk_pm',
+            label: 'UK Prime Minister',
+            title: `<b>UK Prime Minister</b><br>Type: person<br>Team: BLUE<br>Actor: Ben Wallace`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_foreign_sec',
+            label: 'UK Foreign Secretary',
+            title: `<b>UK Foreign Secretary</b><br>Type: person<br>Team: BLUE<br>Actor: Jack Straw`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_home_sec',
+            label: 'UK Home Secretary',
+            title: `<b>UK Home Secretary</b><br>Type: person<br>Team: BLUE<br>Actor: Amber Rudd`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_defence_sec',
+            label: 'UK Defence Secretary',
+            title: `<b>UK Defence Secretary</b><br>Type: person<br>Team: BLUE<br>Actor: James Heapey`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_cds',
+            label: 'UK Chief of Defence Staff',
+            title: `<b>UK Chief of Defence Staff</b><br>Type: person<br>Team: BLUE<br>Actor: General Richard Barrons`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_nsa',
+            label: 'UK National Security Advisor',
+            title: `<b>UK National Security Advisor</b><br>Type: person<br>Team: BLUE<br>Actor: Mark Sedwell`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_attorney_gen',
+            label: 'UK Attorney General',
+            title: `<b>UK Attorney General</b><br>Type: person<br>Team: BLUE<br>Actor: Baroness Kennedy`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_cjo',
+            label: 'UK Chief of Joint Operations',
+            title: `<b>UK Chief of Joint Operations</b><br>Type: person<br>Team: BLUE<br>Actor: Lt Gen David Capewell`,
+            shape: 'dot',
+            color: '#0066FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russia_president',
+            label: 'Russian President',
+            title: `<b>Russian President</b><br>Type: person<br>Team: RED<br>Actor: Vladimir Putin`,
+            shape: 'dot',
+            color: '#FF0000',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russia_cgs',
+            label: 'Russian Chief of General Staff',
+            title: `<b>Russian Chief of General Staff</b><br>Type: person<br>Team: RED`,
+            shape: 'dot',
+            color: '#FF0000',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russia_gru_head',
+            label: 'Russian GRU Head',
+            title: `<b>Russian GRU Head</b><br>Type: person<br>Team: RED`,
+            shape: 'dot',
+            color: '#FF0000',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russia_northern_fleet_cmd',
+            label: 'Russian Northern Fleet Commander',
+            title: `<b>Russian Northern Fleet Commander</b><br>Type: person<br>Team: RED`,
+            shape: 'dot',
+            color: '#FF0000',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'us_president',
+            label: 'US President',
+            title: `<b>US President</b><br>Type: person<br>Actor: Donald Trump`,
+            shape: 'dot',
+            color: '#999999',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'us_sec_state',
+            label: 'US Secretary of State',
+            title: `<b>US Secretary of State</b><br>Type: person`,
+            shape: 'dot',
+            color: '#999999',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'nato_sec_gen',
+            label: 'NATO Secretary General',
+            title: `<b>NATO Secretary General</b><br>Type: person`,
+            shape: 'dot',
+            color: '#999999',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'severomorsk_attack',
+            label: 'Severomorsk Naval Base Attack',
+            title: `<b>Severomorsk Naval Base Attack</b><br>Type: event<br>Date: 1 October 2025<br>Casualties: 100+ personnel killed<br>Description: Terrorist attack on Russian naval base`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'f35_pilots_murder',
+            label: 'Murder of Two F-35 Pilots',
+            title: `<b>Murder of Two F-35 Pilots</b><br>Type: event<br>Date: 5 October 2025<br>Location: Norfolk, UK<br>Description: Two RAF pilots found shot dead`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'ferry_fires',
+            label: 'Ferry Terminal Fires',
+            title: `<b>Ferry Terminal Fires</b><br>Type: event<br>Date: 26 September 2025<br>Locations: ['Plymouth', 'Portsmouth']<br>Description: Simultaneous fires at ferry terminals`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'power_outage',
+            label: 'Power Grid Failure',
+            title: `<b>Power Grid Failure</b><br>Type: event<br>Date: 29 September 2025<br>Locations: ['England', 'Wales']<br>Description: Major power cut affecting transport infrastructure`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'submarine_surfacing',
+            label: 'Akula Submarine Surfacing',
+            title: `<b>Akula Submarine Surfacing</b><br>Type: event<br>Location: Off Orkney Islands<br>Description: Russian submarine surfaces near civilian ferry`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_families_exodus',
+            label: 'Russian Diplomatic Exodus',
+            title: `<b>Russian Diplomatic Exodus</b><br>Type: event<br>Description: Russian families and diplomatic staff leaving UK`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'operation_tuman',
+            label: 'Operation Tuman',
+            title: `<b>Operation Tuman</b><br>Type: operation<br>Team: RED<br>Description: Russian attack plan against UK (Tuman = 'fog' in Russian)`,
+            shape: 'dot',
+            color: '#FF8C42',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'cobra_meeting',
+            label: 'COBRA Emergency Meeting',
+            title: `<b>COBRA Emergency Meeting</b><br>Type: event<br>Date: 5 October 2025, 5pm<br>Description: UK government emergency response meeting`,
+            shape: 'dot',
+            color: '#FF6B6B',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'severomorsk',
+            label: 'Severomorsk/Murmansk',
+            title: `<b>Severomorsk/Murmansk</b><br>Type: location<br>Country: Russia<br>Description: Major Russian naval base in northern Russia`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'raf_marham',
+            label: 'RAF Marham',
+            title: `<b>RAF Marham</b><br>Type: location<br>Country: UK<br>Description: RAF base, home of 617 Squadron (F-35s)`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'faslane',
+            label: 'Faslane',
+            title: `<b>Faslane</b><br>Type: location<br>Country: UK<br>Region: Scotland<br>Description: UK nuclear submarine base`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'london',
+            label: 'London',
+            title: `<b>London</b><br>Type: location<br>Country: UK<br>Description: UK capital, seat of government`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'north_atlantic',
+            label: 'North Atlantic',
+            title: `<b>North Atlantic</b><br>Type: location<br>Description: Waters where Russian fleet is deployed`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'orkney',
+            label: 'Orkney Islands',
+            title: `<b>Orkney Islands</b><br>Type: location<br>Country: UK<br>Region: Scotland`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'plymouth',
+            label: 'Plymouth',
+            title: `<b>Plymouth</b><br>Type: location<br>Country: UK<br>Description: Ferry port`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'portsmouth',
+            label: 'Portsmouth',
+            title: `<b>Portsmouth</b><br>Type: location<br>Country: UK<br>Description: Ferry port and naval base`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'norfolk',
+            label: 'Norfolk',
+            title: `<b>Norfolk</b><br>Type: location<br>Country: UK<br>Description: Location where F-35 pilots were killed`,
+            shape: 'dot',
+            color: '#00CC00',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'nato',
+            label: 'NATO',
+            title: `<b>NATO</b><br>Type: organization<br>Full Name: North Atlantic Treaty Organization<br>Description: Western military alliance`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'mod',
+            label: 'Ministry of Defence (MOD)',
+            title: `<b>Ministry of Defence (MOD)</b><br>Type: organization<br>Country: UK`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'mi6',
+            label: 'MI6 / SIS',
+            title: `<b>MI6 / SIS</b><br>Type: organization<br>Country: UK<br>Full Name: Secret Intelligence Service<br>Description: UK foreign intelligence service`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'mi5',
+            label: 'MI5',
+            title: `<b>MI5</b><br>Type: organization<br>Country: UK<br>Description: UK domestic security service`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'gchq',
+            label: 'GCHQ',
+            title: `<b>GCHQ</b><br>Type: organization<br>Country: UK<br>Full Name: Government Communications Headquarters<br>Description: UK signals and cyber intelligence`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'defence_intelligence',
+            label: 'Defence Intelligence',
+            title: `<b>Defence Intelligence</b><br>Type: organization<br>Country: UK<br>Description: MOD intelligence agency`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'jic',
+            label: 'Joint Intelligence Committee (JIC)',
+            title: `<b>Joint Intelligence Committee (JIC)</b><br>Type: organization<br>Country: UK<br>Description: Coordinates UK intelligence assessment`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'kremlin',
+            label: 'The Kremlin',
+            title: `<b>The Kremlin</b><br>Type: organization<br>Country: Russia<br>Description: Russian government`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'gru',
+            label: 'GRU',
+            title: `<b>GRU</b><br>Type: organization<br>Country: Russia<br>Full Name: Main Intelligence Directorate<br>Description: Russian military intelligence`,
+            shape: 'dot',
+            color: '#9933FF',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_northern_fleet',
+            label: 'Russian Northern Fleet',
+            title: `<b>Russian Northern Fleet</b><br>Type: military_unit<br>Country: Russia`,
+            shape: 'dot',
+            color: '#FFD93D',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'f35_squadron',
+            label: '617 Squadron',
+            title: `<b>617 Squadron</b><br>Type: military_unit<br>Country: UK<br>Aircraft: F-35<br>Base: RAF Marham`,
+            shape: 'dot',
+            color: '#FFD93D',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'f35',
+            label: 'F-35 Fighter Jets',
+            title: `<b>F-35 Fighter Jets</b><br>Type: military_asset<br>Country: UK<br>Quantity: 24 available`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'typhoon',
+            label: 'Typhoon Fighter Jets',
+            title: `<b>Typhoon Fighter Jets</b><br>Type: military_asset<br>Country: UK`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'hms_prince_of_wales',
+            label: 'HMS Prince of Wales',
+            title: `<b>HMS Prince of Wales</b><br>Type: military_asset<br>Country: UK<br>Class: Aircraft Carrier<br>Value: £3 billion`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'type45_destroyers',
+            label: 'Type 45 Destroyers',
+            title: `<b>Type 45 Destroyers</b><br>Type: military_asset<br>Country: UK<br>Quantity: 6 total (4 often unavailable)<br>Capability: Ballistic missile defence`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'type23_frigates',
+            label: 'Type 23 Frigates',
+            title: `<b>Type 23 Frigates</b><br>Type: military_asset<br>Country: UK<br>Capability: Anti-submarine warfare`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_attack_subs',
+            label: 'UK Attack Submarines',
+            title: `<b>UK Attack Submarines</b><br>Type: military_asset<br>Country: UK<br>Class: SSN`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'trident_subs',
+            label: 'Trident Nuclear Submarines',
+            title: `<b>Trident Nuclear Submarines</b><br>Type: military_asset<br>Country: UK<br>Class: SSBN<br>Quantity: 4 total (1 always at sea)<br>Description: Continuous at-sea nuclear deterrent`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'p8_poseidon',
+            label: 'P-8 Poseidon',
+            title: `<b>P-8 Poseidon</b><br>Type: military_asset<br>Country: UK<br>Role: Maritime reconnaissance<br>Quantity: 1-2 available`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_ssbn',
+            label: 'Russian SSBNs (Nuclear Submarines)',
+            title: `<b>Russian SSBNs (Nuclear Submarines)</b><br>Type: military_asset<br>Country: Russia<br>Quantity: 7 deployed<br>Description: Ballistic missile submarines`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_ssn',
+            label: 'Russian SSNs (Attack Submarines)',
+            title: `<b>Russian SSNs (Attack Submarines)</b><br>Type: military_asset<br>Country: Russia<br>Quantity: 8 deployed<br>Description: Hunter-killer submarines`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'akula_submarine',
+            label: 'Akula-class Submarine',
+            title: `<b>Akula-class Submarine</b><br>Type: military_asset<br>Country: Russia<br>Class: SSN`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_destroyers',
+            label: 'Russian Destroyers',
+            title: `<b>Russian Destroyers</b><br>Type: military_asset<br>Country: Russia<br>Quantity: 2 deployed`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'russian_frigates',
+            label: 'Russian Frigates',
+            title: `<b>Russian Frigates</b><br>Type: military_asset<br>Country: Russia<br>Quantity: 4 deployed`,
+            shape: 'dot',
+            color: '#F38181',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'cruise_missiles',
+            label: 'Cruise Missiles',
+            title: `<b>Cruise Missiles</b><br>Type: weapon<br>Description: Self-guided jet-powered missiles`,
+            shape: 'dot',
+            color: '#FC5185',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'ballistic_missiles',
+            label: 'Ballistic Missiles',
+            title: `<b>Ballistic Missiles</b><br>Type: weapon<br>Description: High-altitude trajectory missiles`,
+            shape: 'dot',
+            color: '#FC5185',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'article_5',
+            label: 'NATO Article 5',
+            title: `<b>NATO Article 5</b><br>Type: topic<br>Description: Collective defence principle - attack on one is attack on all`,
+            shape: 'dot',
+            color: '#A8D8EA',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'us_commitment',
+            label: 'US Commitment to NATO/UK',
+            title: `<b>US Commitment to NATO/UK</b><br>Type: topic<br>Description: Uncertainty about US willingness to defend UK`,
+            shape: 'dot',
+            color: '#A8D8EA',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'false_flag',
+            label: 'False Flag Operation',
+            title: `<b>False Flag Operation</b><br>Type: topic<br>Description: Russia blaming UK for attack Russia didn't do`,
+            shape: 'dot',
+            color: '#A8D8EA',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'uk_air_defense_gap',
+            label: 'UK Air Defence Vulnerability',
+            title: `<b>UK Air Defence Vulnerability</b><br>Type: topic<br>Description: Limited capacity to intercept cruise/ballistic missiles`,
+            shape: 'dot',
+            color: '#A8D8EA',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'national_resilience',
+            label: 'National Resilience',
+            title: `<b>National Resilience</b><br>Type: topic<br>Description: UK preparedness for attack on homeland`,
+            shape: 'dot',
+            color: '#A8D8EA',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'dagestani_militants',
+            label: 'Dagestani Extremists',
+            title: `<b>Dagestani Extremists</b><br>Type: actor<br>Country: Russia/Dagestan<br>Description: Islamist militants believed responsible for Severomorsk attack`,
+            shape: 'dot',
+            color: '#95A792',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_pilots_secured',
+            label: 'ACTION: Pilots Secured at Bases',
+            title: `<b>ACTION: Pilots Secured at Bases</b><br>Type: action<br>Team: BLUE<br>Description: F-35 and Typhoon pilots recalled to bases with families for security`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_forces_concentrated',
+            label: 'ACTION: Forces Concentrated',
+            title: `<b>ACTION: Forces Concentrated</b><br>Type: action<br>Team: BLUE<br>Description: Military units concentrated in bases, supplies outloaded`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_carrier_deployed',
+            label: 'ACTION: Carrier Deployment',
+            title: `<b>ACTION: Carrier Deployment</b><br>Type: action<br>Team: BLUE<br>Description: HMS Prince of Wales to deploy with 8 F-35s to North Atlantic`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_second_trident',
+            label: 'ACTION: Second Nuclear Sub Readied',
+            title: `<b>ACTION: Second Nuclear Sub Readied</b><br>Type: action<br>Team: BLUE<br>Description: Second Trident submarine prepared for potential deployment`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_cap_surge',
+            label: 'ACTION: Combat Air Patrols',
+            title: `<b>ACTION: Combat Air Patrols</b><br>Type: action<br>Team: BLUE<br>Description: 24-hour CAP over Faslane and key military infrastructure`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_asw_deployment',
+            label: 'ACTION: Anti-Submarine Forces',
+            title: `<b>ACTION: Anti-Submarine Forces</b><br>Type: action<br>Team: BLUE<br>Description: Deploy Type 23 frigates, attack subs, P-8 aircraft to track Russian fleet`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_nato_contact',
+            label: 'ACTION: NATO Consultation',
+            title: `<b>ACTION: NATO Consultation</b><br>Type: action<br>Team: BLUE<br>Description: Reach out to NATO allies on military and political channels`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_us_contact',
+            label: 'ACTION: Contact US Leadership',
+            title: `<b>ACTION: Contact US Leadership</b><br>Type: action<br>Team: BLUE<br>Description: Foreign Secretary to contact US Secretary of State`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_public_messaging',
+            label: 'ACTION: Public Communications',
+            title: `<b>ACTION: Public Communications</b><br>Type: action<br>Team: BLUE<br>Description: Home Secretary and Defence Secretary to make public statements`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        },{
+            id: 'action_civil_contingency',
+            label: 'ACTION: Civil Contingency Preparations',
+            title: `<b>ACTION: Civil Contingency Preparations</b><br>Type: action<br>Team: BLUE<br>Description: Prepare domestic defences, consider police leave cancellations`,
+            shape: 'dot',
+            color: '#FF8800',
+            font: {size: 50, color: 'white', strokeWidth: 7, strokeColor: '#000000', face: 'arial', align: 'center', vadjust: 50},
+            size: 35,
+            borderWidth: 4,
+            borderWidthSelected: 6
+        }
+        ]);
+
+        // Create edges
+        var edges = new vis.DataSet([
+            {
+            from: 'russia_president',
+            to: 'operation_tuman',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 5.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'operation_tuman',
+            to: 'uk_pm',
+            label: 'Targets',
+            title: 'Targets',
+            color: '#DC143C',
+            width: 5.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_president',
+            to: 'false_flag',
+            label: 'Exploits',
+            title: 'Exploits',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'false_flag',
+            to: 'severomorsk_attack',
+            label: 'Uses As Pretext',
+            title: 'Uses As Pretext',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'dagestani_militants',
+            to: 'severomorsk_attack',
+            label: 'Actually Responsible For',
+            title: 'Actually Responsible For',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_president',
+            to: 'mod',
+            label: 'Falsely Accuses',
+            title: 'Falsely Accuses',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_president',
+            to: 'mi6',
+            label: 'Falsely Accuses',
+            title: 'Falsely Accuses',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'severomorsk_attack',
+            to: 'severomorsk',
+            label: 'Occurred At',
+            title: 'Occurred At',
+            color: '#9370DB',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'f35_pilots_murder',
+            to: 'norfolk',
+            label: 'Occurred At',
+            title: 'Occurred At',
+            color: '#9370DB',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'f35_pilots_murder',
+            to: 'f35_squadron',
+            label: 'Targets',
+            title: 'Targets',
+            color: '#DC143C',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'gru',
+            to: 'f35_pilots_murder',
+            label: 'Likely Responsible For',
+            title: 'Likely Responsible For',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'ferry_fires',
+            to: 'plymouth',
+            label: 'Occurred At',
+            title: 'Occurred At',
+            color: '#9370DB',
+            width: 4.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'ferry_fires',
+            to: 'portsmouth',
+            label: 'Occurred At',
+            title: 'Occurred At',
+            color: '#9370DB',
+            width: 4.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'gru',
+            to: 'ferry_fires',
+            label: 'Suspected Of',
+            title: 'Suspected Of',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'akula_submarine',
+            to: 'submarine_surfacing',
+            label: 'Involved In',
+            title: 'Involved In',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'submarine_surfacing',
+            to: 'orkney',
+            label: 'Occurred Near',
+            title: 'Occurred Near',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet',
+            to: 'north_atlantic',
+            label: 'Deployed To',
+            title: 'Deployed To',
+            color: '#8A2BE2',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet',
+            to: 'russian_ssbn',
+            label: 'Includes',
+            title: 'Includes',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet',
+            to: 'russian_ssn',
+            label: 'Includes',
+            title: 'Includes',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet',
+            to: 'russian_destroyers',
+            label: 'Includes',
+            title: 'Includes',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet',
+            to: 'russian_frigates',
+            label: 'Includes',
+            title: 'Includes',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_northern_fleet_cmd',
+            to: 'russian_northern_fleet',
+            label: 'Commands',
+            title: 'Commands',
+            color: '#FF6B00',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_ssbn',
+            to: 'ballistic_missiles',
+            label: 'Carries',
+            title: 'Carries',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russian_ssn',
+            to: 'cruise_missiles',
+            label: 'Carries',
+            title: 'Carries',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_pm',
+            to: 'cobra_meeting',
+            label: 'Convenes',
+            title: 'Convenes',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_foreign_sec',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_home_sec',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_defence_sec',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cds',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_nsa',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_attorney_gen',
+            to: 'cobra_meeting',
+            label: 'Attends',
+            title: 'Attends',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'jic',
+            to: 'cobra_meeting',
+            label: 'Briefs',
+            title: 'Briefs',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'mi6',
+            to: 'jic',
+            label: 'Reports To',
+            title: 'Reports To',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'mi5',
+            to: 'jic',
+            label: 'Reports To',
+            title: 'Reports To',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'gchq',
+            to: 'jic',
+            label: 'Reports To',
+            title: 'Reports To',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'defence_intelligence',
+            to: 'jic',
+            label: 'Reports To',
+            title: 'Reports To',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'mi5',
+            to: 'russian_families_exodus',
+            label: 'Monitors',
+            title: 'Monitors',
+            color: '#4169E1',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'gchq',
+            to: 'russian_northern_fleet',
+            label: 'Tracks',
+            title: 'Tracks',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cds',
+            to: 'action_pilots_secured',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_pilots_secured',
+            to: 'f35_squadron',
+            label: 'Protects',
+            title: 'Protects',
+            color: '#32CD32',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_pilots_secured',
+            to: 'raf_marham',
+            label: 'Implements At',
+            title: 'Implements At',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_pm',
+            to: 'action_carrier_deployed',
+            label: 'Authorizes',
+            title: 'Authorizes',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_carrier_deployed',
+            to: 'hms_prince_of_wales',
+            label: 'Deploys',
+            title: 'Deploys',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_carrier_deployed',
+            to: 'north_atlantic',
+            label: 'Destination',
+            title: 'Destination',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'hms_prince_of_wales',
+            to: 'f35',
+            label: 'Carries',
+            title: 'Carries',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_pm',
+            to: 'action_second_trident',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_second_trident',
+            to: 'trident_subs',
+            label: 'Readies',
+            title: 'Readies',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'trident_subs',
+            to: 'faslane',
+            label: 'Based At',
+            title: 'Based At',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cds',
+            to: 'action_cap_surge',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_cap_surge',
+            to: 'faslane',
+            label: 'Protects',
+            title: 'Protects',
+            color: '#32CD32',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_cap_surge',
+            to: 'f35',
+            label: 'Uses',
+            title: 'Uses',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_cap_surge',
+            to: 'typhoon',
+            label: 'Uses',
+            title: 'Uses',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cds',
+            to: 'action_asw_deployment',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_asw_deployment',
+            to: 'type23_frigates',
+            label: 'Deploys',
+            title: 'Deploys',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_asw_deployment',
+            to: 'uk_attack_subs',
+            label: 'Deploys',
+            title: 'Deploys',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_asw_deployment',
+            to: 'p8_poseidon',
+            label: 'Deploys',
+            title: 'Deploys',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_asw_deployment',
+            to: 'russian_northern_fleet',
+            label: 'Monitors',
+            title: 'Monitors',
+            color: '#4169E1',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_pm',
+            to: 'action_nato_contact',
+            label: 'Orders',
+            title: 'Orders',
+            color: '#FF6B00',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_nato_contact',
+            to: 'nato',
+            label: 'Engages',
+            title: 'Engages',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_nato_contact',
+            to: 'nato_sec_gen',
+            label: 'Contacts',
+            title: 'Contacts',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'nato',
+            to: 'article_5',
+            label: 'May Invoke',
+            title: 'May Invoke',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_foreign_sec',
+            to: 'action_us_contact',
+            label: 'Executes',
+            title: 'Executes',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'action_us_contact',
+            to: 'us_sec_state',
+            label: 'Contacts',
+            title: 'Contacts',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'us_president',
+            to: 'us_commitment',
+            label: 'Questions Raised About',
+            title: 'Questions Raised About',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'us_commitment',
+            to: 'nato',
+            label: 'Threatens',
+            title: 'Threatens',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_home_sec',
+            to: 'action_public_messaging',
+            label: 'Executes',
+            title: 'Executes',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_defence_sec',
+            to: 'action_public_messaging',
+            label: 'Executes',
+            title: 'Executes',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_home_sec',
+            to: 'action_civil_contingency',
+            label: 'Oversees',
+            title: 'Oversees',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cds',
+            to: 'uk_cjo',
+            label: 'Coordinates With',
+            title: 'Coordinates With',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_cjo',
+            to: 'mod',
+            label: 'Commands Operations For',
+            title: 'Commands Operations For',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'type45_destroyers',
+            to: 'ballistic_missiles',
+            label: 'Defends Against',
+            title: 'Defends Against',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'type45_destroyers',
+            to: 'uk_air_defense_gap',
+            label: 'Insufficient For',
+            title: 'Insufficient For',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_air_defense_gap',
+            to: 'cruise_missiles',
+            label: 'Vulnerable To',
+            title: 'Vulnerable To',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_air_defense_gap',
+            to: 'russian_northern_fleet',
+            label: 'Threatened By',
+            title: 'Threatened By',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_gru_head',
+            to: 'us_commitment',
+            label: 'Assesses',
+            title: 'Assesses',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_gru_head',
+            to: 'nato',
+            label: 'Predicts Collapse Of',
+            title: 'Predicts Collapse Of',
+            color: '#999999',
+            width: 4.666666666666666,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'russia_cgs',
+            to: 'operation_tuman',
+            label: 'Plans',
+            title: 'Plans',
+            color: '#999999',
+            width: 5.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'national_resilience',
+            to: 'action_civil_contingency',
+            label: 'Tested By',
+            title: 'Tested By',
+            color: '#999999',
+            width: 4.333333333333334,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'london',
+            to: 'action_cap_surge',
+            label: 'Considered For Protection',
+            title: 'Considered For Protection',
+            color: '#999999',
+            width: 4.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'uk_attorney_gen',
+            to: 'article_5',
+            label: 'Discusses',
+            title: 'Discusses',
+            color: '#999999',
+            width: 4.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        },{
+            from: 'portsmouth',
+            to: 'hms_prince_of_wales',
+            label: 'Home Port',
+            title: 'Home Port',
+            color: '#999999',
+            width: 4.0,
+            font: {size: 40, color: 'white', strokeWidth: 6, strokeColor: '#000000', align: 'top'},
+            arrows: {to: {enabled: true, scaleFactor: 1.2}}
+        }
+        ]);
+
+        // Create network
+        var container = document.getElementById('network');
+        var data = { nodes: nodes, edges: edges };
+        var options = {
+            nodes: {
+                shape: 'dot',
+                font: {
+                    size: 50,
+                    color: 'white',
+                    strokeWidth: 7,
+                    strokeColor: '#000000',
+                    face: 'arial',
+                    align: 'center',
+                    vadjust: 50
+                }
+            },
+            edges: {
+                font: {
+                    size: 40,
+                    color: 'white',
+                    strokeWidth: 6,
+                    strokeColor: '#000000',
+                    align: 'top'
+                },
+                smooth: {
+                    type: 'continuous'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -30000,
+                    centralGravity: 0.1,
+                    springLength: 300,
+                    springConstant: 0.0005,
+                    damping: 0.95,
+                    avoidOverlap: 0.5
+                },
+                stabilization: {
+                    enabled: true,
+                    iterations: 1000,
+                    updateInterval: 50
+                },
+                minVelocity: 0.75,
+                maxVelocity: 10
+            },
+            interaction: {
+                hover: true,
+                tooltipDelay: 100,
+                navigationButtons: true,
+                keyboard: true
+            }
+        };
+
+        var network = new vis.Network(container, data, options);
+        
+        // Stop physics after stabilization for static graph
+        network.on('stabilizationIterationsDone', function() {
+            network.setOptions({physics: false});
+            console.log('Network stabilized - physics disabled');
+        });
+        
+        console.log('Network created with', nodes.length, 'nodes and', edges.length, 'edges');
+        console.log('Node font size: 50px (below nodes)');
+        console.log('Edge font size: 40px');
+    </script>
+</body>
+</html>

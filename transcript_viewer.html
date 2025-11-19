@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wargame S2E1 - Classified Transcript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+        }
+        .legend {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .legend h3 {
+            margin-top: 0;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .color-box {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        
+        /* Line Colors */
+        .blue .speaker, .blue { background-color: #e6f7ff; border-left: 5px solid #0077b6; }
+        .red .speaker, .red { background-color: #fff0f0; border-left: 5px solid #cc3333; }
+        .commentary .speaker, .commentary { background-color: #f0f0f0; border-left: 5px solid #888888; }
+        .advertisement .speaker, .advertisement { background-color: #fcf8e3; border-left: 5px solid #ffcc00; }
+
+        .transcript-container {
+            max-height: 500px; /* Limit height for scrolling content */
+            overflow-y: auto;
+            padding-right: 10px; /* Space for scrollbar */
+        }
+
+        .line {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: opacity 0.3s ease;
+        }
+        .speaker {
+            font-weight: bold;
+            margin-right: 10px;
+            padding-right: 10px;
+            display: inline-block;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: #555;
+            margin-right: 10px;
+        }
+        
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filter-btn {
+            background-color: #ddd;
+            border: none;
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+        .filter-btn.active {
+            background-color: #667eea;
+            color: white;
+            box-shadow: 0 2px 5px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Wargame Transcript Viewer</h1>
+        <p>A dynamically filtered view of the raw intelligence transcripts.</p>
+    </div>
+
+    <div class="legend">
+        <h3>Filter by Source</h3>
+        <div class="filters">
+            <button class="filter-btn blue active" onclick="toggleFilter('blue')">Blue Force</button>
+            <button class="filter-btn red active" onclick="toggleFilter('red')">Red Force</button>
+            <button class="filter-btn commentary active" onclick="toggleFilter('commentary')">Commentary</button>
+            <button class="filter-btn advertisement active" onclick="toggleFilter('advertisement')">Other/Ads</button>
+            <button class="filter-btn show-all-btn" onclick="showAll()">Show All</button>
+        </div>
+        <h3>Transcript Legend</h3>
+        <div class="legend-item"><div class="color-box" style="background-color: #0077b6;"></div>Blue Force (UK/Allies)</div>
+        <div class="legend-item"><div class="color-box" style="background-color: #cc3333;"></div>Red Force (Adversary)</div>
+        <div class="legend-item"><div class="color-box" style="background-color: #888888;"></div>Commentary (Narrator/Context)</div>
+        <div class="legend-item"><div class="color-box" style="background-color: #ffcc00;"></div>Other (Advertisements/Unidentified)</div>
+    </div>
+    
+    <div id="transcript-container" class="transcript-container">
+        <p>Transcript viewer initialized. Waiting for data from application parent...</p>
+        <!-- Transcript lines will be injected here by JavaScript -->
+    </div>
+    
+    <script>
+        const filters = {
+            advertisement: true,
+            commentary: true,
+            blue: true,
+            red: true
+        };
+        
+        function toggleFilter(type) {
+            filters[type] = !filters[type];
+            const btn = document.querySelector(`.filter-btn.${type}`);
+            if (btn) btn.classList.toggle('active');
+            applyFilters();
+        }
+        
+        function showAll() {
+            Object.keys(filters).forEach(key => filters[key] = true);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                // Ensure 'Show All' button itself doesn't get the filter class
+                if (!btn.classList.contains('show-all-btn')) {
+                    btn.classList.add('active');
+                }
+            });
+            applyFilters();
+        }
+        
+        function applyFilters() {
+            document.querySelectorAll('.line').forEach(line => {
+                const type = line.getAttribute('data-type');
+                line.style.display = filters[type] ? 'block' : 'none';
+            });
+        }
+        
+        function renderTranscript(transcriptText) {
+            const transcriptDiv = document.getElementById('transcript-container');
+            if (!transcriptDiv) return;
+
+            // Clear placeholder/existing content
+            transcriptDiv.innerHTML = '';
+
+            // Split the full text by newline for line-by-line rendering
+            const lines = transcriptText.split('\n');
+            
+            // Regex to extract speaker (anything before the first colon) and content
+            // Non-greedy match for the speaker
+            const speakerRegex = /^([^:]+):\s*(.*)$/; 
+            
+            lines.forEach(line => {
+                if (!line.trim() || line.includes('--- END OF EPISODE ---')) return; // Skip separators and empty lines
+
+                const match = line.match(speakerRegex);
+                
+                let speaker = 'Commentary';
+                let content = line.trim();
+                let type = 'commentary'; 
+
+                if (match) {
+                    speaker = match[1].trim();
+                    content = match[2].trim();
+                    
+                    // Simple categorization based on speaker name
+                    const lowerSpeaker = speaker.toLowerCase();
+                    if (lowerSpeaker.includes('advertisement') || lowerSpeaker.includes('speaker_')) {
+                        type = 'advertisement';
+                    } else if (lowerSpeaker.includes('red') || lowerSpeaker.includes('russia') || lowerSpeaker.includes('putin')) {
+                        type = 'red';
+                    } else if (lowerSpeaker.includes('prime') || lowerSpeaker.includes('defence') || lowerSpeaker.includes('foreign') || lowerSpeaker.includes('blue') || lowerSpeaker.includes('cabinet')) {
+                        type = 'blue';
+                    } else {
+                        type = 'commentary'; 
+                    }
+                } else if (line.trim().length > 0) {
+                     // Handle long narrative lines without a colon (still commentary)
+                     speaker = 'Narrator';
+                     content = line.trim();
+                     type = 'commentary';
+                }
+
+                const lineDiv = document.createElement('div');
+                lineDiv.className = `line ${type}`;
+                lineDiv.setAttribute('data-type', type);
+                lineDiv.innerHTML = `
+                    <span class="speaker ${type}">${speaker}:</span> 
+                    <span>${content}</span>
+                `;
+                
+                transcriptDiv.appendChild(lineDiv);
+            });
+
+            // If the transcript loaded successfully, scroll to the top
+            transcriptDiv.scrollTop = 0;
+            applyFilters();
+        }
+        
+        // --- Listener to receive transcript data from Streamlit parent ---
+        window.addEventListener('message', (event) => {
+            // Check if the message is from the parent window (Streamlit)
+            if (event.source === window.parent && event.data && event.data.type === 'streamlit:transcript:load') {
+                const transcriptText = event.data.text;
+                // Only render if we received actual content
+                if (transcriptText && transcriptText.length > 0) {
+                    renderTranscript(transcriptText);
+                } else {
+                    document.getElementById('transcript-container').innerHTML = '<p style="color: red;">Error: Received empty or invalid transcript data.</p>';
+                }
+            }
+        });
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            showAll();
+        });
+    </script>
+</body>
+</html>

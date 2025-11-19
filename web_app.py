@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components 
 import json
 import os
 import sys
@@ -14,7 +15,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # --- IMPORTS ---
-# We still need agents.py for the Chatbot functionality (get_agent)
 AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
 if not os.path.exists(AGENTS_FILE_PATH):
     st.error("FATAL: agents.py not found.")
@@ -30,14 +30,18 @@ else:
 # --- CONFIG ---
 st.set_page_config(layout="wide", page_title="AI Wargame Situation Room")
 PRECOMPUTED_FILE = "intelligence_analysis.json"
+TRANSCRIPT_VIEWER_HTML = "transcript_viewer.html"
+SCENARIO_MD_FILE = "wargame_scenario.md" # Define the scenario file path
 
 # --- SESSION STATE ---
 if 'current_page_id' not in st.session_state:
-    st.session_state.current_page_id = "Situation Room - SITREP"
+    st.session_state.current_page_id = "Overview - Scenario" 
 if 'wargame_context' not in st.session_state:
     st.session_state.wargame_context = ""
 if 'data_loaded' not in st.session_state:
     st.session_state.data_loaded = False
+if 'transcript_context_length' not in st.session_state:
+    st.session_state.transcript_context_length = 0
 
 # --- CACHED AGENT CREATION ---
 @st.cache_resource
@@ -51,15 +55,15 @@ def initialize_wargame_agent(agent_name):
     
     agent = get_agent(agent_name)
     if agent:
-        # Important: Start chat session here or inside get_response, but ensure it's
-        # not tied to the st.cache_resource lifecycle if possible. 
-        # Since the agent class will now handle initialization internally, 
-        # we can rely on its methods.
         agent.start_new_session()
     return agent
 
 # --- NAVIGATION ---
 NAVIGATION = {
+    "Overview": {
+        "Scenario": {"icon": "📰", "type": "static", "file": SCENARIO_MD_FILE},
+        "Transcript": {"icon": "📖", "type": "transcript_view", "file": TRANSCRIPT_VIEWER_HTML},
+    },
     "Situation Room": {
         "SITREP": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
@@ -75,6 +79,9 @@ NAVIGATION = {
         "Red Teamer": {"icon": "😈", "type": "chatbot"},
         "The Missing Link": {"icon": "💡", "type": "chatbot"},
         "Citizen's Voice": {"icon": "🗣️", "type": "chatbot"},
+    },
+    "Tools": {
+        "Knowledge Graph": {"icon": "🕸️", "type": "knowledge_graph", "file": "wargame_network.html"},
     }
 }
 
@@ -90,30 +97,38 @@ def load_data_fast():
     ]
     combined_text = ""
     
+    # Path to the 'data' directory (assuming it's relative to web_app.py)
+    data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    
     for filename in files_to_load:
-        path = filename if os.path.exists(filename) else os.path.join("data", filename)
+        path = os.path.join(data_dir, filename)
         if os.path.exists(path):
             try:
                 with open(path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     if isinstance(data, list):
                         for entry in data:
+                            # Concatenate speaker and text/content, separated by a colon
                             if 'text' in entry: combined_text += f"{entry.get('speaker', 'Unknown')}: {entry['text']}\n"
                             elif 'content' in entry: combined_text += f"{entry['content']}\n"
                     elif isinstance(data, dict):
+                        # Simple JSON to string conversion for dicts (less ideal for transcript)
                         combined_text += str(data)
                     combined_text += "\n--- END OF EPISODE ---\n"
-            except Exception:
-                pass
+            except Exception as e:
+                logger.warning(f"Failed to load or parse transcript file {filename}: {e}")
+        else:
+            logger.warning(f"Transcript file not found: {path}")
 
-    st.session_state.wargame_context = combined_text
+    st.session_state.wargame_context = combined_text.strip()
+    st.session_state.transcript_context_length = len(st.session_state.wargame_context)
     
     # 2. Load Precomputed Analysis
-    if os.path.exists(PRECOMPUTED_FILE):
+    precomputed_path = os.path.join(os.path.dirname(__file__), PRECOMPUTED_FILE)
+    if os.path.exists(precomputed_path):
         try:
-            with open(PRECOMPUTED_FILE, 'r', encoding='utf-8') as f:
+            with open(precomputed_path, 'r', encoding='utf-8') as f:
                 analysis_data = json.load(f)
-                # Load into session state
                 for key, content in analysis_data.items():
                     st.session_state[key] = content
                 st.session_state.data_loaded = True
@@ -122,62 +137,154 @@ def load_data_fast():
             st.error(f"Error reading {PRECOMPUTED_FILE}: {e}")
             return False
     else:
-        # If file missing, we rely on manual generation or show error
+        logger.warning(f"Precomputed analysis file not found: {precomputed_path}")
         return False
 
-# --- SIDEBAR ---
-with st.sidebar:
-    st.title("Wargame OS")
-    
-    # Auto-load on first run
-    if not st.session_state.data_loaded:
-        success = load_data_fast()
-        if success:
-            st.success("System Online (Cached Data)")
-        else:
-            st.warning(f"Cache missing: {PRECOMPUTED_FILE}")
-            if st.button("Retry Load"):
-                st.rerun()
+# --- PAGE RENDERING FUNCTIONS ---
 
-    st.markdown("---")
+def get_page_data_from_id(page_id):
+    """Utility to safely retrieve page data from a page ID."""
+    try:
+        group, title = page_id.split(" - ")
+        return group, title, NAVIGATION[group][title]
+    except (ValueError, KeyError):
+        # Fallback to default page if ID is malformed or not found
+        return "Overview", "Scenario", NAVIGATION["Overview"]["Scenario"]
 
-    # Nav
-    for group, pages in NAVIGATION.items():
-        st.subheader(group)
-        for page_title, data in pages.items():
-            unique_id = f"{group} - {page_title}"
-            if st.session_state.current_page_id == unique_id:
-                st.markdown(f"**👉 {data['icon']} {page_title}**")
-            else:
-                if st.button(f"{data['icon']} {page_title}", key=unique_id, use_container_width=True):
-                    st.session_state.current_page_id = unique_id
-                    st.rerun()
-        st.markdown("---")
 
-# --- PAGE RENDERING ---
-current_id = st.session_state.current_page_id
-try:
-    page_group, current_page_title = current_id.split(" - ")
-    page_data = NAVIGATION[page_group][current_page_title]
-except:
-    page_group = "Situation Room"
-    current_page_title = "SITREP"
-    page_data = NAVIGATION["Situation Room"]["SITREP"]
-
-def render_llm_static_page(group, title):
+def render_static_page(group, title, file_path):
+    """Renders content from a static file (e.g., Markdown)."""
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
     st.header(f"{page_data['icon']} {group}: {title}")
     st.markdown("---")
+    
+    try:
+        # NOTE: File access should now be relative to the web_app.py script location
+        full_path = os.path.join(os.path.dirname(__file__), file_path)
+        with open(full_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        st.markdown(content, unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.error(f"Error: Static content file '{file_path}' not found at {full_path}. Please ensure the file exists in the deployment package.")
+        st.markdown(f"***NOTE:*** *If this is the Scenario page, ensure **{SCENARIO_MD_FILE}** is present.*")
+
+
+def render_transcript_page(group, title, file_path):
+    """Renders the transcript using the embedded HTML viewer and passes data."""
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
+    st.header(f"{page_data['icon']} {group}: {title}")
+    st.markdown("---")
+
+    # Check if data loading was successful
+    if not st.session_state.wargame_context:
+        st.warning("Transcript data could not be loaded. Please check the `data` folder for transcript files or the loading logic.")
+        return
+
+    try:
+        # Load the HTML template from the file
+        full_path = os.path.join(os.path.dirname(__file__), file_path)
+        with open(full_path, 'r', encoding='utf-8') as f:
+            html_template = f.read()
+
+        # Embed the HTML component
+        components.html(
+            html_template,
+            height=700, 
+            scrolling=False
+        )
+        
+        # --- ROBUST DATA SENDING FOR TRANSCRIPT FIX ---
+        
+        # 1. Ensure the context is JSON-safe and can be put into a JS template literal.
+        # This handles newlines and other escape characters correctly.
+        context_to_send = st.session_state.wargame_context
+        # Use json.dumps to escape special characters, then strip surrounding quotes
+        escaped_context = json.dumps(context_to_send)
+        if escaped_context.startswith('"') and escaped_context.endswith('"'):
+            # This is the string we want to embed inside JS backticks (`...`)
+            escaped_context = escaped_context[1:-1]
+
+        # 2. Inject the script to find the iframe and post the message
+        js_injection = f"""
+            <script>
+                // We use a small delay and a loop to ensure the iframe is ready.
+                function postTranscriptData() {{
+                    const iframes = parent.document.querySelectorAll('iframe');
+                    // Find the iframe containing the component (it will be the last one rendered)
+                    const iframe = iframes[iframes.length - 1]; 
+                    
+                    if (iframe) {{
+                        const transcriptText = `{escaped_context}`;
+                        iframe.contentWindow.postMessage(
+                            {{ type: 'streamlit:transcript:load', text: transcriptText }}, 
+                            '*'
+                        );
+                        // console.log('Transcript data posted successfully.');
+                    }} else {{
+                        // console.log('Waiting for iframe to load...');
+                        setTimeout(postTranscriptData, 100); // Retry after 100ms
+                    }}
+                }}
+
+                // Start the posting process immediately
+                postTranscriptData();
+            </script>
+        """
+        # Render a tiny script component to trigger the message sending
+        # Using a width/height of 1 prevents some rendering issues compared to 0.
+        components.html(js_injection, height=1, width=1) 
+
+    except FileNotFoundError:
+        st.error(f"Error: Transcript viewer HTML file '{file_path}' not found.")
+        st.markdown("Please ensure `transcript_viewer.html` exists in the deployment package.")
+
+
+def render_knowledge_graph(group, title, file_path):
+    """
+    Renders the knowledge graph by embedding the HTML file directly.
+    """
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
+    st.header(f"{page_data['icon']} {group}: {title}")
+    st.markdown("---")
+
+    try:
+        # Load the HTML template from the file
+        full_path = os.path.join(os.path.dirname(__file__), file_path)
+        with open(full_path, 'r', encoding='utf-8') as f:
+            html_template = f.read()
+
+        # Embed the HTML component
+        st.info("The Knowledge Graph is interactive. Scroll within the viewer to explore the network.")
+        components.html(
+            html_template,
+            height=800, 
+            scrolling=True 
+        )
+        
+    except FileNotFoundError:
+        st.error(f"Error: Knowledge Graph HTML file '{file_path}' not found.")
+        st.markdown("Please ensure `wargame_network.html` exists in the deployment package.")
+
+
+def render_llm_static_page(group, title):
+    """Renders precomputed reports generated by the LLM."""
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
+    st.header(f"{page_data['icon']} {group}: {title} Report")
+    st.markdown("---")
+    
     cache_key = f"report_{title}"
     
     if cache_key in st.session_state:
         st.markdown(st.session_state[cache_key])
     else:
-        st.warning("Data not found. Ensure precompute_intelligence.py has been run.")
+        st.warning("Intelligence data not found. Ensure precompute_intelligence.py has been run and the data is loaded.")
+
 
 def render_chatbot_page(agent_name):
+    """Renders the interactive chatbot interface for an advisor."""
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
     st.header(f"{page_data['icon']} Advisor: {agent_name}")
     
-    # Static Briefing
     briefing_key = f"briefing_{agent_name}"
     if briefing_key in st.session_state:
         with st.expander("📜 Initial Strategic Assessment", expanded=True):
@@ -186,34 +293,91 @@ def render_chatbot_page(agent_name):
     st.markdown("---")
     st.caption("Operational Chat Channel - Secure Line Open")
 
-    # Interactive Chat
     history_key = f"chat_history_{agent_name}"
     if history_key not in st.session_state:
         st.session_state[history_key] = []
         
+    # Display chat messages from history
     for msg in st.session_state[history_key]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
             
+    # Handle user input
     if prompt := st.chat_input(f"Ask {agent_name}..."):
         st.session_state[history_key].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
             
         with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                # Use the cached agent creation function
+            with st.spinner(f"{agent_name} is synthesizing intelligence..."):
                 agent = initialize_wargame_agent(agent_name)
                 
                 if agent:
-                    # We pass context here for RAG capability on follow-up questions
+                    # Pass the full wargame context to the agent
                     response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
                     st.markdown(response)
                     st.session_state[history_key].append({"role": "assistant", "content": response})
                 else:
-                    st.error("Agent connection failed.")
+                    st.error("Agent connection failed. Check Vertex AI initialization.")
 
-if page_data['type'] == 'llm_static':
+
+# --- SIDEBAR ---
+with st.sidebar:
+    st.title("Wargame OS")
+    
+    # Data Loading Check
+    if not st.session_state.data_loaded:
+        with st.spinner("Initializing system and loading intelligence data..."):
+            success = load_data_fast()
+            if success:
+                st.success("System Online (Cached Data)")
+            else:
+                if not os.path.exists(os.path.join(os.path.dirname(__file__), PRECOMPUTED_FILE)):
+                    st.error(f"Cache missing: {PRECOMPUTED_FILE}")
+                else:
+                    st.warning("Data loading failed.")
+                
+                if st.button("Retry Load"):
+                    st.rerun()
+
+    st.info(f"Loaded {st.session_state.transcript_context_length:,} characters of transcript data.")
+    st.markdown("---")
+
+    # Navigation Menu
+    for group, pages in NAVIGATION.items():
+        st.subheader(group)
+        for page_title, data in pages.items():
+            unique_id = f"{group} - {page_title}"
+            is_current = st.session_state.current_page_id == unique_id
+            button_key = f"nav_btn_{unique_id.replace(' ', '_').replace('-', '_')}"
+
+            if is_current:
+                st.markdown(f"**👉 {data['icon']} {page_title}**")
+            else:
+                if st.button(f"{data['icon']} {page_title}", key=button_key, use_container_width=True):
+                    st.session_state.current_page_id = unique_id
+                    st.rerun()
+        st.markdown("---")
+
+# --- MAIN CONTENT AREA ---
+
+# Determine the current page
+page_group, current_page_title, page_data = get_page_data_from_id(st.session_state.current_page_id)
+
+# --- Render the appropriate content based on the determined page data ---
+page_type = page_data['type']
+
+if page_type == 'static':
+    render_static_page(page_group, current_page_title, page_data.get('file'))
+elif page_type == 'transcript_view':
+    render_transcript_page(page_group, current_page_title, page_data.get('file'))
+elif page_type == 'knowledge_graph':
+    render_knowledge_graph(page_group, current_page_title, page_data.get('file'))
+elif page_type == 'llm_static':
     render_llm_static_page(page_group, current_page_title)
-elif page_data['type'] == 'chatbot':
+elif page_type == 'chatbot':
     render_chatbot_page(current_page_title)
+
+# If the page type is unexpected (shouldn't happen with the current logic), default to Scenario
+else:
+    render_static_page("Overview", "Scenario", NAVIGATION["Overview"]["Scenario"].get('file'))
