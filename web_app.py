@@ -3,9 +3,20 @@ import json
 import os
 import sys
 import time
+import logging
+import concurrent.futures
 
 # --- PATH SETUP ---
 sys.path.append(os.path.dirname(__file__))
+
+# --- LOGGING SETUP ---
+# Streamlit specific logger
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+logger = logging.getLogger(__name__)
 
 # --- IMPORTS ---
 AGENTS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'agents.py')
@@ -45,7 +56,7 @@ if 'data_loaded' not in st.session_state:
 # --- NAVIGATION STRUCTURE ---
 NAVIGATION = {
     "Situation Room": {
-        "Sitrep": {"icon": "📊", "type": "llm_static"},
+        "SITREP": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
         "ORBAT": {"icon": "🛡️", "type": "llm_static"},
         "Actions": {"icon": "🎬", "type": "llm_static"},
@@ -62,11 +73,11 @@ NAVIGATION = {
 
 def load_and_analyze_data():
     """
-    1. Loads transcripts.
-    2. Runs a batch process to pre-generate ALL Situation Reports.
-    3. Runs a batch process to pre-generate ALL Advisor Briefings.
+    Loads transcripts and runs batch processing in PARALLEL using ThreadPoolExecutor.
+    Logs progress to GCP console.
     """
     # 1. LOAD FILES
+    logger.info("--- STARTING DATA LOAD ---")
     files_to_load = [
         "the_wargame_s2e1_transcript_cleaned.json",
         "the_wargame_s2e2_transcript_cleaned.json",
@@ -80,16 +91,14 @@ def load_and_analyze_data():
     my_bar = st.sidebar.progress(0, text=progress_text)
     
     for filename in files_to_load:
-        if os.path.exists(filename):
-            path = filename
-        elif os.path.exists(os.path.join("data", filename)):
-            path = os.path.join("data", filename)
-        else:
+        path = filename if os.path.exists(filename) else os.path.join("data", filename)
+        if not os.path.exists(path):
             continue
             
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
+                # Check format
                 if isinstance(data, list):
                     for entry in data:
                         if 'text' in entry: 
@@ -101,45 +110,73 @@ def load_and_analyze_data():
                 loaded_count += 1
                 combined_text += "\n--- END OF EPISODE ---\n"
         except Exception as e:
+            logger.error(f"Error loading {filename}: {e}")
             st.sidebar.error(f"Error loading {filename}: {e}")
 
     st.session_state.wargame_context = combined_text
     st.session_state.transcript_context_length = len(combined_text)
+    logger.info(f"Loaded {loaded_count} files. Total characters: {len(combined_text)}")
     
     if loaded_count == 0:
         st.sidebar.error("No files loaded.")
         return 0
 
-    # 2. BATCH ANALYSIS (Pre-generation)
-    total_tasks = len(SITUATION_PROMPTS) + len(ADVISOR_DEFINITIONS)
-    current_task = 0
+    # 2. PARALLEL BATCH ANALYSIS
+    logger.info("--- STARTING PARALLEL GENERATION ---")
     
-    # A. Generate Situation Room Reports
+    # Define tasks
+    # Format: (type, name)
+    tasks = []
     for report_name in SITUATION_PROMPTS:
-        current_task += 1
-        progress_percent = int((current_task / total_tasks) * 100)
-        my_bar.progress(progress_percent, text=f"Analysing: {report_name}...")
-        
-        # Generate and Cache
-        cache_key = f"report_{report_name}"
-        if generate_situation_report:
-            report_content = generate_situation_report(report_name, combined_text)
-            st.session_state[cache_key] = report_content
-    
-    # B. Generate Advisor Briefings
+        tasks.append(("report", report_name))
     for advisor_name in ADVISOR_DEFINITIONS:
-        current_task += 1
-        progress_percent = int((current_task / total_tasks) * 100)
-        my_bar.progress(progress_percent, text=f"Consulting: {advisor_name}...")
+        tasks.append(("advisor", advisor_name))
+
+    total_tasks = len(tasks)
+    completed_tasks = 0
+    
+    # Define a helper to be run in threads
+    def process_task(task_info):
+        t_type, t_name = task_info
+        result_key = ""
+        result_content = ""
         
-        # Generate and Cache
-        cache_key = f"briefing_{advisor_name}"
-        if generate_advisor_briefing:
-            briefing_content = generate_advisor_briefing(advisor_name, combined_text)
-            st.session_state[cache_key] = briefing_content
+        if t_type == "report":
+            result_key = f"report_{t_name}"
+            result_content = generate_situation_report(t_name, combined_text)
+        elif t_type == "advisor":
+            result_key = f"briefing_{t_name}"
+            result_content = generate_advisor_briefing(t_name, combined_text)
+            
+        return result_key, result_content
+
+    # Run in ThreadPool
+    # We limit max_workers to 4 to avoid hitting Vertex AI QPM/TPM (Rate Limits)
+    # while still being 4x faster than serial execution.
+    MAX_WORKERS = 4
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        # Submit all tasks
+        future_to_task = {executor.submit(process_task, task): task for task in tasks}
+        
+        for future in concurrent.futures.as_completed(future_to_task):
+            task_type, task_name = future_to_task[future]
+            try:
+                key, content = future.result()
+                # Write to session state (Streamlit allows this from main thread loop)
+                st.session_state[key] = content
+                completed_tasks += 1
+                
+                # Update UI
+                pct = int((completed_tasks / total_tasks) * 100)
+                my_bar.progress(pct, text=f"Processed: {task_name} ({completed_tasks}/{total_tasks})")
+                
+            except Exception as exc:
+                logger.error(f"Task {task_name} generated an exception: {exc}")
 
     my_bar.empty()
     st.session_state.data_loaded = True
+    logger.info("--- DATA LOAD COMPLETE ---")
     return loaded_count
 
 # --- SIDEBAR ---
@@ -207,7 +244,7 @@ def render_llm_static_page(group, title):
         if not st.session_state.data_loaded:
             st.info("System Offline. Please click 'INITIALIZE / RELOAD INTELLIGENCE' in the sidebar.")
         else:
-            st.warning("Report generation pending or failed. Try reloading.")
+            st.warning("Report generation pending or failed. Check logs or try reloading.")
 
 def render_chatbot_page(agent_name):
     """
@@ -224,6 +261,8 @@ def render_chatbot_page(agent_name):
     if briefing_key in st.session_state:
         with st.expander("📜 Initial Strategic Assessment", expanded=True):
             st.markdown(st.session_state[briefing_key])
+    else:
+         st.warning("Briefing unavailable (generation failed). You can still chat below.")
     
     st.markdown("---")
     st.caption("Operational Chat Channel - Secure Line Open")
@@ -248,11 +287,8 @@ def render_chatbot_page(agent_name):
             with st.spinner("Thinking..."):
                 agent = get_agent(agent_name)
                 if agent:
-                    # Context is only needed if you want to re-inject it, 
-                    # but the agent instance maintains history in `chat_session`.
-                    # Ideally, for a robust chat, we inject context invisibly in the first message
-                    # or use the system prompt. 
-                    # Here we pass it to get_response which handles context injection logic.
+                    # Context injection handled inside get_response if needed, 
+                    # but usually better to rely on the conversation flow for follow-ups
                     response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
                     st.markdown(response)
                     st.session_state[history_key].append({"role": "assistant", "content": response})
