@@ -49,7 +49,7 @@ if 'transcript_context_length' not in st.session_state:
 if 'data_loaded' not in st.session_state:
     st.session_state.data_loaded = False
 
-# --- NAVIGATION STRUCTURE ---
+# --- NAVIGATION STRUCTURE (UPDATED WITH NEW ADVISORS) ---
 NAVIGATION = {
     "Situation Room": {
         "SITREP": {"icon": "📊", "type": "llm_static"},
@@ -61,8 +61,10 @@ NAVIGATION = {
     },
     "Advisors": {
         "Integrator": {"icon": "🧩", "type": "chatbot"},
-        "Red Teamer": {"icon": "😈", "type": "chatbot"},
         "Military Historian": {"icon": "🏛️", "type": "chatbot"},
+        "Alliance Whisperer": {"icon": "🤝", "type": "chatbot"}, # NEW
+        "Red Teamer": {"icon": "😈", "type": "chatbot"},
+        "The Missing Link": {"icon": "💡", "type": "chatbot"}, # NEW
         "Citizen's Voice": {"icon": "🗣️", "type": "chatbot"},
     }
 }
@@ -119,8 +121,10 @@ def load_and_analyze_data():
     
     # Define tasks
     tasks = []
+    # Add Situation Room Tasks
     for report_name in SITUATION_PROMPTS:
         tasks.append(("report", report_name))
+    # Add Advisor Tasks (Includes new Advisors automatically via ADVISOR_DEFINITIONS)
     for advisor_name in ADVISOR_DEFINITIONS:
         tasks.append(("advisor", advisor_name))
 
@@ -133,7 +137,7 @@ def load_and_analyze_data():
         result_key = ""
         result_content = ""
         
-        # Try generating up to 2 times (Simple Retry Logic)
+        # Retry Logic
         attempts = 2
         for i in range(attempts):
             try:
@@ -143,20 +147,17 @@ def load_and_analyze_data():
                 elif t_type == "advisor":
                     result_key = f"briefing_{t_name}"
                     result_content = generate_advisor_briefing(t_name, combined_text)
-                
-                # If we get here, it worked
-                break
+                break # Success
             except Exception as e:
                 logger.warning(f"Task {t_name} failed attempt {i+1}: {e}")
                 if i < attempts - 1:
-                    time.sleep(2) # Wait 2 seconds before retry
+                    time.sleep(2)
                 else:
                     result_content = f"Generation Failed after retries. Error: {e}"
             
         return result_key, result_content
 
-    # --- INCREASED PARALLELISM ---
-    # Increased to 8. This will be much faster but monitors for 429 errors.
+    # EXECUTE
     MAX_WORKERS = 8
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -184,6 +185,7 @@ with st.sidebar:
     st.title("Wargame OS")
     
     if st.button("INITIALIZE / RELOAD INTELLIGENCE", type="primary"):
+        # Clear old cache
         keys_to_delete = [k for k in st.session_state.keys() if k.startswith("report_") or k.startswith("briefing_")]
         for k in keys_to_delete:
             del st.session_state[k]
@@ -205,6 +207,7 @@ with st.sidebar:
         for page_title, data in pages.items():
             unique_id = f"{group} - {page_title}"
             
+            # Styling selected button
             if st.session_state.current_page_id == unique_id:
                 st.markdown(f"**👉 {data['icon']} {page_title}**")
             else:
@@ -214,6 +217,7 @@ with st.sidebar:
         st.markdown("---")
 
 # --- PAGE ROUTER ---
+
 current_id = st.session_state.current_page_id
 try:
     page_group, current_page_title = current_id.split(" - ")
@@ -224,9 +228,14 @@ except:
     page_data = NAVIGATION["Situation Room"]["SITREP"]
 
 # --- RENDER FUNCTIONS ---
+
 def render_llm_static_page(group, title):
+    """
+    Renders a pre-generated situation report.
+    """
     st.header(f"{page_data['icon']} {group}: {title}")
     st.markdown("---")
+    
     cache_key = f"report_{title}"
     
     if cache_key in st.session_state:
@@ -238,12 +247,16 @@ def render_llm_static_page(group, title):
             st.warning("Report generation pending or failed. Check logs.")
 
 def render_chatbot_page(agent_name):
+    """
+    Renders the Advisor page with a pre-generated briefing + interactive chat.
+    """
     st.header(f"{page_data['icon']} Advisor: {agent_name}")
     
     if not st.session_state.data_loaded:
         st.info("Advisor Offline. Please initialize intelligence in the sidebar.")
         return
 
+    # 1. Show the Pre-Generated Briefing
     briefing_key = f"briefing_{agent_name}"
     if briefing_key in st.session_state:
         with st.expander("📜 Initial Strategic Assessment", expanded=True):
@@ -254,14 +267,17 @@ def render_chatbot_page(agent_name):
     st.markdown("---")
     st.caption("Operational Chat Channel - Secure Line Open")
 
+    # 2. Chat Interface
     history_key = f"chat_history_{agent_name}"
     if history_key not in st.session_state:
         st.session_state[history_key] = []
         
+    # Display History
     for msg in st.session_state[history_key]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
             
+    # Chat Input
     if prompt := st.chat_input(f"Ask {agent_name} for clarification..."):
         st.session_state[history_key].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -276,6 +292,8 @@ def render_chatbot_page(agent_name):
                     st.session_state[history_key].append({"role": "assistant", "content": response})
                 else:
                     st.error("Agent connection failed.")
+
+# --- MAIN EXECUTION ---
 
 if page_data['type'] == 'llm_static':
     render_llm_static_page(page_group, current_page_title)
