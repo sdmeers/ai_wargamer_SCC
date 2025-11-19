@@ -1,57 +1,82 @@
 import streamlit as st
+import json
+import os
 import time
-# Import the new backend modules
-# Note: Ensure game_state.py and agents.py are in the same directory
+
+# Import the Agent factory. Ensure agents.py is in the same directory.
 try:
-    from game_state import GameStateManager
     from agents import get_agent
 except ImportError:
-    # Fallback to prevent crash if files aren't created yet
-    st.error("Backend modules (game_state.py, agents.py) not found. Please ensure they are created.")
-    GameStateManager = None
+    st.error("Backend module 'agents.py' not found. Please ensure it is created.")
     get_agent = None
 
-# --- 1. CONFIGURATION AND INITIAL SETUP ---
+
+# --- 1. CONFIGURATION, STYLING, AND DATA LOADING ---
 
 st.set_page_config(
-    page_title="AI Wargamer Interface",
+    page_title="AI Wargamer Interface (MVP Snapshot)",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for a modern, dark theme
+# Custom CSS for a dark theme
 st.markdown("""
 <style>
-    /* Main Content Area Styling */
-    .stApp {
-        background-color: #121212;
-        color: #E0E0E0;
-    }
-    [data-testid="stSidebar"] {
-        background-color: #1E1E1E;
-    }
-    h1 {
-        color: #FFD700;
-        padding-top: 0px;
-        margin-top: 0px;
-    }
-    h2, h3 {
-        color: #A9A9A9;
-    }
-    .stTextInput > div > div > input {
-        color: #E0E0E0;
-        background-color: #2D2D2D;
-        border: 1px solid #444444;
-    }
-    [data-testid="stChatMessage"] {
-        background-color: #1E1E1E; 
-    }
+    .stApp { background-color: #121212; color: #E0E0E0; }
+    [data-testid="stSidebar"] { background-color: #1E1E1E; }
+    h1 { color: #FFD700; padding-top: 0px; margin-top: 0px; }
+    h2, h3 { color: #A9A9A9; }
+    .stTextInput > div > div > input { color: #E0E0E0; background-color: #2D2D2D; border: 1px solid #444444; }
+    [data-testid="stChatMessage"] { background-color: #1E1E1E; }
 </style>
 """, unsafe_allow_html=True)
 
 
-# --- 2. NAVIGATION DATA STRUCTURE ---
+@st.cache_data
+def load_frozen_snapshot():
+    """
+    Loads and concatenates the first three episodes into a single context string.
+    This replaces the dynamic timeline logic.
+    """
+    files = [
+        "the_wargame_s2e1_transcript_cleaned.json",
+        "the_wargame_s2e2_transcript_cleaned.json",
+        "the_wargame_s2e3_transcript_cleaned.json"
+    ]
+    
+    full_context = "--- FULL WARGAME CONTEXT (Episodes 1-3 Snapshot) ---\n"
+    base_path = "data" 
+    valid_types = ['blue', 'red', 'explanation'] # Focus on core game segments
+    
+    for i, filename in enumerate(files):
+        path = os.path.join(base_path, filename)
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    
+                full_context += f"\n=== EPISODE {i+1} SEGMENTS ===\n"
+                
+                for segment in data.get('segments', []):
+                    if segment.get('type') in valid_types:
+                        speaker = segment.get('type', 'UNKNOWN').upper()
+                        text = segment.get('content', '')
+                        full_context += f"[{speaker}]: {text}\n"
+                        
+            except Exception as e:
+                st.warning(f"Could not load or parse {filename}: {e}")
+    
+    full_context += "\n--- END OF CONTEXT ---"
+    return full_context
+
+# Load the context once and store it
+if 'wargame_context' not in st.session_state:
+    with st.spinner("Loading Wargame Data (Episodes 1-3 Snapshot)..."):
+        st.session_state['wargame_context'] = load_frozen_snapshot()
+        st.session_state['transcript_context_length'] = len(st.session_state['wargame_context'])
+
+# --- 2. NAVIGATION DATA STRUCTURE (Original Structure Maintained) ---
 
 NAVIGATION = {
     "Scenario": {
@@ -79,15 +104,8 @@ NAVIGATION = {
 
 # Session state management
 DEFAULT_PAGE_ID = "Scenario - Summary"
-
 if 'current_page_id' not in st.session_state:
     st.session_state.current_page_id = DEFAULT_PAGE_ID 
-
-# Initialize Game State Manager
-if 'game_manager' not in st.session_state and GameStateManager:
-    # Ensure you have a 'data' folder with your JSONs
-    st.session_state.game_manager = GameStateManager(data_dir="data")
-
 
 # --- 3. PAGE RENDERING FUNCTIONS ---
 
@@ -106,39 +124,59 @@ def render_static_page(group, title):
     st.markdown("---")
     
     if title == "Transcripts":
-        st.info("Raw transcript data is processed by the Game State Manager.")
-        # Optional: Display raw text if needed
-        # st.text_area("Current Context", st.session_state.get('transcript_context', ''), height=400)
+        st.info("The transcripts are loaded as one complete context block (Episodes 1-3).")
+        # Display the context as raw text
+        st.text_area(
+            "Full Wargame Context (Read Only)", 
+            st.session_state['wargame_context'], 
+            height=400, 
+            disabled=True
+        )
     else:
-        st.markdown(f"""
-        ### **Static Content**
-        This page contains **pre-defined information**.
-        """)
+        st.markdown(f"### **Static Content**\nThis page contains **pre-defined information** about the project.")
 
 def render_llm_static_page(group, title):
-    """Renders a page for LLM-generated static reports (Situation Room)."""
+    """
+    Renders a page for LLM-generated static reports (Situation Room).
+    Uses hardcoded data for the MVP to ensure fast, predictable results.
+    """
     icon = NAVIGATION[group][title]["icon"]
     st.header(f"{icon} {group}: {title}")
     st.markdown("---")
-    st.markdown(f"### **{title} Report**")
     
-    # Placeholder for Step 2 (Situation Room Agents)
-    # In the next phase, we will connect 'agents.py' analyze_situation() here.
+    st.info(f"Report for **{title}** - (Based on End of Episode 3 Snapshot)")
     
-    st.info(f"Generating {title} based on current Episode state...")
-    
-    if title == "ORBAT":
-        st.subheader("Friendly Order of Battle (Mock Data)")
-        st.table({
-            'Unit': ['1st Mechanized Brigade', '3rd Air Cavalry Regiment', 'Special Operations Task Force'],
-            'Strength': ['Full', '75%', 'Full'],
-            'Readiness': ['High', 'Medium', 'High']
-        })
+    # --- MVP HARDCODED REPORTS (for speed) ---
+    if title == "SITREP":
+        st.subheader("High-Level Situation Report")
+        st.markdown("""
+        The conflict has escalated to missile strikes on the UK mainland. Key actions include:
+        - **Russian Strike:** Successful attacks on Portsmouth Naval Base, Faslane, and Heathrow Airport.
+        - **UK Response:** Activation of full military readiness; Trident deployment; Cabinet debate on Article 5 invocation.
+        - **Diplomatic:** NATO discussions ongoing, but US commitment appears contingent on certain actions.
+        """)
+    elif title == "ORBAT":
+        st.subheader("Order of Battle (ORBAT)")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("#### 🔵 UK Forces (Blue)")
+            st.dataframe([
+                {"Asset": "HMS Queen Elizabeth", "Status": "Damaged/On Fire", "Location": "Portsmouth"},
+                {"Asset": "F-35 Squadron", "Status": "Deployed/Active", "Location": "Sortie"},
+                {"Asset": "Trident Sub 1", "Status": "At Sea", "Location": "Classified"},
+            ])
+        with col2:
+            st.markdown("#### 🔴 Russian Forces (Red)")
+            st.dataframe([
+                {"Asset": "Northern Fleet", "Status": "Active", "Location": "North Atlantic"},
+                {"Asset": "SSN Flotilla", "Status": "Hunting", "Location": "UK Waters"},
+                {"Asset": "Airborne Missiles", "Status": "Expended", "Location": "Targets Reached"},
+            ])
     else:
-        st.markdown(f"**Report Excerpt for {title}:** *The latest intelligence from the podcast transcript indicates... [Agent Output Placeholder]*")
+        st.markdown(f"**{title}** content requires an agent call to format the transcript context. For the MVP, this section is a placeholder.")
 
 def render_chatbot_page(group, title):
-    """Renders an interactive chatbot interface connected to Vertex AI."""
+    """Renders an interactive chatbot interface connected to the Wargame Agent."""
     icon = NAVIGATION[group][title]["icon"]
     st.header(f"{icon} **Advisor**: {title}")
     st.markdown("---")
@@ -148,11 +186,13 @@ def render_chatbot_page(group, title):
     
     # Initialize chat history
     if history_key not in st.session_state:
-        st.session_state[history_key] = [{"role": "assistant", "content": f"Greetings. I am the **{title}**. How can I assist you?"}]
+        st.session_state[history_key] = [{"role": "assistant", "content": f"Greetings. I am the **{title}**. I have analyzed the entire Wargame scenario up to Episode 3. How can I advise you?"}]
     
     # Display chat history
     for message in st.session_state[history_key]:
-        with st.chat_message(message["role"], avatar="🤖" if message["role"] == "assistant" else None):
+        # Use a generic icon for assistant, no icon for user
+        avatar = NAVIGATION['Advisors'][title]['icon'] if message["role"] == "assistant" else None
+        with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
     # Chat Input
@@ -163,22 +203,17 @@ def render_chatbot_page(group, title):
             st.markdown(prompt)
 
         # 2. Assistant Response
-        with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar=NAVIGATION['Advisors'][title]['icon']):
             if not get_agent:
                 st.error("Agent backend not loaded.")
             else:
-                # Get the specific agent instance
-                # Note: In a production app, you might cache the agent object itself to keep session memory active
-                agent = get_agent(title)
+                agent = get_agent(title) # Get the specific agent instance
                 
                 if agent:
-                    with st.spinner(f"{title} is analyzing the transcript context..."):
+                    with st.spinner(f"{title} is synthesizing the full scenario context..."):
                         try:
-                            # Retrieve current context from the slider selection
-                            current_context = st.session_state.get('transcript_context', '')
-                            
-                            # Call the Agent
-                            response_text = agent.chat(prompt, current_context)
+                            # Pass the *single, frozen* context
+                            response_text = agent.chat(prompt, st.session_state['wargame_context'])
                             
                             st.markdown(response_text)
                             
@@ -188,48 +223,40 @@ def render_chatbot_page(group, title):
                         except Exception as e:
                             st.error(f"Error communicating with Agent: {e}")
                 else:
-                    st.warning(f"Agent '{title}' is not yet defined in agents.py")
+                    st.warning(f"Agent '{title}' is not defined.")
 
 
 # --- 4. STREAMLIT APPLICATION LAYOUT ---
 
-# --- Sidebar (Navigation & Timeline) ---
+# --- Sidebar (Navigation) ---
 with st.sidebar:
     st.title("🤖 AI Wargamer ⚔️")
+    st.caption("Hackathon MVP: Frozen State (Eps 1-3)")
     
-    # --- TIMELINE CONTROL (New) ---
-    st.subheader("Timeline Control")
-    # Slider to select the current episode state (1 to 3 based on your files)
-    selected_episode = st.slider("Current State (Episode End)", min_value=1, max_value=3, value=1)
-    st.caption(f"Simulating state at end of Episode {selected_episode}")
-    
-    # Update Context based on slider
-    if st.session_state.get('game_manager'):
-        transcript_context = st.session_state.game_manager.get_transcript_context(
-            up_to_episode=selected_episode,
-            include_types=['blue', 'red', 'explanation', 'commentary']
-        )
-        st.session_state['transcript_context'] = transcript_context
-    else:
-        st.session_state['transcript_context'] = "Context not loaded (Game Manager missing)."
-
+    # --- Context Display (Replaces Timeline Slider) ---
+    st.subheader("Wargame Context")
+    st.info(f"Loaded {st.session_state.get('transcript_context_length', 0):,} characters of transcript data.")
     st.markdown("---")
 
-    # --- Navigation Menu ---
+    # --- Navigation Menu (Original Structure) ---
     for group, pages in NAVIGATION.items():
         st.subheader(group)
         for page_title, data in pages.items():
+            # Generate a UNIQUE IDENTIFIER and KEY for each button
             unique_id = f"{group} - {page_title}"
             unique_key = f"nav_{group}_{page_title.replace(' ', '_')}"
             
             if st.button(f"{data['icon']} {page_title}", use_container_width=True, key=unique_key):
+                # On click, set the unique ID to the session state
                 st.session_state.current_page_id = unique_id
-        st.markdown("---")
+        st.markdown("---") # Visual separator between groups
 
 # --- Main Content Area ---
 
+# Retrieve the components from the stored unique ID
 page_group, current_page_title = get_group_and_title(st.session_state.current_page_id)
 
+# Render the appropriate content based on the page type
 if page_group in NAVIGATION and current_page_title in NAVIGATION[page_group]:
     page_type = NAVIGATION[page_group][current_page_title]['type']
 
@@ -241,4 +268,4 @@ if page_group in NAVIGATION and current_page_title in NAVIGATION[page_group]:
         render_chatbot_page(page_group, current_page_title)
 else:
     st.title("Welcome to the AI Wargamer Interface")
-    st.info("Select a page from the sidebar to view scenario data, SITREP details, or consult with an Advisor.")
+    st.info("Select a page from the sidebar to view scenario data or consult with an Advisor.")
