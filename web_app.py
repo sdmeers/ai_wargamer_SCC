@@ -45,7 +45,7 @@ if 'data_loaded' not in st.session_state:
 # --- NAVIGATION STRUCTURE ---
 NAVIGATION = {
     "Situation Room": {
-        "SITREP": {"icon": "📊", "type": "llm_static"},
+        "Sitrep": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
         "ORBAT": {"icon": "🛡️", "type": "llm_static"},
         "Actions": {"icon": "🎬", "type": "llm_static"},
