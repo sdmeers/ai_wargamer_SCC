@@ -4,22 +4,18 @@ import os
 import streamlit as st
 
 # --- CONFIGURATION ---
-# Use environment variables for Docker/Cloud Run compatibility, fallback to defaults
+# Updated to your working configuration
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
-LOCATION = os.environ.get("GCP_REGION", "us-central1")
-# UPDATED: Using Gemini 1.5 Pro (002) as the robust "Pro" model.
-# If you have a specific ID for "2.5", replace the string below.
+LOCATION = os.environ.get("GCP_REGION", "us-central1") 
 MODEL_ID = "gemini-2.5-pro" 
 
 # Initialize Vertex AI
 try:
     vertexai.init(project=PROJECT_ID, location=LOCATION)
 except Exception as e:
-    # This might fail locally if not authenticated, but will work in GCP/Docker if SA is attached
     print(f"Vertex AI Init Warning: {e}")
 
 # --- SITUATION ROOM PROMPTS ---
-# These prompts correspond to the 'llm_static' pages in your web_app navigation.
 SITUATION_PROMPTS = {
     "SITREP": """
     You are the Chief of Staff. 
@@ -105,13 +101,8 @@ def generate_situation_report(report_type, context_text):
     system_instruction = SITUATION_PROMPTS[report_type]
     
     try:
-        # Create the model instance
-        model = GenerativeModel(
-            MODEL_ID,
-            system_instruction=[system_instruction]
-        )
+        model = GenerativeModel(MODEL_ID, system_instruction=[system_instruction])
         
-        # Construct the user prompt
         prompt = f"""
         ANALYZE THE FOLLOWING TRANSCRIPT DATA:
         --------------------------------------
@@ -121,19 +112,44 @@ def generate_situation_report(report_type, context_text):
         GENERATE THE REQUESTED REPORT ({report_type}).
         """
         
-        # Generate
         response = model.generate_content(prompt)
         return response.text
         
     except Exception as e:
         return f"Error generating {report_type}: {str(e)}"
 
+def generate_advisor_briefing(agent_name, context_text):
+    """
+    Generates the initial 'thinking' summary for an advisor.
+    """
+    if agent_name not in ADVISOR_DEFINITIONS:
+        return "Error: Unknown Advisor"
+        
+    definition = ADVISOR_DEFINITIONS[agent_name]
+    
+    try:
+        model = GenerativeModel(MODEL_ID, system_instruction=[definition['prompt']])
+        
+        prompt = f"""
+        CONTEXT:
+        {context_text}
+        
+        TASK:
+        Provide a high-level initial assessment of the situation from your specific perspective.
+        What is your headline advice to the Commander?
+        Keep it under 150 words. Use bullet points for clarity.
+        """
+        
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Error generating briefing: {e}"
+
 class WargameAgent:
     def __init__(self, name, icon, system_prompt):
         self.name = name
         self.icon = icon
         self.system_prompt = system_prompt
-        # Initialize with the Pro model
         self.model = GenerativeModel(
             MODEL_ID,
             system_instruction=[system_prompt]
@@ -145,15 +161,11 @@ class WargameAgent:
         self.chat_session = self.model.start_chat(history=[])
 
     def get_response(self, user_input, context_text=""):
-        """
-        Sends a message to the agent and gets a response.
-        Includes context if provided (usually strictly for the first message or system context).
-        """
         try:
             if self.chat_session is None:
                 self.start_new_session()
             
-            # If there's specific context to inject (RAG-lite), prepend it
+            # Inject context if provided (usually for first turn)
             full_prompt = user_input
             if context_text:
                 full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
