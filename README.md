@@ -1,48 +1,47 @@
-graph TD
-    %% Styles
+```mermaid
+graph LR
+    %% Styling
     classDef storage fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef process fill:#e1f5fe,stroke:#0277bd,stroke-width:2px;
-    classDef external fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
+    classDef process fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+    classDef agents fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
     classDef ui fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
 
-    subgraph "Data Pipeline (Offline Processing)"
-        Audio[("🎙️ Audio File\n(Podcast MP3)")]:::storage
-        Transcriber["⚡ Transcript Processor\n(Speech-to-Text + Speaker ID)"]:::process
-        Classifier["🏷️ Text Classifier\n(Blue / Red / Explanation)"]:::process
-        JSON[("📄 Cleaned Transcripts\n(JSON Snapshot)")]:::storage
+    subgraph "Data Pipeline (Pre-Processing)"
+        direction TB
+        A[("🎙️ Audio File\n(MP3/Podcast)")]:::storage
+        B["🗣️ Speech-to-Text"]:::process
+        C["🏷️ Text Classifier &\nSpeaker ID"]:::process
+        D[("📄 Clean Transcript\n(JSON)")]:::storage
         
-        Audio --> Transcriber
-        Transcriber --> Classifier
-        Classifier --> JSON
+        A --> B --> C --> D
     end
 
-    subgraph "AI Wargamer Backend (GCP Cloud Run)"
+    subgraph "AI Agent Backend"
         direction TB
-        ContextEngine["⚙️ Game State Manager\n(Loads & Stitches Episodes)"]:::process
-        SystemPrompts["📜 System Prompts\n(Agent Personas)"]:::storage
+        E["⚙️ Game State Manager\n(Context Injection)"]:::process
         
-        subgraph "The Agents"
-            SitRoom["📊 Situation Room Agents\n(SITREP, ORBAT, SIGACTS)"]:::process
-            Advisors["🧠 Advisor Agents\n(Integrator, Red Team, etc.)"]:::process
+        subgraph "🤖 Intelligent Agents"
+            F["📊 Situation Agents\n(SITREP, ORBAT, SIGACTS)"]:::agents
+            G["🧠 Advisor Agents\n(Red Team, Historian, etc.)"]:::agents
         end
         
-        VertexAI["☁️ Google Vertex AI\n(Gemini 1.5 Flash)"]:::external
+        H[("📜 System Prompts\n(Personas)")]:::storage
+        
+        D --> E
+        E --> F
+        E --> G
+        H --> F & G
     end
 
     subgraph "Frontend (Streamlit)"
-        UI["💻 Web Application\n(Streamlit Interface)"]:::ui
-        User((👤 User))
+        direction TB
+        I["💻 Web UI\n(Dashboard)"]:::ui
+        J["📂 Situation Room\n(Static Reports)"]:::ui
+        K["💬 Chat Interface\n(Interactive Advice)"]:::ui
+        
+        F -->|"Structured Data"| J
+        G <-->|"User Query / Response"| K
+        J --- I
+        K --- I
     end
-
-    %% Data Flow Connections
-    JSON -->|"Load Context"| ContextEngine
-    ContextEngine -->|"Inject Context"| SitRoom
-    ContextEngine -->|"Inject Context"| Advisors
-    SystemPrompts --> Advisors & SitRoom
-    
-    SitRoom <-->|"Generate Reports"| VertexAI
-    Advisors <-->|"Chat / Reasoning"| VertexAI
-    
-    SitRoom -->|"Static View"| UI
-    Advisors <-->|"Interactive Chat"| UI
-    User <-->|"Interact"| UI
+```
