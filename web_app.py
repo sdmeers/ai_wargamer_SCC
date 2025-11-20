@@ -4,6 +4,9 @@ import json
 import os
 import sys
 import logging
+import re
+import base64
+import mimetypes
 # Import necessary for Streamlit caching
 from functools import lru_cache
 
@@ -163,6 +166,34 @@ def render_static_page(group, title, file_path):
         full_path = os.path.join(os.path.dirname(__file__), file_path)
         with open(full_path, 'r', encoding='utf-8') as f:
             content = f.read()
+
+        # Convert local image paths in markdown to base64 to ensure they render in Docker
+        def path_to_base64(match):
+            # The first group is the start of the tag, the second is the path
+            tag_start = match.group(1)
+            img_path = match.group(2)
+            
+            # Build absolute path to the image
+            full_img_path = os.path.join(os.path.dirname(__file__), img_path)
+            
+            try:
+                with open(full_img_path, "rb") as f:
+                    img_bytes = f.read()
+                mime_type, _ = mimetypes.guess_type(full_img_path)
+                if mime_type is None:
+                    # Fallback if mime type can't be guessed
+                    return match.group(0) 
+                
+                base64_str = base64.b64encode(img_bytes).decode()
+                # Return the modified tag with the base64 data URI
+                return f'{tag_start}data:{mime_type};base64,{base64_str}"'
+            except FileNotFoundError:
+                # If file not found, return the original tag to avoid breaking the page
+                return match.group(0)
+
+        # Use a regex that captures the beginning of the tag and the path separately
+        content = re.sub(r'(<img\s[^>]*src=")([^"]+)"', path_to_base64, content, flags=re.IGNORECASE)
+
         st.markdown(content, unsafe_allow_html=True)
     except FileNotFoundError:
         st.error(f"Error: Static content file '{file_path}' not found at {full_path}. Please ensure the file exists in the deployment package.")
