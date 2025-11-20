@@ -169,32 +169,47 @@ def render_static_page(group, title, file_path):
 
         # Convert local image paths in markdown to base64 to ensure they render in Docker
         def path_to_base64(match):
-            # The first group is the start of the tag, the second is the path
             tag_start = match.group(1)
             img_path = match.group(2)
-            
-            # Build absolute path to the image
             full_img_path = os.path.join(os.path.dirname(__file__), img_path)
-            
             try:
                 with open(full_img_path, "rb") as f:
                     img_bytes = f.read()
                 mime_type, _ = mimetypes.guess_type(full_img_path)
-                if mime_type is None:
-                    # Fallback if mime type can't be guessed
-                    return match.group(0) 
-                
+                if mime_type is None: return match.group(0) 
                 base64_str = base64.b64encode(img_bytes).decode()
-                # Return the modified tag with the base64 data URI
                 return f'{tag_start}data:{mime_type};base64,{base64_str}"'
             except FileNotFoundError:
-                # If file not found, return the original tag to avoid breaking the page
                 return match.group(0)
 
-        # Use a regex that captures the beginning of the tag and the path separately
         content = re.sub(r'(<img\s[^>]*src=")([^"]+)"', path_to_base64, content, flags=re.IGNORECASE)
 
+        # --- START: MERMAID DIAGRAM RENDERING (Robust Method) ---
+        mermaid_pattern = re.compile(r'```mermaid(.*?)```', re.DOTALL)
+        match = mermaid_pattern.search(content)
+        
+        mermaid_code = ""
+        if match:
+            mermaid_code = match.group(1)
+            # Remove the mermaid block from the main content string
+            content = mermaid_pattern.sub("", content)
+        # --- END: MERMAID DIAGRAM RENDERING ---
+
+        # Render the main markdown content (now without the mermaid block)
         st.markdown(content, unsafe_allow_html=True)
+
+        # If mermaid code was found, render it in a dedicated component
+        if mermaid_code:
+            components.html(f"""
+                <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+                <pre class="mermaid">
+                    {mermaid_code}
+                </pre>
+                <script>
+                    mermaid.initialize({{ startOnLoad: true }});
+                </script>
+            """, height=600, scrolling=True)
+            
     except FileNotFoundError:
         st.error(f"Error: Static content file '{file_path}' not found at {full_path}. Please ensure the file exists in the deployment package.")
         st.markdown(f"***NOTE:*** *If this is the Scenario page, ensure **{SCENARIO_MD_FILE}** is present.*")
