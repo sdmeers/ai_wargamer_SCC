@@ -1,8 +1,11 @@
-import vertexai
-from vertexai.generative_models import GenerativeModel, SafetySetting
+import time
 import os
 import logging
-import time
+
+# --- VERTEX AI IMPORTS (COMMENTED OUT FOR COST SAVINGS) ---
+# To re-enable LLM functionality, uncomment the following lines:
+# import vertexai
+# from vertexai.generative_models import GenerativeModel, SafetySetting
 
 # --- LOGGING SETUP ---
 logging.basicConfig(
@@ -13,317 +16,137 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # --- CONFIGURATION ---
-# We keep these variables for use within the WargameAgent class
-PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
-LOCATION = os.environ.get("GCP_REGION", "us-central1")
+# Note: These are now primarily informational, but set to your new project ID
+PROJECT_ID = "ai-wargamer" 
+LOCATION = "us-central1"
 MODEL_ID = "gemini-3.0" 
 
-# NOTE: Removed the global vertexai.init() call to speed up Streamlit startup.
-# Initialization now occurs inside WargameAgent.__init__ which is cached in web_app.py.
-
-# --- SITUATION ROOM PROMPTS (STATIC REPORTS) ---
-# KEY REQUIREMENT: Cabinet-level concise, bulleted, no fluff.
-
-SITUATION_PROMPTS = {
-    "SITREP": """
-    ROLE: Chief of Staff to the Prime Minister.
-    TASK: Provide a Situation Report (SITREP) based STRICTLY on the transcript provided.
-    AUDIENCE: Cabinet Ministers (Time-poor, strategic focus).
-    
-    OUTPUT FORMAT:
-    **1. EXECUTIVE SUMMARY:** (Max 2 sentences. The bottom line.)
-    **2. KEY DEVELOPMENTS:** (Max 5 bullet points. Focus on strategic shifts, not minor details.)
-    **3. CRITICAL DECISIONS REQUIRED:** (What does the PM need to decide NOW?)
-    
-    CONSTRAINT: Do not include introductory filler. Start directly with the summary.
-    """,
-    
-    "SIGACTS": """
-    ROLE: Chief of Defence Intelligence (CDI).
-    TASK: List Significant Activities (SIGACTS) from the transcript.
-    
-    OUTPUT FORMAT:
-    **TIMELINE OF KEY EVENTS:**
-    * [Time/Phase] **Event**: [Brief Description] -> **Impact**: [Casualties/Damage/Strategic Effect]
-    
-    GUIDANCE:
-    - Separate BLUE (UK/Allied) and RED (Adversary) actions where possible.
-    - Focus on KINETIC events (attacks), MAJOR diplomatic moves, and CRITICAL infrastructure failure.
-    - Ignore minor chatter.
-    """,
-    
-    "ORBAT": """
-    ROLE: Chief of the Defence Staff (CDS).
-    TASK: Reconstruct the Order of Battle (ORBAT) from the transcript context.
-    
-    OUTPUT FORMAT:
-    **🔵 BLUE FORCES (UK/Allied)**
-    * **[Unit/Platform Name]**: [Status: Active/Damaged/Destroyed] - [Location/Activity]
-    
-    **🔴 RED FORCES (Adversary)**
-    * **[Unit/Platform Name]**: [Status: Active/Damaged/Destroyed] - [Location/Activity]
-    
-    GUIDANCE: Focus on major platforms (Ships, Subs, Air Squadrons) and key formations.
-    """,
-
-    "Actions": """
-    ROLE: Cabinet Secretary.
-    TASK: Summarize AGREED actions and decisions found in the transcript.
-    
-    OUTPUT FORMAT:
-    **DECISION LOG:**
-    * **[Action]**: Assigned to [Who/Department]. Status: [Triggered/Pending].
-    
-    GUIDANCE: Only list actions that were explicitly ordered or agreed upon by the players.
-    """,
-    
-    "Uncertainties": """
-    ROLE: Joint Intelligence Committee (JIC) Chair.
-    TASK: Identify "Known Unknowns" and critical information gaps.
-    
-    OUTPUT FORMAT:
-    **CRITICAL INFORMATION GAPS:**
-    * [Bullet point specific missing intelligence]
-    * [Bullet point ambiguous adversary intent]
-    
-    GUIDANCE: What do we need to know before we can make the next strategic decision?
-    """,
-    
-    "Dilemmas": """
-    ROLE: Red Team Analyst (simulating Russian perspective).
-    TASK: Identify the core strategic dilemmas and concerns for the Russian leadership (RED) based on the transcript.
-    AUDIENCE: UK Leadership (to understand the adversary's mindset).
-
-    OUTPUT FORMAT:
-    **🔴 RED FORCE DILEMMAS & CONCERNS:**
-    * **Concern 1: [Specific Concern]** - This could be exacerbated by BLUE actions such as [e.g., moving a specific military unit, applying new sanctions].
-    * **Dilemma 1: Choice between [Red Option A] and [Red Option B]** - Risk for RED: [Brief description of the trade-off from their perspective].
-
-    GUIDANCE:
-    - Analyze what would worry the Russian leadership.
-    - What BLUE actions (military, political, economic) would increase their anxiety or force them into a difficult choice?
-    - Consider factors like: overextension of forces, US/NATO policy shifts, effectiveness of sanctions, internal Russian public opinion, and BLUE cyber capabilities.
-    - Frame everything from the adversary's point of view. What are THEIR "least bad options"?
-    """
-}
-
-# --- ADVISOR PERSONAS (INTERACTIVE) ---
-
-ADVISOR_DEFINITIONS = {
-    "Integrator": {
-        "icon": "🧩",
-        "prompt": """
-        ROLE: 'The Integrator' (Senior Strategic Analyst).
-        MISSION: Synthesize military, diplomatic, economic, and domestic domains.
-        STYLE: Cabinet-level briefing. Concise. Connect the dots.
-        
-        INSTRUCTIONS:
-        - Identify connections others miss (e.g., how a naval strike impacts the stock market).
-        - Highlight contradictions in current policy.
-        - Warn of cascading effects.
-        - KEEP IT BRIEF. The PM is busy.
-        """
-    },
-    "Military Historian": {
-        "icon": "🏛️",
-        "prompt": """
-        ROLE: 'The Historian' (Crisis Management Expert).
-        MISSION: Apply historical lessons to the current crisis.
-        STYLE: Academic but applied. Warning-focused.
-        
-        INSTRUCTIONS:
-        - Do NOT just recite history. Apply it. "This looks like Falklands '82 because..."
-        - Warn of 'Failure Modes' (e.g., escalation ladders, miscalculation).
-        - Remind the Cabinet that history doesn't repeat, but it rhymes.
-        """
-    },
-    "Alliance Whisperer": {
-        "icon": "🤝",
-        "prompt": """
-        ROLE: 'The Alliance Whisperer' (NATO/US Relations Expert).
-        MISSION: Model ally behavior and suggest how to leverage the coalition.
-        STYLE: Diplomatic, cynical, realistic.
-        
-        INSTRUCTIONS:
-        - Focus primarily on the US, France, and Germany.
-        - Predict how Washington will react to UK moves.
-        - Advise on framing requests for maximum effect.
-        - Warn if the UK is becoming isolated.
-        """
-    },
-    "Red Teamer": {
-        "icon": "😈",
-        "prompt": """
-        ROLE: 'The Red Cell' (Adversary Simulation).
-        MISSION: Think like the Russian Leadership (Putin/Stavka).
-        STYLE: Ruthless, cold, calculating. NOT pro-Russian, but pro-accurate simulation.
-        
-        INSTRUCTIONS:
-        - Predict the adversary's next move based on their doctrine.
-        - Identify UK vulnerabilities from Moscow's perspective.
-        - If the UK pulls a punch, explain why Russia sees that as weakness.
-        """
-    },
-    "The Missing Link": {
-        "icon": "💡",
-        "prompt": """
-        ROLE: 'The Missing Link' (Blind Spot Detector).
-        MISSION: Spot what is NOT being discussed.
-        STYLE: Direct, challenging, minimalist.
-        
-        INSTRUCTIONS:
-        - Do not summarize what has been said. Only speak to add what is missing.
-        - Scan for ignored perspectives (e.g., Cyber, Space, Logistics, Legal).
-        - If the current plan covers everything, state: "No significant strategic omissions."
-        - Do not bog the PM down in detail unless it is a critical failure point.
-        """
-    },
-    "Citizen's Voice": {
-        "icon": "🗣️",
-        "prompt": """
-        ROLE: 'The Citizen's Voice' (Civil Preparedness & Public Sentiment).
-        MISSION: Represent the 67 million UK residents.
-        STYLE: Grounded, human, urgent.
-        
-        INSTRUCTIONS:
-        - Translate military actions into domestic impact (Panic, Supply Chains, Morale).
-        - Ask: "Are we protecting the population, or just the state?"
-        - Focus on resilience, civil order, and the narrative on the street.
-        """
-    }
-}
-
-# --- GENERATION FUNCTIONS (Unchanged, they still use the global MODEL_ID) ---
-
-def generate_situation_report(report_type, context_text):
-    # This function is only used by the precompute script, which runs locally 
-    # and has its own initialization flow, so we leave it as is.
-    start_time = time.time()
-    logger.info(f"--> START: Report [{report_type}]")
-    
-    if not context_text:
-        return "Error: No transcript context."
-    if report_type not in SITUATION_PROMPTS:
-        return f"Error: No prompt for {report_type}"
-
-    try:
-        # Initializing Vertex AI locally for precomputation, if not already
-        vertexai.init(project=PROJECT_ID, location=LOCATION) 
-        model = GenerativeModel(MODEL_ID, system_instruction=[SITUATION_PROMPTS[report_type]])
-        
-        prompt = f"""
-        ANALYZE THE FOLLOWING TRANSCRIPT CONTEXT:
-        -----------------------------------------
-        {context_text}
-        -----------------------------------------
-        
-        GENERATE THE {report_type} REPORT NOW.
-        """
-        
-        response = model.generate_content(prompt)
-        duration = time.time() - start_time
-        logger.info(f"<-- FINISH: Report [{report_type}] in {duration:.2f}s")
-        return response.text
-    except Exception as e:
-        logger.error(f"!!! ERROR: Report [{report_type}] failed: {e}")
-        raise e 
-
-def generate_advisor_briefing(agent_name, context_text):
-    # This function is only used by the precompute script, which runs locally 
-    # and has its own initialization flow, so we leave it as is.
-    start_time = time.time()
-    logger.info(f"--> START: Briefing [{agent_name}]")
-    
-    if agent_name not in ADVISOR_DEFINITIONS:
-        return "Error: Unknown Advisor"
-    
-    try:
-        # Initializing Vertex AI locally for precomputation, if not already
-        vertexai.init(project=PROJECT_ID, location=LOCATION)
-        definition = ADVISOR_DEFINITIONS[agent_name]
-        model = GenerativeModel(MODEL_ID, system_instruction=[definition['prompt']])
-        
-        prompt = f"""
-        CONTEXT (TRANSCRIPTS):
-        {context_text}
-        
-        TASK:
-        Provide your 'Initial Strategic Assessment' based on your specific role.
-        
-        CONSTRAINTS:
-        - Max 150 words.
-        - Use bullet points.
-        - Bottom Line Up Front (BLUF).
-        - Be decisive.
-        """
-        
-        response = model.generate_content(prompt)
-        duration = time.time() - start_time
-        logger.info(f"<-- FINISH: Briefing [{agent_name}] in {duration:.2f}s")
-        return response.text
-    except Exception as e:
-        logger.error(f"!!! ERROR: Briefing [{agent_name}] failed: {e}")
-        raise e
-
-# --- AGENT CLASS ---
-
+# --- WargameAgent Class ---
 class WargameAgent:
     def __init__(self, name, icon, system_prompt):
         self.name = name
         self.icon = icon
         self.system_prompt = system_prompt
         
-        # --- LAZY INITIALIZATION FOR CLOUD RUN ---
-        # Initialize Vertex AI connection only when a WargameAgent is instantiated.
-        # This will now be controlled by @st.cache_resource in web_app.py.
-        
-        # --- MVP DEMO: VERTEX AI CALLS DISABLED TO REDUCE COST ---
-        # The following block is commented out to prevent live calls to Vertex AI.
+        # --- LLM INITIALIZATION (COMMENTED OUT) ---
+        # To re-enable, uncomment the following:
         # try:
         #     vertexai.init(project=PROJECT_ID, location=LOCATION)
-        #     logger.info(f"Initialized Vertex AI for Agent: {name}")
-        #     self.model = GenerativeModel(MODEL_ID, system_instruction=[system_prompt])
+        #     self.model = GenerativeModel(
+        #         MODEL_ID,
+        #         system_instruction=[system_prompt]
+        #     )
+        #     # The chat session will be initialized on first use or start_new_session
+        #     self.chat_session = None
+        #     logger.info(f"LLM Mode: Agent {name} initialized for {PROJECT_ID}")
         # except Exception as e:
-        #     logger.error(f"Vertex AI Init Failed for Agent {name}: {e}")
-        #     self.model = None # Set to None if initialization fails
+        #     logger.warning(f"Mock Mode: Vertex AI initialization skipped or failed: {e}. Running in cost-free mock mode.")
+        #     self.model = None
         
-        self.model = None
-        self.chat_session = None
+        # In cost-free mode, the model is explicitly set to None
+        self.model = None 
+
 
     def start_new_session(self):
-        # Only start the chat session if the model was successfully initialized
-        if self.model:
-            self.chat_session = self.model.start_chat(history=[])
-        else:
-            logger.warning(f"Cannot start chat session for {self.name}: Model not initialized.")
+        """Resets the chat session (now mocked)."""
+        logger.info(f"Mock mode: Starting new session for {self.name}")
+        # --- LLM CODE (COMMENTED OUT) ---
+        # if self.model:
+        #     self.chat_session = self.model.start_chat(history=[])
+        pass 
 
+    def analyze_situation(self, context_text, task_type="summary"):
+        """
+        Used for the 'Situation Room' static reports (now mocked).
+        """
+        logger.info(f"Mock mode: Generating static report for {self.name} / {task_type}")
+        time.sleep(1.0) # Simulate a slight delay
+
+        # --- LLM CODE (COMMENTED OUT) ---
+        # if self.model:
+        #     # In a real setup, you would construct a detailed prompt and call generate_content
+        #     # For now, we fall through to the mock response below
+        #     pass
+
+        # A static, non-LLM mock response for the Situation Room
+        return f"""
+        # [MOCK STATIC REPORT - {self.name}]
+
+        This report is generated in **LLM-FREE MODE** to minimize cloud costs. The original LLM functionality is disabled.
+
+        ### Key Takeaway for {self.name}
+        The current game state (Episodes 1-3) indicates a highly kinetic environment, with significant actions taken by both Blue and Red forces. The most crucial factor for decision-makers remains **escalation control** and **alliance cohesion**.
+
+        ### Mock Analysis
+        * **Situation:** Kinematics against the UK mainland are confirmed, crossing a major red line.
+        * **Focus:** NATO activation and Article 5 discussions are paramount.
+        * **Recommendation:** Prioritize political signaling over military action in the next 12 hours.
+        """
 
     def get_response(self, user_input, context_text=""):
-        # --- MVP DEMO: VERTEX AI CALLS DISABLED TO REDUCE COST ---
-        # The chatbot functionality is disabled and returns a static message.
-        return "The chatbot has been disabled for this MVP demo to reduce token costs."
+        """
+        Used for the 'Advisor' chatbot interaction (now mocked).
+        """
+        logger.info(f"Mock mode: Getting chat response for {self.name}")
+        # Simulate LLM delay
+        time.sleep(1.5)
+        
+        # --- LLM CODE (COMMENTED OUT) ---
+        # if self.model and self.chat_session:
+        #     try:
+        #         # Pass the raw transcript context to the LLM for RAG-like capability
+        #         full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
+        #         response = self.chat_session.send_message(full_prompt)
+        #         return response.text
+        #     except Exception as e:
+        #         logger.error(f"LLM Call Error: {e}")
+        #         return f"**[LLM ERROR]** An error occurred while communicating with the AI. Check project logs. Falling back to mock response."
+        
+        # A static, non-LLM mock response for the Chatbot
+        return f"**[MOCK RESPONSE - {self.name}]**\n\nI am currently operating in **LLM-FREE MODE**.\n\nYour query ('{user_input}') is understood.\n\nAs the **{self.name}**, my advice is currently locked to a placeholder message to ensure zero Vertex AI token usage. To enable the live AI capability, you will need to **uncomment the Vertex AI import and initialization code** in the `agents.py` file."
 
-        # Original code commented out below for easy reinstatement.
-        # if self.model is None:
-        #     return "Error: Agent model failed to initialize. Check configuration."
-            
-        # try:
-        #     if self.chat_session is None:
-        #         # Should not happen if start_new_session is called in @st.cache_resource, 
-        #         # but good safety check.
-        #         self.start_new_session()
-            
-        #     full_prompt = user_input
-        #     if context_text:
-        #          # Pass the raw transcript context to the LLM for RAG-like capability
-        #          full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
-                 
-        #     response = self.chat_session.send_message(full_prompt)
-        #     return response.text
-        # except Exception as e:
-        #     return f"Error: {e}"
+
+# --- ADVISOR DEFINITIONS ---
+
+ADVISOR_DEFINITIONS = {
+    "Integrator": {
+        "icon": "🧩",
+        "prompt": """You are 'The Integrator,' a senior strategic analyst advising the UK Prime Minister. 
+        Synthesize information across military, diplomatic, economic, and domestic domains. 
+        Identify connections, contradictions, and cascading effects. Be concise and strategic."""
+    },
+    "Military Historian": {
+        "icon": "🏛️",
+        "prompt": """You are 'The Historian.' Identify relevant historical parallels to the current crisis. 
+        Warn about known failure modes. Acknowledge that history doesn't repeat but often rhymes."""
+    },
+    "Alliance Whisperer": {
+        "icon": "🤝",
+        "prompt": """You are the 'Alliance Whisperer.' You specialize in alliance politics and coalition management. 
+        Predict NATO responses and suggest how to frame UK requests for maximum effect."""
+    },
+    "Red Teamer": {
+        "icon": "😈",
+        "prompt": """You are 'The Red Cell.' Your job is to think like the Russian leadership. 
+        Predict Russian responses and identify UK vulnerabilities from Moscow's perspective. 
+        You are pro-UK success, but achieve this by ruthlessly simulating the adversary."""
+    },
+    "The Missing Link": {
+        "icon": "💡",
+        "prompt": """You are the 'Missing Link', a strategic advisor who spots what isn't being discussed. 
+        What are the important factors or perspectives that haven't been included in the discussion so far. 
+        Only add missing points if they are strategically important."""
+    },
+    "Citizen's Voice": {
+        "icon": "🗣️",
+        "prompt": """You are 'The Citizen's Voice.' You represent the 67 million UK residents. 
+        Ask: 'What does this mean for ordinary people?' and 'Are we protecting the population, not just the state?'"""
+    }
+}
+
 
 def get_agent(agent_name):
+    """Factory function to create an agent instance."""
     if agent_name in ADVISOR_DEFINITIONS:
         data = ADVISOR_DEFINITIONS[agent_name]
         return WargameAgent(agent_name, data['icon'], data['prompt'])
