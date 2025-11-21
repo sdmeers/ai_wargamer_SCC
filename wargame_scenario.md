@@ -2,7 +2,7 @@
 
 ALL THE INFORMATION IN THIS APP IS BASED ON A FICTIONAL WARGAME. 
 
-This application is a Minimum Viable Product (MVP) designed to demonstrate how artificial intelligence agents could support human decision-makers during a fast-moving, high-stress crisis like the Wargame. It was developed in around 4 hours during a hackathon.
+This application is a Minimum Viable Product (MVP) designed to demonstrate how artificial intelligence agents could support human decision-makers during a fast-moving, high-stress crisis like the Wargame. It was developed during 1 one-day hackathon.
 
 ## Scenario Overview
 

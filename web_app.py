@@ -337,6 +337,27 @@ def render_chatbot_page(agent_name):
             st.markdown(msg["content"])
             
     # Handle user input
+    if prompt := st.chat_input(f"Ask {agent_name}..."):
+        st.session_state[history_key].append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+            
+        with st.chat_message("assistant"):
+            with st.spinner(f"{agent_name} is synthesizing intelligence..."):
+                agent = initialize_wargame_agent(agent_name)
+                
+                if agent:
+                    # Pass the full wargame context to the agent
+                    response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
+                    st.markdown(response)
+                    st.session_state[history_key].append({"role": "assistant", "content": response})
+                else:
+                    st.error("Agent connection failed. Check Vertex AI initialization.")
+
+
+# --- SIDEBAR ---
+with st.sidebar:
+    st.title("Wargame OS")
     # Data Loading Check
     if not st.session_state.data_loaded:
         with st.spinner("Initializing system and loading intelligence data..."):
