@@ -276,14 +276,18 @@ class WargameAgent:
         # --- LAZY INITIALIZATION FOR CLOUD RUN ---
         # Initialize Vertex AI connection only when a WargameAgent is instantiated.
         # This will now be controlled by @st.cache_resource in web_app.py.
-        try:
-            vertexai.init(project=PROJECT_ID, location=LOCATION)
-            logger.info(f"Initialized Vertex AI for Agent: {name}")
-            self.model = GenerativeModel(MODEL_ID, system_instruction=[system_prompt])
-        except Exception as e:
-            logger.error(f"Vertex AI Init Failed for Agent {name}: {e}")
-            self.model = None # Set to None if initialization fails
-            
+        
+        # --- MVP DEMO: VERTEX AI CALLS DISABLED TO REDUCE COST ---
+        # The following block is commented out to prevent live calls to Vertex AI.
+        # try:
+        #     vertexai.init(project=PROJECT_ID, location=LOCATION)
+        #     logger.info(f"Initialized Vertex AI for Agent: {name}")
+        #     self.model = GenerativeModel(MODEL_ID, system_instruction=[system_prompt])
+        # except Exception as e:
+        #     logger.error(f"Vertex AI Init Failed for Agent {name}: {e}")
+        #     self.model = None # Set to None if initialization fails
+        
+        self.model = None
         self.chat_session = None
 
     def start_new_session(self):
@@ -295,24 +299,29 @@ class WargameAgent:
 
 
     def get_response(self, user_input, context_text=""):
-        if self.model is None:
-            return "Error: Agent model failed to initialize. Check configuration."
+        # --- MVP DEMO: VERTEX AI CALLS DISABLED TO REDUCE COST ---
+        # The chatbot functionality is disabled and returns a static message.
+        return "The chatbot has been disabled for this MVP demo to reduce token costs."
+
+        # Original code commented out below for easy reinstatement.
+        # if self.model is None:
+        #     return "Error: Agent model failed to initialize. Check configuration."
             
-        try:
-            if self.chat_session is None:
-                # Should not happen if start_new_session is called in @st.cache_resource, 
-                # but good safety check.
-                self.start_new_session()
+        # try:
+        #     if self.chat_session is None:
+        #         # Should not happen if start_new_session is called in @st.cache_resource, 
+        #         # but good safety check.
+        #         self.start_new_session()
             
-            full_prompt = user_input
-            if context_text:
-                 # Pass the raw transcript context to the LLM for RAG-like capability
-                 full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
+        #     full_prompt = user_input
+        #     if context_text:
+        #          # Pass the raw transcript context to the LLM for RAG-like capability
+        #          full_prompt = f"CONTEXT:\n{context_text}\n\nUSER QUERY:\n{user_input}"
                  
-            response = self.chat_session.send_message(full_prompt)
-            return response.text
-        except Exception as e:
-            return f"Error: {e}"
+        #     response = self.chat_session.send_message(full_prompt)
+        #     return response.text
+        # except Exception as e:
+        #     return f"Error: {e}"
 
 def get_agent(agent_name):
     if agent_name in ADVISOR_DEFINITIONS:
