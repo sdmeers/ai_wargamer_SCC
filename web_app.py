@@ -90,17 +90,16 @@ NAVIGATION = {
 
 def load_data_fast():
     """
-    Loads 1) Raw transcripts (for chat context) and 2) Precomputed Analysis JSON.
+    Loads 1) Raw transcripts into a Python list of objects and 2) Precomputed Analysis JSON.
     """
-    # 1. Load Transcripts (For Chat Context)
+    # 1. Load Transcripts into a structured list
     files_to_load = [
         "the_wargame_s2e1_transcript_cleaned.json",
         "the_wargame_s2e2_transcript_cleaned.json",
         "the_wargame_s2e3_transcript_cleaned.json"
     ]
-    combined_text = ""
+    all_transcript_entries = []
     
-    # Path to the 'data' directory (assuming it's relative to web_app.py)
     data_dir = os.path.join(os.path.dirname(__file__), 'data')
     
     for filename in files_to_load:
@@ -109,22 +108,39 @@ def load_data_fast():
             try:
                 with open(path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
+                    
+                    # Find the actual list of transcript entries
+                    transcript_list = None
                     if isinstance(data, list):
-                        for entry in data:
-                            # Concatenate speaker and text/content, separated by a colon
-                            if 'text' in entry: combined_text += f"{entry.get('speaker', 'Unknown')}: {entry['text']}\n"
-                            elif 'content' in entry: combined_text += f"{entry['content']}\n"
+                        transcript_list = data
                     elif isinstance(data, dict):
-                        # Simple JSON to string conversion for dicts (less ideal for transcript)
-                        combined_text += str(data)
-                    combined_text += "\n--- END OF EPISODE ---\n"
+                        # If the data is in a dictionary, find the list within it
+                        for key in data:
+                            if isinstance(data[key], list):
+                                transcript_list = data[key]
+                                break # Assume the first list found is the correct one
+                    
+                    if transcript_list:
+                        all_transcript_entries.extend(transcript_list)
+                    
+                    # Add a separator object between episodes
+                    all_transcript_entries.append({"type": "separator", "text": "--- END OF EPISODE ---"})
             except Exception as e:
                 logger.warning(f"Failed to load or parse transcript file {filename}: {e}")
         else:
             logger.warning(f"Transcript file not found: {path}")
 
-    st.session_state.wargame_context = combined_text.strip()
-    st.session_state.transcript_context_length = len(st.session_state.wargame_context)
+    # Store the Python list directly.
+    st.session_state.wargame_context = all_transcript_entries
+
+    # Calculate the total word count for the UI display
+    total_words = 0
+    for entry in all_transcript_entries:
+        text = entry.get('text', '') or entry.get('content', '')
+        if isinstance(text, str):
+            total_words += len(text.split())
+            
+    st.session_state.transcript_context_length = total_words
     
     # 2. Load Precomputed Analysis
     precomputed_path = os.path.join(os.path.dirname(__file__), PRECOMPUTED_FILE)
@@ -216,14 +232,14 @@ def render_static_page(group, title, file_path):
 
 
 def render_transcript_page(group, title, file_path):
-    """Renders the transcript using the embedded HTML viewer and passes data."""
+    """Renders the transcript by injecting data directly into the HTML viewer."""
     page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
     st.header(f"{page_data['icon']} {group}: {title}")
     st.markdown("---")
 
     # Check if data loading was successful
-    if not st.session_state.wargame_context:
-        st.warning("Transcript data could not be loaded. Please check the `data` folder for transcript files or the loading logic.")
+    if not st.session_state.wargame_context or not isinstance(st.session_state.wargame_context, list):
+        st.warning("Transcript data could not be loaded or is in an incorrect format.")
         return
 
     try:
@@ -232,53 +248,25 @@ def render_transcript_page(group, title, file_path):
         with open(full_path, 'r', encoding='utf-8') as f:
             html_template = f.read()
 
-        # Embed the HTML component
-        components.html(
-            html_template,
-            height=700, 
-            scrolling=False
-        )
-        
-        # --- ROBUST DATA SENDING FOR TRANSCRIPT FIX ---
-        
-        # 1. Ensure the context is JSON-safe and can be put into a JS template literal.
-        # This handles newlines and other escape characters correctly.
+        # --- DATA INJECTION ---
+        # 1. Get the data, which is a Python list of objects.
         context_to_send = st.session_state.wargame_context
-        # Use json.dumps to escape special characters, then strip surrounding quotes
-        escaped_context = json.dumps(context_to_send)
-        if escaped_context.startswith('"') and escaped_context.endswith('"'):
-            # This is the string we want to embed inside JS backticks (`...`)
-            escaped_context = escaped_context[1:-1]
+        
+        # 2. Serialize the list into a JSON string. This is the one and only serialization step.
+        json_string = json.dumps(context_to_send)
 
-        # 2. Inject the script to find the iframe and post the message
-        js_injection = f"""
-            <script>
-                // We use a small delay and a loop to ensure the iframe is ready.
-                function postTranscriptData() {{
-                    const iframes = parent.document.querySelectorAll('iframe');
-                    // Find the iframe containing the component (it will be the last one rendered)
-                    const iframe = iframes[iframes.length - 1]; 
-                    
-                    if (iframe) {{
-                        const transcriptText = `{escaped_context}`;
-                        iframe.contentWindow.postMessage(
-                            {{ type: 'streamlit:transcript:load', text: transcriptText }}, 
-                            '*'
-                        );
-                        // console.log('Transcript data posted successfully.');
-                    }} else {{
-                        // console.log('Waiting for iframe to load...');
-                        setTimeout(postTranscriptData, 100); // Retry after 100ms
-                    }}
-                }}
+        # 3. Replace the placeholder in the HTML. This injects the JSON as a JS object literal.
+        html_with_data = html_template.replace(
+            '`%%TRANSCRIPT_DATA_PLACEHOLDER%%`',
+            json_string
+        )
 
-                // Start the posting process immediately
-                postTranscriptData();
-            </script>
-        """
-        # Render a tiny script component to trigger the message sending
-        # Using a width/height of 1 prevents some rendering issues compared to 0.
-        components.html(js_injection, height=1, width=1) 
+        # 4. Embed the HTML component with the data now included.
+        components.html(
+            html_with_data,
+            height=700, 
+            scrolling=True # Allow scrolling on the main iframe if content overflows
+        )
 
     except FileNotFoundError:
         st.error(f"Error: Transcript viewer HTML file '{file_path}' not found.")
@@ -349,28 +337,6 @@ def render_chatbot_page(agent_name):
             st.markdown(msg["content"])
             
     # Handle user input
-    if prompt := st.chat_input(f"Ask {agent_name}..."):
-        st.session_state[history_key].append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-            
-        with st.chat_message("assistant"):
-            with st.spinner(f"{agent_name} is synthesizing intelligence..."):
-                agent = initialize_wargame_agent(agent_name)
-                
-                if agent:
-                    # Pass the full wargame context to the agent
-                    response = agent.get_response(prompt, context_text=st.session_state.wargame_context)
-                    st.markdown(response)
-                    st.session_state[history_key].append({"role": "assistant", "content": response})
-                else:
-                    st.error("Agent connection failed. Check Vertex AI initialization.")
-
-
-# --- SIDEBAR ---
-with st.sidebar:
-    st.title("Wargame OS")
-    
     # Data Loading Check
     if not st.session_state.data_loaded:
         with st.spinner("Initializing system and loading intelligence data..."):
@@ -386,7 +352,7 @@ with st.sidebar:
                 if st.button("Retry Load"):
                     st.rerun()
 
-    st.info(f"Loaded {st.session_state.transcript_context_length:,} characters of transcript data.")
+    st.info(f"Loaded {st.session_state.transcript_context_length:,} words of transcript data.")
     st.markdown("---")
 
     # Navigation Menu

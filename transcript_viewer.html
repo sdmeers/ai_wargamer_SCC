@@ -53,8 +53,6 @@
         .advertisement .speaker, .advertisement { background-color: #fcf8e3; border-left: 5px solid #ffcc00; }
 
         .transcript-container {
-            max-height: 500px; /* Limit height for scrolling content */
-            overflow-y: auto;
             padding-right: 10px; /* Space for scrollbar */
         }
 
@@ -123,6 +121,9 @@
     </div>
     
     <script>
+        // This placeholder is replaced by a JSON literal (an array of objects) from Python.
+        const transcriptDataFromPython = `%%TRANSCRIPT_DATA_PLACEHOLDER%%`;
+
         const filters = {
             advertisement: true,
             commentary: true,
@@ -140,7 +141,6 @@
         function showAll() {
             Object.keys(filters).forEach(key => filters[key] = true);
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                // Ensure 'Show All' button itself doesn't get the filter class
                 if (!btn.classList.contains('show-all-btn')) {
                     btn.classList.add('active');
                 }
@@ -155,49 +155,37 @@
             });
         }
         
-        function renderTranscript(transcriptText) {
+        function renderTranscript(transcriptEntries) {
             const transcriptDiv = document.getElementById('transcript-container');
             if (!transcriptDiv) return;
+
+            if (!Array.isArray(transcriptEntries)) {
+                transcriptDiv.innerHTML = '<p style="color: red;">Error: Injected transcript data is not an array.</p>';
+                console.error("Data is not an array:", transcriptEntries);
+                return;
+            }
 
             // Clear placeholder/existing content
             transcriptDiv.innerHTML = '';
 
-            // Split the full text by newline for line-by-line rendering
-            const lines = transcriptText.split('\n');
-            
-            // Regex to extract speaker (anything before the first colon) and content
-            // Non-greedy match for the speaker
-            const speakerRegex = /^([^:]+):\s*(.*)$/; 
-            
-            lines.forEach(line => {
-                if (!line.trim() || line.includes('--- END OF EPISODE ---')) return; // Skip separators and empty lines
+            transcriptEntries.forEach(entry => {
+                if (!entry || (entry.type === 'separator')) {
+                    return; // Skip separators
+                }
 
-                const match = line.match(speakerRegex);
-                
-                let speaker = 'Commentary';
-                let content = line.trim();
-                let type = 'commentary'; 
+                const speaker = entry.speaker || 'Narrator';
+                const content = entry.text || entry.content || '';
+                let type = 'commentary';
 
-                if (match) {
-                    speaker = match[1].trim();
-                    content = match[2].trim();
-                    
-                    // Simple categorization based on speaker name
-                    const lowerSpeaker = speaker.toLowerCase();
-                    if (lowerSpeaker.includes('advertisement') || lowerSpeaker.includes('speaker_')) {
-                        type = 'advertisement';
-                    } else if (lowerSpeaker.includes('red') || lowerSpeaker.includes('russia') || lowerSpeaker.includes('putin')) {
-                        type = 'red';
-                    } else if (lowerSpeaker.includes('prime') || lowerSpeaker.includes('defence') || lowerSpeaker.includes('foreign') || lowerSpeaker.includes('blue') || lowerSpeaker.includes('cabinet')) {
-                        type = 'blue';
-                    } else {
-                        type = 'commentary'; 
-                    }
-                } else if (line.trim().length > 0) {
-                     // Handle long narrative lines without a colon (still commentary)
-                     speaker = 'Narrator';
-                     content = line.trim();
-                     type = 'commentary';
+                const lowerSpeaker = speaker.toLowerCase();
+                if (lowerSpeaker.includes('advertisement') || lowerSpeaker.includes('speaker_')) {
+                    type = 'advertisement';
+                } else if (lowerSpeaker.includes('red') || lowerSpeaker.includes('russia') || lowerSpeaker.includes('putin')) {
+                    type = 'red';
+                } else if (lowerSpeaker.includes('prime') || lowerSpeaker.includes('defence') || lowerSpeaker.includes('foreign') || lowerSpeaker.includes('blue') || lowerSpeaker.includes('cabinet')) {
+                    type = 'blue';
+                } else {
+                    type = 'commentary'; 
                 }
 
                 const lineDiv = document.createElement('div');
@@ -211,28 +199,18 @@
                 transcriptDiv.appendChild(lineDiv);
             });
 
-            // If the transcript loaded successfully, scroll to the top
             transcriptDiv.scrollTop = 0;
             applyFilters();
         }
         
-        // --- Listener to receive transcript data from Streamlit parent ---
-        window.addEventListener('message', (event) => {
-            // Check if the message is from the parent window (Streamlit)
-            if (event.source === window.parent && event.data && event.data.type === 'streamlit:transcript:load') {
-                const transcriptText = event.data.text;
-                // Only render if we received actual content
-                if (transcriptText && transcriptText.length > 0) {
-                    renderTranscript(transcriptText);
-                } else {
-                    document.getElementById('transcript-container').innerHTML = '<p style="color: red;">Error: Received empty or invalid transcript data.</p>';
-                }
-            }
-        });
-
-        // Initial setup
         document.addEventListener('DOMContentLoaded', () => {
             showAll();
+
+            if (Array.isArray(transcriptDataFromPython)) {
+                renderTranscript(transcriptDataFromPython);
+            } else {
+                console.warn("Transcript data was not injected or is not a valid array.");
+            }
         });
     </script>
 </body>

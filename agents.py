@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # We keep these variables for use within the WargameAgent class
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "mod-scc25lon-710")
 LOCATION = os.environ.get("GCP_REGION", "us-central1")
-MODEL_ID = "gemini-2.5-pro" 
+MODEL_ID = "gemini-3.0" 
 
 # NOTE: Removed the global vertexai.init() call to speed up Streamlit startup.
 # Initialization now occurs inside WargameAgent.__init__ which is cached in web_app.py.
@@ -90,14 +90,20 @@ SITUATION_PROMPTS = {
     """,
     
     "Dilemmas": """
-    ROLE: PM's Strategy Unit.
-    TASK: Identify the core strategic trade-offs facing the UK.
-    
+    ROLE: Red Team Analyst (simulating Russian perspective).
+    TASK: Identify the core strategic dilemmas and concerns for the Russian leadership (RED) based on the transcript.
+    AUDIENCE: UK Leadership (to understand the adversary's mindset).
+
     OUTPUT FORMAT:
-    **STRATEGIC DILEMMAS:**
-    * **Dilemma 1:** Choice between [Option A] and [Option B]. Risk: [Brief description of the trade-off].
-    
-    GUIDANCE: Focus on "Least Bad Options" and moral/strategic conflicts.
+    **🔴 RED FORCE DILEMMAS & CONCERNS:**
+    * **Concern 1: [Specific Concern]** - This could be exacerbated by BLUE actions such as [e.g., moving a specific military unit, applying new sanctions].
+    * **Dilemma 1: Choice between [Red Option A] and [Red Option B]** - Risk for RED: [Brief description of the trade-off from their perspective].
+
+    GUIDANCE:
+    - Analyze what would worry the Russian leadership.
+    - What BLUE actions (military, political, economic) would increase their anxiety or force them into a difficult choice?
+    - Consider factors like: overextension of forces, US/NATO policy shifts, effectiveness of sanctions, internal Russian public opinion, and BLUE cyber capabilities.
+    - Frame everything from the adversary's point of view. What are THEIR "least bad options"?
     """
 }
 
