@@ -14,7 +14,7 @@ from agents import (
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-OUTPUT_FILE = "intelligence_analysis_gemini3.json"
+OUTPUT_FILE = "intelligence_analysis.json"
 
 def load_transcripts():
     logger.info("Reading transcript files...")

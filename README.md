@@ -108,11 +108,6 @@ The application runs in two stages. First, you must run a script to pre-compute 
     ```bash
     python precompute_intelligence.py
     ```
-    This will create a file named `intelligence_analysis_gemini3.json`. For the web app to find it, rename it: 
-    
-    ```bash
-    mv intelligence_analysis_gemini3.json intelligence_analysis.json
-    ```
 
 2.  **Launch the Streamlit Web App:**
     ```bash
