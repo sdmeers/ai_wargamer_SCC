@@ -1,6 +1,20 @@
 import time
 import os
 import logging
+import json
+
+ADVISOR_DEFINITIONS_PATH = 'prompts/advisor_prompts.json'
+
+# Load advisor definitions from agent_prompts.json
+try:
+    with open(ADVISOR_DEFINITIONS_PATH, 'r') as f:
+        ADVISOR_DEFINITIONS = json.load(f)
+except FileNotFoundError:
+    logger.error(f"{ADVISOR_DEFINITIONS_PATH} not found. Advisor definitions cannot be loaded.")
+    ADVISOR_DEFINITIONS = {}
+except json.JSONDecodeError:
+    logger.error(f"Error decoding JSON from {ADVISOR_DEFINITIONS_PATH}. Check file format.")
+    ADVISOR_DEFINITIONS = {}
 
 # --- VERTEX AI IMPORTS (COMMENTED OUT FOR COST SAVINGS) ---
 # To re-enable LLM functionality, uncomment the following lines:
@@ -106,43 +120,6 @@ class WargameAgent:
         return f"**[MOCK RESPONSE - {self.name}]**\n\nI am currently operating in **LLM-FREE MODE**.\n\nYour query ('{user_input}') is understood.\n\nAs the **{self.name}**, my advice is currently locked to a placeholder message to ensure zero Vertex AI token usage. To enable the live AI capability, you will need to **uncomment the Vertex AI import and initialization code** in the `agents.py` file."
 
 
-# --- ADVISOR DEFINITIONS ---
-
-ADVISOR_DEFINITIONS = {
-    "Integrator": {
-        "icon": "🧩",
-        "prompt": """You are 'The Integrator,' a senior strategic analyst advising the UK Prime Minister. 
-        Synthesize information across military, diplomatic, economic, and domestic domains. 
-        Identify connections, contradictions, and cascading effects. Be concise and strategic."""
-    },
-    "Military Historian": {
-        "icon": "🏛️",
-        "prompt": """You are 'The Historian.' Identify relevant historical parallels to the current crisis. 
-        Warn about known failure modes. Acknowledge that history doesn't repeat but often rhymes."""
-    },
-    "Alliance Whisperer": {
-        "icon": "🤝",
-        "prompt": """You are the 'Alliance Whisperer.' You specialize in alliance politics and coalition management. 
-        Predict NATO responses and suggest how to frame UK requests for maximum effect."""
-    },
-    "Red Teamer": {
-        "icon": "😈",
-        "prompt": """You are 'The Red Cell.' Your job is to think like the Russian leadership. 
-        Predict Russian responses and identify UK vulnerabilities from Moscow's perspective. 
-        You are pro-UK success, but achieve this by ruthlessly simulating the adversary."""
-    },
-    "The Missing Link": {
-        "icon": "💡",
-        "prompt": """You are the 'Missing Link', a strategic advisor who spots what isn't being discussed. 
-        What are the important factors or perspectives that haven't been included in the discussion so far. 
-        Only add missing points if they are strategically important."""
-    },
-    "Citizen's Voice": {
-        "icon": "🗣️",
-        "prompt": """You are 'The Citizen's Voice.' You represent the 67 million UK residents. 
-        Ask: 'What does this mean for ordinary people?' and 'Are we protecting the population, not just the state?'"""
-    }
-}
 
 
 def get_agent(agent_name):
