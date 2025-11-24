@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 gcp/
+old/
 
 # Virtual environments
 .venv
