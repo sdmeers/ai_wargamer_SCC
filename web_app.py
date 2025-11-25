@@ -93,42 +93,26 @@ def load_data_fast():
     Loads 1) Raw transcripts into a Python list of objects and 2) Precomputed Analysis JSON.
     """
     # 1. Load Transcripts into a structured list
-    files_to_load = [
-        "the_wargame_s2e1_transcript_cleaned.json",
-        "the_wargame_s2e2_transcript_cleaned.json",
-        "the_wargame_s2e3_transcript_cleaned.json"
-    ]
+    transcript_file_to_load = "the_wargame_s2e1+2+3_clean_transcript.json"
     all_transcript_entries = []
     
     data_dir = os.path.join(os.path.dirname(__file__), 'data')
     
-    for filename in files_to_load:
-        path = os.path.join(data_dir, filename)
-        if os.path.exists(path):
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    
-                    # Find the actual list of transcript entries
-                    transcript_list = None
-                    if isinstance(data, list):
-                        transcript_list = data
-                    elif isinstance(data, dict):
-                        # If the data is in a dictionary, find the list within it
-                        for key in data:
-                            if isinstance(data[key], list):
-                                transcript_list = data[key]
-                                break # Assume the first list found is the correct one
-                    
-                    if transcript_list:
-                        all_transcript_entries.extend(transcript_list)
-                    
-                    # Add a separator object between episodes
-                    all_transcript_entries.append({"type": "separator", "text": "--- END OF EPISODE ---"})
-            except Exception as e:
-                logger.warning(f"Failed to load or parse transcript file {filename}: {e}")
-        else:
-            logger.warning(f"Transcript file not found: {path}")
+    path = os.path.join(data_dir, transcript_file_to_load)
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+                if isinstance(data, list):
+                    all_transcript_entries.extend(data)
+                else:
+                    logger.warning(f"Transcript file {transcript_file_to_load} content is not a list. Skipping.")
+                
+        except Exception as e:
+            logger.warning(f"Failed to load or parse transcript file {transcript_file_to_load}: {e}")
+    else:
+        logger.warning(f"Transcript file not found: {path}")
 
     # Store the Python list directly.
     st.session_state.wargame_context = all_transcript_entries
@@ -252,20 +236,25 @@ def render_transcript_page(group, title, file_path):
         # 1. Get the data, which is a Python list of objects.
         context_to_send = st.session_state.wargame_context
         
-        # 2. Serialize the list into a JSON string. This is the one and only serialization step.
+        # 2. Serialize the list into a JSON string.
         json_string = json.dumps(context_to_send)
 
-        # 3. Replace the placeholder in the HTML. This injects the JSON as a JS object literal.
+        # 3. Replace the placeholder in the HTML.
         html_with_data = html_template.replace(
             '`%%TRANSCRIPT_DATA_PLACEHOLDER%%`',
             json_string
         )
 
-        # 4. Embed the HTML component with the data now included.
+        # 4. Dynamically calculate height to avoid nested scrollbars
+        # Estimate: 250px for header/legend + 40px per transcript line
+        num_lines = len(context_to_send)
+        estimated_height = 250 + (num_lines * 40)
+
+        # 5. Embed the HTML component with the data now included.
         components.html(
             html_with_data,
-            height=700, 
-            scrolling=True # Allow scrolling on the main iframe if content overflows
+            height=estimated_height, 
+            scrolling=False 
         )
 
     except FileNotFoundError:
@@ -319,10 +308,20 @@ def render_chatbot_page(agent_name):
     page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
     st.header(f"{page_data['icon']} Advisor: {agent_name}")
     
-    briefing_key = f"briefing_{agent_name}"
-    if briefing_key in st.session_state:
+    # Robustly find the briefing key, trying both space and underscore formats
+    # to handle inconsistency in the source JSON file.
+    key_with_space = f"briefing_{agent_name}"
+    key_with_underscore = f"briefing_{agent_name.replace(' ', '_')}"
+    
+    briefing_content = None
+    if key_with_space in st.session_state:
+        briefing_content = st.session_state[key_with_space]
+    elif key_with_underscore in st.session_state:
+        briefing_content = st.session_state[key_with_underscore]
+
+    if briefing_content:
         with st.expander("📜 Initial Strategic Assessment", expanded=True):
-            st.markdown(st.session_state[briefing_key])
+            st.markdown(briefing_content)
     
     st.markdown("---")
     st.caption("Operational Chat Channel - Secure Line Open")

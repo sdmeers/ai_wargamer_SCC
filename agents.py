@@ -3,12 +3,22 @@ import os
 import logging
 import json
 
-ADVISOR_DEFINITIONS_PATH = 'prompts/advisor_prompts.json'
+# --- LOGGING SETUP ---
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+logger = logging.getLogger(__name__)
 
-# Load advisor definitions from agent_prompts.json
+ADVISOR_DEFINITIONS_PATH = 'prompts/system_prompts.json'
+
+# Load advisor definitions from system_prompts.json
 try:
     with open(ADVISOR_DEFINITIONS_PATH, 'r') as f:
-        ADVISOR_DEFINITIONS = json.load(f)
+        # Load the entire JSON and then extract the 'advisors' part
+        system_prompts_data = json.load(f)
+        ADVISOR_DEFINITIONS = system_prompts_data.get('advisors', {}).get('personas', {})
 except FileNotFoundError:
     logger.error(f"{ADVISOR_DEFINITIONS_PATH} not found. Advisor definitions cannot be loaded.")
     ADVISOR_DEFINITIONS = {}
@@ -20,14 +30,6 @@ except json.JSONDecodeError:
 # To re-enable LLM functionality, uncomment the following lines:
 # import vertexai
 # from vertexai.generative_models import GenerativeModel, SafetySetting
-
-# --- LOGGING SETUP ---
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamHandler()]
-)
-logger = logging.getLogger(__name__)
 
 # --- CONFIGURATION ---
 # Note: These are now primarily informational, but set to your new project ID

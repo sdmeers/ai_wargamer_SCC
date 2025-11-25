@@ -47,10 +47,11 @@
         }
         
         /* Line Colors */
-        .blue .speaker, .blue { background-color: #e6f7ff; border-left: 5px solid #0077b6; }
-        .red .speaker, .red { background-color: #fff0f0; border-left: 5px solid #cc3333; }
-        .commentary .speaker, .commentary { background-color: #f0f0f0; border-left: 5px solid #888888; }
-        .advertisement .speaker, .advertisement { background-color: #fcf8e3; border-left: 5px solid #ffcc00; }
+        .blue { background-color: #e6f7ff; border-left: 5px solid #0077b6; }
+        .red { background-color: #fff0f0; border-left: 5px solid #cc3333; }
+        .commentary { background-color: #f0f0f0; border-left: 5px solid #888888; }
+        .explanation { background-color: #e6ffed; border-left: 5px solid #28a745; }
+        .advertisement { background-color: #fcf8e3; border-left: 5px solid #ffcc00; }
 
         .transcript-container {
             padding-right: 10px; /* Space for scrollbar */
@@ -78,19 +79,30 @@
             margin-bottom: 20px;
         }
         .filter-btn {
-            background-color: #ddd;
             border: none;
             padding: 8px 15px;
             margin-right: 10px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.2s, box-shadow 0.2s;
+            transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+            color: #333;
+            border: 1px solid #ccc;
         }
-        .filter-btn.active {
-            background-color: #667eea;
-            color: white;
-            box-shadow: 0 2px 5px rgba(102, 126, 234, 0.4);
-        }
+
+        /* Inactive states */
+        .filter-btn.blue { background-color: #e6f7ff; }
+        .filter-btn.red { background-color: #fff0f0; }
+        .filter-btn.commentary { background-color: #f0f0f0; }
+        .filter-btn.explanation { background-color: #e6ffed; }
+        .filter-btn.advertisement { background-color: #fcf8e3; }
+
+        /* Active states */
+        .filter-btn.active.blue { background-color: #0077b6; color: white; border-color: #0077b6;}
+        .filter-btn.active.red { background-color: #cc3333; color: white; border-color: #cc3333;}
+        .filter-btn.active.commentary { background-color: #888888; color: white; border-color: #888888;}
+        .filter-btn.active.explanation { background-color: #28a745; color: white; border-color: #28a745;}
+        .filter-btn.active.advertisement { background-color: #ffcc00; color: white; border-color: #ffcc00;}
+        
     </style>
 </head>
 <body>
@@ -105,6 +117,7 @@
             <button class="filter-btn blue active" onclick="toggleFilter('blue')">Blue Force</button>
             <button class="filter-btn red active" onclick="toggleFilter('red')">Red Force</button>
             <button class="filter-btn commentary active" onclick="toggleFilter('commentary')">Commentary</button>
+            <button class="filter-btn explanation active" onclick="toggleFilter('explanation')">Explanation</button>
             <button class="filter-btn advertisement active" onclick="toggleFilter('advertisement')">Other/Ads</button>
             <button class="filter-btn show-all-btn" onclick="showAll()">Show All</button>
         </div>
@@ -112,6 +125,7 @@
         <div class="legend-item"><div class="color-box" style="background-color: #0077b6;"></div>Blue Force (UK/Allies)</div>
         <div class="legend-item"><div class="color-box" style="background-color: #cc3333;"></div>Red Force (Adversary)</div>
         <div class="legend-item"><div class="color-box" style="background-color: #888888;"></div>Commentary (Narrator/Context)</div>
+        <div class="legend-item"><div class="color-box" style="background-color: #28a745;"></div>Explanation (Factual/Background)</div>
         <div class="legend-item"><div class="color-box" style="background-color: #ffcc00;"></div>Other (Advertisements/Unidentified)</div>
     </div>
     
@@ -127,6 +141,7 @@
         const filters = {
             advertisement: true,
             commentary: true,
+            explanation: true,
             blue: true,
             red: true
         };
@@ -169,30 +184,19 @@
             transcriptDiv.innerHTML = '';
 
             transcriptEntries.forEach(entry => {
-                if (!entry || (entry.type === 'separator')) {
-                    return; // Skip separators
+                if (!entry || typeof entry.text !== 'string') {
+                    return; // Skip separators or entries without text
                 }
 
-                const speaker = entry.speaker || 'Narrator';
-                const content = entry.text || entry.content || '';
-                let type = 'commentary';
-
-                const lowerSpeaker = speaker.toLowerCase();
-                if (lowerSpeaker.includes('advertisement') || lowerSpeaker.includes('speaker_')) {
-                    type = 'advertisement';
-                } else if (lowerSpeaker.includes('red') || lowerSpeaker.includes('russia') || lowerSpeaker.includes('putin')) {
-                    type = 'red';
-                } else if (lowerSpeaker.includes('prime') || lowerSpeaker.includes('defence') || lowerSpeaker.includes('foreign') || lowerSpeaker.includes('blue') || lowerSpeaker.includes('cabinet')) {
-                    type = 'blue';
-                } else {
-                    type = 'commentary'; 
-                }
+                const role = entry.identified_role || 'Unknown Role';
+                const content = entry.text;
+                const classification = entry.classification || 'commentary'; // Default to commentary
 
                 const lineDiv = document.createElement('div');
-                lineDiv.className = `line ${type}`;
-                lineDiv.setAttribute('data-type', type);
+                lineDiv.className = `line ${classification}`;
+                lineDiv.setAttribute('data-type', classification);
                 lineDiv.innerHTML = `
-                    <span class="speaker ${type}">${speaker}:</span> 
+                    <span class="speaker">${role}:</span> 
                     <span>${content}</span>
                 `;
                 
@@ -206,10 +210,23 @@
         document.addEventListener('DOMContentLoaded', () => {
             showAll();
 
-            if (Array.isArray(transcriptDataFromPython)) {
-                renderTranscript(transcriptDataFromPython);
-            } else {
-                console.warn("Transcript data was not injected or is not a valid array.");
+            try {
+                // The data is injected as a JavaScript literal, so we use it directly.
+                if (Array.isArray(transcriptDataFromPython)) {
+                    renderTranscript(transcriptDataFromPython);
+                } else {
+                    console.warn("Transcript data was not injected or is not a valid array.", transcriptDataFromPython);
+                    document.getElementById('transcript-container').innerHTML = '<p style="color: orange;">Warning: Transcript data is not in the expected format.</p>';
+                }
+            } catch (e) {
+                // This will catch errors if the data is malformed or the variable is not defined.
+                console.error("Failed to render transcript data:", e);
+                // Check if the placeholder was never replaced.
+                if (typeof transcriptDataFromPython === 'string' && transcriptDataFromPython.includes('%%TRANSCRIPT_DATA_PLACEHOLDER%%')) {
+                     document.getElementById('transcript-container').innerHTML = '<p>Waiting for data from the application...</p>';
+                } else {
+                     document.getElementById('transcript-container').innerHTML = '<p style="color: red;">Error: Failed to load transcript data. See console for details.</p>';
+                }
             }
         });
     </script>
