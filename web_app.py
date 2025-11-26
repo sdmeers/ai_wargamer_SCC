@@ -349,22 +349,42 @@ def format_llm_output(text):
     """
     Formats raw LLM output by replacing custom tags with HTML styles.
     Target tags: [**BOLD RED: ...**] and [**BOLD GREEN: ...**]
+    Fallback: Colors **Text** red/green based on keywords.
     """
     if not isinstance(text, str):
         return str(text)
 
-    def replace_match(match):
+    # 1. Primary Method: Explicit Tags
+    def replace_tag_match(match):
         color_name = match.group(1).upper()
         content = match.group(2)
-        # Define colors: Red for bad/damaged, Green for good/operational
         color_code = "#cc3333" if color_name == "RED" else "#28a745"
         return f'<span style="color: {color_code}; font-weight: bold;">{content}</span>'
 
-    # Regex to capture COLOR and Content. Handles optional ** markers.
-    # Matches: [BOLD RED: Text], [**BOLD RED: Text**], [**BOLD RED: Text] etc.
-    pattern = r"\[(?:\*\*)?BOLD (RED|GREEN): (.*?)(?:\*\*)?\]"
-    
-    return re.sub(pattern, replace_match, text)
+    pattern_tags = r"\[(?:\*\*)?BOLD (RED|GREEN): (.*?)(?:\*\*)?\]"
+    text = re.sub(pattern_tags, replace_tag_match, text)
+
+    # 2. Fallback Method: Keyword Matching in Bold Text
+    # Matches: **Text**
+    def replace_keyword_match(match):
+        content = match.group(1)
+        lower_content = content.lower()
+        
+        # Keywords for RED (Bad status)
+        if any(w in lower_content for w in ['damaged', 'destroyed', 'sunk', 'crippled', 'fire', 'casualt']):
+            color_code = "#cc3333" 
+        # Keywords for GREEN (Good status)
+        elif any(w in lower_content for w in ['operational', 'transit', 'active', 'deployed']):
+            color_code = "#28a745" 
+        else:
+            return match.group(0) # No change
+            
+        return f'<span style="color: {color_code}; font-weight: bold;">{content}</span>'
+
+    pattern_keywords = r"\*\*(.*?)\*\*"
+    text = re.sub(pattern_keywords, replace_keyword_match, text)
+
+    return text
 
 
 def render_llm_static_page(group, title):
