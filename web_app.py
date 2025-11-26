@@ -82,12 +82,12 @@ NAVIGATION = {
         "Dilemmas": {"icon": "⚖️", "type": "llm_static"},
     },
     "Advisors": {
-        "Integrator": {"icon": "🧩", "type": "chatbot"},
-        "Military Historian": {"icon": "🏛️", "type": "chatbot"},
-        "Alliance Whisperer": {"icon": "🤝", "type": "chatbot"},
-        "Red Teamer": {"icon": "😈", "type": "chatbot"},
-        "The Missing Link": {"icon": "💡", "type": "chatbot"},
-        "Citizen's Voice": {"icon": "🗣️", "type": "chatbot"},
+        "Integrator": {"icon": "🧩", "type": "chatbot", "id": "integrator"},
+        "Military Historian": {"icon": "🏛️", "type": "chatbot", "id": "historian"},
+        "Alliance Whisperer": {"icon": "🤝", "type": "chatbot", "id": "alliance_whisperer"},
+        "Red Teamer": {"icon": "😈", "type": "chatbot", "id": "red_teamer"},
+        "The Missing Link": {"icon": "💡", "type": "chatbot", "id": "missing_link"},
+        "Citizen's Voice": {"icon": "🗣️", "type": "chatbot", "id": "citizens_voice"},
     },
     "Tools": {
         "Knowledge Graph": {"icon": "🕸️", "type": "knowledge_graph", "file": "wargame_network.html"},
@@ -443,7 +443,9 @@ def render_chatbot_page(agent_name):
             
         with st.chat_message("assistant"):
             with st.spinner(f"{agent_name} is synthesizing intelligence..."):
-                agent = initialize_wargame_agent(agent_name)
+                # Use the internal ID if available, otherwise fallback to the name
+                agent_id = page_data.get('id', agent_name)
+                agent = initialize_wargame_agent(agent_id)
                 
                 if agent:
                     # Pass the full wargame context to the agent

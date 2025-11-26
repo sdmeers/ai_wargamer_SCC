@@ -1,31 +1,16 @@
 The attached json transcript files contains the transcripts for various episodes of the podcast "The Wargame". Please combined the contents of all the provided json transcripts into a single transcript and them apply each of the system prompts to this combined transcript as described in the system_prompts json file. Finally please output the response for each system prompt which MUST BE in the following json format. Please being sure to preserve all the necessary formatting, structure, bullet points etc... so it can be clearly displayed in a python script I have written.
 
-
-
 {
-
   "report_SITREP": "",
-
   "report_ORBAT": "",
-
   "report_SIGACTS": "",
-
   "report_Actions": "", 
-
   "report_Uncertainties": "",
-
-"report_Dilemmas": "",
-
+  "report_Dilemmas": "",
   "briefing_Military Historian": "",
-
   "briefing_Integrator": "",
-
   "briefing_Red Teamer": "",
-
   "briefing_The Missing Link": "",
-
   "briefing_Citizen's Voice": "",
-
   "briefing_Alliance_Whisperer": ""
-
 }

@@ -128,5 +128,5 @@ def get_agent(agent_name):
     """Factory function to create an agent instance."""
     if agent_name in ADVISOR_DEFINITIONS:
         data = ADVISOR_DEFINITIONS[agent_name]
-        return WargameAgent(agent_name, data['icon'], data['prompt'])
+        return WargameAgent(agent_name, data['icon'], data['system_prompt'])
     return None
