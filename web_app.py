@@ -282,15 +282,35 @@ def render_transcript_page(group, title, file_path):
         )
 
         # 4. Dynamically calculate height to avoid nested scrollbars
-        # Estimate: 300px for header/legend + 60px per transcript line (increased to handle wrapping)
-        num_lines = len(context_to_send)
-        estimated_height = 300 + (num_lines * 60)
+        # We want the iframe to be tall enough to show all content so the user uses the main page scrollbar.
+        # Heuristic:
+        # - Header/Legend: ~400px
+        # - Per entry:
+        #   - Text wrapping: ~80 chars per line (conservative)
+        #   - Line height: ~25px
+        #   - Padding/Margin: ~20px
+        
+        estimated_height = 400 
+        chars_per_line = 80
+        line_height_px = 25
+        entry_padding_px = 20
+
+        for entry in context_to_send:
+            text = entry.get('text', '')
+            if text:
+                # Calculate number of visual lines this text might take
+                num_visual_lines = (len(text) // chars_per_line) + 1
+                entry_height = (num_visual_lines * line_height_px) + entry_padding_px
+                estimated_height += entry_height
+
+        # Add a little extra buffer just in case
+        estimated_height += 100
 
         # 5. Embed the HTML component with the data now included.
         components.html(
             html_with_data,
             height=estimated_height, 
-            scrolling=True 
+            scrolling=False # Disable iframe scrolling so we rely on the main page scroll
         )
 
     except FileNotFoundError:
