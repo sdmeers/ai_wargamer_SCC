@@ -277,6 +277,29 @@ def render_transcript_page(group, title, file_path):
 
         # 3. Replace the placeholder in the HTML.
 
+        # 3. Replace the placeholder in the HTML.
+        html_with_data = html_template.replace(
+            '`%%TRANSCRIPT_DATA_PLACEHOLDER%%`',
+            json_string
+        )
+
+        # 4. Dynamically calculate height to avoid nested scrollbars
+        # Estimate: 300px for header/legend + 60px per transcript line (increased to handle wrapping)
+        num_lines = len(context_to_send)
+        estimated_height = 300 + (num_lines * 60)
+
+        # 5. Embed the HTML component with the data now included.
+        components.html(
+            html_with_data,
+            height=estimated_height, 
+            scrolling=True 
+        )
+
+    except FileNotFoundError:
+        st.error(f"Error: Transcript viewer HTML file '{file_path}' not found.")
+        st.markdown("Please ensure `transcript_viewer.html` exists in the deployment package.")
+
+
 def render_knowledge_graph(group, title, file_path):
     """
     Renders the knowledge graph by embedding the HTML file directly.
