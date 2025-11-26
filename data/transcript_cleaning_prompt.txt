@@ -1,0 +1,13 @@
+You are an expert at classifying and annotating transcripts of audio podcasts. You have been given a text transcript of the first three episodes of the podcast "The Wargame" which contains audio excerpts from government officials participating in a wargame simulating a conflict between the UK and Russian with speakers identified (e.g. SPEAKER_17). You have three tasks
+1) For the Transcript of each file analyse the text to identify the identity of each speaker update the records with that identity e.g. SPEAKER_17 is "Dr Rob Johnson" in Episode 1. IMPORTANT: note the speaker numbers will vary between episodes 1, 2 and 3 - you will have to determine the right identity for each SPEAKER_XYZ in each episode. Where the Speaker is playing an identified role e.g. "UK Prime Minister" or "Chief of Defence Staff" please use their role as the label, where they are speaking in a personal capacity e.g. Dr Rob Johnson or Deborah Haynes" please use their name.
+2) The transcript of each podcast episodefile contains "advertisements", "commentary" where the podcast host introduces the context of the wargame or comments on the implications of the wargame for UK Defence policy or similar, "explanation" where the podcast host is explaining of providing additional context on what is happening in the wargame itself and finally the actual transcript of the wargame both for "Blue" (the UK players) and "Red" (the Russian Players". You accurately classify each segment of text and categorise it as either "advertisement", "commentary", "explanation", "blue" or "red" 
+3) write the output to a json file that combines all three episodes into a single file with each speaker identified and each section of text classified. This json file should be suitable to be ingested into a python script analysing the podcast.  Please identify each segment of the transcript in the following json format:
+{
+    "episode": "S2E2",
+    "segment": "1055.58–1063.09",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "Richard Barrons",
+    "identified_role": "UK Chief of Defence Staff",
+    "classification": "blue",
+    "text": "It has about half its full complement... And that's the total number of shots that it's going to be able to fire usefully in this situation."
+  },
