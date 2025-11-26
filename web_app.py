@@ -40,11 +40,17 @@ SCENARIO_MD_FILE = "wargame_scenario.md" # Define the scenario file path
 if 'current_page_id' not in st.session_state:
     st.session_state.current_page_id = "Overview - Scenario" 
 if 'wargame_context' not in st.session_state:
-    st.session_state.wargame_context = ""
+    st.session_state.wargame_context = []
+if 'all_transcripts' not in st.session_state:
+    st.session_state.all_transcripts = []
+if 'all_analysis' not in st.session_state:
+    st.session_state.all_analysis = {}
 if 'data_loaded' not in st.session_state:
     st.session_state.data_loaded = False
 if 'transcript_context_length' not in st.session_state:
     st.session_state.transcript_context_length = 0
+if 'selected_episode' not in st.session_state:
+    st.session_state.selected_episode = 3
 
 # --- CACHED AGENT CREATION ---
 @st.cache_resource
@@ -114,17 +120,8 @@ def load_data_fast():
     else:
         logger.warning(f"Transcript file not found: {path}")
 
-    # Store the Python list directly.
-    st.session_state.wargame_context = all_transcript_entries
-
-    # Calculate the total word count for the UI display
-    total_words = 0
-    for entry in all_transcript_entries:
-        text = entry.get('text', '') or entry.get('content', '')
-        if isinstance(text, str):
-            total_words += len(text.split())
-            
-    st.session_state.transcript_context_length = total_words
+    # Store the full list in session state
+    st.session_state.all_transcripts = all_transcript_entries
     
     # 2. Load Precomputed Analysis
     precomputed_path = os.path.join(os.path.dirname(__file__), PRECOMPUTED_FILE)
@@ -132,8 +129,7 @@ def load_data_fast():
         try:
             with open(precomputed_path, 'r', encoding='utf-8') as f:
                 analysis_data = json.load(f)
-                for key, content in analysis_data.items():
-                    st.session_state[key] = content
+                st.session_state.all_analysis = analysis_data
                 st.session_state.data_loaded = True
                 return True
         except Exception as e:
@@ -142,6 +138,46 @@ def load_data_fast():
     else:
         logger.warning(f"Precomputed analysis file not found: {precomputed_path}")
         return False
+
+def update_state_for_episode():
+    """
+    Updates the session state based on the selected episode.
+    Filters transcripts and loads the correct intelligence reports.
+    """
+    episode = st.session_state.selected_episode
+    
+    # 1. Update Intelligence Reports
+    episode_key = f"episode_{episode}"
+    if episode_key in st.session_state.all_analysis:
+        current_analysis = st.session_state.all_analysis[episode_key]
+        for key, content in current_analysis.items():
+            st.session_state[key] = content
+    else:
+        # Fallback or clear if data missing
+        pass
+
+    # 2. Filter Transcripts
+    # Define which episodes to include for each slider position
+    # The transcript file uses "S2E1", "S2E2", "S2E3"
+    episodes_to_include = []
+    for i in range(1, episode + 1):
+        episodes_to_include.append(f"S2E{i}")
+        
+    filtered_transcripts = [
+        entry for entry in st.session_state.all_transcripts 
+        if entry.get('episode') in episodes_to_include
+    ]
+    
+    st.session_state.wargame_context = filtered_transcripts
+
+    # Calculate word count
+    total_words = 0
+    for entry in filtered_transcripts:
+        text = entry.get('text', '') or entry.get('content', '')
+        if isinstance(text, str):
+            total_words += len(text.split())
+            
+    st.session_state.transcript_context_length = total_words
 
 # --- PAGE RENDERING FUNCTIONS ---
 
@@ -373,6 +409,26 @@ with st.sidebar:
                     st.rerun()
 
     st.info(f"Loaded {st.session_state.transcript_context_length:,} words of transcript data.")
+    
+    # Time Slider
+    st.markdown("### ⏳ Time Travel")
+    selected_episode = st.select_slider(
+        "Current Episode State",
+        options=[1, 2, 3, 4, 5],
+        value=st.session_state.selected_episode,
+        key="episode_slider"
+    )
+    
+    # Update state if slider changed
+    if selected_episode != st.session_state.selected_episode:
+        st.session_state.selected_episode = selected_episode
+        update_state_for_episode()
+        st.rerun()
+
+    # Ensure state is updated on first load or reload
+    if st.session_state.data_loaded:
+        update_state_for_episode()
+
     st.markdown("---")
 
     # Navigation Menu

@@ -1,0 +1,546 @@
+[0.03–7.54] SPEAKER_21: On a windswept walk in Carmarthen, while someone tries to use your car details to hire a speedboat in Cannes.
+[8.24–16.75] SPEAKER_21: This is the moment you relax, knowing that Barclays' advanced tech has helped to spot the fraud in under a second, and their expert team are on hand to close it down.
+[17.63–20.29] SPEAKER_21: So you can get back to being windswept.
+[22.03–24.57] SPEAKER_21: Just one of the ways we're protecting our customers 24-7.
+[24.93–27.26] SPEAKER_21: Search Barclays Fraud Protection.
+[27.76–28.28] SPEAKER_21: Barclays.
+[28.74–30.04] SPEAKER_21: Make money work for you.
+[32.38–34.56] SPEAKER_16: Come to your senses, British people.
+[35.53–37.53] SPEAKER_16: Lay down your weapons.
+[38.91–40.48] SPEAKER_16: We are not bluffing.
+[43.74–50.25] SPEAKER_23: We left the war game in the previous episode with the Russian president, played by Keir Giles, issuing an ultimatum.
+[51.41–62.39] SPEAKER_23: At 11am on Monday the 6th of October 2025, he demanded that the UK cease fire and withdraw all British forces to within sovereign territory.
+[63.45–70.75] SPEAKER_16: This morning, we showed that the British cannot continue any longer to exercise their criminal activities against the Russian Federation.
+[71.67–73.81] SPEAKER_23: But it's Russia that's been on the attack.
+[75.21–77.03] SPEAKER_15: Oxford Circus have hit Oxford Circus.
+[78.31–82.16] SPEAKER_23: Britain is reeling from two waves of deadly missile strikes.
+[82.90–87.60] SPEAKER_23: One launched at 3.15 in the morning, the other barely six hours later.
+[87.66–89.63] SPEAKER_15: GCHQ destroyed.
+[90.37–94.37] SPEAKER_15: That is a massive issue for us, strategic issue for us.
+[95.45–96.91] SPEAKER_23: The Royal Navy fought back.
+[97.53–100.90] SPEAKER_06: We have sunk a Russian ship in self-defence.
+[101.56–103.58] SPEAKER_06: May I now sink that submarine I have under control?
+[104.14–104.64] SPEAKER_10: Yes.
+[107.31–115.85] SPEAKER_23: Now the British side, led by Sir Ben Wallace as Prime Minister, has been given an hour to respond to the Kremlin's ultimatum.
+[116.38–118.05] SPEAKER_04: They've said they're not going to do any more waves.
+[118.73–121.71] SPEAKER_04: We'll believe it when we see it, because we are dealing with a President Putin's Russia.
+[122.05–140.94] SPEAKER_04: But I think what we need to do is now craft a response to their demand for midday, but a response that is not acquiescing to the ultimatums, but saying, you know, we in the United Kingdom, which was unprovoked, we were illegally attacked, we have taken all steps to defend ourselves, and we will continue to do so if
+[141.31–142.49] SPEAKER_04: We are attacked again.
+[142.53–146.44] SPEAKER_04: So we make the point that there is a ceasefire in a sense of there is no more engagement.
+[146.70–149.10] SPEAKER_04: But if they engage, we will respond.
+[149.46–157.62] SPEAKER_15: PM, the Russians are now, sorry, we've just got here, saying they're thanking the United States for their efforts to reach a ceasefire.
+[158.88–161.97] SPEAKER_23: Lord Mark Sedwell as the National Security Advisor.
+[162.30–184.31] SPEAKER_15: If in effect we're saying that we will also support those efforts and hope that there isn't a further Russian response, given that they seem to have withdrawn somewhat, then you need to say that publicly, and not only here, but in the United States, and therefore put the ball firmly into the American court if you're hoping that they will be able to enforce the ceasefire that they're talking about.
+[184.29–185.01] SPEAKER_04: I think that's right.
+[185.03–188.68] SPEAKER_04: Can we craft a response in line with the NSA's recommendation?
+[188.72–192.45] SPEAKER_02: Prime Minister, can I suggest that we give that as a statement to Parliament, having done one to the nation?
+[192.47–204.27] SPEAKER_23: I think it would be a good moment to have it from behind the dispatch box and show you... Well, yes, wherever is, both in writing to the Russians,
+[204.25–214.85] SPEAKER_04: But I also think it's important that we make it very clear that we are standing sentry, that we are ready and we are determined, and we are not, in a sense, backing down.
+[214.89–216.18] SPEAKER_04: We haven't backed down.
+[216.24–224.79] SPEAKER_04: We have taken self-defense steps throughout this, and we are ready should they again take any action.
+[235.59–241.04] SPEAKER_23: What you're listening to is the kind of war game that's genuinely tested inside government.
+[242.40–247.23] SPEAKER_23: The main difference is that nothing discussed in this version is classified.
+[248.43–250.03] SPEAKER_23: Russia knows our weaknesses.
+[251.15–251.73] SPEAKER_23: But do you?
+[251.77–257.88] SPEAKER_23: From Sky News and Tortoise, this is The War Game.
+[258.52–259.41] SPEAKER_23: I'm Debra Haines.
+[261.55–263.99] SPEAKER_23: Episode five, The Choice.
+[268.92–270.84] SPEAKER_13: So we break, break, break, tea break.
+[271.10–272.30] SPEAKER_13: Is there a final phase?
+[272.58–275.21] SPEAKER_13: There is one final, final phase.
+[275.23–284.23] SPEAKER_23: With Russia having issued its ultimatum, and the British now agreed on their response, the players returned to the real world for another coffee break.
+[284.29–290.22] SPEAKER_04: We need to find a way of saying we ain't going to...
+[290.20–295.02] SPEAKER_23: They're still in the basement of a building in central London that's been the set of the war game.
+[296.02–301.09] SPEAKER_23: Ben Wallace, with a team of former ministers and top officials, are in the largest room.
+[301.11–307.94] SPEAKER_23: They're supported by a group of military security and disaster relief experts in a smaller room.
+[310.66–311.81] SPEAKER_11: Cup of tea?
+[312.41–312.63] SPEAKER_11: Definitely.
+[313.75–320.18] SPEAKER_23: Then, along a corridor and through two doors, is another big room where the Russia team is based.
+[322.33–324.07] SPEAKER_24: OK, here we go.
+[326.73–327.59] SPEAKER_04: Well, have we got an agenda?
+[328.94–332.00] SPEAKER_04: See, without an agenda, I will wonder.
+[332.02–336.71] SPEAKER_04: The agenda is sit-rep, options, actions.
+[337.53–346.80] SPEAKER_23: With time ticking down on his pocket watch, Rob Johnson, the Gamesmaster, asks all the participants to retake their seats one last time.
+[347.64–351.38] SPEAKER_14: So as we go into this final phase, try to get yourself in this mindset.
+[351.61–355.27] SPEAKER_14: We've just lost probably over 100 UK citizens.
+[356.49–359.77] SPEAKER_23: Rob is also playing the chair of the Joint Intelligence Committee.
+[360.65–366.98] SPEAKER_23: He's addressing the main British room, where a final emergency COBRA meeting is about to start.
+[367.62–368.74] SPEAKER_14: The cash numbers are going up.
+[369.73–371.35] SPEAKER_14: Londoners are bloody frightened.
+[372.04–375.59] SPEAKER_14: And the country is looking to us for national leadership right now.
+[383.43–390.44] SPEAKER_23: In the war game, it's just gone midday, the deadline that Russia set for the UK to convey a response to its demands.
+[391.18–393.77] SPEAKER_23: And the Kremlin isn't satisfied with the reply.
+[393.81–403.79] SPEAKER_23: The Russian military chief, played by Tom Srostock, mistakenly thinks London is trying to trick Moscow into overplaying its hand.
+[405.22–406.66] SPEAKER_24: I understand what they're doing.
+[407.12–416.98] SPEAKER_24: They want to have another attack by us and then the US would support them and allies would rally around.
+[417.02–422.91] SPEAKER_23: He's saying this because the British side didn't agree to an unconditional ceasefire.
+[423.63–428.56] SPEAKER_23: They also made no mention of bringing home forces deployed overseas.
+[429.06–431.85] SPEAKER_24: That's a political game that they could be playing.
+[431.87–439.07] SPEAKER_24: Maybe they are inviting further aggression on our part so that they can play the victim.
+[439.50–440.56] SPEAKER_24: This could be a trap.
+[441.40–442.56] SPEAKER_10: Yes, this could be a trap.
+[443.60–446.83] SPEAKER_23: Maria Ankvest as the head of military intelligence.
+[447.45–450.73] SPEAKER_10: And we should not exclude that they have already spoken to the Americans.
+[450.90–464.15] SPEAKER_24: But if they do not agree to our ultimatum, then we must use further military force and that may play to their advantage, potentially.
+[465.25–470.04] SPEAKER_23: But the UK isn't setting any traps and doesn't want any more attacks.
+[470.78–477.75] SPEAKER_23: It's just trying to contain the crisis by sounding defiant instead of defeated.
+[478.12–493.02] SPEAKER_23: The British team knows all too well the United States remains on the fence, calls with the US Secretary of State have gone badly, and European NATO allies are only very slowly starting to offer London support.
+[495.28–499.88] SPEAKER_23: The UK's ability to sustain a conventional fight is very limited.
+[501.19–508.06] SPEAKER_23: It does have nuclear weapons, but would the British government really take such an extraordinary step?
+[509.54–516.59] SPEAKER_23: The Russian president weighs up the risks against the potential reward of isolating the UK and fracturing NATO.
+[516.63–518.31] SPEAKER_23: He comes to a decision.
+[520.01–522.92] SPEAKER_16: We do have the justification for continuing on.
+[523.30–530.41] SPEAKER_16: So any further limited strikes we carry out in order to continue the pressure are entirely appropriate.
+[530.43–533.01] SPEAKER_16: I think the very last thing we want to do is give them time to think.
+[534.29–535.24] SPEAKER_16: Okay, let's go with it.
+[535.82–543.21] SPEAKER_16: A SoT set, an operation against the UK's critical national infrastructure with the aid of our subsea capabilities.
+[547.17–550.05] SPEAKER_22: The latest update now on Russia's armed attack on the UK.
+[550.44–555.25] SPEAKER_22: Reports are coming in of a major explosion on a gas pipeline off the coast of Scotland.
+[555.77–560.86] SPEAKER_22: A government spokesperson says the blast is impacting gas supplies to the whole of the UK.
+[561.48–566.95] SPEAKER_22: The public's being urged to limit energy use at this time of national crisis.
+[566.93–572.36] SPEAKER_22: A spokesperson accused Russia of using a submarine to plant an explosive device.
+[573.06–578.22] SPEAKER_22: The pipeline that was targeted is connected to the St Fergus gas terminal in Aberdeenshire.
+[578.73–582.67] SPEAKER_22: The terminal supplies up to half of all the gas to the UK.
+[583.47–585.59] SPEAKER_22: It is currently unable to operate.
+[585.65–591.94] SPEAKER_02: Can I just come in on the critical national infrastructure point?
+[593.14–599.15] SPEAKER_23: We're in the smaller of the two British rooms where our team of experts is reacting to the latest attack.
+[601.13–613.59] SPEAKER_23: The sudden loss of 50% of the country's gas supplies will hurt every single household and business across the UK, as well as hospitals, GPs and other public services.
+[614.89–618.75] SPEAKER_02: We've lost gas power to half of the UK.
+[619.60–620.44] SPEAKER_02: What time is it?
+[620.68–624.68] SPEAKER_02: It's 12 o'clock, so it's October, so it'll be dark in four and a half hours.
+[626.23–631.08] SPEAKER_23: Professor Lucy Easthope is a leading authority on recovering from disaster.
+[632.12–638.14] SPEAKER_23: In the real world, she's been an advisor during terrorist attacks and the Salisbury spy poisonings.
+[639.33–646.63] SPEAKER_23: In the war game, her knowledge on how the public might be reacting and what they will need is vital.
+[647.58–649.58] SPEAKER_02: We're kind of falling apart here at home.
+[649.68–650.74] SPEAKER_07: You probably can't run the grid.
+[651.82–655.64] SPEAKER_23: Sir Bernard Gray, a former top Ministry of Defence official,
+[656.57–665.30] SPEAKER_07: So it's not our part of the ship, but if we can't run the gas stations, that's about 50% of in-store capacity.
+[665.32–674.15] SPEAKER_07: And the problem is, as you say, at this time of year, we're probably above 50% requirement and peak time for that is tee time.
+[674.17–680.29] SPEAKER_07: And the worry is that the grid will then have to be shut down rather than fall over.
+[680.97–684.00] SPEAKER_07: So you have to manage ways to keep hospitals and things going.
+[684.41–689.74] SPEAKER_07: So probably we're losing electric power to a large part of the civilian population.
+[690.08–697.11] SPEAKER_07: I mean, they might cycle it through over, you know, three-hour time blocks or something, but broadly speaking, you can't run the whole grid.
+[698.23–707.35] SPEAKER_11: What do you think it does, Bernard, to the industrial capacity to maintain sustainment of ammunition, weapons, fuel?
+[708.25–712.41] SPEAKER_23: The Chief of Joint Operations, played by General Sir David Capewell,
+[712.66–714.39] SPEAKER_07: Well, we can run some areas.
+[714.43–715.85] SPEAKER_07: What you can't do is run the whole system.
+[715.89–718.63] SPEAKER_07: So you have to deliberately decide to switch off some areas.
+[719.44–724.51] SPEAKER_07: So we could prioritise both military bases and Wharton and so forth.
+[725.37–729.24] SPEAKER_23: Bernard Gray is referring to a defence industry site in Lancashire.
+[729.59–734.08] SPEAKER_07: I turn off the Blackpool illuminations, but leave on Lytham St Anne's.
+[735.00–740.85] SPEAKER_07: So we can do that, but that takes out civilian power.
+[741.11–743.47] SPEAKER_07: Replacing that is not a quick fix.
+[743.97–746.49] SPEAKER_07: So we could be out of civilian power for quite a long time.
+[756.41–757.77] SPEAKER_04: Right.
+[758.43–767.72] SPEAKER_23: As the experts react to the crisis, the Prime Minister and his team in the main Cobra Room must decide what move to take next.
+[768.72–772.53] SPEAKER_23: The Chancellor, played by Jim Murphy, is the first to speak.
+[773.41–785.46] SPEAKER_17: The Prime Minister is clear now that the Russians are no longer just intent on harming our military capability, they intend, it would appear, to humble and destroy our economy and our way of life.
+[785.83–789.53] SPEAKER_04: I think, first of all, we should work up
+[790.07–791.29] SPEAKER_04: some of the options.
+[792.11–800.12] SPEAKER_04: Norway currently is the biggest supplier of gas to Europe, so I think we should engage with them on alternative gas.
+[800.92–814.19] SPEAKER_04: If we want to extract an economic price that mirrors the Russians' attempt on us now, there are ways to do that in a different time frame, in different methods, both avowed and unavowed.
+[814.85–819.30] SPEAKER_04: And we shouldn't forget that Russia's economy is less than half the Britain's economy.
+[820.70–824.84] SPEAKER_17: Prime Minister, this is all for you to decide, of course.
+[825.16–826.54] SPEAKER_17: We give you advice and you decide.
+[827.04–829.78] SPEAKER_17: But the Russians have defenestrated the Royal Navy.
+[830.47–836.57] SPEAKER_17: They have attacked our capital and they've now had a catastrophic impact on our economy, all of which our public can see.
+[837.39–841.82] SPEAKER_17: And we have sunk one destroyer and one submarine, none of which the British public can see.
+[842.42–844.36] SPEAKER_17: The British public want a response.
+[844.98–848.12] SPEAKER_17: We run the risk of being perceived to be weak.
+[848.10–849.84] SPEAKER_04: So I don't venture that.
+[849.86–855.75] SPEAKER_04: To lose a submarine, especially in Russian psyche, is an extraordinary loss to the Russian navy.
+[856.51–861.10] SPEAKER_04: And while proportionately we've lost seven typhoons, we haven't lost seven pilots.
+[862.06–867.37] SPEAKER_23: He's revealing the total number of British jets destroyed so far in the Russian missile strikes.
+[868.39–872.74] SPEAKER_23: These aircraft had been on the ground at their bases when the missiles came in.
+[873.25–884.44] SPEAKER_04: We have been obviously damaged, but we have also avoided an escalation that we all know around this table we simply would not be able to maintain at the moment because of our weapon stocks.
+[884.84–887.08] SPEAKER_17: We have very nuclear capability, Prime Minister.
+[887.10–891.41] SPEAKER_04: I'm not going to go to nuclear war with Russia, and nor is Russia going to get to nuclear war with us.
+[892.07–895.78] SPEAKER_04: My job here is to defend the country.
+[895.76–898.62] SPEAKER_04: to do it within the means we have.
+[898.86–905.91] SPEAKER_04: And as CDS pointed out, there were only so many tit-for-tats that we were playing through before we ran out.
+[906.61–908.41] SPEAKER_04: And then we would be in a very difficult position.
+[908.43–917.00] SPEAKER_17: Can I ask then, gently, Prime Minister, in the privacy of this room, that the Treasury has invested tens of billions of pounds in the nuclear deterrent.
+[917.02–920.00] SPEAKER_04: It's also taken tens of billions of pounds out of the defense budget.
+[920.02–923.06] SPEAKER_17: Our nation faces an existential crisis.
+[923.04–925.87] SPEAKER_17: The deterrent was there to prevent these sorts of moments.
+[926.53–933.80] SPEAKER_17: And yet in this very moment, we are saying we are unwilling to travel up the escalatory ladder.
+[934.32–938.65] SPEAKER_18: Chancellor, I really am surprised to hear you being so hawkish on this.
+[941.15–944.40] SPEAKER_18: That is the ultimate state.
+[944.42–945.14] SPEAKER_17: Of course it is.
+[945.36–946.54] SPEAKER_17: And what does it take?
+[946.56–947.89] SPEAKER_04: The deterrent worked.
+[948.07–956.60] SPEAKER_04: Because what the deterrent did was it ensured that the Russian government had a boundary that it didn't cross.
+[956.96–959.05] SPEAKER_04: It contained the Russian.
+[959.45–964.94] SPEAKER_04: As I said at the beginning, do I think Putin wants a nuclear war?
+[964.98–968.30] SPEAKER_04: And I felt he didn't, and therefore
+[968.49–970.41] SPEAKER_04: That's my judgment, that I didn't think he wanted it.
+[970.95–977.30] SPEAKER_04: And once he'd made that decision, if that is his decision, it ended up putting confinement to his ambitions.
+[977.68–980.30] SPEAKER_17: Prime Minister, he continues to attack us at this very moment.
+[980.33–987.62] SPEAKER_04: The Russians have been attacking us for as long as the Treasury have been taking money out of our defence budget, Chancellor, since about 1991.
+[987.66–993.68] SPEAKER_23: Prime Minister, we made those decisions jointly.
+[993.66–1004.00] SPEAKER_12: My Prime Minister will say to the Chancellor, I understand what he's saying, but as the Prime Minister said, the nuclear deterrent has worked here and will continue to work.
+[1004.58–1013.90] SPEAKER_12: Just bear this in mind, when Ukraine broke away from what was then the USSR and became an independent state,
+[1014.40–1021.30] SPEAKER_12: It decided voluntarily to give up what was very large arsenal of nuclear weapons and capabilities.
+[1022.26–1030.10] SPEAKER_12: If, however, Ukraine had decided to retain that capability, I doubt very much whether Putin
+[1030.08–1033.18] SPEAKER_12: would have engaged in the adventure that he has done for the last three years.
+[1033.20–1042.08] SPEAKER_17: I think that's fair, Foreign Secretary, but I'm not advocating the use of the deterrent, I'm advocating that we signal to the Russians that that is still available to us.
+[1042.60–1049.53] SPEAKER_17: Because how do we, after all, respond to such an enormous attack on our economic capabilities as a nation?
+[1049.89–1054.77] SPEAKER_17: Because we haven't, we haven't, we haven't round this room discussed what our response to that should be.
+[1054.79–1059.38] SPEAKER_03: And not just our economic capabilities, you know, the actual fact that we've had so many attacks.
+[1059.36–1061.45] SPEAKER_03: Amber Rudd, the Home Secretary.
+[1062.15–1063.62] SPEAKER_03: We have the nuclear deterrent.
+[1063.64–1065.78] SPEAKER_03: What circumstances would we use it Prime Minister?
+[1066.33–1069.53] SPEAKER_04: Britain has one of the most forward-leaning policies on the nuclear deterrent.
+[1070.01–1078.59] SPEAKER_04: We are one of the few first-strike nations that publicly avowed we have a first-strike capability should we believe there was an imminent threat against us of a nuclear strike.
+[1079.25–1081.23] SPEAKER_04: That is not always the case of other nations.
+[1081.84–1090.53] SPEAKER_04: It puts us in a unique position to some extent and today I believe the deterrent has worked and it has contained
+[1090.51–1092.37] SPEAKER_04: the extent to which Russia would push.
+[1092.39–1099.46] SPEAKER_04: If we didn't have the deterrent today, we'd probably be sitting here with no more missiles left, nothing left to go with, because that's all we had.
+[1099.52–1100.92] SPEAKER_04: I think we have contained it.
+[1108.73–1109.69] SPEAKER_11: Home Secretary.
+[1109.71–1114.14] SPEAKER_03: Yes, I just wanted some information about what's taking place on the ground.
+[1117.02–1122.35] SPEAKER_23: The Home Secretary has left the Cobra meeting and walked across the corridor to the smaller British room.
+[1123.43–1129.23] SPEAKER_23: She wants to ask the disaster relief expert, Lucy Easthope, how the home front is coping.
+[1130.82–1136.04] SPEAKER_23: While the Prime Minister believes the nuclear deterrent has worked, this conflict isn't over.
+[1136.72–1138.61] SPEAKER_11: Fortunately, we have an expert.
+[1138.63–1139.79] SPEAKER_02: I heard a rumour.
+[1140.41–1141.19] SPEAKER_02: Thank you, Minister.
+[1144.53–1157.70] SPEAKER_02: So to give you assurance straight away, arrangements for the continuity of government are in place under the Cabinet Office who lead on civil contingencies issues and we are using both radio broadcasts and repeated emergency alerts.
+[1158.26–1160.12] SPEAKER_02: We have activated that structure.
+[1161.23–1162.82] SPEAKER_03: Now there could be a nuclear attack.
+[1162.86–1167.76] SPEAKER_03: What else can we do to alert the British public in a way that saves lives?
+[1168.22–1169.90] SPEAKER_03: I mean, that comes as new news to people.
+[1169.94–1171.23] SPEAKER_03: Let's face it, they're not used to that.
+[1171.39–1184.29] SPEAKER_02: It is, and it's likely to cause some level of distress and the, she says with some under exaggeration, what it is often best to do is give the public practical things to do and as much information as possible.
+[1185.59–1190.73] SPEAKER_02: People will be asking things like iodine and do I need to go, do I build a shelter and all of those kind of things.
+[1193.21–1209.65] SPEAKER_02: At that point I would suggest that you would do a press conference alongside your Defence and Science Laboratory colleagues and possibly the nuclear physicists at Sellafield to give a view on being ready if you felt that you were ready for that or you might feel that we're not quite there yet.
+[1211.66–1216.53] SPEAKER_02: You would have a decision to make as to where we were at in terms of how much information you felt would be helpful.
+[1216.92–1221.63] SPEAKER_02: Behind the scenes the local resilience forum have activated their contaminated mass fatalities plan.
+[1221.92–1225.32] SPEAKER_02: and their contaminated casualties plan, and both of those are ready to go.
+[1228.50–1229.20] SPEAKER_03: Thank you very much.
+[1229.24–1230.92] SPEAKER_03: I think I'll take that back to Cobra.
+[1231.15–1231.59] SPEAKER_03: Marvellous.
+[1231.63–1232.29] SPEAKER_03: Thank you very much.
+[1232.31–1232.89] SPEAKER_03: Very helpful.
+[1233.15–1234.01] SPEAKER_03: Thank you very much.
+[1234.03–1235.17] SPEAKER_02: I may well be back.
+[1238.21–1249.64] SPEAKER_23: In the Russia Room, before going back into character, the red team is deciding how best to talk about the secretive part of the Russian military that just carried out the pipeline attack.
+[1250.32–1256.42] SPEAKER_16: Our main directorate for Deepwater Research, or as we call it in Russian, Glavnoye Pravleny, etc., etc.
+[1256.98–1260.91] SPEAKER_24: Glavnoye Pravleny and Gubakavodnyk Islyadovany, or GUGY.
+[1261.47–1262.93] SPEAKER_24: Yes, GUGY.
+[1265.29–1273.90] SPEAKER_24: This is a military organization that may seem at first glance like a research organization, which it is not.
+[1274.80–1277.62] SPEAKER_24: It's under Chief of General Staff Command.
+[1277.65–1288.63] SPEAKER_09: I mean, deep-sea research director, that does sound like, you know, Glasgow School of Marine Biology.
+[1288.65–1295.08] SPEAKER_23: Robin Hagblom, who's playing the commander of Russia's Northern Fleet, is suggesting a better way to describe it.
+[1295.50–1297.83] SPEAKER_09: Something like our deep-sea special forces.
+[1298.41–1299.07] SPEAKER_16: That's a good phrase.
+[1299.67–1301.65] SPEAKER_16: Yes, deep-sea special forces.
+[1302.24–1305.44] SPEAKER_23: The Russia team then step back into their roles.
+[1306.25–1308.75] SPEAKER_23: And they're sounding pretty pleased with themselves.
+[1309.49–1320.89] SPEAKER_24: Mr President, for many years we have been mapping the Western undersea infrastructure, communication cables, electricity cables, undersea gas pipelines.
+[1321.49–1327.32] SPEAKER_24: And we have developed capabilities to target that infrastructure in a case of conflict.
+[1327.96–1330.24] SPEAKER_24: Our efforts have really paid off.
+[1332.23–1339.40] SPEAKER_16: Is there any reason to change our earlier assessment of how the United Kingdom, under its current leadership, is likely to respond?
+[1340.40–1342.51] SPEAKER_16: Chief of Military Intelligence, to you first please.
+[1343.75–1362.79] SPEAKER_24: I do not see any reason
+[1362.77–1373.71] SPEAKER_24: Furthermore, by responding they risk more severe consequences and potentially a nuclear confrontation with a major nuclear power.
+[1374.17–1377.39] SPEAKER_10: Yes, they should realize that it is not the time to escalate.
+[1378.05–1384.78] SPEAKER_10: I think it is also important for us at this point to display our moral superiority, that we are
+[1385.32–1396.71] SPEAKER_10: capable of actually restraining ourselves from using the worst of weapons that we are in possession of and can handle them with great care.
+[1397.59–1397.91] SPEAKER_16: Thank you.
+[1398.67–1405.14] SPEAKER_16: So at this point we remain confident that our operation may achieve its objectives and be successful?
+[1405.94–1406.77] SPEAKER_10: Yes, Mr President.
+[1407.43–1408.29] SPEAKER_10: Thank you.
+[1409.04–1415.60] SPEAKER_23: The Russia side hit the gas pipeline as it hadn't been satisfied with the British response to its ultimatum.
+[1416.44–1420.72] SPEAKER_23: Moscow wants London to withdraw all forces to within its borders.
+[1421.59–1427.04] SPEAKER_23: That includes a battle group of almost a thousand British troops in Estonia.
+[1427.02–1439.12] SPEAKER_23: They're deployed as part of a NATO mission to deter Russian aggression and their removal would leave a country that was once part of the Soviet Union looking very exposed.
+[1439.67–1444.56] SPEAKER_09: As the commander of the Northern Fleet, I do have a slight worry.
+[1444.58–1448.94] SPEAKER_09: We still have the issue with their submarines being somewhere around in the water.
+[1449.40–1453.37] SPEAKER_09: They are few in number, but as we have seen, they might cause issues for us.
+[1454.01–1460.08] SPEAKER_09: And we have also not seen their air force come out to challenge us in the way that they might have.
+[1460.46–1464.58] SPEAKER_09: The judgment is still that it would in many ways be foolhardy for them to try.
+[1464.85–1473.48] SPEAKER_09: But on the other hand, give them a little time during ceasefire negotiations or similar, and we might face a very different situation.
+[1474.32–1488.87] SPEAKER_16: So if they regenerate their capacity for defense, and if they, in addition, build up means of challenging the kind of operation that we have just carried out, things will be harder in the future to reinforce the message?
+[1489.71–1489.95] SPEAKER_09: Yes.
+[1490.42–1494.40] SPEAKER_09: So we should press home the advantage now as long as we have it.
+[1494.60–1495.06] SPEAKER_16: Understood.
+[1496.14–1504.84] SPEAKER_16: In that case, please draw up further contingency plans for what damage you can inflict on the UK using the assets at your disposal immediately.
+[1505.58–1506.12] SPEAKER_16: Thank you, Admiral.
+[1512.08–1515.22] SPEAKER_23: But the Russians aren't the only ones making plans.
+[1528.96–1538.09] SPEAKER_19: Amazon offers term time working to their employees, like Anton, who's home to look after his daughters during their holidays.
+[1538.71–1541.42] SPEAKER_19: To him, this is the best sound in the world.
+[1541.46–1548.69] SPEAKER_19: Actually, maybe that's the best sound of all.
+[1549.61–1552.81] SPEAKER_19: Now that's term time working, offered at Amazon.
+[1552.83–1558.22] SPEAKER_19: 10 weeks off guaranteed per year, mix of paid holiday and unpaid time off, conditions apply.
+[1558.40–1562.73] SPEAKER_20: I've always been ambitious, and in teaching, I've found plenty of opportunities to progress.
+[1563.27–1567.25] SPEAKER_20: As Head of English, I now get to support all the other teachers in my department.
+[1567.63–1571.13] SPEAKER_20: They often learn from my advice, though actually, I often learn from theirs.
+[1571.67–1574.38] SPEAKER_20: The support and development we all get from each other is amazing.
+[1574.74–1577.56] SPEAKER_20: It benefits not just us, but every student we teach.
+[1578.12–1579.52] SPEAKER_20: How many other professions can say that?
+[1580.48–1581.92] SPEAKER_00: Every lesson shapes a life.
+[1582.28–1586.21] SPEAKER_00: Start shaping yours with a minimum starting salary of £32,900.
+[1586.63–1588.21] SPEAKER_00: Search Get Into Teaching.
+[1599.11–1606.48] SPEAKER_23: The UK Defence Chief, played by General Sir Richard Barons, has also decided to visit the smaller British room.
+[1607.64–1613.51] SPEAKER_23: With no certainty over a ceasefire, he needs the military to be ready for further attacks.
+[1614.61–1625.03] SPEAKER_23: He also wants ideas from the Chief of Joint Operations for what the Prime Minister has called strategic dilemmas to exert pressure on Russia.
+[1626.53–1635.36] SPEAKER_06: It has become clear that given the shortage of our conventional options, if we get pushed so far, we're only left with a strategic nuclear deterrent.
+[1636.52–1648.46] SPEAKER_06: Nobody obviously wants to go there, but this gap between our remaining conventional capability and the recourse to a strategic deterrent is a huge and one which we now appear to be living in.
+[1649.80–1652.38] SPEAKER_06: Primaris is quite clear he wants some options developed.
+[1652.94–1658.44] SPEAKER_23: The defence chief asks again about an F-35 bombing raid inside Russia.
+[1660.47–1670.06] SPEAKER_23: He also repeats the prime minister's suggestion of sending troops to Russia's border with Norway or Finland to potentially attack a Russian naval base.
+[1672.00–1681.49] SPEAKER_11: Insofar as a deep strike into Russia by F-35s is concerned, you know as well as I know that the capability of that aircraft
+[1681.61–1683.69] SPEAKER_11: rarely allows that to occur.
+[1684.59–1693.66] SPEAKER_11: And so what we will do is think of other solutions that might give us an answer to the making sure we can reach into the heart of the Russian system.
+[1694.62–1703.31] SPEAKER_23: The Chief of Joint Operations touches again on a question he raised at the very start of the crisis about how to end the fight.
+[1706.21–1709.89] SPEAKER_23: He knows he also needs to be ready for further attacks.
+[1710.26–1726.57] SPEAKER_11: As far as I'm concerned, most of the options that remain concern conflict termination, which still leaves at risk the optionality of escalating to a nuclear response of some sort, including a demonstration.
+[1727.76–1728.44] SPEAKER_06: I think that's right.
+[1729.08–1730.90] SPEAKER_06: If we go back to the beginning of this,
+[1731.52–1739.98] SPEAKER_06: Whatever this is, there was some sort of attack in Russia, which Russia very readily ascribed to us, and we know we weren't responsible for that.
+[1740.08–1741.60] SPEAKER_06: So it's a classic false flag.
+[1741.98–1756.48] SPEAKER_06: The situation we're now in is, I think Russia should feel it's in such a position of ascendancy that if we simply buckle to its demands, and that's possibly as a result of US pressure on Russia, it will feel it's had the better day.
+[1756.57–1761.93] SPEAKER_06: But any sign of Russia not having its way or that being in doubt, they'll go again.
+[1761.95–1763.49] SPEAKER_06: We've seen this in Ukraine and elsewhere.
+[1763.87–1764.99] SPEAKER_06: So I think you're absolutely right.
+[1765.06–1769.54] SPEAKER_06: In fact, you must make sure that the force is as well positioned as it can be.
+[1770.66–1780.63] SPEAKER_06: And this campaign to draw in our allies around the world, which so far has been enormously disappointing, is one way of spreading the risk.
+[1780.65–1781.87] SPEAKER_06: So we should press on all points.
+[1781.91–1784.84] SPEAKER_06: But we are extremely vulnerable.
+[1786.18–1791.57] SPEAKER_23: The Defence Chief leaves the room and the Chief of Joint Operations turns to his advisors.
+[1792.71–1796.99] SPEAKER_23: Matthew Saville, a former Ministry of Defence civil servant, speaks first.
+[1797.93–1814.35] SPEAKER_23: He strongly advises against deploying F-35s on a top gun-style bombing raid into Russia, even though it's the RAF's most expensive and sophisticated warplane fitted with technology to evade enemy air defences.
+[1815.12–1830.64] SPEAKER_08: Any discussion over the F-35 right now needs to reckon with its current weapons fit, which is that it is basically cleared for two weapons, an air-to-air missile and a Paveway 4, which is a, you know, yes, precision guided, but it is a bomb.
+[1830.82–1831.46] SPEAKER_08: 500-pound bomb.
+[1831.55–1831.95] SPEAKER_08: Exactly.
+[1832.89–1840.34] SPEAKER_23: A bomb needs to be dropped on a target rather than fired from a distance, raising the risk of the jet being shot down.
+[1840.64–1847.53] SPEAKER_08: So you are flying to the equivalent point blank range with your F-35 to drop a bomb on a target.
+[1848.01–1857.99] SPEAKER_08: And even with the world's most advanced current stealth aircraft, that is not easy to do because you basically have to be near as damn it over the target.
+[1858.01–1864.20] SPEAKER_08: And you are therefore placing all of your eggs in the basket of we can evade all of their air defenses.
+[1864.97–1875.26] SPEAKER_23: Still risky but with a higher chance of success, the RAF could use its other fighter jet, the Typhoon, that can fire cruise missiles from a distance.
+[1876.56–1882.26] SPEAKER_23: But these older aircraft lack the radar evading technology of the F-35.
+[1882.52–1888.85] SPEAKER_08: You would want to be launching outside over at the very edge of the air engagement zone for their air defense missiles.
+[1888.87–1891.67] SPEAKER_08: So you can launch the missiles, hope that they get through.
+[1891.71–1898.12] SPEAKER_08: You need to launch enough whilst you're turfing to turn tail and then get the hell out of there so the enemy missiles fall short.
+[1898.18–1904.67] SPEAKER_08: So both of those deep strike options have limits on them with the current weapons fit that we have.
+[1905.21–1906.03] SPEAKER_08: It doesn't mean they're impossible.
+[1906.05–1912.34] SPEAKER_08: I mean, that's what your preference would be to stick a submarine 1,000 kilometers away and far some teelams at it.
+[1912.32–1914.49] SPEAKER_08: Bearing in mind, TLAMs get intercepted.
+[1915.33–1918.44] SPEAKER_23: TLAM stands for Tomahawk Land Attack Missile.
+[1919.10–1931.34] SPEAKER_08: They are a subsonic missile and Russian air defence is probably capable of taking some of them out on the way in, so you'd have to be imaginative about how you launch those in or accompany it with something that's firing decoys.
+[1932.32–1943.54] SPEAKER_23: The team is also against the Prime Minister's suggestion of deploying 16 Air Assault Brigade to Russia's northern border because it doesn't have enough air defence systems to protect itself.
+[1944.50–1951.29] SPEAKER_23: That means the troops might well be spotted and wiped out by Russian artillery, missiles and drones.
+[1952.63–1957.42] SPEAKER_23: Another possibility could be to launch a land attack from the sea.
+[1958.19–1967.16] SPEAKER_23: But in the real world, the only two warships in the Royal Navy designed for beach landings are being sold off to Brazil.
+[1968.18–1969.59] SPEAKER_23: So the team improvises.
+[1969.64–1974.67] SPEAKER_08: Are we even considering the carrier around the top to go and do?
+[1974.71–1976.84] SPEAKER_07: What offensive weapons?
+[1978.06–1978.40] SPEAKER_08: Royal.
+[1979.72–1980.40] SPEAKER_08: Royal Marines.
+[1981.80–1987.81] SPEAKER_23: Tom Sharp, the former Royal Navy officer, is suggesting sending Royal Marines on an aircraft carrier.
+[1988.63–1991.99] SPEAKER_23: Special Forces, or SF, would also be on board.
+[1992.77–1996.32] SPEAKER_07: What, as an SF insertion device?
+[1996.34–1999.18] SPEAKER_07: 65,000 tonne SF insertion device?
+[1999.58–2014.64] SPEAKER_08: Having unfortunately sold off some months previously to Brazil the two landing platforms.
+[2015.66–2022.22] SPEAKER_23: The Chief of Joint Operations then receives an inject of information from Rob Johnson as the Games Master.
+[2023.24–2031.73] SPEAKER_23: The Prime Minister is now asking for options to target Russia's critical national infrastructure in retaliation for the gas pipeline attack.
+[2033.12–2036.24] SPEAKER_23: Moscow has been all too willing to hurt civilians.
+[2037.14–2039.23] SPEAKER_23: But would London do the same?
+[2040.13–2044.18] SPEAKER_11: Like all politicians, they want an a la carte menu, and we don't think like that.
+[2044.20–2053.09] SPEAKER_11: So we can answer all their a la carte questions, we can do a bit of space, we can do a bit of cyber, we can do a bit of critical national infrastructure, all that sort of stuff.
+[2053.11–2057.33] SPEAKER_11: The bigger question that they have to answer is, all right you lot, how are you going to finish this?
+[2058.63–2064.94] SPEAKER_11: Because we can continue with all these options to put compression on the Russian system, but none of that has any point whatsoever.
+[2065.02–2069.26] SPEAKER_11: In fact, it's wasteful and probably self-harming if it has no object.
+[2069.80–2082.53] SPEAKER_02: I do think with all of this, one of the ways to take the public with you is going to have to be what comes after this and also what's left of us in terms of our own moral compass and what have we become and what was worth fighting for.
+[2082.95–2093.77] SPEAKER_02: Because if you come away slightly bloody but it's shown the value of standing together and we need to now enlist and regroup, then that's an important message as well.
+[2093.75–2097.11] SPEAKER_02: It can't just be conflict termination from behind closed doors.
+[2097.13–2099.30] SPEAKER_02: People have to see what this is.
+[2099.74–2103.06] SPEAKER_02: And the sort of ethical, they're not constantly going lower.
+[2103.66–2108.27] SPEAKER_02: And coming out of this looking reasonable and ethical I think is important.
+[2110.61–2117.34] SPEAKER_02: And I think that we have damaged ourselves significantly in recent years in international perception of us as a nation.
+[2117.82–2120.21] SPEAKER_02: And this would be a chance to look like we have
+[2120.88–2124.82] SPEAKER_02: tried to behave very ethically and within the rules of engagement.
+[2124.93–2126.95] SPEAKER_11: Yeah, how much of a sour taste does it all leave?
+[2137.60–2144.15] SPEAKER_23: Wanting the fighting to stop, the US Secretary of State has sent a message to the Russian president.
+[2145.41–2149.89] SPEAKER_23: He condemns the gas pipeline attack and demands a ceasefire.
+[2151.16–2152.40] SPEAKER_16: Message from the United States.
+[2152.50–2155.40] SPEAKER_16: We would hope that there would be no more military action by either side.
+[2155.46–2157.48] SPEAKER_16: We will encourage the British to do likewise.
+[2158.63–2166.06] SPEAKER_16: I shall thank the United States for their leadership, because no other president of the United States could have done this.
+[2166.54–2166.68] SPEAKER_10: No.
+[2167.38–2168.46] SPEAKER_10: They have been very generous.
+[2169.94–2172.61] SPEAKER_10: Of course, they realize that that is in their best interest.
+[2173.38–2178.79] SPEAKER_24: Yes, but pursuing an even-handed approach should still be appreciated.
+[2178.85–2184.84] SPEAKER_24: We believe that the current United States President is someone we can work with.
+[2185.68–2186.04] SPEAKER_10: Indeed.
+[2187.82–2192.27] SPEAKER_23: The team then receives its first message from the American leader.
+[2192.29–2196.86] SPEAKER_16: We have a message from the President of the United States via Secretary of State.
+[2197.19–2203.58] SPEAKER_16: POTUS is committed to peace in Europe and believes that constructive engagement with Russia is vital for that end.
+[2206.82–2208.01] SPEAKER_16: Colleagues, I believe we have won.
+[2208.99–2209.63] SPEAKER_10: We have indeed.
+[2210.05–2213.17] SPEAKER_10: This is a great success for us.
+[2215.08–2219.60] SPEAKER_16: Just need to wait for the other side to realize that.
+[2231.19–2241.19] SPEAKER_23: The Russians have reached this conclusion because the United States has still not rallied behind the UK, even after the latest strikes against gas supplies.
+[2241.21–2249.00] SPEAKER_23: They believe it means Britain will have no choice but to comply with all of their ceasefire demands.
+[2255.56–2260.81] SPEAKER_23: In the British room though, the Prime Minister and his team have not admitted defeat.
+[2262.00–2271.14] SPEAKER_23: But they have very limited options other than hope the ceasefire brokered by the United States holds while they plan their next move.
+[2272.67–2281.55] SPEAKER_23: The defence chief is giving an update on possible ways to pressure Russia in unexpected directions – the strategic dilemma.
+[2282.79–2287.42] SPEAKER_23: He still sounds in favour of deploying F-35 jets.
+[2287.98–2292.36] SPEAKER_06: We're examining conventional deep strike using the F-35 into Russia.
+[2293.18–2296.93] SPEAKER_06: The challenge with that is it requires overflight permissions from our friends.
+[2298.01–2299.33] SPEAKER_06: That's currently the stumbling block.
+[2299.35–2302.75] SPEAKER_06: Those that don't want to engage in the fight would have to agree to us passing through the country.
+[2303.01–2304.41] SPEAKER_06: They then become part of the fight.
+[2305.26–2309.16] SPEAKER_06: You asked me to look at Murmansk and 16 Air Assault Brigade in particular.
+[2309.18–2313.18] SPEAKER_06: As you know, 16 Air Assault Brigade is our global crisis response force.
+[2313.20–2315.70] SPEAKER_06: It's elite paratroopers, but they are light infantry.
+[2315.82–2317.43] SPEAKER_06: When they're on the ground there,
+[2317.86–2322.15] SPEAKER_06: They wouldn't have much of their own air defence and they would be in range of Russian long range.
+[2322.17–2323.57] SPEAKER_04: We might have Norway's air defence.
+[2323.89–2326.90] SPEAKER_06: So we might have Norway's air if Norway is prepared to cooperate.
+[2327.64–2337.96] SPEAKER_06: But the point is, a 16-air assault brigade on the ground, on the NATO side of the border, getting it to do anything useful and romance will be very high risk.
+[2338.22–2340.14] SPEAKER_06: What about three commando brigades?
+[2341.08–2344.05] SPEAKER_23: He's referring to a Royal Marines commando force.
+[2344.71–2348.84] SPEAKER_23: The Royal Navy describes them as some of the toughest fighters on the planet.
+[2349.74–2357.35] SPEAKER_06: It's the same challenge for any light force, is that it has to get from where you put it down to the point at which you wish to use it in a very hostile environment.
+[2357.73–2366.38] SPEAKER_04: If you were a military commander of a Minsk and 16-hour assault brigade were nearby, or three-commando brigade, there is a contingency, I'm guessing.
+[2366.40–2367.56] SPEAKER_04: You wouldn't ignore them.
+[2367.88–2368.82] SPEAKER_04: even if they're light.
+[2368.88–2374.55] SPEAKER_06: If I was the military commander in Murmansk and I knew that were there, I would be lining up
+[2374.70–2380.21] SPEAKER_06: an enormous amount of firepower to make sure that if they showed any intention of coming my way, they didn't make it.
+[2381.01–2388.28] SPEAKER_06: This is why I think we're really talking about holding places like that at risk with firepower from the air, or indeed a TLAM.
+[2389.50–2397.97] SPEAKER_06: CGO is telling me if we go for a ground-based Murmansk option, we should expect a minimum of 50% good casualties.
+[2399.12–2400.88] SPEAKER_04: We need to explore what the Norwegians will do.
+[2401.38–2415.34] SPEAKER_04: If the Norwegians will support our light troops with some form of air defense cover, with some form of armor capability, then it is a perfectly viable opportunity at the very least to pose a dilemma.
+[2415.60–2423.44] SPEAKER_04: It is also less dependent on the United States, which your point about deep strike and F-35 is obviously different.
+[2423.42–2426.86] SPEAKER_04: Can I just finish by saying this isn't over at all.
+[2427.28–2434.95] SPEAKER_04: We will continue to pursue with our allies and like-minded friends the Russian threat until that is dissipated.
+[2445.15–2447.51] SPEAKER_23: That's of course what the British side wants.
+[2448.57–2451.74] SPEAKER_23: Whether it's something they can achieve is a different matter.
+[2454.97–2460.06] SPEAKER_23: You've heard the team throw around some ideas to fight back, but not all of them.
+[2462.04–2468.11] SPEAKER_23: Earlier, the Prime Minister said he'd hit Russia using methods both avowed and unavowed.
+[2469.49–2474.40] SPEAKER_23: At the start of each episode, I've told you that nothing in this war game is classified.
+[2475.76–2482.97] SPEAKER_23: Every country has its secrets, and it's at this moment the National Security Advisor has the last word.
+[2484.44–2498.14] SPEAKER_15: PM, can I just remind colleagues of something the Prime Minister said about half an hour ago, which must not leave this room, which is that we will strike back at a time and in a manner of our choosing.
+[2499.34–2510.09] SPEAKER_15: That must remain ambiguous and uncertain for the Russians, because we do have those capabilities, and it must not leave this room when we might consider deploying them.
+[2510.11–2510.69] SPEAKER_15: Good.
+[2510.71–2511.51] SPEAKER_13: Thank you, sir.
+[2511.53–2511.95] SPEAKER_13: Done.
+[2511.97–2513.99] SPEAKER_13: Very, very, very, very much indeed.
+[2514.99–2519.22] SPEAKER_13: We are End Ex, as they used to say in the armed forces.
+[2519.24–2525.34] SPEAKER_04: We'll probably be listened to by the Russian military academy in the next five years.
+[2530.98–2535.99] SPEAKER_23: The war game ends less than 10 hours after the first missiles were launched.
+[2537.52–2542.34] SPEAKER_23: If this had happened for real, the crisis would just be getting started.
+[2547.67–2555.92] SPEAKER_23: Russia's attack was a catastrophic humiliation for the UK and a failure of the NATO alliance's vow of collective defence.
+[2556.98–2565.53] SPEAKER_23: If that's allowed to stand, it would surely transform the security landscape of Europe and the world in Russia's favour.
+[2566.67–2576.04] SPEAKER_23: But if the UK and its allies did fight back, with or without the United States, this could mark the beginning of a much wider war.
+[2587.58–2601.68] SPEAKER_25: I sometimes wonder if the Prime Minister understands that he would have to preemptively use nuclear weapons if it became known that the Russians were going to launch a ballistic missile at Fazlai.
+[2603.36–2609.43] SPEAKER_23: I'm back at Chris Donnelly's house, the Russia expert once dismissed as a Cold War warrior.
+[2610.61–2618.54] SPEAKER_23: He's sharing his view on the biggest dilemma our players faced about when or whether to order a nuclear strike.
+[2619.66–2627.95] SPEAKER_23: In the war game, the nuclear submarine base at Fazlaine was targeted, yet our British team didn't resort to nuclear war.
+[2629.11–2639.74] SPEAKER_23: What Chris is saying is that he thinks a real government would not only go nuclear, but would launch the strike before the missiles had even landed.
+[2640.43–2642.27] SPEAKER_25: It wouldn't be a tripwire response.
+[2642.91–2643.95] SPEAKER_25: You'd have to initiate it.
+[2644.33–2644.93] SPEAKER_23: Why is that?
+[2645.09–2646.15] SPEAKER_23: Why wouldn't that be a tripwire?
+[2646.29–2649.48] SPEAKER_25: Well, if it were a tripwire, we'd have to wait till somebody tripped it.
+[2649.52–2652.28] SPEAKER_25: We'd have to let that missile attack happen.
+[2653.38–2654.50] SPEAKER_25: And can we afford to?
+[2654.60–2660.45] SPEAKER_25: The answer would be no, given we have only four bombers, only one at sea at any one time.
+[2661.13–2666.45] SPEAKER_25: If we risk something which destroys our capacity to react, we have to shoot first.
+[2668.14–2683.38] SPEAKER_23: In the Cold War, because the UK and its European allies had larger conventional forces, they had more options to deter threats conventionally rather than a rapid escalation to using weapons of mass destruction.
+[2684.24–2697.43] SPEAKER_25: As our conventional armed forces have shrunk, particularly for the UK, one of Europe's two nuclear powers, we no longer have a conventional deterrent ramp.
+[2697.89–2706.90] SPEAKER_25: We no longer have a conventional force sufficient to fight a war against an enemy, be it the Russians or someone else.
+[2706.88–2718.91] SPEAKER_25: to give politicians time to consider how to use nuclear weapons and then how to demonstrate that they will use nuclear weapons to make the enemy back off before it becomes a nuclear exchange.
+[2720.03–2728.27] SPEAKER_25: So that if it comes to a confrontation, our only response, strategic response mechanism is nuclear.
+[2728.25–2737.52] SPEAKER_25: And if that's small and we no longer have the capacity to defend it effectively, then we have to use it before it's destroyed.
+[2738.68–2739.87] SPEAKER_25: So we have to use it first.
+[2742.59–2743.65] SPEAKER_23: And do you think that's understood?
+[2743.67–2746.08] SPEAKER_25: I don't know.
+[2746.86–2747.42] SPEAKER_25: I doubt it.
+[2747.88–2752.35] SPEAKER_23: How dangerous is it to have lost that conventional deterrent ramp?
+[2756.90–2767.09] SPEAKER_25: It makes the risk of error catastrophic instead of just serious.
+[2771.43–2782.43] SPEAKER_23: In the war game, Ben Wallace said Britain's nuclear deterrent had worked because it limited Russia's options, though it didn't stop the Kremlin from firing conventional missiles.
+[2783.51–2795.83] SPEAKER_23: What was also striking to me was how our fictional Cobra team used the fact that it might be forced to go nuclear as a way to pressure its own allies to get off the fence and help.
+[2799.56–2801.86] SPEAKER_01: Secretary of State for Defence John Healy.
+[2802.32–2804.95] SPEAKER_23: We ran the game a couple of months before this.
+[2805.01–2814.74] SPEAKER_05: The real British government published a major review of defence in early June.
+[2816.44–2828.13] SPEAKER_23: The document confirms the hollowed-out state of the armed forces, but also what needs to be done to rebuild them.
+[2828.33–2836.03] SPEAKER_05: and we prevent wars by being strong enough to fight and win them.
+[2836.05–2845.02] SPEAKER_23: Unusually, the review was led by a team of external experts, including General Sir Richard Barons, the defence chief in our war game.
+[2851.28–2866.56] SPEAKER_06: When we went through the Wargame experience we had already completed drafting the review and what I was struck by was how the content of the Wargame and the content of the review that I couldn't then talk about are the same.
+[2867.70–2874.39] SPEAKER_06: So when we in the Wargame portray what an attack by Russia on the UK feels like
+[2875.03–2886.90] SPEAKER_06: then the war game is handling the same issues that the review addresses in that it identifies we live in a really difficult world of potential for state confrontation and conflict.
+[2887.88–2895.75] SPEAKER_23: The review places NATO at the heart of UK defence policy, trusting in the Alliance's pledge of collective defence.
+[2896.54–2901.19] SPEAKER_23: Yet every member state is also meant to have a national defence plan.
+[2902.15–2910.72] SPEAKER_23: Our war game exposes serious gaps in the UK's air defences, but the review contains very little on how to fix them.
+[2911.40–2920.47] SPEAKER_06: Within the frame of the defence review, there was really never any credible question of affording something that people might call the UK Iron Dome.
+[2921.41–2926.16] SPEAKER_06: That's a very, very expensive proposition and it would require
+[2926.70–2934.75] SPEAKER_06: big shout from civil society to want to find that money at the expense of something else before I think it becomes an early prospect.
+[2935.15–2935.99] SPEAKER_23: What sort of money?
+[2936.05–2950.64] SPEAKER_06: So I hesitate to quote sums of money but as a rule of thumb entry-level ability to shoot down incoming missiles from ground-based interceptors entry-level about 25 billion pounds.
+[2951.45–2958.54] SPEAKER_23: Lots of other holes are addressed though, with the government now planning to build more submarines and buy more missiles.
+[2959.26–2963.71] SPEAKER_23: It also wants to regrow the reserves and rebuild wider resilience.
+[2964.65–2970.24] SPEAKER_23: But this change will be expensive and require all of society to play a part.
+[2971.08–2980.61] SPEAKER_06: We should look at Ukraine and remind ourselves that we're having an argument about whether we spend three or three and a half percent or four percent of GDP on deterrence.
+[2981.57–2985.83] SPEAKER_06: and that's expensive, but it's an investment.
+[2985.91–2990.25] SPEAKER_06: It essentially makes everything else possible behind the comfort of effective deterrence.
+[2990.79–3017.44] SPEAKER_06: If we don't do that and deterrence fails and our enemies take advantage of us and I'm not for a moment suggesting this is this is imminent or necessary or even likely but it is possible if that happens and you go to war then history and again look at Ukraine says you won't be spending three and a half percent on defense or deterrence you'll be spending somewhere between 25% and 50% of your GDP on fighting a war.
+[3018.21–3022.24] SPEAKER_06: And with that war will come massive destruction, and the war game has illustrated that.
+[3028.91–3033.32] SPEAKER_23: The Defense Review describes Russia as an immediate and pressing threat.
+[3034.36–3044.07] SPEAKER_23: After it was published, the Russian Embassy in London responded on social media saying, and I quote, Russia poses no threat to the United Kingdom and its people.
+[3044.71–3048.96] SPEAKER_23: We harbor no aggressive intentions and have no plans to attack Britain.
+[3049.62–3053.01] SPEAKER_23: We are not interested in doing so, nor do we need to.
+[3055.06–3059.71] SPEAKER_23: Vladimir Putin's ambassador to the UK was also interviewed on Sky News.
+[3060.59–3066.22] SPEAKER_03: Based on the defence review here in this country, one of the major threats they see is from Russia.
+[3066.88–3069.08] SPEAKER_01: Yeah, it is fantastic and I like it.
+[3070.46–3076.63] SPEAKER_01: The UN Minister of Defence has said that they have daily threat from Russia in the sea, in the air and on the earth.
+[3077.39–3081.05] SPEAKER_01: I pretty much would like to see these threats.
+[3081.98–3082.88] SPEAKER_01: What does he mean?
+[3087.78–3096.22] SPEAKER_23: As you know, the UK chose to shrink its defences when the Cold War ended, believing that Moscow no longer posed a threat.
+[3097.62–3099.00] SPEAKER_23: That turned out to be wrong.
+[3099.68–3101.47] SPEAKER_23: And we're living with the consequences.
+[3104.31–3107.24] SPEAKER_23: I've repeatedly said Russia knows our weaknesses.
+[3108.58–3110.06] SPEAKER_23: Now you do too.
+[3111.08–3115.23] SPEAKER_23: Whether or not we fix them, well, that's the big choice.
+[3121.08–3121.98] SPEAKER_14: I've got to get myself back in there.
+[3122.24–3124.34] SPEAKER_23: So, shall I just ask a couple of questions?
+[3124.64–3126.25] SPEAKER_23: Yeah, go ahead.
+[3126.99–3130.15] SPEAKER_23: Okay, so I am with Rob after the game.
+[3130.88–3132.12] SPEAKER_23: So, how did you think it went?
+[3132.62–3134.46] SPEAKER_14: I think it went better than I expected.
+[3134.50–3143.86] SPEAKER_14: My impressions about the game were I was really amazed about the enthusiasm and the dedication that the politicians and our former military personnel put into it.
+[3143.88–3145.12] SPEAKER_14: They took it very seriously.
+[3145.16–3148.40] SPEAKER_14: And I think it's a simple reason they really care.
+[3148.87–3152.66] SPEAKER_23: In the game, it stops really in the middle of the crisis.
+[3153.64–3154.42] SPEAKER_23: How does this end?
+[3155.40–3164.61] SPEAKER_14: Well, in designing the game, we want to leave it with a sort of cliffhanger moment where the listener themselves can decide, do I feel safe?
+[3164.85–3165.77] SPEAKER_14: Do I feel secure?
+[3166.19–3167.53] SPEAKER_14: I wonder what would happen next.
+[3167.57–3173.60] SPEAKER_14: We want to leave our audience with a sense of, I wonder what needs to happen next.
+[3174.02–3175.72] SPEAKER_14: How would we put this right?
+[3177.02–3181.93] SPEAKER_14: What happens if our allies don't come, even though we've always assumed that they would do?
+[3182.63–3183.63] SPEAKER_14: How would Britain hit back?
+[3184.27–3188.57] SPEAKER_14: So we've left it deliberately unfinished, because I think the story isn't finished.
+[3190.71–3195.32] SPEAKER_14: It's not a drama with a conclusion, the curtain comes down and we all take a bow.
+[3195.98–3203.03] SPEAKER_14: This is a game that doesn't have a definitive ending, because this is a game that the public will finish.
+[3210.38–3211.11] SPEAKER_26: you
+[3238.56–3241.81] SPEAKER_23: The War Game was written and presented by me, Deborah Haynes.
+[3242.59–3244.77] SPEAKER_23: The series producer was James Shield.
+[3245.43–3247.81] SPEAKER_23: The development producer was Jess Swinburne.
+[3248.43–3251.68] SPEAKER_23: Sound design and original music were by Tom Kinsella.
+[3252.22–3253.66] SPEAKER_23: Violin by Charlie Brown.
+[3254.36–3256.46] SPEAKER_23: Additional production by Katie Scholes.
+[3257.28–3265.55] SPEAKER_23: The technical team on the day of The War Game were Rich Andrews, Will Thornton and Tom Ross from Spiritland Productions.
+[3265.53–3274.76] SPEAKER_23: The Wargames support team were Matthew Boyce, Edward Clowes, Aisling Flaherty, Katie Gunning, Jonathan Lewis, Garry Marshall, and Rebecca Moore.
+[3275.34–3278.47] SPEAKER_23: The runners were Talia Augustidis and Alan Whedon.
+[3279.29–3287.39] SPEAKER_23: A special thank you to Air Marshal Ed Stringer and Dr. Sophie Antrobus for giving up their time to help with this podcast.
+[3287.36–3289.83] SPEAKER_23: The editor for Tortoise was Jasper Corbett.
+[3290.57–3297.71] SPEAKER_23: For Sky News, the commissioning editor was Paul Stanworth, and the executive producers were Sarah Whitehead and David Mapstone.
+[3306.33–3312.78] SPEAKER_19: This year, Amazon are increasing the electric delivery vehicles we use across Europe to 10,000.
+[3313.14–3325.02] SPEAKER_19: It's a difference you'll notice on your doorstep, where babies are made a fuss of, where we deliver footballs for kids' kickabouts, and where they deliver the football straight into next door's garden.
+[3327.47–3329.37] SPEAKER_19: Can they have their ball back, please?
+[3329.45–3331.59] SPEAKER_19: We're delivering change where it matters.
+[3332.13–3332.98] SPEAKER_19: On your doorstep.
+[3333.38–3336.42] SPEAKER_19: Delivery service partner vehicles across the UK and EU.
