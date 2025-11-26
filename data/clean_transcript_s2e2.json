@@ -1,0 +1,3566 @@
+[
+  {
+    "episode": "S2E2",
+    "segment": "0.66–9.53",
+    "original_speaker_id": "SPEAKER_12",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "It's thrilling. High octane racing. Across three big days at Newbury Racecourse."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "11.67–19.54",
+    "original_speaker_id": "SPEAKER_12",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Enjoy the historic Coral Gold Cup meeting. Complete with after party on Friday the 28th and Saturday the 29th of November."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "19.82–25.92",
+    "original_speaker_id": "SPEAKER_12",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Before family fun returns to Newbury on Monday the 29th of December for the Coral Cello Hurdle Day."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "26.28–30.21",
+    "original_speaker_id": "SPEAKER_12",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Buy early and save at NewburyRacecourse.co.uk."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "39.32–41.28",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Hello, how are you? Good to see you."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "41.72–43.76",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Hello, good to see you. Thank you so much for having me. Welcome."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "43.80–44.86",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "You're a beautiful house."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "44.88–46.04",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Oh, a pleasure, a pleasure."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "49.25–57.61",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "I've travelled to an old stone house in the middle of the English countryside to meet one of the UK's leading experts on Russia's ways of war."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "59.40–61.38",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Can you show me the security cameras that you've got here?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "62.48–72.77",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Top one's right near the house knight's nest. Over here, they're all round. Look down on every aspect of the house completely. It's all surveyed."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "74.71–89.01",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "At 78, Chris Donnelly's advice is still sought by military chiefs and government ministers. But he's also on the Kremlin's radar. It's why Chris takes his security very seriously."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "89.86–91.70",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "How long have you had the cameras up here?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "92.24–98.53",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Well, we first put the cameras in after the house burned down in mysterious circumstances six years ago now."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "99.43–105.00",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "And then 18 months ago, we had them upgraded and renewed in assistance of the police."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "106.60–116.10",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Russia's FSB spy agency twice targeted Chris in a cyber hacking campaign exposed by the UK's National Crime Agency."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "117.53–124.72",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Now, counter-terrorism police are on alert to race to his property in the event of any physical intrusion."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "126.36–128.60",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Could anyone sneak up here without you knowing? Nope."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "130.78–132.89",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "And as you know, we even got locked on the inside doors."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "134.59–138.41",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "And do you worry that someone might try and, sort of, come and find you?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "139.17–142.56",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "There's no point in worrying. Do soldiers worry in wartime?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "143.18–145.92",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "If you start worrying, the other side will run."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "148.58–171.16",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Chris is concerned, though, about a threat from authoritarian powers like Russia to a system of rules and values that evolved since the end of the Second World War. Designed to maintain peace and security, as well as to benefit democracies, the system enshrined things like human rights, free speech and the rule of law."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "172.72–191.95",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "The fact is that there are nasty people out there prepared to do very nasty things and that the rules-based order which we've all complacently come to be used to and to think was permanent, because it's been guiding our life for the last 70 years, is dead and gone. It's finished."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "193.81–201.71",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "The institutions which were created to maintain it are rather now left drifting like ships without motors."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "204.81–211.88",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Around the end of the Cold War, Chris became a special advisor to the head of the NATO Alliance in Brussels."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "212.96–221.87",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "He was one of a minority of voices who disagreed with a decision by the UK and other allies to shrink their armed forces over time."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "223.25–228.99",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Chris feared they'd be less able to defend themselves and their values if they were ever challenged."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "230.11–231.47",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "It wasn't a popular view."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "237.02–243.99",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "It was very easy to dismiss me and people like me as Cold War warriors and out of date. Is that what people would say?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "244.09–244.63",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Absolutely."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "245.29–247.64",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "They were saying that until five years ago."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "248.94–249.90",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "And how does that make you feel?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "251.86–252.20",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Cross."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "257.19–268.16",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "As a defence journalist, I've had the chance to get to know Chris over the years. He's spent many hours sharing his concerns with me about the state of Britain's defences."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "269.22–272.17",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "It's one of the reasons why I wanted to make this podcast."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "273.15–288.81",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "Unfortunately, I think that our politicians have not understood, at least not until very recently, how weak the country is. and how much has been lost. I think they simply don't know."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "289.27–293.78",
+    "original_speaker_id": "SPEAKER_07",
+    "identified_speaker": "Chris Donnelly",
+    "identified_role": "Chris Donnelly (Expert)",
+    "classification": "commentary",
+    "text": "I think they've been living with an illusion of power. And that's dangerous."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "302.81–315.62",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "What you're about to hear is the kind of war game that's genuinely tested inside government. The main difference is that nothing discussed in this version is classified."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "318.06–320.98",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Russia knows our weaknesses. But do you?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "325.65–334.48",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "From Sky News and Tortoise, this is The War Game. I'm Debra Haines. Episode 2, Armed Attack."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "343.25–354.76",
+    "original_speaker_id": "SPEAKER_19",
+    "identified_speaker": "Unidentified Voice",
+    "identified_role": "War Game Participant",
+    "classification": "explanation",
+    "text": "This is the first time I've ever seen such a thing."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "358.10–374.02",
+    "original_speaker_id": "SPEAKER_26",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Back in central London, in a basement that's become the set of the war game, it's coffee break time."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "375.72–381.21",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The first session lasted just over an hour and the players really got into their roles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "382.60–406.86",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "This wasn't hard for most on the British side, as Jack Straw really was the Foreign Secretary, just as Amber Rudd had been the Home Secretary, and Mark Sedwell is a veteran National Security Advisor. He also served as the Cabinet Secretary, the UK's top civil servant, under Prime Ministers Theresa May and Boris Johnson."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "410.11–421.45",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Ben Wallace turned down the chance of running for prime minister in real life, but he was the longest serving conservative defence secretary, and before that, security minister."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "422.51–435.81",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Along a corridor in a separate underground room, also enjoying a break, is the Russian side, led by Keir Giles, an expert on the Kremlin."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "436.89–445.00",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "When governments do this kind of exercise for real, Keir and his colleagues are among the people called upon to play the red team."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "445.04–455.78",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "As for Rob Johnson, the Oxford academic who devised the Wargame, he's busy getting ready for what's known as the next turn."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "455.80–465.43",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "While the participants talk amongst themselves, Rob keeps glancing at his pocket watch."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "466.57–473.48",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The game runs to a strict timeline and this relaxed chatter in the real world is about to end."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "478.89–480.09",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "We have some breaking news."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "481.42–486.12",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Everyone retakes their seats as one of our mocked up news reports starts to play."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "487.06–490.59",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "It's read by Katie Gunning, a former BBC newsreader,"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "491.70–504.35",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "In the war game, it's now four in the morning on Monday the 6th of October 2025. Our cabinet ministers and officials have just been scrambled from their beds and into waiting cars."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "505.31–509.88",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Taken to an emergency meeting in Whitehall, they hear this on the radio."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "510.92–524.49",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "Explosions have been reported across the UK. Details are only just coming into us, but the emergency services say they're responding to incidents in multiple locations, including London, the south-east of England and Scotland."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "525.09–529.34",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "It's not yet clear what caused the blast or whether there have been any casualties."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "530.00–534.04",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "explanation",
+    "text": "These explosions come at a time of heightened tensions with Russia."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "535.48–541.10",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Prime Minister Ben Wallace and his team assemble in what we're imagining is an emergency COBRA meeting."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "542.46–547.85",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Everyone knows they must stay professional, but this crisis is also personal."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "549.41–554.35",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Mark Sedwell, playing the National Security Advisor, or NSA, speaks first."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "555.62–562.02",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Can I suggest, P.M., we kick off with the latest intel? Oh, my word."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "563.10–568.74",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Rob Johnson, in his role as chair of the Joint Intelligence Committee, spells out what's going on."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "570.02–580.01",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Thank you very much, Nies. At 3.15am this morning, 16 3M14 calibre missiles are launched from that Russian surface vessels that we knew of in the North Atlantic."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "580.03–585.00",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Russian Air Force with 20 attack aircraft have also launched a salvo of missiles over the North Atlantic."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "585.06–590.52",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Some 36 missiles in total were tracked in the air heading for the UK."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "590.50–605.60",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Phylindales, which provides, as you know, our ballistic missile early warning, reports that four ballistic missiles were launched from subsurface platforms in the North Atlantic and were inbound on a trajectory, as far as defence intelligence is concerned, that appeared to be in southern England."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "606.53–608.47",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "That makes 40 missiles altogether."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "608.49–615.16",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "The RAF scrambled, as you'd expect, from Losermouth and Connexby thanks to our high state of readiness, we ordered."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "615.78–619.58",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "They've intercepted and defeated, they tell us, eight air-launched missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "620.07–623.51",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "That means eight missiles were shot down, but the rest got through."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "623.55–637.17",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "The first missiles, using subsonic delivery speeds, arrived at 3.30 half an hour ago. Finingdale's, its last message to us before it was struck, but we don't yet know the damage to that facility."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "638.82–647.43",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "This is a radar station in North Yorkshire, also used by the Americans, which provides an early warning for incoming ballistic missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "648.55–659.37",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Royal Navy sites were also targeted, including the nuclear submarine base at Fazlane in Scotland and the main naval base in Portsmouth as well as Heathrow Airport."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "660.33–665.44",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "At 3.47 at Portsmouth and the port at Felixstowe, both were struck."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "666.14–670.25",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Missiles also arrived at Terminal 4 at Heathrow at the same time."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "670.67–675.57",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "We've not yet got firm details of what the extent of the damage is, but that will be forthcoming."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "676.50–685.73",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "It is anticipated that four of the unidentified but large-scale ballistic missiles will reach Portsmouth at fault 16 in 15 minutes from now."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "687.57–689.83",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Portsmouth is the home of the Royal Navy."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "691.06–702.73",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Multiple warships are typically moored alongside at a naval base there, including HMS Queen Elizabeth and HMS Prince of Wales, the UK's two giant aircraft carriers."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "704.54–705.80",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "That concludes the intelligence brief."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "708.70–720.29",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "OK, so we're now in a situation where clearly Russia has moved to a position of, effectively, an act of war against this country."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "722.90–731.41",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "I think the questions for us, therefore, are first and foremost what we would call battle damage assessment, as in how much damage have the Russians inflicted."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "732.84–752.36",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Secondly, the challenge I'd like an update from is obviously how many of our military assets were remotely within range of being able to at least counter some of the launch platforms the Russians used, which would be, I'm guessing, a proportionate response should we wish to engage the actual ship or whatever that did it."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "754.19–759.58",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Prime Minister is asking whether his forces can destroy any of the Russian fleet or warplanes."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "761.13–772.70",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And thirdly, where are we with our communications? It's four in the morning, most of the country hasn't woken up. I think we need to think about the time. NSA, first of all."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "773.18–775.47",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "So as you say, this is in effect an act of war."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "775.79–779.11",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "And so we need now to proceed on that basis."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "779.87–798.02",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "There's also some operational things that we will have to do. Given the nature of this attack, we're going to need to disperse. We can't have you, the defence secretary, the foreign secretary, et cetera, all in the same place. And so we're going to need to disperse pretty quickly and continue this, at least after this meeting, on that basis."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "801.58–811.00",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Helena Kennedy, as the Attorney General, suggests invoking a suite of emergency powers to help restore order and reassure the public."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "812.06–831.51",
+    "original_speaker_id": "SPEAKER_05",
+    "identified_speaker": "Baroness Helena Kennedy",
+    "identified_role": "UK Attorney General",
+    "classification": "blue",
+    "text": "Prime Minister, I really do think with some urgency you have to consider the situation with regard to the Civil Contingencies Act because this is a national emergency. We are under attack. An act of war, an act of aggression has been committed against us and I would strongly advise that as soon as possible that you declare a state of emergency."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "835.07–838.00",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Amber Rudd as the Home Secretary supports the move."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "839.56–842.49",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "blue",
+    "text": "I must agree with that because the public needs some guidance."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "842.51–850.42",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "blue",
+    "text": "This is totally unprecedented."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "850.44–858.57",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "I just want to stop and bring you back into the real world, because what's being described is too serious to be left only in the realms of a game."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "861.72–870.69",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "This would be the gravest attack on the UK homeland since the Second World War, plunging the whole country into a state of emergency. "
+  },
+  {
+    "episode": "S2E2",
+    "segment": "871.61–874.77",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "In an instant, normal everyday life would stop."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "876.54–885.25",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Schools, shops and businesses would have to shut, UK airspace would be closed and limits placed on all internal movement."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "890.66–912.57",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "What you can hear are air raid sirens in Ukraine from the day Russia launched its full-scale war more than three years ago. I was in Kiev at the time and watched as this European city that looked and felt so familiar transformed from a state of relative peace to one of all-out war."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "916.93–925.02",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Back in the game, the National Security Advisor is focused on the threat posed by four ballistic missiles now closing in on their targets."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "927.58–939.66",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "CDS, these four ballistic missiles inbound, which are presumably now going to hit Portsmouth imminently, do we have any sense whether those are conventional ballistic missiles or whether they potentially have a nuclear warhead on them?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "941.50–946.50",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Richard Barons, our chief of the defence staff, or CDS, responds."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "946.87–953.26",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "You can't tell whether a ballistic missile is conventional or nuclear until it arrives and goes bang, and then you do know."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "955.74–961.13",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Exactly, so we don't have any indication of what that is from intelligence or anything else, no."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "961.15–969.82",
+    "original_speaker_id": "SPEAKER_14",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "Our assessment is that it's highly unlikely, since we would have known about, I think, previous deployments of nuclear systems, but at this stage we can't take anything for granted."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "971.46–978.99",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Adding to a collective sense of helplessness, the defence chief explains it's not possible to intercept these missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "980.65–989.05",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "We have almost no defence against ballistic missiles except that the Type 45 air defence has limited capability if it's in the right place."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "989.17–992.00",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "It was in the wrong place. It can only be in one place at once."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "993.82–1002.55",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "As I mentioned in episode one, UK air defences are a major casualty of cost-saving cuts since the end of the Cold War."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1003.89–1016.68",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Type 45 warship is the single piece of British kit that can shoot down ballistic missiles, which are generally larger, heavier and harder to stop than cruise missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1017.78–1025.99",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We have in theory six, We probably have in reality four of which in reality two are at sea or able to be at sea."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1026.85–1036.23",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Certainly they are based in Portsmouth and therefore they do have a limited but capable ballistic missile defense, small as it is."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1037.03–1039.97",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Where is the current Type 45, Sid, yes?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1040.90–1043.28",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "I know one Type 45 is at sea."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1044.32–1050.39",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Where is it? It's making its way towards the North Atlantic, up the west coast of the UK."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1052.49–1054.48",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "I know how many missiles it has on board."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1055.58–1058.38",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "It has about half its full complement."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1059.64–1063.09",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "And that's the total number of shots that it's going to be able to fire usefully in this situation."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1064.37–1068.37",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "That means it's only carrying half the missiles it can hold."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1070.02–1073.71",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The exact number of munitions on warships is classified."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1074.37–1089.42",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "But the fact this destroyer is only loaded with half the amount it can carry illustrates another major problem caused by a squeeze on the defence budget over many years. Insufficient stockpiles of air defence missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1091.65–1094.75",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The second Type 45 was tied up in Portsmouth."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1095.21–1097.31",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "I do not yet know whether it survived the attack."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1098.49–1100.53",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "But it's bombed up or even half bombed up?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1101.10–1110.95",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "It's most unlikely to have any munitions on board at all at the minute because those munitions are stored elsewhere and there was no requirement to have it bombed up."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1111.01–1111.57",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "It's useless."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1113.73–1124.80",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Despite his depleted capabilities, the military chief knows his forces must respond, ideally backed up by urgent NATO reinforcements."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1125.86–1132.47",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "If there are more ballistic missile attacks on the UK, we have no defense against them, that the Air Force don't deal with ballistic missiles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1134.25–1141.68",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "So I'm going to need some time to find out what's actually happened and what is still available to defend the UK."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1142.00–1152.51",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Can I take it, Prime Minister, that you now accept that we are at war with Russia and that Article 5 of the NATO treaty has been breached? Because off that is going to hang everything else that I do."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1153.72–1175.77",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He's referring to a founding principle of the Alliance that an attack on one is an attack on all. In theory, this means a nation that's in trouble can call on its 31 allies to come to the rescue. A powerful deterrent that's helped secure the Alliance's borders for 75 years."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1176.37–1184.88",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "But in practice, belonging to the NATO club is not the automatic guarantee of protection that many people believe."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1186.14–1195.41",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Instead, it's merely the right to ask for help and every member of NATO needs to agree before Article 5 can be invoked."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1196.97–1201.72",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Even then, it's up to each country to decide what assistance they will offer."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1203.30–1204.83",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "One other important point."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1205.55–1211.15",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "If NATO doesn't agree to step in, Britain's options become alarmingly slim."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1212.25–1225.24",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Defence cuts over the years have eroded the UK's once deep arsenal of conventional forces. In other words, all elements of military power short of nuclear weapons."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1226.52–1231.43",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "It means without NATO's help, the government could be left with two choices."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1231.47–1245.52",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Admit defeat or order a nuclear strike, which would almost certainly prompt Moscow to fire nuclear weapons back. An apocalyptic scenario that neither country wants."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1247.05–1252.93",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The British team knows they must rally their NATO allies, in particular the United States."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1259.76–1263.34",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "But they're not the only ones keen for a call with Washington."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1267.30–1271.57",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "In Russia, news of the attack is being reported very differently."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1273.25–1285.49",
+    "original_speaker_id": "SPEAKER_04",
+    "identified_speaker": "Valeriy Akhimenko",
+    "identified_role": "Russian Media Spokesperson",
+    "classification": "red",
+    "text": "The Russian Federation has this morning punished the terrorist British state for its attack against the Severomorsk naval base."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1286.09–1291.86",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Valeriy Akhimenko, who's reading the bulletin, is an expert on Russian state communications."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1293.12–1305.02",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He helped us craft the Russian news reports so they sound authentic, even though some of the phrases will seem strange to people not familiar with the way Russian media talks about Britain."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1305.54–1313.35",
+    "original_speaker_id": "SPEAKER_04",
+    "identified_speaker": "Valeriy Akhimenko",
+    "identified_role": "Russian Media Spokesperson",
+    "classification": "red",
+    "text": "Launched by sea and air, the Special Military Operation targeted military sites in the UK. It was a complete success."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1314.14–1319.91",
+    "original_speaker_id": "SPEAKER_04",
+    "identified_speaker": "Valeriy Akhimenko",
+    "identified_role": "Russian Media Spokesperson",
+    "classification": "red",
+    "text": "The world has been horrified at the hostile actions of the Anglo-Saxon regime in London for too long."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1320.99–1331.03",
+    "original_speaker_id": "SPEAKER_04",
+    "identified_speaker": "Valeriy Akhimenko",
+    "identified_role": "Russian Media Spokesperson",
+    "classification": "red",
+    "text": "This mission will send a message to the British government to avoid direct confrontation with the Russian Federation."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1336.11–1342.10",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Overseeing his operation from the Kremlin is the Russian President, played by Keir Giles."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1343.26–1347.82",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He heads the red team, which is pitched against the British blue team in the scenario."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1349.38–1364.68",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Unlike in normal wargames though, our red side already knows the main moves it will make, so a key job for Keir and his team is to explain why they're attacking the UK and how Russian leaders might be thinking."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1366.37–1367.55",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "This is a historic moment."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1368.07–1374.16",
+    "original_speaker_id": "SPEAKER_10",
+    "identified_speaker": "Toms Rostoks",
+    "identified_role": "Head of the Russian Armed Forces (Chief of the General Staff)",
+    "classification": "red",
+    "text": "I think it would be fair to say that we at this point have created a lot of chaos in Whitehall."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1375.48–1388.60",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "This is our opportunity to pay back for the injustices that they have committed against us in the past and also more recently."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1389.30–1390.38",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "I think they deserve it."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1392.64–1405.93",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "As well as Keir, we have Maria Enqvist from Sweden as Russia's military spy chief, and Toms Rostok from Latvia, who's playing the head of the Russian armed forces, or chief of the general staff."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1407.40–1412.62",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Colleagues, we see the first response from the United Kingdom. They have declared an act of war."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1413.76–1415.55",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "explanation",
+    "text": "They have finally woken up."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1416.07–1416.93",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "It would appear so."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1417.72–1421.44",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "This is what we expected, but this is still marginally symbolic."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1421.66–1427.23",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "It doesn't change facts on the ground and their military defences are weakened."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1428.13–1429.97",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "So we can proceed with further action."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1431.81–1439.94",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Russia appears to be emboldened not just by the UK's weakened armed forces, but also its waning alliances."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1441.31–1447.44",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "I think we can assume that the United States is going to be one of the first places that the British will call."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1448.54–1451.00",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Therefore, I am very pleased that we called them first."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1451.26–1451.52",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "red",
+    "text": "Yes."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1453.28–1457.97",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "red",
+    "text": "Strategic move."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1457.99–1468.60",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "In an extraordinary move that would have been unimaginable in the Cold War, Washington has agreed to take a call from Moscow before speaking to London."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1469.83–1472.99",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Hello, can you hear me? Mr Secretary of State, yes we can."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1475.29–1485.08",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Our imagined top US diplomat is played by Professor Phillips O'Brien, the head of the School of International Relations at the University of St Andrews."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1486.53–1496.04",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He helped us craft a US position based on the principle of America First. This underpins the current administration's foreign policy."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1497.08–1510.89",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "We can't know for sure what the US would do in real life. But by playing the role in this way, Philips is helping us test a scenario in which Britain's allies don't immediately come to its aid."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1511.80–1515.72",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Instead, the UK has to rely on its own defences."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1519.18–1525.03",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The US Secretary of State is available throughout the war game to speak to whoever wants to call."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1526.46–1533.55",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Thank you for your willingness to communicate and to step forward as an honest broker to resolve the British problem."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1534.57–1539.28",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "We agree absolutely with you that we do not want a war in Europe."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1539.38–1557.62",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "And precisely for that reason, we are limiting our demonstrative actions to the United Kingdom, which, let us not forget, left Europe almost a decade ago. Our ultimate aim is to remove the British as a problem, not just for Russia, not just for Europe, but for the United States as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1557.64–1563.68",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "But in order to do so, the continuing isolation of the United Kingdom is absolutely essential."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1564.01–1570.37",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "There will therefore be further measures against the United Kingdom, but not to the full extent of our capabilities."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1571.13–1574.98",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "red",
+    "text": "Thank you very much for that outline of the Russian position."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1575.43–1580.92",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "red",
+    "text": "We understand the Russians feel that they have been attacked by the British and the British now feel they have been attacked by the Russians."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1581.60–1586.44",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "red",
+    "text": "Therefore, we believe there must be a cessation of all attacks right now."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1587.51–1604.85",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "red",
+    "text": "If there are continuing attacks on the British and we determine they are coming from Russian sources, then we will have to at least leave open the possibility of providing the British with some kind of intelligence or ammunition to protect themselves from further attacks."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1605.45–1618.97",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "red",
+    "text": "So we ask the Russians, please, if they can, to step back from the brink and we will keep the British and we will use all of our resources to make sure there are no further British attacks and a war in Europe is prevented."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1620.47–1626.92",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Understood. We have understood the importance of restraint at this point and we will proceed accordingly."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1627.38–1629.43",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Thank you for your time, Secretary of State."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1629.45–1629.89",
+    "original_speaker_id": "SPEAKER_14",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "red",
+    "text": "Thank you."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1633.30–1648.87",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Back in London, there would be shock if the British side knew their closest ally had chosen to speak with the Russians before them. For now, though, they're unaware this has happened and instead are preparing for their own call with Washington."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1648.89–1654.72",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The British side also has the option to talk to the Secretary-General of NATO."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1655.34–1659.30",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "You'll hear the NATO chief referred to as SecGen as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1660.92–1662.70",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "What I suggest, PM, is you do three things."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1662.82–1687.06",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "First is to inform them of exactly the situation that we're in. If I may recommend, I think we have to say that we are therefore invoking Article 5, NATO Article 5. And a decision for you is whether, essentially, to say to them, if we are on our own, we do not have much short of escalating all the way to the nuclear deterrent in order to stop this."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1688.53–1698.73",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "When the National Security Advisor talks about escalating all the way to the deterrent, he means the conflict has the potential to become a nuclear war."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1699.81–1707.99",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "This is because the UK lacks the conventional forces to be able to fight back unless the US and other allies join in."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1710.13–1713.17",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "And if they want to stop this, then they're going to have to get engaged."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1713.21–1717.78",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Because I think we have to put a bit of steel into their spines and not simply feel we can soak this up."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1718.00–1720.32",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Who should we engage first, the US or NATO, do we think?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1721.14–1722.20",
+    "original_speaker_id": "SPEAKER_02",
+    "identified_speaker": "Jack Straw",
+    "identified_role": "UK Foreign Secretary",
+    "classification": "blue",
+    "text": "Personally, I think the US."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1724.09–1730.84",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "They all agree, and the face of the top American diplomat then appears via video link beamed into the Cobra Room."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1733.03–1740.17",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Hello. Hello, Prime Minister. Secretary, I'm sorry to interrupt your evening, but there is something of significant concern."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1740.67–1745.58",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "In the last few minutes, missiles were launched by the Russians at the United Kingdom."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1746.32–1750.23",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "This is unprovoked act of war as we see it."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1750.43–1753.79",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "The United Kingdom will be evoking Article 5 at NATO."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1753.81–1761.26",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And I'm very, very keen that the United States fully commit to supporting us in whatever response we do."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1761.98–1773.00",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "The position of the US, and we're still waiting to get our own intelligence to see exactly what we believe has occurred, is that we certainly do not want this to escalate anymore."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1773.62–1782.07",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "We believe that we can provide a vehicle to reach out to the Russians and try and mediate between both of you."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1782.15–1787.82",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "We have good relationships with the United Kingdom historically, but also now with the Russians."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1788.22–1790.83",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "We certainly are not pleased with this Russian attack."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1790.87–1799.12",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "This was not something that we wanted, but we would like the United Kingdom now to show some restraint to step back from the edge."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1800.02–1808.78",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "And we'd also like it very clear. We want neither side to threaten the use of nuclear weapons, let alone obviously use nuclear weapons."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1809.61–1815.21",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "Any side that does that will be considered to be acting against the interest of the United States."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1817.10–1820.58",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The response is momentous for all the wrong reasons."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1821.66–1832.95",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Britain's security assumptions are built around a cast-iron belief that its special relationship with Washington means the US would always be there in a crisis."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1834.04–1849.43",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "A world in which that's no longer guaranteed means the risk successive governments have taken in paring back UK military strength to spend money on other priorities has left the country even more vulnerable."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1852.05–1869.48",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Trying to appeal to their shared history, the Prime Minister reminds the Secretary of State about how the one and only time NATO has invoked Article 5 was in support of the US after the September 11th terrorist attacks in 2001."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1870.46–1873.70",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "The United Kingdom were the first and foremost to come to your assistance."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1874.60–1877.26",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We will be putting an Article 5 to NATO later."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1878.11–1884.37",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Can you give us an indication that you will at least support our Article 5 in the NATO chamber?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1885.07–1892.40",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Bearing in mind that Article 5 doesn't automatically mean an all-out war. What it means is mutual support for our fellow allies."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1894.42–1902.53",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "If there are any more attacks, launched today by the Russians, we would be inclined to support Article 5."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1903.29–1909.92",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "If however, things stop now, the number one priority of the United States is to make sure there is not a war in Europe."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1910.68–1914.03",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "We are reorienting our forces much more to the Pacific."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1915.14–1924.88",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Perhaps I would disagree that failure to support an Article 5 by the interest of the kingdom would, I'm afraid, only aid China, not the United States."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1925.92–1935.05",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "I'd like to call the president, please, of the United States as we get more information, and I'd like to communicate directly to him, please, as his ally."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1935.99–1941.82",
+    "original_speaker_id": "SPEAKER_03",
+    "identified_speaker": "Professor Phillips O'Brien",
+    "identified_role": "US Secretary of State",
+    "classification": "blue",
+    "text": "If the president is willing to take those calls, that is, of course, something I would be delighted to facilitate."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1942.31–1947.17",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Thank you very much. We'll continue to engage through our Foreign Secretary and our National Security Advisors."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1948.38–1949.97",
+    "original_speaker_id": "SPEAKER_05",
+    "identified_speaker": "Baroness Helena Kennedy",
+    "identified_role": "UK Attorney General",
+    "classification": "blue",
+    "text": "Well, that was not very encouraging."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1950.37–1951.27",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "It's an understatement."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1951.91–1965.14",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "So PM, I think we just need to take stock of that conversation in what you're going to say to the NATO Secretary General. So clear that they're not going to come to our aid yet unless you can persuade the president otherwise, that's clearly an urgent call."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1965.27–1969.79",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "I think we just need to think how straightforward are we going to be with the NATO Secretary General about this."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1969.81–1975.99",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "I think you should say that we will definitely invoke Article 5, and then we're going to have to work the phones to every European ally."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1976.36–1985.17",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Otherwise, we have very few options between what we have seen already and taking this all away, unless the Americans can somehow put a stop to it."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1985.19–1987.55",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "So I think you have to get him on side."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "1987.57–2006.66",
+    "original_speaker_id": "SPEAKER_02",
+    "identified_speaker": "Jack Straw",
+    "identified_role": "UK Foreign Secretary",
+    "classification": "blue",
+    "text": "And you've got to persuade the Americans that given the inadequacy of our conventional capabilities, including our inability to stop ballistic missiles and so on, we may have to resort to the nuclear option."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2007.06–2010.94",
+    "original_speaker_id": "SPEAKER_02",
+    "identified_speaker": "Jack Straw",
+    "identified_role": "UK Foreign Secretary",
+    "classification": "blue",
+    "text": "And whether he likes it or not, if we do that, then that will involve the US."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2012.41–2014.55",
+    "original_speaker_id": "SPEAKER_10",
+    "identified_speaker": "Toms Rostoks",
+    "identified_role": "Head of the Russian Armed Forces (Chief of the General Staff)",
+    "classification": "blue",
+    "text": "That's the point I was going to make as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2014.57–2017.41",
+    "original_speaker_id": "SPEAKER_10",
+    "identified_speaker": "Toms Rostoks",
+    "identified_role": "Head of the Russian Armed Forces (Chief of the General Staff)",
+    "classification": "blue",
+    "text": "That's the best way to avoid what the Americans want to avoid most of all."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2019.68–2025.69",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "It's now nearing 4.30 in the morning. The four ballistic missiles have hit Portsmouth."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2027.75–2033.86",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "People across the country are waking up in terror as news of the attack spreads."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2034.82–2042.53",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "Russia's launched a large-scale missile attack on the UK targeting multiple military sites and Heathrow Airport."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2042.69–2047.44",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "At least two people have died but officials warn the toll will likely rise."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2048.10–2054.43",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "UK airspace is now closed to civilian traffic and the Prime Minister has declared a state of emergency."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2054.87–2061.32",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "The government's describing this as the most serious attack on the British mainland since the Second World War."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2061.30–2069.20",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "Details are still emerging, but Downing Street is urging the public to remain calm, stay at home and await further information."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2070.86–2076.21",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "For security reasons, the government is restricting reporting on the military sites that have been hit."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2076.91–2080.95",
+    "original_speaker_id": "SPEAKER_24",
+    "identified_speaker": "Katie Gunning",
+    "identified_role": "Newsreader (Voiceover)",
+    "classification": "blue",
+    "text": "We understand that RAF jets are still airborne in case of further strikes."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2086.06–2090.64",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Foreign Secretary, played by Jack Straw, asks for an assessment of the damage."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2091.35–2095.74",
+    "original_speaker_id": "SPEAKER_02",
+    "identified_speaker": "Jack Straw",
+    "identified_role": "UK Foreign Secretary",
+    "classification": "blue",
+    "text": "Do we have any indication of UK casualties, military and civilian? We do."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2097.08–2112.46",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We do. Four casualties at Fylingdale, 15 at Portsmouth, two at Heathrow, nothing about Fazlaine, four Ministry of Defence police casualties and two Royal Naval personnel missing."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2113.06–2116.68",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Nothing about submarines damaged in Fazlaine that hasn't been appeared."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2118.35–2126.49",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Rob Johnson, as chair of the Joint Intelligence Committee, projects a map of the submarine base onto a large screen in the room."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2127.49–2134.34",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "This is one of the UK's most critically important sites where its nuclear-armed submarines are located."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2135.97–2139.63",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Red circles identify the areas where the missiles struck."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2141.20–2149.43",
+    "original_speaker_id": "SPEAKER_13",
+    "identified_speaker": "Dr Rob Johnson",
+    "identified_role": "Chair of the Joint Intelligence Committee",
+    "classification": "blue",
+    "text": "— All we've got, Prime Minister, of the fleet from Defence Intelligence, has been some satellite photography of where they landed."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2149.45–2155.26",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "— Truth is, PM, given the scale of the attack, it is remarkably and luckily light on casualties."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2155.28–2158.42",
+    "original_speaker_id": "SPEAKER_11",
+    "identified_speaker": "James Heappey",
+    "identified_role": "UK Defence Secretary",
+    "classification": "blue",
+    "text": "— We have no damage to the submarine fleet, Prime Minister."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2158.44–2160.53",
+    "original_speaker_id": "SPEAKER_11",
+    "identified_speaker": "James Heappey",
+    "identified_role": "UK Defence Secretary",
+    "classification": "blue",
+    "text": "HMS Queen Elizabeth is damaged and on fire."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2160.55–2170.36",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "— Another map appears, showing where Russian crews and ballistic missiles hit targets at the Royal Navy's main base in Portsmouth. "
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2171.57–2177.64",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "HMS Queen Elizabeth is a £3 billion aircraft carrier and national status symbol."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2179.12–2183.07",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "James Heapey, as Defence Secretary, lists what's been impacted."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2184.27–2185.45",
+    "original_speaker_id": "SPEAKER_11",
+    "identified_speaker": "James Heappey",
+    "identified_role": "UK Defence Secretary",
+    "classification": "blue",
+    "text": "Queen Elizabeth damaged on fire."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2185.71–2188.45",
+    "original_speaker_id": "SPEAKER_11",
+    "identified_speaker": "James Heappey",
+    "identified_role": "UK Defence Secretary",
+    "classification": "blue",
+    "text": "Type 45 HMS Diamond is damaged."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2189.11–2196.72",
+    "original_speaker_id": "SPEAKER_11",
+    "identified_speaker": "James Heappey",
+    "identified_role": "UK Defence Secretary",
+    "classification": "blue",
+    "text": "HMS Richmond, an anti-submarine warfare frigate, is crippled and one offshore patrol vessel has been sunk on its mooring."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2198.68–2201.28",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "This is a devastating blow for the Navy."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2201.32–2205.43",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "It's also a catastrophic moment for the whole nation."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2206.61–2211.88",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Prime Minister must decide on a military response, with or without NATO."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2211.89–2221.19",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He's already asked for options to sink at least one of the Russian vessels or aircraft, but his defence chief wants to do more."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2223.16–2226.51",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "So there are two things that seem to me as CDS clear."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2226.81–2232.86",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "One is Russia has committed an act of war against the UK, and we're having the discussion about Article 5."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2233.22–2244.62",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The second is it is extremely unclear that the US is going to honor its obligations, which we have benefited from and trusted for 75 years, and it's beginning to feel pretty lonely."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2244.76–2254.11",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "And therefore, in your conversation with the National Secretary General, Quite apart from what we need to do to protect the UK, I need you to consider two big options."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2254.19–2263.48",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The first is, below the nuclear threshold, the UK has national things we could do in cyberspace or by using the RAF F-35s to attack deep into Russia."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2264.18–2268.83",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Are you prepared to consider unilaterally taking the fight to Russia?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2269.94–2282.26",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He's suggesting offensive cyber attacks inside Russia. Another option is to deploy the military's F-35 warplanes to fly what would be a high-risk bombing raid."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2284.47–2288.95",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "And secondly, we have to assume that Russia is going to attack again."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2288.99–2292.72",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "And the first wave of attacks were on the military architecture."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2293.72–2297.76",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The second wave of attacks, to have any effect at all, are going to be on our daily national life."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2297.78–2302.17",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "They're going to be on our critical national infrastructure and the continuity of government."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2302.19–2319.02",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Surely, we're approaching the point where Russia needs to understand that if it does that, We are at the point of using our strategic nuclear weapon, or at least considering it. Otherwise, we are just going to spend the rest of this day lying on our back with our legs in the air, taking whatever punishment we get."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2319.72–2341.48",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "So I think we have to ask ourselves whether the choice of targets, predominantly Navy, that Russia has chosen, is in Putin's mind a proportionate response to the bombing of Murmansk Harbor, the Russian Navy base, that he alleges was backed or run by British intelligence."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2341.54–2352.65",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And his choice has been, in a sense, deliberately proportionate, we would say, of the enact a war, but nevertheless, that he is not looking to escalate."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2353.09–2366.13",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "He is, in fact, looking to make a strike to make his point and that at the same time he gets the benefit of fracturing NATO which is actually what he really wants to do at the same time and therefore"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2366.58–2392.61",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "That's the question, CDS, is if we do a limited response, does that really mean we're on our backs or does it mean that we have accepted to escalate to de-escalate, but not to a point where our escalation puts us in a very dangerous spot of nuclear engagement or exchange, which is where We have to make a difficult call of, do we think that's what he wants?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2393.30–2397.44",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Let's be honest, neither leader will want a nuclear exchange."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2398.18–2402.69",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Putin does not want his Moscow annihilated any more than I want London annihilated."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2404.41–2414.41",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "What the prime minister does want, though, is to put pressure on Russia in unexpected directions, such as by deploying a second nuclear-armed submarine."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2415.47–2418.27",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He calls this kind of thing a strategic dilemma"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2419.40–2427.29",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The previous day, the prime minister told his military chief to get a second boat ready. Now he wants it put to sea."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2429.28–2439.33",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "This is one of the strongest signals London can send to Moscow to stop its attacks, though it raises the risk of nuclear escalation by the Russian side as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2441.57–2444.58",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And I think this is the biggest challenge for you, CDS. It's important."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2445.36–2449.28",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "I would like options of a strategic dilemma to give to Putin."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2450.02–2452.43",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "At the moment, we are being responsive."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2453.09–2459.03",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We are not being proactive in making him feel uncomfortable with a strategic dilemma."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2459.05–2463.38",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And that's why the second boat, at the very least, gives him a dilemma."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2463.46–2470.91",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Because he would not have done this without thinking he had some ability to curtail the boat, the nuclear bomb that we currently always have on patrol."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2471.64–2484.10",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And the second one is, is there another part of the globe or another part of Europe we can give him a strategic dilemma where he can suffer elsewhere and therefore he has to make a different choice of what he wants to do?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2488.50–2496.36",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "Such a counter-attack requires the ability to think dynamically, and at times unconventionally, a British strength."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2499.84–2502.85",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "But it's something the Russians are rather good at as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2510.29–2534.91",
+    "original_speaker_id": "SPEAKER_00",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "At Amazon, over 50% of deliveries now come with less packaging, or with no added packaging at all. It's a difference you'll notice on your doorstep, where you chat with friends, where your neighbour's daughter practices guitar, and where we deliver your new noise-cancelling headphones in the manufacturer's packaging. Much better. Reduced packaging from Amazon. We're delivering change where it matters."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2535.39–2540.30",
+    "original_speaker_id": "SPEAKER_00",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "On your doorstep. Based on 2024 UK and EU Amazon packaging data."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2540.28–2559.39",
+    "original_speaker_id": "SPEAKER_21",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "My classroom isn't just a classroom, it's a launch pad, a runway, a place where ideas fly on the back of paper planes. Sure there are other ways to get students to speak up, but this is mine. All it takes is a bit of creativity and soon they're all joining in. It gives me a lot of joy to see one of my ideas working in the moment and the class learning something new together."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2559.65–2561.61",
+    "original_speaker_id": "SPEAKER_21",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "That's when you know a lesson is really taking off."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2562.55–2570.28",
+    "original_speaker_id": "SPEAKER_01",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Every lesson shapes a life. Start shaping yours with a minimum starting salary of £32,900. Search Get Into Teaching."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2576.96–2588.06",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "In the Kremlin, the main focus of the operation is the large-scale missile strikes. But the team has also concocted a variety of other, smaller dilemmas."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2589.20–2592.22",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "They may sound random, but that's the whole point."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2593.69–2605.48",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The options include capturing the Shetland Islands, targeting British troops based in Estonia, or striking a Royal Navy base on the British territory of Gibraltar,"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2607.29–2617.39",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The commander of Russia's Northern Fleet, played by Robin Hagblom, a Finnish naval analyst, is speaking to the president via an imagined satellite phone."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2618.43–2622.36",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "He's explaining how his forces could attack Gibraltar."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2622.61–2637.76",
+    "original_speaker_id": "SPEAKER_20",
+    "identified_speaker": "Robin Häggblom",
+    "identified_role": "Commander of Russia's Northern Fleet",
+    "classification": "red",
+    "text": "We have a submarine out in the Atlantic equipped with the caliber cruise missiles we discussed earlier. We are able to fire a major salvo with several weapons which can impact the chosen targets including the airfield and the dockyards."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2640.60–2653.31",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "At a minimum, the Russian team plans to exploit historic friction between London and Madrid over the status of Gibraltar, which shares a border with Spain, also a NATO member."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2653.91–2658.12",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "There's even a communique they plan to release at the United Nations."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2659.01–2673.54",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "I propose the following text."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2679.85–2682.15",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The president's spy chief supports the plan."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2682.79–2690.88",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "It's in line with the Russian playbook of deploying a variety of attacks to confuse and disorientate an enemy."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2692.16–2698.71",
+    "original_speaker_id": "SPEAKER_09",
+    "identified_speaker": "Amber Rudd",
+    "identified_role": "UK Home Secretary",
+    "classification": "red",
+    "text": "Mr. President, I think that it will be difficult for the Spanish to resist this generous offer."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2699.05–2701.63",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Excellent. Very good. We shall send those communications now."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2701.84–2702.18",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Thank you."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2704.96–2710.64",
+    "original_speaker_id": "SPEAKER_17",
+    "identified_speaker": "Keir Giles",
+    "identified_role": "Russian President",
+    "classification": "red",
+    "text": "Colleagues, we sit. We wait. We see if the British respond, and if so, how."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2712.07–2715.79",
+    "original_speaker_id": "SPEAKER_18",
+    "identified_speaker": "Maria Engqvist",
+    "identified_role": "Head of the GRU (Russian Military Spy Chief)",
+    "classification": "red",
+    "text": "Again, what could they do that would impact our calculations?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2724.06–2730.17",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "At the same time in London, the Prime Minister is issuing final instructions to his defence chief."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2731.33–2740.35",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "I would like options of being able to strike at least one of the platforms that launched the attack against the United Kingdom."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2740.59–2751.74",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "So if it's a destroyer or a submarine, and we have the ability to sink one of them, to send a message that we won't go quietly, but nevertheless, again, a proportionate response to the aggressor."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2752.54–2772.99",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "With total urgency, Secretary of State, I need one second boat, last line of defense, Trident at sea, selected target directly proportional to the music, mobilisation, readiness and strategic dilemma to Russia, either here or elsewhere."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2774.01–2776.13",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "So, PM, can I suggest we release CDS to do that?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2776.19–2778.09",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Yeah."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2778.11–2780.47",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The chief of the defence staff leaves the room."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2781.73–2790.38",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "With Allied support more important than ever, the national security advisor prepares the prime minister to speak with the head of NATO."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2791.70–2794.74",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Can I just suggest there are three points you should make?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2795.38–2805.09",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "One is there's been an attack as you briefed the Secretary of State and we will be invoking NATO Article 5 and we need an emergency meeting of the North Atlantic Council this morning."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2807.18–2813.69",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The North Atlantic Council, often referred to as the NAC, is the main decision-making body of NATO."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2815.42–2821.97",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Each member state has an ambassador that would attend the NAC and give the view of their respective capital."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2823.45–2829.08",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "It is now an act of aggression against the whole of NATO and that the Secretary-General needs to proceed on that basis."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2829.80–2842.87",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "Second, I'd suggest you dial this down a bit, but just indicate that we aren't completely confident that the United States is prepared to use armed force and they're seeking to de-escalate the situation."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2843.91–2850.44",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "And third, I think we do need to warn, because this will get back to the Russians, that"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2850.42–2855.85",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "We cannot prevail in a conventional fight against the Russians on our own."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2856.83–2860.78",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "The CDS has some options, but we are outmatched by the Russians conventionally."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2861.54–2873.15",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "If the Secretary-General wants to avoid this ending up in a strategic nuclear exchange, then we need conventional options from our allies in order to be able to deter the Russians from taking this further."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2873.17–2878.78",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "If we're on our own, we have virtually no option other than giving in or going all the way."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2879.02–2880.74",
+    "original_speaker_id": "SPEAKER_16",
+    "identified_speaker": "Lord Mark Sedwill",
+    "identified_role": "UK National Security Advisor (NSA)",
+    "classification": "blue",
+    "text": "And I think it's important they understand that."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2882.22–2886.49",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The NATO chief appears in the Cobra Room via a secure video link."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2887.55–2893.70",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "Thank you, Prime Minister. I have been up for quite a while, as I know you have, following these events."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2896.12–2905.59",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Our NATO chief is being played by Elizabeth Brough, a senior fellow at the Atlantic Council think tank and a leading expert on defence and security."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2907.19–2917.38",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "Like the US Secretary of State, she too is helping us test a scenario in which NATO allies do not immediately mobilise to defend the UK."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2918.66–2936.71",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We have suffered a number of casualties on our military bases hit as indeed Heathrow Terminal 4 has been struck a civilian target and this is unprovoked. The United Kingdom will be triggering Article 5 and we will be very concerned"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2936.94–2939.80",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "if we don't receive that support and backing."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2940.24–2959.82",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "I would simply urge, before I break off to let you obviously respond, that Russia's intention is not just Britain, it is to fracture NATO, demonstrated as weak, which will be wholly supported by China, and indeed it is therefore not in the interest of any member of NATO to not support the Article 5."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2960.12–2967.42",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "I can tell you I have also received communications from other NATO allies and indeed from our American partners."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2968.06–2978.76",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "As I think you may be aware, our American friends are not willing to agree to an Article 5 situation and that means I will not be able to call the NAC."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2979.06–2984.62",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "And I should tell you that other NATO member states, governments, have been in touch with me."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2985.24–2989.33",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "Some are willing to help the UK with surveillance."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2989.79–2997.66",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "Some, including Germany, France, and Italy, are, like the United States, predominantly concerned that this be de-escalated."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "2998.20–3004.64",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "You know, this is the test of NATO as Secretary General, and it looks like we are failing at the first test."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3005.11–3013.04",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "And after this, what happens to Estonia? What happens to Poland? What happened to other allies? Should we fail?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3013.92–3024.43",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "We know that Putin is banking on an international schism and a weakness of NATO, and it won't survive a failure of Article 5."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3025.34–3030.48",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "It is fundamental to what we have all stood for and invested in over decades."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3030.66–3037.65",
+    "original_speaker_id": "SPEAKER_22",
+    "identified_speaker": "Elizabeth Brough",
+    "identified_role": "NATO Secretary-General (SecGen)",
+    "classification": "blue",
+    "text": "Prime Minister, I regret the situation in the UK. It's finding itself in and I support your important work within your government."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3038.79–3040.70",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "blue",
+    "text": "Thank you. We'll close it there. Thank you."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3044.20–3050.63",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "With an ever-increasing urgency to act, the Defence Chief has linked up with his top operational commander."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3052.09–3057.80",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Chief of Joint Operations, or CJO, is played by Lieutenant General Sir David Capewell."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3059.13–3067.31",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The Cobra team needs options fast on how to retaliate, regardless of whether NATO stands with the UK or not."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3068.37–3072.94",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "CGO, I've just come from the latest meeting with Cobra."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3074.64–3075.84",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "A number of things have become clear."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3075.98–3079.99",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The first is, no other NATO member thinks this is their fight yet."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3080.17–3085.56",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Ambivalence doesn't even begin to describe the lack of warmth that this is being received by."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3085.60–3092.13",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The Prime Minister accepts that we may now be at war with Russia and we may now be at war with Russia on our own."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3092.93–3094.64",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "He has given me the following instructions."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3095.30–3102.71",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The first action is, tell me how we sink. at least one Russian ship and or submarine."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3103.67–3114.62",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Secondly, and the Prime Minister has not agreed to this yet, is I'd like you to tell me what options there are for conducting a conventional deep strike into Russia using the F-35 capability."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3115.76–3121.96",
+    "original_speaker_id": "SPEAKER_15",
+    "identified_speaker": "Lt Gen Sir David Capewell",
+    "identified_role": "UK Chief of Joint Operations (CJO)",
+    "classification": "blue",
+    "text": "I cannot guarantee in any sense at the moment the sinking of one or two of the surface fleet."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3122.78–3126.07",
+    "original_speaker_id": "SPEAKER_15",
+    "identified_speaker": "Lt Gen Sir David Capewell",
+    "identified_role": "UK Chief of Joint Operations (CJO)",
+    "classification": "blue",
+    "text": "But we can certainly begin to engineer plans to do that."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3127.30–3130.78",
+    "original_speaker_id": "SPEAKER_15",
+    "identified_speaker": "Lt Gen Sir David Capewell",
+    "identified_role": "UK Chief of Joint Operations (CJO)",
+    "classification": "blue",
+    "text": "The operational fight is the more problematic area."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3134.02–3144.46",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "explanation",
+    "text": "The commander wants to be sure his political masters understand the possibility that a British counter-attack may trigger a much bigger response from Russia."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3145.58–3156.40",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "And that raises questions about the UK's ability to sustain a protracted conflict with limited supplies unless NATO is in the fight as well."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3157.24–3177.80",
+    "original_speaker_id": "SPEAKER_15",
+    "identified_speaker": "Lt Gen Sir David Capewell",
+    "identified_role": "UK Chief of Joint Operations (CJO)",
+    "classification": "blue",
+    "text": "So I'd like to understand whether or not there is appetite to take this fight to an even greater extent, which begins to beg the questions about armaments, resource, supply chains, and a much wider enablement proposition for a campaign that goes longer than two or three days."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3178.56–3181.99",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "So let me give you what I believe is a current position on that."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3182.13–3197.79",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "From the prime minister's perspective, the UK cannot be seen to be completely supine in this situation and therefore it seems to me more likely than not that we may strike out the fotilla and then say that we don't intend to escalate further."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3198.45–3209.86",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "We know we are at a position of profound conventional disadvantage and what we're all shying away from is being a situation where the only thing left in the locker is the strategic nuclear deterrent."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3213.15–3215.81",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The prime minister is very focused on this."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3216.33–3219.22",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "As you know, one boat at sea, the second boat will put to sea."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3221.68–3225.47",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "It won't be as ready as you and I would like, but it'll have some capability."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3228.27–3230.61",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "What happens if this becomes a protracted campaign?"
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3231.80–3237.70",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "Well, unless our allies choose to fight for us, we'll find this extraordinarily difficult."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3237.76–3239.30",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "And I'm using understatement there."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3240.53–3244.69",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "But unless our allies give us their material, we're out of the game in a week."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3247.04–3251.46",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "So I'm struggling to find easy or attractive outcomes to this."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3251.84–3258.18",
+    "original_speaker_id": "SPEAKER_08",
+    "identified_speaker": "General Sir Richard Barrons",
+    "identified_role": "UK Chief of the Defence Staff (CDS)",
+    "classification": "blue",
+    "text": "The one thing we have as a point of certainty is tell me how to sink a Russian ship in the next 30 minutes."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3263.82–3265.53",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "coming up in episode three."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3267.77–3273.49",
+    "original_speaker_id": "SPEAKER_27",
+    "identified_speaker": "Lt Gen Sir David Capewell",
+    "identified_role": "UK Chief of Joint Operations (CJO)",
+    "classification": "commentary",
+    "text": "That is a high-risk mission. That submarine, I would give it probably a 40% chance of not coming back."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3276.48–3281.40",
+    "original_speaker_id": "SPEAKER_06",
+    "identified_speaker": "Sir Ben Wallace",
+    "identified_role": "UK Prime Minister (PM)",
+    "classification": "commentary",
+    "text": "If we are too weak in the next hour, this ends with our humiliation and surrender."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3287.11–3291.03",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "The War Game was written and presented by me, Deborah Haynes."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3292.80–3314.28",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "The series producer is James Shield. The development producer is Jess Swinburne. Sound Design by Tom Burchell. Original Music by Tom Kinsella. Additional production by Katie Scholes. The editor for Tortoise is Jasper Corbett."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3315.49–3324.36",
+    "original_speaker_id": "SPEAKER_25",
+    "identified_speaker": "Deborah Haynes",
+    "identified_role": "Host / Narrator",
+    "classification": "commentary",
+    "text": "For Sky News, the commissioning editor is Paul Stanworth and the executive producers are Sarah Whitehead and David Mapstone."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3338.39–3358.11",
+    "original_speaker_id": "SPEAKER_23",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "on a windswept walk in Carmarthen, while someone tries to use your car details to hire a speedboat in Cannes. This is the moment you relax, knowing that Barclays' advanced tech has helped to spot the fraud in under a second, and their expert team are on hand to close it down. So you can get back to being windswept."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3359.88–3365.11",
+    "original_speaker_id": "SPEAKER_23",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Just one of the ways we're protecting our customers 24-7. Search Barclays Fraud Protection."
+  },
+  {
+    "episode": "S2E2",
+    "segment": "3365.61–3367.91",
+    "original_speaker_id": "SPEAKER_23",
+    "identified_speaker": "Ad Voice",
+    "identified_role": "Advertisement",
+    "classification": "advertisement",
+    "text": "Barclays. Make money work for you."
+  }
+]

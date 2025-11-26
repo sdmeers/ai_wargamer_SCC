@@ -99,26 +99,26 @@ def load_data_fast():
     Loads 1) Raw transcripts into a Python list of objects and 2) Precomputed Analysis JSON.
     """
     # 1. Load Transcripts into a structured list
-    transcript_file_to_load = "the_wargame_s2e1+2+3_clean_transcript.json"
     all_transcript_entries = []
-    
     data_dir = os.path.join(os.path.dirname(__file__), 'data')
     
-    path = os.path.join(data_dir, transcript_file_to_load)
-    if os.path.exists(path):
-        try:
-            with open(path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                
-                if isinstance(data, list):
-                    all_transcript_entries.extend(data)
-                else:
-                    logger.warning(f"Transcript file {transcript_file_to_load} content is not a list. Skipping.")
-                
-        except Exception as e:
-            logger.warning(f"Failed to load or parse transcript file {transcript_file_to_load}: {e}")
-    else:
-        logger.warning(f"Transcript file not found: {path}")
+    # Iterate through episodes 1 to 5
+    for i in range(1, 6):
+        filename = f"clean_transcript_s2e{i}.json"
+        path = os.path.join(data_dir, filename)
+        
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        all_transcript_entries.extend(data)
+                    else:
+                        logger.warning(f"Transcript file {filename} content is not a list. Skipping.")
+            except Exception as e:
+                logger.warning(f"Failed to load or parse transcript file {filename}: {e}")
+        else:
+            logger.warning(f"Transcript file not found: {path}")
 
     # Store the full list in session state
     st.session_state.all_transcripts = all_transcript_entries
@@ -274,8 +274,6 @@ def render_transcript_page(group, title, file_path):
         
         # 2. Serialize the list into a JSON string.
         json_string = json.dumps(context_to_send)
-
-        # 3. Replace the placeholder in the HTML.
 
         # 3. Replace the placeholder in the HTML.
         html_with_data = html_template.replace(
