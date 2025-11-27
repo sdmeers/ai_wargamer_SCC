@@ -74,7 +74,7 @@ NAVIGATION = {
     "Situation Room": {
         "SITREP": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
-        "Geospatial": {"icon": "🗺️", "type": "geospatial"},
+        "GEOINT": {"icon": "🗺️", "type": "geospatial"},
         "ORBAT": {"icon": "🛡️", "type": "llm_static"},
         "Actions": {"icon": "🎬", "type": "llm_static"},
         "Uncertainties": {"icon": "❓", "type": "llm_static"},
