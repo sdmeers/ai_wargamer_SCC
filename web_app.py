@@ -7,11 +7,9 @@ import logging
 import re
 import base64
 import mimetypes
-# Import necessary for Streamlit caching
+import xml.etree.ElementTree as ET
+import folium
 from functools import lru_cache
-
-# --- PATH SETUP ---
-sys.path.append(os.path.dirname(__file__))
 
 # --- LOGGING ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -76,6 +74,7 @@ NAVIGATION = {
     "Situation Room": {
         "SITREP": {"icon": "📊", "type": "llm_static"},
         "SIGACTS": {"icon": "💥", "type": "llm_static"},
+        "Geospatial": {"icon": "🗺️", "type": "geospatial"},
         "ORBAT": {"icon": "🛡️", "type": "llm_static"},
         "Actions": {"icon": "🎬", "type": "llm_static"},
         "Uncertainties": {"icon": "❓", "type": "llm_static"},
@@ -403,6 +402,97 @@ def render_llm_static_page(group, title):
         st.warning("Intelligence data not found. Ensure precompute_intelligence.py has been run and the data is loaded.")
 
 
+def render_geospatial_page(group, title):
+    """
+    Renders the Geospatial map view using Folium.
+    Parses KML data from the intelligence report and displays it on an interactive map.
+    """
+    page_data = get_page_data_from_id(st.session_state.current_page_id)[2]
+    st.header(f"{page_data['icon']} {group}: {title}")
+    st.markdown("---")
+
+    # Retrieve KML content from session state
+    # The key in intelligence_analysis.json is "report_Geospatial"
+    kml_content = st.session_state.get("report_Geospatial")
+
+    if not kml_content:
+        st.info("No Geospatial intelligence available for this episode.")
+        return
+
+    try:
+        # Parse KML
+        # Remove any leading whitespace/newlines before parsing
+        kml_content = kml_content.strip()
+        root = ET.fromstring(kml_content)
+        
+        # Namespace handling
+        namespace = {'kml': 'http://www.opengis.net/kml/2.2'}
+        
+        # Initialize Map - Default to UK view
+        m = folium.Map(location=[54.5, -3.0], zoom_start=6, tiles="OpenStreetMap")
+        
+        # Extract Placemarks
+        placemarks = root.findall('.//kml:Placemark', namespace)
+        
+        markers_added = False
+        all_coords = []
+
+        for placemark in placemarks:
+            # Extract Name
+            name_tag = placemark.find('kml:name', namespace)
+            name = name_tag.text if name_tag is not None else "Unknown Location"
+
+            # Extract Description
+            desc_tag = placemark.find('kml:description', namespace)
+            description = desc_tag.text if desc_tag is not None else ""
+
+            # Extract Coordinates
+            point = placemark.find('.//kml:Point/kml:coordinates', namespace)
+            if point is not None:
+                coords_str = point.text.strip()
+                try:
+                    # KML is Longitude,Latitude,Altitude
+                    lon_str, lat_str, _ = coords_str.split(',')
+                    lat = float(lat_str)
+                    lon = float(lon_str)
+                    
+                    all_coords.append([lat, lon])
+
+                    # Create a marker
+                    folium.Marker(
+                        location=[lat, lon],
+                        popup=folium.Popup(f"<b>{name}</b><br>{description}", max_width=300),
+                        tooltip=name,
+                        icon=folium.Icon(color="red", icon="info-sign")
+                    ).add_to(m)
+                    markers_added = True
+                except ValueError:
+                    logger.warning(f"Skipping placemark '{name}': Invalid coordinates format.")
+
+        if markers_added:
+            st.success(f"Identified {len(all_coords)} tactical locations.")
+            # Fit bounds to show all markers
+            if all_coords:
+                m.fit_bounds(all_coords)
+            
+            # Render the map
+            # We use _html to get the raw HTML representation of the map and embed it
+            # This avoids needing streamlit-folium if we just want a static-ish interactive map
+            # But streamlit-folium is better for interactivity. 
+            # Since I didn't add streamlit-folium to requirements (I added folium), I will use components.html
+            
+            map_html = m._repr_html_()
+            components.html(map_html, height=600)
+            
+        else:
+            st.warning("No valid locations found in the KML data.")
+
+    except ET.ParseError as e:
+        st.error(f"Error parsing KML data: {e}")
+        st.code(kml_content, language="xml")
+
+
+
 def render_chatbot_page(agent_name):
     """Renders the interactive chatbot interface for an advisor."""
     page_data = get_page_data_from_id(st.session_state.current_page_id)[2] # Re-fetch data for icon
@@ -531,6 +621,8 @@ elif page_type == 'llm_static':
     render_llm_static_page(page_group, current_page_title)
 elif page_type == 'chatbot':
     render_chatbot_page(current_page_title)
+elif page_type == 'geospatial':
+    render_geospatial_page(page_group, current_page_title)
 
 # If the page type is unexpected (shouldn't happen with the current logic), default to Scenario
 else:
